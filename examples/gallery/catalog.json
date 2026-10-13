@@ -1,0 +1,3055 @@
+{
+  "version": "1.1.0",
+  "snapshot": "2026-10-13",
+  "scope": "Original runnable web adaptations and explicitly labeled simulations; no native SDK or device conformance claim.",
+  "topics": [
+    {
+      "slug": "human-interface-guidelines",
+      "title": "Human Interface Guidelines",
+      "category": "getting-started",
+      "platforms": [],
+      "kind": "topic-browser",
+      "scenario": "Explore the human interface guidelines example collection",
+      "action": "Choose example",
+      "mode": "web-adaptation",
+      "source": "https://developer.apple.com/design/human-interface-guidelines",
+      "children": [
+        "components",
+        "foundations",
+        "getting-started",
+        "inputs",
+        "patterns",
+        "technologies"
+      ]
+    },
+    {
+      "slug": "accessibility",
+      "title": "Accessibility",
+      "category": "foundations",
+      "platforms": [
+        "ios",
+        "ipados",
+        "macos",
+        "tvos",
+        "visionos",
+        "watchos"
+      ],
+      "kind": "accessibility",
+      "scenario": "Read a travel plan with adaptable text",
+      "action": "Enlarge text",
+      "mode": "web-adaptation",
+      "source": "https://developer.apple.com/design/human-interface-guidelines/accessibility#Vision",
+      "children": []
+    },
+    {
+      "slug": "action-button",
+      "title": "Action button",
+      "category": "inputs",
+      "platforms": [
+        "ios",
+        "watchos"
+      ],
+      "kind": "hardware",
+      "scenario": "Choose a quick action for a hiking session",
+      "action": "Start waypoint",
+      "mode": "simulation",
+      "source": "https://developer.apple.com/design/human-interface-guidelines/action-button#Best-practices",
+      "children": []
+    },
+    {
+      "slug": "action-sheets",
+      "title": "Action sheets",
+      "category": "components",
+      "platforms": [
+        "ios",
+        "ipados",
+        "macos",
+        "tvos",
+        "watchos"
+      ],
+      "kind": "action-sheet",
+      "scenario": "Choose what to do with a field recording",
+      "action": "Choose action",
+      "mode": "web-adaptation",
+      "source": "https://developer.apple.com/design/human-interface-guidelines/action-sheets#Best-practices",
+      "children": []
+    },
+    {
+      "slug": "activity-rings",
+      "title": "Activity rings",
+      "category": "components",
+      "platforms": [
+        "ios",
+        "ipados",
+        "watchos"
+      ],
+      "kind": "rings",
+      "scenario": "Explore a fictional person's daily activity",
+      "action": "Add activity",
+      "mode": "simulation",
+      "source": "https://developer.apple.com/design/human-interface-guidelines/activity-rings#Best-practices",
+      "children": []
+    },
+    {
+      "slug": "activity-views",
+      "title": "Activity views",
+      "category": "components",
+      "platforms": [
+        "ios",
+        "ipados",
+        "visionos"
+      ],
+      "kind": "share",
+      "scenario": "Share a weekend itinerary",
+      "action": "Copy itinerary",
+      "mode": "web-adaptation",
+      "source": "https://developer.apple.com/design/human-interface-guidelines/activity-views#Best-practices",
+      "children": []
+    },
+    {
+      "slug": "airplay",
+      "title": "AirPlay",
+      "category": "technologies",
+      "platforms": [
+        "ios",
+        "ipados",
+        "macos",
+        "tvos",
+        "visionos",
+        "watchos"
+      ],
+      "kind": "integration",
+      "scenario": "Choose a playback destination for a lecture",
+      "action": "Connect display",
+      "mode": "simulation",
+      "source": "https://developer.apple.com/design/human-interface-guidelines/airplay#Best-practices",
+      "children": []
+    },
+    {
+      "slug": "alerts",
+      "title": "Alerts",
+      "category": "components",
+      "platforms": [
+        "ios",
+        "ipados",
+        "macos",
+        "tvos",
+        "visionos",
+        "watchos"
+      ],
+      "kind": "dialog",
+      "scenario": "Confirm removal of an unsaved draft",
+      "action": "Review removal",
+      "mode": "web-adaptation",
+      "source": "https://developer.apple.com/design/human-interface-guidelines/alerts#Best-practices",
+      "children": []
+    },
+    {
+      "slug": "always-on",
+      "title": "Always On",
+      "category": "technologies",
+      "platforms": [
+        "ios",
+        "watchos"
+      ],
+      "kind": "always-on",
+      "scenario": "Keep a fictional timer glanceable",
+      "action": "Dim display",
+      "mode": "web-adaptation",
+      "source": "https://developer.apple.com/design/human-interface-guidelines/always-on#Best-practices",
+      "children": []
+    },
+    {
+      "slug": "app-clips",
+      "title": "App Clips",
+      "category": "technologies",
+      "platforms": [
+        "ios",
+        "ipados"
+      ],
+      "kind": "integration",
+      "scenario": "Complete a small parking-meter task",
+      "action": "Begin parking",
+      "mode": "simulation",
+      "source": "https://developer.apple.com/design/human-interface-guidelines/app-clips#Designing-your-App-Clip",
+      "children": []
+    },
+    {
+      "slug": "app-icons",
+      "title": "App icons",
+      "category": "foundations",
+      "platforms": [
+        "ios",
+        "ipados",
+        "macos",
+        "tvos",
+        "visionos",
+        "watchos"
+      ],
+      "kind": "app-icon",
+      "scenario": "Preview an original notebook app icon",
+      "action": "Change variant",
+      "mode": "web-adaptation",
+      "source": "https://developer.apple.com/design/human-interface-guidelines/app-icons#Layer-design",
+      "children": []
+    },
+    {
+      "slug": "app-shortcuts",
+      "title": "App Shortcuts",
+      "category": "components",
+      "platforms": [
+        "ios",
+        "ipados",
+        "visionos",
+        "watchos"
+      ],
+      "kind": "assistant",
+      "scenario": "Run a fictional shortcut to capture a note",
+      "action": "Capture note",
+      "mode": "simulation",
+      "source": "https://developer.apple.com/design/human-interface-guidelines/app-shortcuts#Best-practices",
+      "children": []
+    },
+    {
+      "slug": "apple-in-app-purchase",
+      "title": "Apple In-App Purchase",
+      "category": "technologies",
+      "platforms": [
+        "ios",
+        "ipados",
+        "macos",
+        "tvos",
+        "visionos",
+        "watchos"
+      ],
+      "kind": "payment",
+      "scenario": "Preview a subscription choice without making a purchase",
+      "action": "Preview plan",
+      "mode": "simulation",
+      "source": "https://developer.apple.com/design/human-interface-guidelines/apple-in-app-purchase#Auto-renewable-subscriptions",
+      "children": []
+    },
+    {
+      "slug": "apple-pay",
+      "title": "Apple Pay",
+      "category": "technologies",
+      "platforms": [
+        "ios",
+        "ipados",
+        "macos",
+        "visionos",
+        "watchos"
+      ],
+      "kind": "payment",
+      "scenario": "Review a fictional bakery order without charging",
+      "action": "Preview checkout",
+      "mode": "simulation",
+      "source": "https://developer.apple.com/design/human-interface-guidelines/apple-pay#Offering-Apple-Pay",
+      "children": []
+    },
+    {
+      "slug": "apple-pencil-and-scribble",
+      "title": "Apple Pencil and Scribble",
+      "category": "inputs",
+      "platforms": [
+        "ipados"
+      ],
+      "kind": "drawing",
+      "scenario": "Sketch a trail with pointer or keyboard controls",
+      "action": "Clear sketch",
+      "mode": "web-adaptation",
+      "source": "https://developer.apple.com/design/human-interface-guidelines/apple-pencil-and-scribble#Best-practices",
+      "children": []
+    },
+    {
+      "slug": "augmented-reality",
+      "title": "Augmented reality",
+      "category": "technologies",
+      "platforms": [
+        "ios",
+        "ipados",
+        "visionos"
+      ],
+      "kind": "spatial",
+      "scenario": "Place a virtual chair in an illustrated room",
+      "action": "Place chair",
+      "mode": "simulation",
+      "source": "https://developer.apple.com/design/human-interface-guidelines/augmented-reality#Best-practices",
+      "children": []
+    },
+    {
+      "slug": "boxes",
+      "title": "Boxes",
+      "category": "components",
+      "platforms": [
+        "ios",
+        "ipados",
+        "macos",
+        "visionos"
+      ],
+      "kind": "boxes",
+      "scenario": "Group related export settings",
+      "action": "Apply settings",
+      "mode": "web-adaptation",
+      "source": "https://developer.apple.com/design/human-interface-guidelines/boxes#Best-practices",
+      "children": []
+    },
+    {
+      "slug": "branding",
+      "title": "Branding",
+      "category": "foundations",
+      "platforms": [
+        "ios",
+        "ipados",
+        "macos",
+        "tvos",
+        "visionos",
+        "watchos"
+      ],
+      "kind": "branding",
+      "scenario": "Compare a recognizable original brand treatment",
+      "action": "Switch accent",
+      "mode": "web-adaptation",
+      "source": "https://developer.apple.com/design/human-interface-guidelines/branding#Best-practices",
+      "children": []
+    },
+    {
+      "slug": "buttons",
+      "title": "Buttons",
+      "category": "components",
+      "platforms": [
+        "ios",
+        "ipados",
+        "macos",
+        "tvos",
+        "visionos",
+        "watchos"
+      ],
+      "kind": "buttons",
+      "scenario": "Save a field note with distinct action styles",
+      "action": "Save note",
+      "mode": "web-adaptation",
+      "source": "https://developer.apple.com/design/human-interface-guidelines/buttons#Best-practices",
+      "children": []
+    },
+    {
+      "slug": "camera-control",
+      "title": "Camera Control",
+      "category": "inputs",
+      "platforms": [
+        "ios"
+      ],
+      "kind": "hardware",
+      "scenario": "Explore camera adjustments without camera access",
+      "action": "Change exposure",
+      "mode": "simulation",
+      "source": "https://developer.apple.com/design/human-interface-guidelines/camera-control#Anatomy",
+      "children": []
+    },
+    {
+      "slug": "carekit",
+      "title": "CareKit",
+      "category": "technologies",
+      "platforms": [
+        "ios",
+        "ipados"
+      ],
+      "kind": "care",
+      "scenario": "Record a fictional care-task check-in",
+      "action": "Mark complete",
+      "mode": "simulation",
+      "source": "https://developer.apple.com/design/human-interface-guidelines/carekit#CareKit-views",
+      "children": []
+    },
+    {
+      "slug": "carplay",
+      "title": "CarPlay",
+      "category": "technologies",
+      "platforms": [
+        "ios"
+      ],
+      "kind": "car",
+      "scenario": "Preview a simplified driving destination choice",
+      "action": "Select destination",
+      "mode": "simulation",
+      "source": "https://developer.apple.com/design/human-interface-guidelines/carplay#iPhone-interactions",
+      "children": []
+    },
+    {
+      "slug": "charting-data",
+      "title": "Charting data",
+      "category": "patterns",
+      "platforms": [
+        "ios",
+        "ipados",
+        "macos",
+        "tvos",
+        "visionos",
+        "watchos"
+      ],
+      "kind": "chart",
+      "scenario": "Inspect weekly reading time with labels",
+      "action": "Change period",
+      "mode": "web-adaptation",
+      "source": "https://developer.apple.com/design/human-interface-guidelines/charting-data#Best-practices",
+      "children": []
+    },
+    {
+      "slug": "charts",
+      "title": "Charts",
+      "category": "components",
+      "platforms": [
+        "ios",
+        "ipados",
+        "macos",
+        "tvos",
+        "visionos",
+        "watchos"
+      ],
+      "kind": "chart",
+      "scenario": "Compare labeled fictional energy totals",
+      "action": "Show detail",
+      "mode": "web-adaptation",
+      "source": "https://developer.apple.com/design/human-interface-guidelines/charts#Marks",
+      "children": []
+    },
+    {
+      "slug": "collaboration-and-sharing",
+      "title": "Collaboration and sharing",
+      "category": "patterns",
+      "platforms": [
+        "ios",
+        "ipados",
+        "macos",
+        "visionos",
+        "watchos"
+      ],
+      "kind": "collaboration",
+      "scenario": "Invite an example collaborator to a draft",
+      "action": "Preview invitation",
+      "mode": "web-adaptation",
+      "source": "https://developer.apple.com/design/human-interface-guidelines/collaboration-and-sharing#Best-practices",
+      "children": []
+    },
+    {
+      "slug": "collections",
+      "title": "Collections",
+      "category": "components",
+      "platforms": [
+        "ios",
+        "ipados",
+        "macos",
+        "tvos",
+        "visionos"
+      ],
+      "kind": "collection",
+      "scenario": "Browse a compact collection of field notes",
+      "action": "Open note",
+      "mode": "web-adaptation",
+      "source": "https://developer.apple.com/design/human-interface-guidelines/collections#Best-practices",
+      "children": []
+    },
+    {
+      "slug": "color",
+      "title": "Color",
+      "category": "foundations",
+      "platforms": [
+        "ios",
+        "ipados",
+        "macos",
+        "tvos",
+        "visionos",
+        "watchos"
+      ],
+      "kind": "palette",
+      "scenario": "Compare semantic colors in a small dashboard",
+      "action": "Change palette",
+      "mode": "web-adaptation",
+      "source": "https://developer.apple.com/design/human-interface-guidelines/color#Best-practices",
+      "children": []
+    },
+    {
+      "slug": "color-wells",
+      "title": "Color wells",
+      "category": "components",
+      "platforms": [
+        "ios",
+        "ipados",
+        "macos",
+        "visionos"
+      ],
+      "kind": "color-well",
+      "scenario": "Choose an annotation color",
+      "action": "Apply color",
+      "mode": "web-adaptation",
+      "source": "https://developer.apple.com/design/human-interface-guidelines/color-wells#Best-practices",
+      "children": []
+    },
+    {
+      "slug": "column-views",
+      "title": "Column views",
+      "category": "components",
+      "platforms": [
+        "macos"
+      ],
+      "kind": "columns",
+      "scenario": "Navigate a small project folder hierarchy",
+      "action": "Open folder",
+      "mode": "web-adaptation",
+      "source": "https://developer.apple.com/design/human-interface-guidelines/column-views#Best-practices",
+      "children": []
+    },
+    {
+      "slug": "combo-boxes",
+      "title": "Combo boxes",
+      "category": "components",
+      "platforms": [
+        "macos"
+      ],
+      "kind": "combo",
+      "scenario": "Choose or enter a document category",
+      "action": "Apply category",
+      "mode": "web-adaptation",
+      "source": "https://developer.apple.com/design/human-interface-guidelines/combo-boxes#Best-practices",
+      "children": []
+    },
+    {
+      "slug": "complications",
+      "title": "Complications",
+      "category": "components",
+      "platforms": [
+        "watchos"
+      ],
+      "kind": "complication",
+      "scenario": "Preview a watch-sized departure countdown",
+      "action": "Change value",
+      "mode": "simulation",
+      "source": "https://developer.apple.com/design/human-interface-guidelines/complications#Best-practices",
+      "children": []
+    },
+    {
+      "slug": "components",
+      "title": "Components",
+      "category": "components",
+      "platforms": [],
+      "kind": "topic-browser",
+      "scenario": "Explore the components example collection",
+      "action": "Choose example",
+      "mode": "web-adaptation",
+      "source": "https://developer.apple.com/design/human-interface-guidelines/components",
+      "children": [
+        "content",
+        "layout-and-organization",
+        "menus-and-actions",
+        "navigation-and-search",
+        "presentation",
+        "selection-and-input",
+        "status",
+        "system-experiences"
+      ]
+    },
+    {
+      "slug": "content",
+      "title": "Content",
+      "category": "components",
+      "platforms": [],
+      "kind": "topic-browser",
+      "scenario": "Explore the content example collection",
+      "action": "Choose example",
+      "mode": "web-adaptation",
+      "source": "https://developer.apple.com/design/human-interface-guidelines/content",
+      "children": [
+        "charts",
+        "image-views",
+        "text-views",
+        "web-views"
+      ]
+    },
+    {
+      "slug": "context-menus",
+      "title": "Context menus",
+      "category": "components",
+      "platforms": [
+        "ios",
+        "ipados",
+        "macos",
+        "tvos",
+        "visionos"
+      ],
+      "kind": "context-menu",
+      "scenario": "Open contextual actions for a photograph",
+      "action": "Show actions",
+      "mode": "web-adaptation",
+      "source": "https://developer.apple.com/design/human-interface-guidelines/context-menus#Best-practices",
+      "children": []
+    },
+    {
+      "slug": "controls",
+      "title": "Controls",
+      "category": "components",
+      "platforms": [
+        "ios",
+        "ipados",
+        "macos"
+      ],
+      "kind": "controls",
+      "scenario": "Adjust a compact set of workspace preferences",
+      "action": "Reset controls",
+      "mode": "web-adaptation",
+      "source": "https://developer.apple.com/design/human-interface-guidelines/controls#Best-practices",
+      "children": []
+    },
+    {
+      "slug": "dark-mode",
+      "title": "Dark Mode",
+      "category": "foundations",
+      "platforms": [
+        "ios",
+        "ipados",
+        "macos",
+        "tvos"
+      ],
+      "kind": "appearance",
+      "scenario": "Compare a reading card in light and dark",
+      "action": "Switch appearance",
+      "mode": "web-adaptation",
+      "source": "https://developer.apple.com/design/human-interface-guidelines/dark-mode#Best-practices",
+      "children": []
+    },
+    {
+      "slug": "design-principles",
+      "title": "Design principles",
+      "category": "getting-started",
+      "platforms": [],
+      "kind": "principles",
+      "scenario": "Refine a focused note-taking task",
+      "action": "Choose principle",
+      "mode": "web-adaptation",
+      "source": "https://developer.apple.com/design/human-interface-guidelines/design-principles#Purpose",
+      "children": []
+    },
+    {
+      "slug": "designing-for-games",
+      "title": "Designing for games",
+      "category": "getting-started",
+      "platforms": [],
+      "kind": "game",
+      "scenario": "Move a token through a keyboard-friendly game",
+      "action": "Move token",
+      "mode": "web-adaptation",
+      "source": "https://developer.apple.com/design/human-interface-guidelines/designing-for-games#Jump-into-gameplay",
+      "children": []
+    },
+    {
+      "slug": "designing-for-ios",
+      "title": "Designing for iOS",
+      "category": "getting-started",
+      "platforms": [],
+      "kind": "phone-screen",
+      "scenario": "Browse a fictional phone reading list",
+      "action": "Open article",
+      "mode": "web-adaptation",
+      "source": "https://developer.apple.com/design/human-interface-guidelines/designing-for-ios#Best-practices",
+      "children": []
+    },
+    {
+      "slug": "designing-for-ipados",
+      "title": "Designing for iPadOS",
+      "category": "getting-started",
+      "platforms": [],
+      "kind": "tablet-screen",
+      "scenario": "Edit a note beside its collection",
+      "action": "Choose collection",
+      "mode": "web-adaptation",
+      "source": "https://developer.apple.com/design/human-interface-guidelines/designing-for-ipados#Best-practices",
+      "children": []
+    },
+    {
+      "slug": "designing-for-iphone-duo",
+      "title": "Designing for iPhone Duo",
+      "category": "getting-started",
+      "platforms": [],
+      "kind": "adaptive-screen",
+      "scenario": "Compare compact and expanded reading layouts",
+      "action": "Change layout",
+      "mode": "web-adaptation",
+      "source": "https://developer.apple.com/design/human-interface-guidelines/designing-for-iphone-duo#Best-practices",
+      "children": []
+    },
+    {
+      "slug": "designing-for-macos",
+      "title": "Designing for macOS",
+      "category": "getting-started",
+      "platforms": [],
+      "kind": "window",
+      "scenario": "Work with a document window and command strip",
+      "action": "Open inspector",
+      "mode": "web-adaptation",
+      "source": "https://developer.apple.com/design/human-interface-guidelines/designing-for-macos#Best-practices",
+      "children": []
+    },
+    {
+      "slug": "designing-for-tvos",
+      "title": "Designing for tvOS",
+      "category": "getting-started",
+      "platforms": [],
+      "kind": "tv-screen",
+      "scenario": "Choose a documentary with visible focus",
+      "action": "Select film",
+      "mode": "web-adaptation",
+      "source": "https://developer.apple.com/design/human-interface-guidelines/designing-for-tvos#Best-practices",
+      "children": []
+    },
+    {
+      "slug": "designing-for-visionos",
+      "title": "Designing for visionOS",
+      "category": "getting-started",
+      "platforms": [],
+      "kind": "spatial",
+      "scenario": "Explore a calm spatial planning board",
+      "action": "Change depth",
+      "mode": "simulation",
+      "source": "https://developer.apple.com/design/human-interface-guidelines/designing-for-visionos#Best-practices",
+      "children": []
+    },
+    {
+      "slug": "designing-for-watchos",
+      "title": "Designing for watchOS",
+      "category": "getting-started",
+      "platforms": [],
+      "kind": "watch-screen",
+      "scenario": "Complete a glanceable timer task",
+      "action": "Start timer",
+      "mode": "simulation",
+      "source": "https://developer.apple.com/design/human-interface-guidelines/designing-for-watchos#Best-practices",
+      "children": []
+    },
+    {
+      "slug": "digit-entry-views",
+      "title": "Digit entry views",
+      "category": "components",
+      "platforms": [
+        "tvos"
+      ],
+      "kind": "digit-entry",
+      "scenario": "Enter a fictional six-digit pickup code",
+      "action": "Verify code",
+      "mode": "web-adaptation",
+      "source": "https://developer.apple.com/design/human-interface-guidelines/digit-entry-views#Best-practices",
+      "children": []
+    },
+    {
+      "slug": "digital-crown",
+      "title": "Digital Crown",
+      "category": "inputs",
+      "platforms": [
+        "visionos",
+        "watchos"
+      ],
+      "kind": "hardware",
+      "scenario": "Adjust a watch timer using a rotary-control model",
+      "action": "Adjust minutes",
+      "mode": "simulation",
+      "source": "https://developer.apple.com/design/human-interface-guidelines/digital-crown#Apple-Watch",
+      "children": []
+    },
+    {
+      "slug": "disclosure-controls",
+      "title": "Disclosure controls",
+      "category": "components",
+      "platforms": [
+        "ios",
+        "ipados",
+        "macos",
+        "visionos"
+      ],
+      "kind": "disclosure",
+      "scenario": "Reveal optional export details",
+      "action": "Show details",
+      "mode": "web-adaptation",
+      "source": "https://developer.apple.com/design/human-interface-guidelines/disclosure-controls#Best-practices",
+      "children": []
+    },
+    {
+      "slug": "dock-menus",
+      "title": "Dock menus",
+      "category": "components",
+      "platforms": [
+        "macos"
+      ],
+      "kind": "menu",
+      "scenario": "Choose a task from an example Dock menu",
+      "action": "Show tasks",
+      "mode": "web-adaptation",
+      "source": "https://developer.apple.com/design/human-interface-guidelines/dock-menus#Best-practices",
+      "children": []
+    },
+    {
+      "slug": "drag-and-drop",
+      "title": "Drag and drop",
+      "category": "patterns",
+      "platforms": [
+        "ios",
+        "ipados",
+        "macos",
+        "visionos"
+      ],
+      "kind": "reorder",
+      "scenario": "Reorder a packing list with drag or buttons",
+      "action": "Move item",
+      "mode": "web-adaptation",
+      "source": "https://developer.apple.com/design/human-interface-guidelines/drag-and-drop#Providing-feedback",
+      "children": []
+    },
+    {
+      "slug": "edit-menus",
+      "title": "Edit menus",
+      "category": "components",
+      "platforms": [
+        "ios",
+        "ipados",
+        "macos",
+        "visionos"
+      ],
+      "kind": "edit-menu",
+      "scenario": "Apply an editing action to sample text",
+      "action": "Show edit actions",
+      "mode": "web-adaptation",
+      "source": "https://developer.apple.com/design/human-interface-guidelines/edit-menus#Best-practices",
+      "children": []
+    },
+    {
+      "slug": "entering-data",
+      "title": "Entering data",
+      "category": "patterns",
+      "platforms": [
+        "ios",
+        "ipados",
+        "macos",
+        "tvos",
+        "visionos",
+        "watchos"
+      ],
+      "kind": "form",
+      "scenario": "Add a reading goal with inline validation",
+      "action": "Save goal",
+      "mode": "web-adaptation",
+      "source": "https://developer.apple.com/design/human-interface-guidelines/entering-data#Best-practices",
+      "children": []
+    },
+    {
+      "slug": "eyes",
+      "title": "Eyes",
+      "category": "inputs",
+      "platforms": [
+        "visionos"
+      ],
+      "kind": "hardware",
+      "scenario": "Explore a gaze-selection model using pointer focus",
+      "action": "Select focused item",
+      "mode": "simulation",
+      "source": "https://developer.apple.com/design/human-interface-guidelines/eyes#Best-practices",
+      "children": []
+    },
+    {
+      "slug": "feedback",
+      "title": "Feedback",
+      "category": "patterns",
+      "platforms": [
+        "ios",
+        "ipados",
+        "macos",
+        "tvos",
+        "visionos",
+        "watchos"
+      ],
+      "kind": "feedback",
+      "scenario": "Complete a local save and read its result",
+      "action": "Save changes",
+      "mode": "web-adaptation",
+      "source": "https://developer.apple.com/design/human-interface-guidelines/feedback#Best-practices",
+      "children": []
+    },
+    {
+      "slug": "file-management",
+      "title": "File management",
+      "category": "patterns",
+      "platforms": [
+        "ios",
+        "ipados",
+        "macos",
+        "tvos",
+        "visionos",
+        "watchos"
+      ],
+      "kind": "files",
+      "scenario": "Rename and organize example documents",
+      "action": "Create folder",
+      "mode": "web-adaptation",
+      "source": "https://developer.apple.com/design/human-interface-guidelines/file-management#Creating-and-opening-files",
+      "children": []
+    },
+    {
+      "slug": "focus-and-selection",
+      "title": "Focus and selection",
+      "category": "inputs",
+      "platforms": [
+        "ipados",
+        "macos",
+        "tvos",
+        "visionos"
+      ],
+      "kind": "focus",
+      "scenario": "Move through a selectable film grid",
+      "action": "Select item",
+      "mode": "web-adaptation",
+      "source": "https://developer.apple.com/design/human-interface-guidelines/focus-and-selection#Best-practices",
+      "children": []
+    },
+    {
+      "slug": "foundations",
+      "title": "Foundations",
+      "category": "foundations",
+      "platforms": [],
+      "kind": "topic-browser",
+      "scenario": "Explore the foundations example collection",
+      "action": "Choose example",
+      "mode": "web-adaptation",
+      "source": "https://developer.apple.com/design/human-interface-guidelines/foundations",
+      "children": [
+        "accessibility",
+        "app-icons",
+        "branding",
+        "color",
+        "dark-mode",
+        "icons",
+        "images",
+        "immersive-experiences",
+        "inclusion",
+        "layout",
+        "materials",
+        "motion",
+        "privacy",
+        "right-to-left",
+        "sf-symbols",
+        "spatial-layout",
+        "typography",
+        "writing"
+      ]
+    },
+    {
+      "slug": "game-center",
+      "title": "Game Center",
+      "category": "technologies",
+      "platforms": [
+        "ios",
+        "ipados",
+        "macos",
+        "tvos",
+        "visionos",
+        "watchos"
+      ],
+      "kind": "integration",
+      "scenario": "Preview a fictional leaderboard and invitation",
+      "action": "Preview match",
+      "mode": "simulation",
+      "source": "https://developer.apple.com/design/human-interface-guidelines/game-center#Accessing-Game-Center",
+      "children": []
+    },
+    {
+      "slug": "game-controls",
+      "title": "Game controls",
+      "category": "inputs",
+      "platforms": [
+        "ios",
+        "ipados",
+        "macos",
+        "tvos",
+        "visionos"
+      ],
+      "kind": "game",
+      "scenario": "Control a token using keys or onscreen arrows",
+      "action": "Move token",
+      "mode": "web-adaptation",
+      "source": "https://developer.apple.com/design/human-interface-guidelines/game-controls#Touch-controls",
+      "children": []
+    },
+    {
+      "slug": "gauges",
+      "title": "Gauges",
+      "category": "components",
+      "platforms": [
+        "ios",
+        "ipados",
+        "macos",
+        "visionos",
+        "watchos"
+      ],
+      "kind": "gauge",
+      "scenario": "Read and adjust a fictional storage gauge",
+      "action": "Add file",
+      "mode": "web-adaptation",
+      "source": "https://developer.apple.com/design/human-interface-guidelines/gauges#Best-practices",
+      "children": []
+    },
+    {
+      "slug": "generative-ai",
+      "title": "Generative AI",
+      "category": "technologies",
+      "platforms": [
+        "ios",
+        "ipados",
+        "macos",
+        "tvos",
+        "visionos",
+        "watchos"
+      ],
+      "kind": "assistant",
+      "scenario": "Review a labeled example AI suggestion before applying it",
+      "action": "Preview suggestion",
+      "mode": "simulation",
+      "source": "https://developer.apple.com/design/human-interface-guidelines/generative-ai#Best-practices",
+      "children": []
+    },
+    {
+      "slug": "gestures",
+      "title": "Gestures",
+      "category": "inputs",
+      "platforms": [
+        "ios",
+        "ipados",
+        "macos",
+        "tvos",
+        "visionos",
+        "watchos"
+      ],
+      "kind": "gesture",
+      "scenario": "Drag a card and release it to a snap point",
+      "action": "Reset card",
+      "mode": "web-adaptation",
+      "source": "https://developer.apple.com/design/human-interface-guidelines/gestures#Best-practices",
+      "children": []
+    },
+    {
+      "slug": "getting-started",
+      "title": "Getting started",
+      "category": "getting-started",
+      "platforms": [],
+      "kind": "topic-browser",
+      "scenario": "Explore the getting started example collection",
+      "action": "Choose example",
+      "mode": "web-adaptation",
+      "source": "https://developer.apple.com/design/human-interface-guidelines/getting-started",
+      "children": [
+        "design-principles",
+        "designing-for-games",
+        "designing-for-ios",
+        "designing-for-ipados",
+        "designing-for-iphone-duo",
+        "designing-for-macos",
+        "designing-for-tvos",
+        "designing-for-visionos",
+        "designing-for-watchos"
+      ]
+    },
+    {
+      "slug": "going-full-screen",
+      "title": "Going full screen",
+      "category": "patterns",
+      "platforms": [
+        "ios",
+        "ipados",
+        "macos"
+      ],
+      "kind": "fullscreen",
+      "scenario": "Focus on a distraction-free reading panel",
+      "action": "Toggle reading mode",
+      "mode": "web-adaptation",
+      "source": "https://developer.apple.com/design/human-interface-guidelines/going-full-screen#Best-practices",
+      "children": []
+    },
+    {
+      "slug": "gyro-and-accelerometer",
+      "title": "Gyroscope and accelerometer",
+      "category": "inputs",
+      "platforms": [
+        "ios",
+        "ipados",
+        "macos",
+        "tvos",
+        "visionos",
+        "watchos"
+      ],
+      "kind": "hardware",
+      "scenario": "Explore a tilt model with explicit controls",
+      "action": "Tilt model",
+      "mode": "simulation",
+      "source": "https://developer.apple.com/design/human-interface-guidelines/gyro-and-accelerometer#Best-practices",
+      "children": []
+    },
+    {
+      "slug": "healthkit",
+      "title": "HealthKit",
+      "category": "technologies",
+      "platforms": [
+        "ios",
+        "ipados",
+        "watchos"
+      ],
+      "kind": "health",
+      "scenario": "Review fictional health-sharing permissions",
+      "action": "Review permissions",
+      "mode": "simulation",
+      "source": "https://developer.apple.com/design/human-interface-guidelines/healthkit#Privacy-protection",
+      "children": []
+    },
+    {
+      "slug": "home-screen-quick-actions",
+      "title": "Home Screen quick actions",
+      "category": "components",
+      "platforms": [
+        "ios",
+        "ipados"
+      ],
+      "kind": "menu",
+      "scenario": "Choose a capture task from quick actions",
+      "action": "Show quick actions",
+      "mode": "web-adaptation",
+      "source": "https://developer.apple.com/design/human-interface-guidelines/home-screen-quick-actions#Best-practices",
+      "children": []
+    },
+    {
+      "slug": "homekit",
+      "title": "HomeKit",
+      "category": "technologies",
+      "platforms": [
+        "ios",
+        "ipados",
+        "macos",
+        "tvos",
+        "visionos",
+        "watchos"
+      ],
+      "kind": "home",
+      "scenario": "Adjust a fictional room's lights locally",
+      "action": "Toggle lights",
+      "mode": "simulation",
+      "source": "https://developer.apple.com/design/human-interface-guidelines/homekit#Terminology-and-layout",
+      "children": []
+    },
+    {
+      "slug": "icloud",
+      "title": "iCloud",
+      "category": "technologies",
+      "platforms": [
+        "ios",
+        "ipados",
+        "macos",
+        "tvos",
+        "visionos",
+        "watchos"
+      ],
+      "kind": "sync",
+      "scenario": "Preview local-to-cloud sync states with sample files",
+      "action": "Simulate sync",
+      "mode": "simulation",
+      "source": "https://developer.apple.com/design/human-interface-guidelines/icloud#Best-practices",
+      "children": []
+    },
+    {
+      "slug": "icons",
+      "title": "Icons",
+      "category": "foundations",
+      "platforms": [
+        "ios",
+        "ipados",
+        "macos",
+        "tvos",
+        "visionos",
+        "watchos"
+      ],
+      "kind": "icons",
+      "scenario": "Compare original icons with text labels",
+      "action": "Change label mode",
+      "mode": "web-adaptation",
+      "source": "https://developer.apple.com/design/human-interface-guidelines/icons#Best-practices",
+      "children": []
+    },
+    {
+      "slug": "id-verifier",
+      "title": "ID Verifier",
+      "category": "technologies",
+      "platforms": [
+        "ios"
+      ],
+      "kind": "verification",
+      "scenario": "Walk through an illustrative identity-check request",
+      "action": "Review request",
+      "mode": "simulation",
+      "source": "https://developer.apple.com/design/human-interface-guidelines/id-verifier#Best-practices",
+      "children": []
+    },
+    {
+      "slug": "image-views",
+      "title": "Image views",
+      "category": "components",
+      "platforms": [
+        "ios",
+        "ipados",
+        "macos",
+        "tvos",
+        "visionos",
+        "watchos"
+      ],
+      "kind": "image",
+      "scenario": "Inspect an original landscape illustration",
+      "action": "Fit image",
+      "mode": "web-adaptation",
+      "source": "https://developer.apple.com/design/human-interface-guidelines/image-views#Best-practices",
+      "children": []
+    },
+    {
+      "slug": "image-wells",
+      "title": "Image wells",
+      "category": "components",
+      "platforms": [
+        "macos"
+      ],
+      "kind": "image-well",
+      "scenario": "Choose an original cover illustration",
+      "action": "Choose cover",
+      "mode": "web-adaptation",
+      "source": "https://developer.apple.com/design/human-interface-guidelines/image-wells#Best-practices",
+      "children": []
+    },
+    {
+      "slug": "images",
+      "title": "Images",
+      "category": "foundations",
+      "platforms": [
+        "ios",
+        "ipados",
+        "macos",
+        "tvos",
+        "visionos",
+        "watchos"
+      ],
+      "kind": "image",
+      "scenario": "Compare fit and fill on an original landscape",
+      "action": "Change fitting",
+      "mode": "web-adaptation",
+      "source": "https://developer.apple.com/design/human-interface-guidelines/images#Resolution",
+      "children": []
+    },
+    {
+      "slug": "imessage-apps-and-stickers",
+      "title": "iMessage apps and stickers",
+      "category": "technologies",
+      "platforms": [
+        "ios",
+        "ipados"
+      ],
+      "kind": "stickers",
+      "scenario": "Choose an original sticker for a sample message",
+      "action": "Add sticker",
+      "mode": "web-adaptation",
+      "source": "https://developer.apple.com/design/human-interface-guidelines/imessage-apps-and-stickers#Best-practices",
+      "children": []
+    },
+    {
+      "slug": "immersive-experiences",
+      "title": "Immersive experiences",
+      "category": "foundations",
+      "platforms": [
+        "visionos"
+      ],
+      "kind": "spatial",
+      "scenario": "Compare a contained scene and a wider spatial stage",
+      "action": "Change immersion",
+      "mode": "simulation",
+      "source": "https://developer.apple.com/design/human-interface-guidelines/immersive-experiences#Best-practices",
+      "children": []
+    },
+    {
+      "slug": "inclusion",
+      "title": "Inclusion",
+      "category": "foundations",
+      "platforms": [
+        "ios",
+        "ipados",
+        "macos",
+        "tvos",
+        "visionos",
+        "watchos"
+      ],
+      "kind": "inclusion",
+      "scenario": "Choose inclusive sample profile preferences",
+      "action": "Update profile",
+      "mode": "web-adaptation",
+      "source": "https://developer.apple.com/design/human-interface-guidelines/inclusion#Inclusive-by-design",
+      "children": []
+    },
+    {
+      "slug": "inputs",
+      "title": "Inputs",
+      "category": "inputs",
+      "platforms": [],
+      "kind": "topic-browser",
+      "scenario": "Explore the inputs example collection",
+      "action": "Choose example",
+      "mode": "web-adaptation",
+      "source": "https://developer.apple.com/design/human-interface-guidelines/inputs",
+      "children": [
+        "action-button",
+        "apple-pencil-and-scribble",
+        "camera-control",
+        "digital-crown",
+        "eyes",
+        "focus-and-selection",
+        "game-controls",
+        "gestures",
+        "gyro-and-accelerometer",
+        "keyboards",
+        "nearby-interactions",
+        "pointing-devices",
+        "remotes"
+      ]
+    },
+    {
+      "slug": "keyboards",
+      "title": "Keyboards",
+      "category": "inputs",
+      "platforms": [
+        "ios",
+        "ipados",
+        "macos",
+        "tvos",
+        "visionos"
+      ],
+      "kind": "keyboard",
+      "scenario": "Use visible keyboard commands in a tiny editor",
+      "action": "Try command",
+      "mode": "web-adaptation",
+      "source": "https://developer.apple.com/design/human-interface-guidelines/keyboards#Best-practices",
+      "children": []
+    },
+    {
+      "slug": "labels",
+      "title": "Labels",
+      "category": "components",
+      "platforms": [
+        "ios",
+        "ipados",
+        "macos",
+        "tvos",
+        "visionos",
+        "watchos"
+      ],
+      "kind": "labels",
+      "scenario": "Compare informative and ambiguous control labels",
+      "action": "Improve labels",
+      "mode": "web-adaptation",
+      "source": "https://developer.apple.com/design/human-interface-guidelines/labels#Best-practices",
+      "children": []
+    },
+    {
+      "slug": "launching",
+      "title": "Launching",
+      "category": "patterns",
+      "platforms": [
+        "ios",
+        "ipados",
+        "macos",
+        "tvos",
+        "visionos",
+        "watchos"
+      ],
+      "kind": "launch",
+      "scenario": "Move from a simple launch state into a useful screen",
+      "action": "Open workspace",
+      "mode": "web-adaptation",
+      "source": "https://developer.apple.com/design/human-interface-guidelines/launching#Best-practices",
+      "children": []
+    },
+    {
+      "slug": "layout",
+      "title": "Layout",
+      "category": "foundations",
+      "platforms": [
+        "ios",
+        "ipados",
+        "macos",
+        "tvos",
+        "visionos",
+        "watchos"
+      ],
+      "kind": "adaptive-screen",
+      "scenario": "Resize an example document layout",
+      "action": "Change width",
+      "mode": "web-adaptation",
+      "source": "https://developer.apple.com/design/human-interface-guidelines/layout#Visual-hierarchy",
+      "children": []
+    },
+    {
+      "slug": "layout-and-organization",
+      "title": "Layout and organization",
+      "category": "components",
+      "platforms": [],
+      "kind": "topic-browser",
+      "scenario": "Explore the layout and organization example collection",
+      "action": "Choose example",
+      "mode": "web-adaptation",
+      "source": "https://developer.apple.com/design/human-interface-guidelines/layout-and-organization",
+      "children": [
+        "boxes",
+        "collections",
+        "column-views",
+        "disclosure-controls",
+        "labels",
+        "lists-and-tables",
+        "lockups",
+        "outline-views",
+        "split-views",
+        "tab-views"
+      ]
+    },
+    {
+      "slug": "lists-and-tables",
+      "title": "Lists and tables",
+      "category": "components",
+      "platforms": [
+        "ios",
+        "ipados",
+        "macos",
+        "tvos",
+        "visionos",
+        "watchos"
+      ],
+      "kind": "table",
+      "scenario": "Sort a fictional document table",
+      "action": "Sort by name",
+      "mode": "web-adaptation",
+      "source": "https://developer.apple.com/design/human-interface-guidelines/lists-and-tables#Best-practices",
+      "children": []
+    },
+    {
+      "slug": "live-activities",
+      "title": "Live Activities",
+      "category": "components",
+      "platforms": [
+        "ios",
+        "ipados",
+        "macos",
+        "watchos"
+      ],
+      "kind": "live",
+      "scenario": "Follow and end a fictional delivery task",
+      "action": "Advance delivery",
+      "mode": "simulation",
+      "source": "https://developer.apple.com/design/human-interface-guidelines/live-activities#Best-practices",
+      "children": []
+    },
+    {
+      "slug": "live-photos",
+      "title": "Live Photos",
+      "category": "technologies",
+      "platforms": [
+        "ios",
+        "ipados",
+        "macos",
+        "tvos",
+        "visionos"
+      ],
+      "kind": "live-photo",
+      "scenario": "Play a short original still-to-motion illustration",
+      "action": "Play moment",
+      "mode": "web-adaptation",
+      "source": "https://developer.apple.com/design/human-interface-guidelines/live-photos#Best-practices",
+      "children": []
+    },
+    {
+      "slug": "live-viewing-apps",
+      "title": "Live-viewing apps",
+      "category": "patterns",
+      "platforms": [
+        "ios",
+        "ipados",
+        "macos",
+        "tvos",
+        "visionos",
+        "watchos"
+      ],
+      "kind": "integration",
+      "scenario": "Connect to a fictional live event with explicit status",
+      "action": "Preview connection",
+      "mode": "simulation",
+      "source": "https://developer.apple.com/design/human-interface-guidelines/live-viewing-apps#Best-practices",
+      "children": []
+    },
+    {
+      "slug": "loading",
+      "title": "Loading",
+      "category": "patterns",
+      "platforms": [
+        "ios",
+        "ipados",
+        "macos",
+        "tvos",
+        "visionos",
+        "watchos"
+      ],
+      "kind": "progress",
+      "scenario": "Load a local sample collection with visible status",
+      "action": "Load collection",
+      "mode": "web-adaptation",
+      "source": "https://developer.apple.com/design/human-interface-guidelines/loading#Best-practices",
+      "children": []
+    },
+    {
+      "slug": "lockups",
+      "title": "Lockups",
+      "category": "components",
+      "platforms": [
+        "tvos"
+      ],
+      "kind": "lockups",
+      "scenario": "Explore related image-title-description groups",
+      "action": "Select feature",
+      "mode": "web-adaptation",
+      "source": "https://developer.apple.com/design/human-interface-guidelines/lockups#Best-practices",
+      "children": []
+    },
+    {
+      "slug": "mac-catalyst",
+      "title": "Mac Catalyst",
+      "category": "technologies",
+      "platforms": [
+        "ipados",
+        "macos"
+      ],
+      "kind": "adaptive-screen",
+      "scenario": "Compare one document task across compact and desktop layouts",
+      "action": "Change context",
+      "mode": "web-adaptation",
+      "source": "https://developer.apple.com/design/human-interface-guidelines/mac-catalyst#Before-you-start",
+      "children": []
+    },
+    {
+      "slug": "machine-learning",
+      "title": "Machine learning",
+      "category": "technologies",
+      "platforms": [
+        "ios",
+        "ipados",
+        "macos",
+        "tvos",
+        "visionos",
+        "watchos"
+      ],
+      "kind": "assistant",
+      "scenario": "Review a fictional image classification with uncertainty",
+      "action": "Inspect prediction",
+      "mode": "simulation",
+      "source": "https://developer.apple.com/design/human-interface-guidelines/machine-learning#The-role-of-machine-learning-in-your-app",
+      "children": []
+    },
+    {
+      "slug": "managing-accounts",
+      "title": "Managing accounts",
+      "category": "patterns",
+      "platforms": [
+        "ios",
+        "ipados",
+        "macos",
+        "tvos",
+        "visionos",
+        "watchos"
+      ],
+      "kind": "accounts",
+      "scenario": "Choose a local demo profile or guest mode",
+      "action": "Continue as guest",
+      "mode": "web-adaptation",
+      "source": "https://developer.apple.com/design/human-interface-guidelines/managing-accounts#Best-practices",
+      "children": []
+    },
+    {
+      "slug": "managing-notifications",
+      "title": "Managing notifications",
+      "category": "patterns",
+      "platforms": [
+        "ios",
+        "ipados",
+        "macos",
+        "tvos",
+        "visionos",
+        "watchos"
+      ],
+      "kind": "notification-settings",
+      "scenario": "Choose which sample notifications are relevant",
+      "action": "Save preferences",
+      "mode": "web-adaptation",
+      "source": "https://developer.apple.com/design/human-interface-guidelines/managing-notifications#Integrating-with-Focus",
+      "children": []
+    },
+    {
+      "slug": "maps",
+      "title": "Maps",
+      "category": "technologies",
+      "platforms": [
+        "ios",
+        "ipados",
+        "macos",
+        "tvos",
+        "visionos",
+        "watchos"
+      ],
+      "kind": "map",
+      "scenario": "Explore a small illustrated route with labeled stops",
+      "action": "Choose stop",
+      "mode": "web-adaptation",
+      "source": "https://developer.apple.com/design/human-interface-guidelines/maps#Best-practices",
+      "children": []
+    },
+    {
+      "slug": "materials",
+      "title": "Materials",
+      "category": "foundations",
+      "platforms": [
+        "ios",
+        "ipados",
+        "macos",
+        "tvos",
+        "visionos",
+        "watchos"
+      ],
+      "kind": "materials",
+      "scenario": "Compare a functional translucent layer and a solid alternative",
+      "action": "Toggle transparency",
+      "mode": "web-adaptation",
+      "source": "https://developer.apple.com/design/human-interface-guidelines/materials#Liquid-Glass",
+      "children": []
+    },
+    {
+      "slug": "menus",
+      "title": "Menus",
+      "category": "components",
+      "platforms": [
+        "ios",
+        "ipados",
+        "macos",
+        "tvos",
+        "visionos",
+        "watchos"
+      ],
+      "kind": "menu",
+      "scenario": "Choose an export format from a structured menu",
+      "action": "Open menu",
+      "mode": "web-adaptation",
+      "source": "https://developer.apple.com/design/human-interface-guidelines/menus#Labels",
+      "children": []
+    },
+    {
+      "slug": "menus-and-actions",
+      "title": "Menus and actions",
+      "category": "components",
+      "platforms": [],
+      "kind": "topic-browser",
+      "scenario": "Explore the menus and actions example collection",
+      "action": "Choose example",
+      "mode": "web-adaptation",
+      "source": "https://developer.apple.com/design/human-interface-guidelines/menus-and-actions",
+      "children": [
+        "activity-views",
+        "buttons",
+        "context-menus",
+        "dock-menus",
+        "edit-menus",
+        "home-screen-quick-actions",
+        "menus",
+        "ornaments",
+        "pop-up-buttons",
+        "pull-down-buttons",
+        "the-menu-bar",
+        "toolbars"
+      ]
+    },
+    {
+      "slug": "modality",
+      "title": "Modality",
+      "category": "patterns",
+      "platforms": [
+        "ios",
+        "ipados",
+        "macos",
+        "tvos",
+        "visionos",
+        "watchos"
+      ],
+      "kind": "dialog",
+      "scenario": "Complete a focused task and return to its context",
+      "action": "Open task",
+      "mode": "web-adaptation",
+      "source": "https://developer.apple.com/design/human-interface-guidelines/modality#Best-practices",
+      "children": []
+    },
+    {
+      "slug": "motion",
+      "title": "Motion",
+      "category": "foundations",
+      "platforms": [
+        "ios",
+        "ipados",
+        "macos",
+        "tvos",
+        "visionos",
+        "watchos"
+      ],
+      "kind": "motion",
+      "scenario": "Compare purposeful transitions with a reduced-motion equivalent",
+      "action": "Replay transition",
+      "mode": "web-adaptation",
+      "source": "https://developer.apple.com/design/human-interface-guidelines/motion#Best-practices",
+      "children": []
+    },
+    {
+      "slug": "multitasking",
+      "title": "Multitasking",
+      "category": "patterns",
+      "platforms": [
+        "ios",
+        "ipados",
+        "macos",
+        "tvos",
+        "visionos"
+      ],
+      "kind": "multitasking",
+      "scenario": "Switch between two local document workspaces",
+      "action": "Switch workspace",
+      "mode": "web-adaptation",
+      "source": "https://developer.apple.com/design/human-interface-guidelines/multitasking#Best-practices",
+      "children": []
+    },
+    {
+      "slug": "navigation-and-search",
+      "title": "Navigation and search",
+      "category": "components",
+      "platforms": [],
+      "kind": "topic-browser",
+      "scenario": "Explore the navigation and search example collection",
+      "action": "Choose example",
+      "mode": "web-adaptation",
+      "source": "https://developer.apple.com/design/human-interface-guidelines/navigation-and-search",
+      "children": [
+        "path-controls",
+        "search-fields",
+        "sidebars",
+        "tab-bars",
+        "token-fields"
+      ]
+    },
+    {
+      "slug": "nearby-interactions",
+      "title": "Nearby interactions",
+      "category": "inputs",
+      "platforms": [
+        "ios",
+        "ipados",
+        "watchos"
+      ],
+      "kind": "hardware",
+      "scenario": "Explore a nearby-item distance model",
+      "action": "Move closer",
+      "mode": "simulation",
+      "source": "https://developer.apple.com/design/human-interface-guidelines/nearby-interactions#Best-practices",
+      "children": []
+    },
+    {
+      "slug": "nfc",
+      "title": "NFC",
+      "category": "technologies",
+      "platforms": [
+        "ios",
+        "ipados"
+      ],
+      "kind": "verification",
+      "scenario": "Preview a tap-to-read task with explicit consent",
+      "action": "Begin preview",
+      "mode": "simulation",
+      "source": "https://developer.apple.com/design/human-interface-guidelines/nfc#In-app-tag-reading",
+      "children": []
+    },
+    {
+      "slug": "notifications",
+      "title": "Notifications",
+      "category": "components",
+      "platforms": [
+        "ios",
+        "ipados",
+        "macos",
+        "tvos",
+        "visionos",
+        "watchos"
+      ],
+      "kind": "notification",
+      "scenario": "Inspect a contextual event notification",
+      "action": "Show notification",
+      "mode": "web-adaptation",
+      "source": "https://developer.apple.com/design/human-interface-guidelines/notifications#Best-practices",
+      "children": []
+    },
+    {
+      "slug": "offering-help",
+      "title": "Offering help",
+      "category": "patterns",
+      "platforms": [
+        "ios",
+        "ipados",
+        "macos",
+        "tvos",
+        "visionos",
+        "watchos"
+      ],
+      "kind": "help",
+      "scenario": "Find contextual guidance without leaving the task",
+      "action": "Open help",
+      "mode": "web-adaptation",
+      "source": "https://developer.apple.com/design/human-interface-guidelines/offering-help#Best-practices",
+      "children": []
+    },
+    {
+      "slug": "onboarding",
+      "title": "Onboarding",
+      "category": "patterns",
+      "platforms": [
+        "ios",
+        "ipados",
+        "macos",
+        "tvos",
+        "visionos",
+        "watchos"
+      ],
+      "kind": "onboarding",
+      "scenario": "Set up a small notebook in three optional steps",
+      "action": "Continue",
+      "mode": "web-adaptation",
+      "source": "https://developer.apple.com/design/human-interface-guidelines/onboarding#Best-practices",
+      "children": []
+    },
+    {
+      "slug": "ornaments",
+      "title": "Ornaments",
+      "category": "components",
+      "platforms": [
+        "visionos"
+      ],
+      "kind": "ornament",
+      "scenario": "Keep a tool palette associated with a spatial board",
+      "action": "Choose tool",
+      "mode": "web-adaptation",
+      "source": "https://developer.apple.com/design/human-interface-guidelines/ornaments#Best-practices",
+      "children": []
+    },
+    {
+      "slug": "outline-views",
+      "title": "Outline views",
+      "category": "components",
+      "platforms": [
+        "macos"
+      ],
+      "kind": "outline",
+      "scenario": "Expand and select a nested outline",
+      "action": "Expand section",
+      "mode": "web-adaptation",
+      "source": "https://developer.apple.com/design/human-interface-guidelines/outline-views#Best-practices",
+      "children": []
+    },
+    {
+      "slug": "page-controls",
+      "title": "Page controls",
+      "category": "components",
+      "platforms": [
+        "ios",
+        "ipados",
+        "tvos",
+        "visionos",
+        "watchos"
+      ],
+      "kind": "pages",
+      "scenario": "Move between three short introductory pages",
+      "action": "Next page",
+      "mode": "web-adaptation",
+      "source": "https://developer.apple.com/design/human-interface-guidelines/page-controls#Best-practices",
+      "children": []
+    },
+    {
+      "slug": "panels",
+      "title": "Panels",
+      "category": "components",
+      "platforms": [
+        "macos"
+      ],
+      "kind": "panel",
+      "scenario": "Open a nonmodal inspector beside a document",
+      "action": "Toggle inspector",
+      "mode": "web-adaptation",
+      "source": "https://developer.apple.com/design/human-interface-guidelines/panels#Best-practices",
+      "children": []
+    },
+    {
+      "slug": "path-controls",
+      "title": "Path controls",
+      "category": "components",
+      "platforms": [
+        "macos"
+      ],
+      "kind": "breadcrumbs",
+      "scenario": "Navigate a labeled folder path",
+      "action": "Go to folder",
+      "mode": "web-adaptation",
+      "source": "https://developer.apple.com/design/human-interface-guidelines/path-controls#Best-practices",
+      "children": []
+    },
+    {
+      "slug": "patterns",
+      "title": "Patterns",
+      "category": "patterns",
+      "platforms": [],
+      "kind": "topic-browser",
+      "scenario": "Explore the patterns example collection",
+      "action": "Choose example",
+      "mode": "web-adaptation",
+      "source": "https://developer.apple.com/design/human-interface-guidelines/patterns",
+      "children": [
+        "charting-data",
+        "collaboration-and-sharing",
+        "drag-and-drop",
+        "entering-data",
+        "feedback",
+        "file-management",
+        "going-full-screen",
+        "launching",
+        "live-viewing-apps",
+        "loading",
+        "managing-accounts",
+        "managing-notifications",
+        "modality",
+        "multitasking",
+        "offering-help",
+        "onboarding",
+        "playing-audio",
+        "playing-haptics",
+        "playing-video",
+        "printing",
+        "ratings-and-reviews",
+        "searching",
+        "settings",
+        "undo-and-redo",
+        "workouts"
+      ]
+    },
+    {
+      "slug": "photo-editing",
+      "title": "Photo editing",
+      "category": "technologies",
+      "platforms": [
+        "ios",
+        "ipados",
+        "macos"
+      ],
+      "kind": "photo-editing",
+      "scenario": "Adjust an original illustration without affecting a source file",
+      "action": "Adjust warmth",
+      "mode": "web-adaptation",
+      "source": "https://developer.apple.com/design/human-interface-guidelines/photo-editing#Best-practices",
+      "children": []
+    },
+    {
+      "slug": "pickers",
+      "title": "Pickers",
+      "category": "components",
+      "platforms": [
+        "ios",
+        "ipados",
+        "macos",
+        "tvos",
+        "visionos",
+        "watchos"
+      ],
+      "kind": "picker",
+      "scenario": "Choose a date and document category",
+      "action": "Apply selection",
+      "mode": "web-adaptation",
+      "source": "https://developer.apple.com/design/human-interface-guidelines/pickers#Best-practices",
+      "children": []
+    },
+    {
+      "slug": "playing-audio",
+      "title": "Playing audio",
+      "category": "patterns",
+      "platforms": [
+        "ios",
+        "ipados",
+        "macos",
+        "tvos",
+        "visionos",
+        "watchos"
+      ],
+      "kind": "audio",
+      "scenario": "Play an optional locally generated tone with visible status",
+      "action": "Play tone",
+      "mode": "web-adaptation",
+      "source": "https://developer.apple.com/design/human-interface-guidelines/playing-audio#Best-practices",
+      "children": []
+    },
+    {
+      "slug": "playing-haptics",
+      "title": "Playing haptics",
+      "category": "patterns",
+      "platforms": [
+        "ios",
+        "ipados",
+        "macos",
+        "tvos",
+        "visionos",
+        "watchos"
+      ],
+      "kind": "hardware",
+      "scenario": "Compare a meaningful feedback event with a visual equivalent",
+      "action": "Preview feedback",
+      "mode": "simulation",
+      "source": "https://developer.apple.com/design/human-interface-guidelines/playing-haptics#Best-practices",
+      "children": []
+    },
+    {
+      "slug": "playing-video",
+      "title": "Playing video",
+      "category": "patterns",
+      "platforms": [
+        "ios",
+        "ipados",
+        "macos",
+        "tvos",
+        "visionos",
+        "watchos"
+      ],
+      "kind": "video",
+      "scenario": "Control an original animated scene and its captions",
+      "action": "Play scene",
+      "mode": "web-adaptation",
+      "source": "https://developer.apple.com/design/human-interface-guidelines/playing-video#Best-practices",
+      "children": []
+    },
+    {
+      "slug": "pointing-devices",
+      "title": "Pointing devices",
+      "category": "inputs",
+      "platforms": [
+        "ios",
+        "ipados",
+        "macos",
+        "visionos"
+      ],
+      "kind": "pointer",
+      "scenario": "Explore hover, focus, and direct pointer feedback",
+      "action": "Select target",
+      "mode": "web-adaptation",
+      "source": "https://developer.apple.com/design/human-interface-guidelines/pointing-devices#Best-practices",
+      "children": []
+    },
+    {
+      "slug": "pop-up-buttons",
+      "title": "Pop-up buttons",
+      "category": "components",
+      "platforms": [
+        "ios",
+        "ipados",
+        "macos",
+        "visionos"
+      ],
+      "kind": "select",
+      "scenario": "Choose one persistent export format",
+      "action": "Apply format",
+      "mode": "web-adaptation",
+      "source": "https://developer.apple.com/design/human-interface-guidelines/pop-up-buttons#Best-practices",
+      "children": []
+    },
+    {
+      "slug": "popovers",
+      "title": "Popovers",
+      "category": "components",
+      "platforms": [
+        "ios",
+        "ipados",
+        "macos",
+        "visionos"
+      ],
+      "kind": "popover",
+      "scenario": "Open contextual details beside their source",
+      "action": "Show details",
+      "mode": "web-adaptation",
+      "source": "https://developer.apple.com/design/human-interface-guidelines/popovers#Best-practices",
+      "children": []
+    },
+    {
+      "slug": "presentation",
+      "title": "Presentation",
+      "category": "components",
+      "platforms": [],
+      "kind": "topic-browser",
+      "scenario": "Explore the presentation example collection",
+      "action": "Choose example",
+      "mode": "web-adaptation",
+      "source": "https://developer.apple.com/design/human-interface-guidelines/presentation",
+      "children": [
+        "action-sheets",
+        "alerts",
+        "page-controls",
+        "panels",
+        "popovers",
+        "scroll-views",
+        "sheets",
+        "windows"
+      ]
+    },
+    {
+      "slug": "printing",
+      "title": "Printing",
+      "category": "patterns",
+      "platforms": [
+        "ios",
+        "ipados",
+        "macos",
+        "visionos"
+      ],
+      "kind": "print",
+      "scenario": "Review a printable document layout",
+      "action": "Preview print",
+      "mode": "web-adaptation",
+      "source": "https://developer.apple.com/design/human-interface-guidelines/printing#Best-practices",
+      "children": []
+    },
+    {
+      "slug": "privacy",
+      "title": "Privacy",
+      "category": "foundations",
+      "platforms": [
+        "ios",
+        "ipados",
+        "macos",
+        "tvos",
+        "visionos",
+        "watchos"
+      ],
+      "kind": "consent",
+      "scenario": "Choose what to share for a fictional location task",
+      "action": "Save privacy choices",
+      "mode": "web-adaptation",
+      "source": "https://developer.apple.com/design/human-interface-guidelines/privacy#Best-practices",
+      "children": []
+    },
+    {
+      "slug": "progress-indicators",
+      "title": "Progress indicators",
+      "category": "components",
+      "platforms": [
+        "ios",
+        "ipados",
+        "macos",
+        "tvos",
+        "visionos",
+        "watchos"
+      ],
+      "kind": "progress",
+      "scenario": "Compare measurable and indeterminate loading",
+      "action": "Start loading",
+      "mode": "web-adaptation",
+      "source": "https://developer.apple.com/design/human-interface-guidelines/progress-indicators#Best-practices",
+      "children": []
+    },
+    {
+      "slug": "pull-down-buttons",
+      "title": "Pull-down buttons",
+      "category": "components",
+      "platforms": [
+        "ios",
+        "ipados",
+        "macos",
+        "visionos"
+      ],
+      "kind": "menu",
+      "scenario": "Choose an action from a compact pull-down menu",
+      "action": "Open actions",
+      "mode": "web-adaptation",
+      "source": "https://developer.apple.com/design/human-interface-guidelines/pull-down-buttons#Best-practices",
+      "children": []
+    },
+    {
+      "slug": "rating-indicators",
+      "title": "Rating indicators",
+      "category": "components",
+      "platforms": [
+        "macos"
+      ],
+      "kind": "rating",
+      "scenario": "Set an editable rating with a readable value",
+      "action": "Rate item",
+      "mode": "web-adaptation",
+      "source": "https://developer.apple.com/design/human-interface-guidelines/rating-indicators#Best-practices",
+      "children": []
+    },
+    {
+      "slug": "ratings-and-reviews",
+      "title": "Ratings and reviews",
+      "category": "patterns",
+      "platforms": [
+        "ios",
+        "ipados",
+        "macos",
+        "tvos",
+        "visionos",
+        "watchos"
+      ],
+      "kind": "review",
+      "scenario": "Write a local example review at a chosen moment",
+      "action": "Preview review",
+      "mode": "web-adaptation",
+      "source": "https://developer.apple.com/design/human-interface-guidelines/ratings-and-reviews#Best-practices",
+      "children": []
+    },
+    {
+      "slug": "remotes",
+      "title": "Remotes",
+      "category": "inputs",
+      "platforms": [
+        "tvos"
+      ],
+      "kind": "remote",
+      "scenario": "Navigate a film grid with a remote-control model",
+      "action": "Move focus",
+      "mode": "web-adaptation",
+      "source": "https://developer.apple.com/design/human-interface-guidelines/remotes#Best-practices",
+      "children": []
+    },
+    {
+      "slug": "researchkit",
+      "title": "ResearchKit",
+      "category": "technologies",
+      "platforms": [
+        "ios",
+        "ipados"
+      ],
+      "kind": "survey",
+      "scenario": "Walk through a fictional research consent and survey",
+      "action": "Review consent",
+      "mode": "web-adaptation",
+      "source": "https://developer.apple.com/design/human-interface-guidelines/researchkit#Creating-the-onboarding-experience",
+      "children": []
+    },
+    {
+      "slug": "right-to-left",
+      "title": "Right to left",
+      "category": "foundations",
+      "platforms": [
+        "ios",
+        "ipados",
+        "macos",
+        "tvos",
+        "visionos",
+        "watchos"
+      ],
+      "kind": "rtl",
+      "scenario": "Compare the same interface in both reading directions",
+      "action": "Change direction",
+      "mode": "web-adaptation",
+      "source": "https://developer.apple.com/design/human-interface-guidelines/right-to-left#Text-alignment",
+      "children": []
+    },
+    {
+      "slug": "scroll-views",
+      "title": "Scroll views",
+      "category": "components",
+      "platforms": [
+        "ios",
+        "ipados",
+        "macos",
+        "tvos",
+        "visionos",
+        "watchos"
+      ],
+      "kind": "scroll",
+      "scenario": "Read a bounded article with natural scrolling",
+      "action": "Go to section",
+      "mode": "web-adaptation",
+      "source": "https://developer.apple.com/design/human-interface-guidelines/scroll-views#Best-practices",
+      "children": []
+    },
+    {
+      "slug": "search-fields",
+      "title": "Search fields",
+      "category": "components",
+      "platforms": [
+        "ios",
+        "ipados",
+        "macos",
+        "tvos",
+        "visionos",
+        "watchos"
+      ],
+      "kind": "search",
+      "scenario": "Find an item in a local reading collection",
+      "action": "Search titles",
+      "mode": "web-adaptation",
+      "source": "https://developer.apple.com/design/human-interface-guidelines/search-fields#Best-practices",
+      "children": []
+    },
+    {
+      "slug": "searching",
+      "title": "Searching",
+      "category": "patterns",
+      "platforms": [
+        "ios",
+        "ipados",
+        "macos",
+        "tvos",
+        "visionos",
+        "watchos"
+      ],
+      "kind": "search",
+      "scenario": "Refine a local search and recover from no results",
+      "action": "Search collection",
+      "mode": "web-adaptation",
+      "source": "https://developer.apple.com/design/human-interface-guidelines/searching#Best-practices",
+      "children": []
+    },
+    {
+      "slug": "segmented-controls",
+      "title": "Segmented controls",
+      "category": "components",
+      "platforms": [
+        "ios",
+        "ipados",
+        "macos",
+        "tvos",
+        "visionos"
+      ],
+      "kind": "segments",
+      "scenario": "Switch between two related views of a reading goal",
+      "action": "Change view",
+      "mode": "web-adaptation",
+      "source": "https://developer.apple.com/design/human-interface-guidelines/segmented-controls#Best-practices",
+      "children": []
+    },
+    {
+      "slug": "selection-and-input",
+      "title": "Selection and input",
+      "category": "components",
+      "platforms": [],
+      "kind": "topic-browser",
+      "scenario": "Explore the selection and input example collection",
+      "action": "Choose example",
+      "mode": "web-adaptation",
+      "source": "https://developer.apple.com/design/human-interface-guidelines/selection-and-input",
+      "children": [
+        "color-wells",
+        "combo-boxes",
+        "digit-entry-views",
+        "image-wells",
+        "pickers",
+        "segmented-controls",
+        "sliders",
+        "steppers",
+        "text-fields",
+        "toggles",
+        "virtual-keyboards"
+      ]
+    },
+    {
+      "slug": "settings",
+      "title": "Settings",
+      "category": "patterns",
+      "platforms": [
+        "ios",
+        "ipados",
+        "macos",
+        "tvos",
+        "visionos",
+        "watchos"
+      ],
+      "kind": "settings",
+      "scenario": "Change local demo preferences with explicit values",
+      "action": "Restore defaults",
+      "mode": "web-adaptation",
+      "source": "https://developer.apple.com/design/human-interface-guidelines/settings#Best-practices",
+      "children": []
+    },
+    {
+      "slug": "sf-symbols",
+      "title": "SF Symbols",
+      "category": "foundations",
+      "platforms": [
+        "ios",
+        "ipados",
+        "macos",
+        "tvos",
+        "visionos",
+        "watchos"
+      ],
+      "kind": "icons",
+      "scenario": "Preview original substitute icons and purposeful symbol motion",
+      "action": "Change emphasis",
+      "mode": "web-adaptation",
+      "source": "https://developer.apple.com/design/human-interface-guidelines/sf-symbols#Rendering-modes",
+      "children": []
+    },
+    {
+      "slug": "shareplay",
+      "title": "SharePlay",
+      "category": "technologies",
+      "platforms": [
+        "ios",
+        "ipados",
+        "macos",
+        "tvos",
+        "visionos"
+      ],
+      "kind": "collaboration",
+      "scenario": "Coordinate a fictional shared viewing session",
+      "action": "Advance shared state",
+      "mode": "web-adaptation",
+      "source": "https://developer.apple.com/design/human-interface-guidelines/shareplay#Best-practices",
+      "children": []
+    },
+    {
+      "slug": "shazamkit",
+      "title": "ShazamKit",
+      "category": "technologies",
+      "platforms": [
+        "ios",
+        "ipados",
+        "macos",
+        "tvos",
+        "visionos",
+        "watchos"
+      ],
+      "kind": "audio-match",
+      "scenario": "Explore a simulated song-match result without microphone access",
+      "action": "Preview match",
+      "mode": "simulation",
+      "source": "https://developer.apple.com/design/human-interface-guidelines/shazamkit#Best-practices",
+      "children": []
+    },
+    {
+      "slug": "sheets",
+      "title": "Sheets",
+      "category": "components",
+      "platforms": [
+        "ios",
+        "ipados",
+        "macos",
+        "tvos",
+        "visionos",
+        "watchos"
+      ],
+      "kind": "sheet",
+      "scenario": "Edit a note in a focused sheet with clear exit choices",
+      "action": "Edit note",
+      "mode": "web-adaptation",
+      "source": "https://developer.apple.com/design/human-interface-guidelines/sheets#Best-practices",
+      "children": []
+    },
+    {
+      "slug": "sidebars",
+      "title": "Sidebars",
+      "category": "components",
+      "platforms": [
+        "ios",
+        "ipados",
+        "macos",
+        "tvos",
+        "visionos"
+      ],
+      "kind": "sidebar",
+      "scenario": "Navigate collections beside a selected document",
+      "action": "Choose collection",
+      "mode": "web-adaptation",
+      "source": "https://developer.apple.com/design/human-interface-guidelines/sidebars#Best-practices",
+      "children": []
+    },
+    {
+      "slug": "sign-in-with-apple",
+      "title": "Sign in with Apple",
+      "category": "technologies",
+      "platforms": [
+        "ios",
+        "ipados",
+        "macos",
+        "tvos",
+        "visionos",
+        "watchos"
+      ],
+      "kind": "accounts",
+      "scenario": "Preview a sign-in choice without authentication",
+      "action": "Review account choices",
+      "mode": "web-adaptation",
+      "source": "https://developer.apple.com/design/human-interface-guidelines/sign-in-with-apple#Offering-Sign-in-with-Apple",
+      "children": []
+    },
+    {
+      "slug": "siri",
+      "title": "Siri",
+      "category": "technologies",
+      "platforms": [
+        "ios",
+        "ipados",
+        "macos",
+        "tvos",
+        "visionos",
+        "watchos"
+      ],
+      "kind": "assistant",
+      "scenario": "Review a fictional voice-intent result with confirmation",
+      "action": "Preview request",
+      "mode": "simulation",
+      "source": "https://developer.apple.com/design/human-interface-guidelines/siri#Getting-your-app-to-work-with-Siri",
+      "children": []
+    },
+    {
+      "slug": "sliders",
+      "title": "Sliders",
+      "category": "components",
+      "platforms": [
+        "ios",
+        "ipados",
+        "macos",
+        "visionos",
+        "watchos"
+      ],
+      "kind": "slider",
+      "scenario": "Adjust narration volume with a visible value",
+      "action": "Change volume",
+      "mode": "web-adaptation",
+      "source": "https://developer.apple.com/design/human-interface-guidelines/sliders#Best-practices",
+      "children": []
+    },
+    {
+      "slug": "snippets",
+      "title": "Snippets",
+      "category": "components",
+      "platforms": [
+        "ios",
+        "ipados",
+        "macos"
+      ],
+      "kind": "snippet",
+      "scenario": "Review a concise example assistant result and its action",
+      "action": "Inspect result",
+      "mode": "web-adaptation",
+      "source": "https://developer.apple.com/design/human-interface-guidelines/snippets#Anatomy",
+      "children": []
+    },
+    {
+      "slug": "spatial-layout",
+      "title": "Spatial layout",
+      "category": "foundations",
+      "platforms": [
+        "visionos"
+      ],
+      "kind": "spatial",
+      "scenario": "Arrange a small spatial board with a stable reference frame",
+      "action": "Change position",
+      "mode": "simulation",
+      "source": "https://developer.apple.com/design/human-interface-guidelines/spatial-layout#Field-of-view",
+      "children": []
+    },
+    {
+      "slug": "split-views",
+      "title": "Split views",
+      "category": "components",
+      "platforms": [
+        "ios",
+        "ipados",
+        "macos",
+        "tvos",
+        "visionos",
+        "watchos"
+      ],
+      "kind": "split",
+      "scenario": "Inspect a document beside its selection list",
+      "action": "Select document",
+      "mode": "web-adaptation",
+      "source": "https://developer.apple.com/design/human-interface-guidelines/split-views#Best-practices",
+      "children": []
+    },
+    {
+      "slug": "status",
+      "title": "Status",
+      "category": "components",
+      "platforms": [],
+      "kind": "topic-browser",
+      "scenario": "Explore the status example collection",
+      "action": "Choose example",
+      "mode": "web-adaptation",
+      "source": "https://developer.apple.com/design/human-interface-guidelines/status",
+      "children": [
+        "activity-rings",
+        "gauges",
+        "progress-indicators",
+        "rating-indicators"
+      ]
+    },
+    {
+      "slug": "status-bars",
+      "title": "Status bars",
+      "category": "components",
+      "platforms": [
+        "ios",
+        "ipados"
+      ],
+      "kind": "status-strip",
+      "scenario": "Read a small app's connection and save states",
+      "action": "Change status",
+      "mode": "web-adaptation",
+      "source": "https://developer.apple.com/design/human-interface-guidelines/status-bars#Best-practices",
+      "children": []
+    },
+    {
+      "slug": "steppers",
+      "title": "Steppers",
+      "category": "components",
+      "platforms": [
+        "ios",
+        "ipados",
+        "macos",
+        "visionos"
+      ],
+      "kind": "stepper",
+      "scenario": "Adjust a bounded number of reading sessions",
+      "action": "Increase sessions",
+      "mode": "web-adaptation",
+      "source": "https://developer.apple.com/design/human-interface-guidelines/steppers#Best-practices",
+      "children": []
+    },
+    {
+      "slug": "system-experiences",
+      "title": "System experiences",
+      "category": "components",
+      "platforms": [],
+      "kind": "topic-browser",
+      "scenario": "Explore the system experiences example collection",
+      "action": "Choose example",
+      "mode": "web-adaptation",
+      "source": "https://developer.apple.com/design/human-interface-guidelines/system-experiences",
+      "children": [
+        "app-shortcuts",
+        "complications",
+        "controls",
+        "live-activities",
+        "notifications",
+        "snippets",
+        "status-bars",
+        "top-shelf",
+        "watch-faces",
+        "widgets"
+      ]
+    },
+    {
+      "slug": "tab-bars",
+      "title": "Tab bars",
+      "category": "components",
+      "platforms": [
+        "ios",
+        "ipados",
+        "macos",
+        "tvos",
+        "visionos"
+      ],
+      "kind": "tabs",
+      "scenario": "Move among stable app destinations",
+      "action": "Open destination",
+      "mode": "web-adaptation",
+      "source": "https://developer.apple.com/design/human-interface-guidelines/tab-bars#Best-practices",
+      "children": []
+    },
+    {
+      "slug": "tab-views",
+      "title": "Tab views",
+      "category": "components",
+      "platforms": [
+        "macos",
+        "watchos"
+      ],
+      "kind": "tabs",
+      "scenario": "Switch between related document views",
+      "action": "Change view",
+      "mode": "web-adaptation",
+      "source": "https://developer.apple.com/design/human-interface-guidelines/tab-views#Best-practices",
+      "children": []
+    },
+    {
+      "slug": "tap-to-pay-on-iphone",
+      "title": "Tap to Pay on iPhone",
+      "category": "technologies",
+      "platforms": [
+        "ios"
+      ],
+      "kind": "payment",
+      "scenario": "Preview a merchant payment request without a transaction",
+      "action": "Review amount",
+      "mode": "simulation",
+      "source": "https://developer.apple.com/design/human-interface-guidelines/tap-to-pay-on-iphone#Enabling-Tap-to-Pay-on-iPhone",
+      "children": []
+    },
+    {
+      "slug": "technologies",
+      "title": "Technologies",
+      "category": "technologies",
+      "platforms": [],
+      "kind": "topic-browser",
+      "scenario": "Explore the technologies example collection",
+      "action": "Choose example",
+      "mode": "web-adaptation",
+      "source": "https://developer.apple.com/design/human-interface-guidelines/technologies",
+      "children": [
+        "airplay",
+        "always-on",
+        "app-clips",
+        "apple-in-app-purchase",
+        "apple-pay",
+        "augmented-reality",
+        "carekit",
+        "carplay",
+        "game-center",
+        "generative-ai",
+        "healthkit",
+        "homekit",
+        "icloud",
+        "id-verifier",
+        "imessage-apps-and-stickers",
+        "live-photos",
+        "mac-catalyst",
+        "machine-learning",
+        "maps",
+        "nfc",
+        "photo-editing",
+        "researchkit",
+        "shareplay",
+        "shazamkit",
+        "sign-in-with-apple",
+        "siri",
+        "tap-to-pay-on-iphone",
+        "voiceover",
+        "wallet"
+      ]
+    },
+    {
+      "slug": "text-fields",
+      "title": "Text fields",
+      "category": "components",
+      "platforms": [
+        "ios",
+        "ipados",
+        "macos",
+        "tvos",
+        "visionos",
+        "watchos"
+      ],
+      "kind": "form",
+      "scenario": "Enter and validate a short document title",
+      "action": "Save title",
+      "mode": "web-adaptation",
+      "source": "https://developer.apple.com/design/human-interface-guidelines/text-fields#Best-practices",
+      "children": []
+    },
+    {
+      "slug": "text-views",
+      "title": "Text views",
+      "category": "components",
+      "platforms": [
+        "ios",
+        "ipados",
+        "macos",
+        "tvos",
+        "visionos",
+        "watchos"
+      ],
+      "kind": "editor",
+      "scenario": "Edit a longer note with a character count",
+      "action": "Save note",
+      "mode": "web-adaptation",
+      "source": "https://developer.apple.com/design/human-interface-guidelines/text-views#Best-practices",
+      "children": []
+    },
+    {
+      "slug": "the-menu-bar",
+      "title": "The menu bar",
+      "category": "components",
+      "platforms": [
+        "ipados",
+        "macos"
+      ],
+      "kind": "menu-bar",
+      "scenario": "Access a document command independently of its toolbar",
+      "action": "Open File menu",
+      "mode": "web-adaptation",
+      "source": "https://developer.apple.com/design/human-interface-guidelines/the-menu-bar#Best-practices",
+      "children": []
+    },
+    {
+      "slug": "toggles",
+      "title": "Toggles",
+      "category": "components",
+      "platforms": [
+        "ios",
+        "ipados",
+        "macos",
+        "tvos",
+        "visionos",
+        "watchos"
+      ],
+      "kind": "toggle",
+      "scenario": "Change an independent reading preference",
+      "action": "Enable reminders",
+      "mode": "web-adaptation",
+      "source": "https://developer.apple.com/design/human-interface-guidelines/toggles#Best-practices",
+      "children": []
+    },
+    {
+      "slug": "token-fields",
+      "title": "Token fields",
+      "category": "components",
+      "platforms": [
+        "macos"
+      ],
+      "kind": "tokens",
+      "scenario": "Add and remove named collaborators as tokens",
+      "action": "Add person",
+      "mode": "web-adaptation",
+      "source": "https://developer.apple.com/design/human-interface-guidelines/token-fields#Best-practices",
+      "children": []
+    },
+    {
+      "slug": "toolbars",
+      "title": "Toolbars",
+      "category": "components",
+      "platforms": [
+        "ios",
+        "ipados",
+        "macos",
+        "tvos",
+        "visionos",
+        "watchos"
+      ],
+      "kind": "toolbar",
+      "scenario": "Act on the current document using a compact toolbar",
+      "action": "Export document",
+      "mode": "web-adaptation",
+      "source": "https://developer.apple.com/design/human-interface-guidelines/toolbars#Best-practices",
+      "children": []
+    },
+    {
+      "slug": "top-shelf",
+      "title": "Top Shelf",
+      "category": "components",
+      "platforms": [
+        "tvos"
+      ],
+      "kind": "tv-screen",
+      "scenario": "Preview directly relevant featured film content",
+      "action": "Open feature",
+      "mode": "web-adaptation",
+      "source": "https://developer.apple.com/design/human-interface-guidelines/top-shelf#Best-practices",
+      "children": []
+    },
+    {
+      "slug": "typography",
+      "title": "Typography",
+      "category": "foundations",
+      "platforms": [
+        "ios",
+        "ipados",
+        "macos",
+        "tvos",
+        "visionos",
+        "watchos"
+      ],
+      "kind": "typography",
+      "scenario": "Compare scalable text hierarchy in a reading card",
+      "action": "Change type scale",
+      "mode": "web-adaptation",
+      "source": "https://developer.apple.com/design/human-interface-guidelines/typography#Ensuring-legibility",
+      "children": []
+    },
+    {
+      "slug": "undo-and-redo",
+      "title": "Undo and redo",
+      "category": "patterns",
+      "platforms": [
+        "ios",
+        "ipados",
+        "macos",
+        "visionos"
+      ],
+      "kind": "undo",
+      "scenario": "Edit a short title and recover earlier states",
+      "action": "Undo edit",
+      "mode": "web-adaptation",
+      "source": "https://developer.apple.com/design/human-interface-guidelines/undo-and-redo#Best-practices",
+      "children": []
+    },
+    {
+      "slug": "virtual-keyboards",
+      "title": "Virtual keyboards",
+      "category": "components",
+      "platforms": [
+        "ios",
+        "ipados",
+        "tvos",
+        "visionos",
+        "watchos"
+      ],
+      "kind": "virtual-keyboard",
+      "scenario": "Enter a short query with onscreen keys",
+      "action": "Enter query",
+      "mode": "web-adaptation",
+      "source": "https://developer.apple.com/design/human-interface-guidelines/virtual-keyboards#Best-practices",
+      "children": []
+    },
+    {
+      "slug": "voiceover",
+      "title": "VoiceOver",
+      "category": "technologies",
+      "platforms": [
+        "ios",
+        "ipados",
+        "macos",
+        "tvos",
+        "visionos",
+        "watchos"
+      ],
+      "kind": "accessibility",
+      "scenario": "Explore semantic labels and a readable result sequence",
+      "action": "Show semantic outline",
+      "mode": "web-adaptation",
+      "source": "https://developer.apple.com/design/human-interface-guidelines/voiceover#Descriptions",
+      "children": []
+    },
+    {
+      "slug": "wallet",
+      "title": "Wallet",
+      "category": "technologies",
+      "platforms": [
+        "ios",
+        "ipados",
+        "macos",
+        "visionos",
+        "watchos"
+      ],
+      "kind": "pass",
+      "scenario": "Preview a fictional event pass without adding it to Wallet",
+      "action": "Inspect pass",
+      "mode": "simulation",
+      "source": "https://developer.apple.com/design/human-interface-guidelines/wallet#Passes",
+      "children": []
+    },
+    {
+      "slug": "watch-faces",
+      "title": "Watch faces",
+      "category": "components",
+      "platforms": [
+        "watchos"
+      ],
+      "kind": "watch-screen",
+      "scenario": "Preview a simple watch-style clock composition",
+      "action": "Change composition",
+      "mode": "simulation",
+      "source": "https://developer.apple.com/design/human-interface-guidelines/watch-faces#Best-practices",
+      "children": []
+    },
+    {
+      "slug": "web-views",
+      "title": "Web views",
+      "category": "components",
+      "platforms": [
+        "ios",
+        "ipados",
+        "macos",
+        "visionos"
+      ],
+      "kind": "web-view",
+      "scenario": "Read self-contained help content in a bounded frame",
+      "action": "Open help page",
+      "mode": "web-adaptation",
+      "source": "https://developer.apple.com/design/human-interface-guidelines/web-views#Best-practices",
+      "children": []
+    },
+    {
+      "slug": "widgets",
+      "title": "Widgets",
+      "category": "components",
+      "platforms": [
+        "ios",
+        "ipados",
+        "macos",
+        "watchos",
+        "visionos"
+      ],
+      "kind": "widget",
+      "scenario": "Choose a compact local information widget",
+      "action": "Change size",
+      "mode": "web-adaptation",
+      "source": "https://developer.apple.com/design/human-interface-guidelines/widgets#Best-practices",
+      "children": []
+    },
+    {
+      "slug": "windows",
+      "title": "Windows",
+      "category": "components",
+      "platforms": [
+        "ipados",
+        "macos",
+        "visionos"
+      ],
+      "kind": "window",
+      "scenario": "Open and restore a document window with clear commands",
+      "action": "Open inspector",
+      "mode": "web-adaptation",
+      "source": "https://developer.apple.com/design/human-interface-guidelines/windows#Best-practices",
+      "children": []
+    },
+    {
+      "slug": "workouts",
+      "title": "Workouts",
+      "category": "patterns",
+      "platforms": [
+        "ios",
+        "ipados",
+        "watchos"
+      ],
+      "kind": "workout",
+      "scenario": "Start, pause, and end a fictional walking session",
+      "action": "Start workout",
+      "mode": "web-adaptation",
+      "source": "https://developer.apple.com/design/human-interface-guidelines/workouts#Best-practices",
+      "children": []
+    },
+    {
+      "slug": "writing",
+      "title": "Writing",
+      "category": "foundations",
+      "platforms": [
+        "ios",
+        "ipados",
+        "macos",
+        "tvos",
+        "visionos",
+        "watchos"
+      ],
+      "kind": "writing",
+      "scenario": "Replace vague UI messages with concrete example copy",
+      "action": "Compare wording",
+      "mode": "web-adaptation",
+      "source": "https://developer.apple.com/design/human-interface-guidelines/writing#Getting-started",
+      "children": []
+    }
+  ]
+}
