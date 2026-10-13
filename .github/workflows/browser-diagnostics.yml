@@ -5,7 +5,42 @@ on:
   workflow_dispatch:
 permissions:
   contents: write
+  actions: read
 jobs:
+  previous-failure:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Read this repository's previously failed browser check
+        env:
+          GH_TOKEN: ${{ github.token }}
+          GH_REPO: ${{ github.repository }}
+        run: gh api "repos/${GH_REPO}/actions/jobs/115433412925/logs" > /tmp/previous-browser-check.log
+      - name: Extract only the browser exception and assertion context
+        run: |
+          python3 - <<'PY'
+          import gzip, io, zipfile
+          from pathlib import Path
+          raw=Path('/tmp/previous-browser-check.log').read_bytes()
+          if raw.startswith(b'PK'):
+              with zipfile.ZipFile(io.BytesIO(raw)) as archive:
+                  raw=b'\n'.join(archive.read(n) for n in archive.namelist() if n.endswith('.txt'))
+          elif raw.startswith(b'\x1f\x8b'):
+              raw=gzip.decompress(raw)
+          lines=raw.decode('utf-8','replace').splitlines()
+          markers=('AssertionError','TimeoutError','TypeError','ReferenceError','locator.','page.waitFor','horizontal overflow','no interactive control')
+          positions=[i for i,line in enumerate(lines) if any(m in line for m in markers)]
+          selected=set()
+          for i in positions:
+              selected.update(range(max(0,i-8),min(len(lines),i+45)))
+          if not selected:
+              raise RuntimeError('No browser exception marker found; full log remains unpublished.')
+          Path('/tmp/previous-browser-exception.txt').write_text('\n'.join(lines[i] for i in sorted(selected))+'\n')
+          PY
+      - name: Publish the exception for the continuation's diagnosis
+        env:
+          GH_TOKEN: ${{ github.token }}
+          GH_REPO: ${{ github.repository }}
+        run: gh release upload v1.1.1 /tmp/previous-browser-exception.txt
   diagnose:
     runs-on: ubuntu-latest
     strategy:
