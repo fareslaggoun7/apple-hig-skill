@@ -88,6 +88,9 @@ class PackageTests(unittest.TestCase):
     def test_documentation_links(self):
         catalog=hig.load_catalog();pages={p['path']:p for p in catalog['pages']}
         for file in ROOT.rglob('*.md'):
+            # Optional developer tooling lives in ignored directories. Validate
+            # our documentation, not third-party npm/Python package READMEs.
+            if any(part in {'work','node_modules','.venv','.git','__pycache__'} for part in file.relative_to(ROOT).parts):continue
             text=file.read_text(encoding='utf-8')
             targets=re.findall(r'\[[^\]]+\]\(([^)]+)\)',text)+re.findall(r'<img[^>]+src="([^"]+)"',text)
             for target in targets:
