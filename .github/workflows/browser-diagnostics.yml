@@ -17,7 +17,7 @@ jobs:
           GH_REPO: ${{ github.repository }}
         run: |
           set +e
-          gh api "repos/${GH_REPO}/actions/jobs/115433412925/logs" > /tmp/previous-browser-check.log 2> /tmp/previous-browser-request-error.txt
+          gh api --allow-escape-sequences "repos/${GH_REPO}/actions/jobs/115433412925/logs" > /tmp/previous-browser-check.log 2> /tmp/previous-browser-request-error.txt
           LOG_REQUEST_STATUS=$?
           printf '%s\n' "$LOG_REQUEST_STATUS" > /tmp/previous-browser-request-status.txt
       - name: Extract only the browser exception and assertion context
