@@ -1,0 +1,285 @@
+/** Original educational browser specimens. No Apple assets or SDK calls. */
+import {mountMotion, springStep} from './motion.mjs';
+
+export const escapeHTML = value => String(value).replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+const e = escapeHTML;
+const button = (label, action, style='') => `<button class="${style}" data-action="${action}">${e(label)}</button>`;
+const field = (label, content) => `<label class="field">${e(label)}${content}</label>`;
+const landscape = '<div class="landscape" role="img" aria-label="Original illustration: a sun above two green hills"><span class="sun"></span></div>';
+const notes = ['Trail notes','Weekend plans','Reading list'];
+const registry = new Map();
+function register(kinds, render) { for (const kind of kinds.split(' ')) { if(registry.has(kind)) throw Error('Duplicate renderer '+kind); registry.set(kind, render); } }
+export const registeredKinds = () => [...registry.keys()].sort();
+
+// A mount owns all listeners, timers, audio, and animation work it creates.
+export function mountSpecimen(root, topic, {status, reduced, topics, navigate}) {
+  const abort = new AbortController(), cleanup = [];
+  const ctx = {root, topic, status, reduced, topics, navigate, signal:abort.signal,
+    html(content, wide=false) {root.innerHTML=`<div class="specimen ${wide?'wide':''} stack">${content}</div>`;},
+    on(selector, event, handler) {for(const node of root.querySelectorAll(selector)) node.addEventListener(event,handler,{signal:abort.signal});},
+    action(name, handler) {this.on(`[data-action="${name}"]`,'click',handler);},
+    find(selector) {return root.querySelector(selector);},
+    own(fn) {cleanup.push(fn);},
+    timer(fn, ms) {const id=setTimeout(fn,ms);cleanup.push(()=>clearTimeout(id));return id;},
+    interval(fn, ms) {const id=setInterval(fn,ms);cleanup.push(()=>clearInterval(id));return id;},
+    card(content) {return `<section class="panel-card stack">${content}</section>`;}
+  };
+  const renderer=registry.get(topic.kind);
+  if(!renderer) throw Error('Unimplemented specimen: '+topic.kind);
+  renderer(ctx);
+  return () => {abort.abort();for(const fn of cleanup.reverse()) fn();for(const d of root.querySelectorAll('dialog[open]'))d.close();};
+}
+
+register('topic-browser', c => {
+  const children=c.topics.filter(t=>c.topic.children.includes(t.slug));
+  c.html(c.card(`<span class="section-label">${e(c.topic.title)}</span><h3>Choose a concrete example</h3><p>Each topic has its own source, task, and working controls.</p><div class="topic-tiles">${children.map(t=>`<a href="?topic=${t.slug}" data-topic="${t.slug}">${e(t.title)} →</a>`).join('')}</div>`));
+  c.on('[data-topic]','click',ev=>{ev.preventDefault();c.navigate(ev.currentTarget.dataset.topic);});
+});
+register('buttons feedback', c => {
+  c.html(`<div><span class="section-label">FIELDNOTES / DOCUMENT ACTIONS</span><h3>A clear action. A visible result.</h3></div><div class="button-board"><div><span class="section-label">Primary action</span>${button('Save note','save','primary')}</div><div><span class="section-label">Secondary action</span>${button('Export a copy','export')}</div><div><span class="section-label">Destructive action</span>${button('Remove draft','remove','danger')}</div><div><span class="section-label">Unavailable action</span><button disabled>Publish · sign in first</button></div></div><p class="muted">The local draft is ready to save. No account or network request is involved.</p>`);
+  c.action('save',ev=>{ev.currentTarget.textContent='Saved';c.status('Note saved in this example. You can continue editing.');});
+  c.action('export',()=>c.status('A copy is ready in the demo. The original note is preserved.'));
+  c.action('remove',()=>openDialog(c,'Remove draft?','The sample draft will be removed from this example.','Remove draft',()=>c.status('Draft removed. Refresh the example to restore it.')));
+});
+
+function openDialog(c,title,copy,confirm,onConfirm,editable=false,sheet=false){
+  const opener=document.activeElement, dialog=document.createElement('dialog');
+  if(sheet)dialog.className='task-sheet';
+  dialog.innerHTML=`<form method="dialog"><div class="dialog-icon" aria-hidden="true">${sheet?'✎':'!'}</div><h2 id="task-title">${e(title)}</h2><p>${e(copy)}</p>${editable?field('Note title','<input name="title" value="Trail notes" required maxlength="80">'):''}<div class="dialog-actions"><button value="cancel" type="submit" formnovalidate autofocus>Cancel</button><button value="confirm" class="primary">${e(confirm)}</button></div></form>`;
+  dialog.setAttribute('aria-labelledby','task-title');c.root.append(dialog);
+  dialog.addEventListener('close',()=>{if(dialog.returnValue==='confirm')onConfirm(dialog.querySelector('input')?.value);else c.status('Cancelled. Your original content is preserved.');dialog.remove();if(opener?.isConnected)opener.focus();},{once:true,signal:c.signal});
+  c.own(()=>{if(dialog.open)dialog.close('cancel');dialog.remove();});dialog.showModal();
+}
+register('dialog sheet action-sheet', c=>{
+  c.html(c.card(`<span class="section-label">DRAFT / TRAIL NOTES</span><h3 data-note>Trail notes</h3><p>A quiet morning on the ridge. Keep the original content until the action is confirmed.</p>${button(c.topic.action,'open','primary')}`));
+  c.action('open',()=>{
+    if(c.topic.kind==='action-sheet'){
+      const opener=document.activeElement,d=document.createElement('dialog');d.className='task-sheet';d.innerHTML='<h2 id="action-title">Field recording</h2><p>Choose an action for the sample recording.</p><div class="stack">'+button('Keep recording','keep')+button('Rename recording','rename')+button('Remove recording','remove','danger')+button('Cancel','cancel')+'</div>';d.setAttribute('aria-labelledby','action-title');c.root.append(d);
+      d.addEventListener('click',ev=>{const b=ev.target.closest('[data-action]');if(b){d.close(b.dataset.action);}},{signal:c.signal});d.addEventListener('close',()=>{c.status(d.returnValue==='cancel'||!d.returnValue?'Cancelled. Recording preserved.':`Recording action: ${d.returnValue}. Local demo only.`);d.remove();opener.focus();},{once:true,signal:c.signal});c.own(()=>d.remove());d.showModal();return;
+    }
+    const edit=c.topic.kind==='sheet'||c.topic.slug==='modality';
+    openDialog(c,edit?'Edit note':'Remove unsaved draft?',edit?'Finish this small task, then return to the document.':'Removal affects only the local example.',edit?'Save note':'Remove draft',value=>{if(edit)c.find('[data-note]').textContent=value;c.status(edit?'Note saved. Returned to the document.':'Sample draft removed.');},edit,c.topic.kind==='sheet');
+  });
+});
+
+register('menu context-menu edit-menu menu-bar popover toolbar',c=>{
+  const pop=c.topic.kind==='popover';
+  const commands=c.topic.kind==='edit-menu'?['Copy sample text','Select all','Clear selection']:c.topic.kind==='context-menu'?['Open photograph','Duplicate photograph','Move to collection']:c.topic.kind==='toolbar'?['Save note','Export Markdown','Show inspector']:['Export Markdown','Export plain text','Show document details'];
+  c.html(c.card(`<span class="section-label">DOCUMENT / COMMANDS</span><h3>Weekend itinerary</h3><p>Meet at the trailhead at 09:00. Bring water and a notebook.</p><div class="row"><button popovertarget="command-pop" id="command-anchor">${e(pop?'Document details':c.topic.action)} ▾</button>${button('Save note','save','primary')}</div><div id="command-pop" popover class="floating-menu">${pop?'<h4>Document details</h4><p>Last edited today · 42 words</p><button popovertarget="command-pop" popovertargetaction="hide">Close details</button>':commands.map((s,i)=>button(s,'command-'+i)).join('')}</div>`));
+  c.action('save',()=>c.status('Itinerary saved locally.'));
+  c.on('[popover]','beforetoggle',ev=>{if(ev.newState!=='open')return;const r=c.find('#command-anchor').getBoundingClientRect(),p=ev.target;p.style.setProperty('--popover-left',Math.max(16,Math.min(r.left,innerWidth-250))+'px');p.style.setProperty('--popover-top',Math.max(16,Math.min(r.bottom+8,innerHeight-200))+'px');});
+  commands.forEach((s,i)=>c.action('command-'+i,()=>{c.find('[popover]').hidePopover();c.status(s+' selected. Original document preserved.');c.find('#command-anchor').focus();}));
+  c.on('#command-pop','keydown',ev=>{if(!['ArrowDown','ArrowUp','Home','End'].includes(ev.key))return;ev.preventDefault();const bs=[...c.find('#command-pop').querySelectorAll('button')],at=bs.indexOf(document.activeElement);bs[ev.key==='Home'?0:ev.key==='End'?bs.length-1:(at+(ev.key==='ArrowDown'?1:-1)+bs.length)%bs.length]?.focus();});
+  if(c.topic.kind==='context-menu')c.on('.panel-card','contextmenu',ev=>{ev.preventDefault();c.find('[popover]').showPopover();c.find('[popover] button').focus();});
+});
+
+register('toggle settings controls notification-settings consent health home inclusion',c=>{
+  const options=c.topic.kind==='home'?['Reading light','Desk light','Evening scene']:c.topic.kind==='health'?['Share steps','Share sleep','Share heart rate']:c.topic.kind==='consent'?['Share approximate location','Share activity history','Allow helpful reminders']:c.topic.kind==='inclusion'?['Show pronouns','Use a chosen display name','Show profile publicly']:c.topic.kind==='notification-settings'?['Reading reminders','Shared note updates','Product announcements']:['Reading reminders','Keep sidebar visible','Use compact cards'];
+  c.html(c.card(`<span class="section-label">${c.topic.mode==='simulation'?'LOCAL SIMULATION':'PREFERENCES'}</span><h3>${e(c.topic.title)}</h3><p>Each choice is independent. These settings last only while this example is open.</p>${options.map((s,i)=>`<label class="toggle-line"><span><strong>${e(s)}</strong><small>${i?'Optional · starts off':'Current preference'}</small></span><input type="checkbox" data-choice="${i}" ${i===0&&!['consent','health'].includes(c.topic.kind)?'checked':''}></label>`).join('')}<div class="row">${button('Save preferences','save','primary')}${button('Restore defaults','reset')}</div>`));
+  c.on('[data-choice]','change',ev=>c.status(`${options[ev.target.dataset.choice]} ${ev.target.checked?'enabled':'disabled'} locally.`));
+  c.action('save',()=>c.status('Preferences saved in this local example. No data was shared.'));
+  c.action('reset',()=>{c.root.querySelectorAll('[data-choice]').forEach(n=>n.checked=false);c.status('All optional choices turned off.');});
+});
+register('slider stepper gauge rings color-well picker select combo rating',c=>{
+  const kind=c.topic.kind;
+  if(kind==='rating'){
+    c.html(c.card('<h3>Your reading experience</h3><div class="rating" role="group" aria-label="Choose a rating">'+[1,2,3,4,5].map(n=>`<button data-rating="${n}" aria-label="${n} ${n===1?'star':'stars'}" aria-pressed="false">★</button>`).join('')+'<output data-value>Not rated</output>'));
+    c.on('[data-rating]','click',ev=>{const n=+ev.currentTarget.dataset.rating;c.root.querySelectorAll('[data-rating]').forEach(b=>{b.classList.toggle('active',+b.dataset.rating<=n);b.setAttribute('aria-pressed',String(+b.dataset.rating===n));});c.find('[data-value]').textContent=n+' of 5 stars';c.status('Rating set to '+n+' of 5.');});return;
+  }
+  if(['select','combo','picker','color-well'].includes(kind)){
+    const control=kind==='color-well'?'<input type="color" value="#2864d7" data-pick>':kind==='picker'?'<input type="date" value="2026-10-13" data-pick>':kind==='combo'?'<input list="categories" value="Travel" data-pick><datalist id="categories"><option>Travel</option><option>Reading</option><option>Projects</option></datalist>':'<select data-pick><option>Markdown</option><option>Plain text</option><option>HTML</option></select>';
+    c.html(c.card(`<h3>${e(c.topic.title)}</h3>${field(kind==='picker'?'Review date':kind==='color-well'?'Annotation color':kind==='combo'?'Document category':'Export format',control)}${button(c.topic.action,'apply','primary')}<output data-value>Choose a value, then apply it.</output>`));
+    c.action('apply',()=>{const v=c.find('[data-pick]').value;c.find('[data-value]').textContent='Selected: '+v;if(kind==='color-well')c.find('.panel-card').style.borderColor=v;c.status('Applied '+v+'.');});return;
+  }
+  let value=kind==='stepper'?3:kind==='rings'?55:40;
+  c.html(c.card(`<h3>${e(kind==='slider'?'Narration volume':kind==='stepper'?'Weekly reading sessions':kind==='rings'?'Fictional daily activity':'Example storage')}</h3><output class="value-display" data-value>${value}${kind==='stepper'?' sessions':'%'}</output>${kind==='stepper'?'<div class="row">'+button('− Decrease','minus')+button('+ Increase','plus')+'</div>':field(kind==='slider'?'Volume':'Adjust sample value',`<input type="range" min="0" max="100" value="${value}" data-range>`)}<meter min="0" max="100" value="${value}" aria-label="Current sample value"></meter>`));
+  const update=n=>{value=Math.max(kind==='stepper'?1:0,Math.min(kind==='stepper'?10:100,n));c.find('[data-value]').textContent=value+(kind==='stepper'?' sessions':'%');c.find('meter').value=value;c.status('Value set to '+value+'.');};
+  c.action('plus',()=>update(value+1));c.action('minus',()=>update(value-1));c.on('[data-range]','input',ev=>update(+ev.target.value));
+});
+
+register('tabs segments pages onboarding',c=>{
+  const sequential=['pages','onboarding'].includes(c.topic.kind),labels=sequential?['Welcome','Choose a collection','Ready']:c.topic.kind==='segments'?['Today','This week']:['Library','Favorites','Recent'];
+  c.html(c.card(`<h3>${e(sequential?'Make room for good ideas':'Your reading workspace')}</h3><div class="segmented" role="${sequential?'group':'tablist'}" aria-label="${sequential?'Setup steps':'Workspace views'}">${labels.map((l,i)=>`<button data-tab="${i}" ${sequential?'aria-pressed':'role="tab" aria-selected'}="${i===0}" ${sequential?'':`id="tab-${i}" aria-controls="tab-content" tabindex="${i===0?0:-1}"`}>${e(l)}</button>`).join('')}</div><div id="tab-content" ${sequential?'':'role="tabpanel" aria-labelledby="tab-0" tabindex="0"'} class="tabs-panel stack"></div>${sequential?'<div class="row">'+button('Back','back')+button('Continue','next','primary')+button('Skip setup','skip')+'</div>':''}`));
+  let index=0;
+  const update=i=>{index=(i+labels.length)%labels.length;c.root.querySelectorAll('[data-tab]').forEach(b=>{const selected=+b.dataset.tab===index;b.setAttribute(sequential?'aria-pressed':'aria-selected',String(selected));if(!sequential)b.tabIndex=selected?0:-1;});const panel=c.find('#tab-content');panel.setAttribute('aria-labelledby','tab-'+index);panel.innerHTML=`<h4>${e(labels[index])}</h4><p>${e(sequential?['A notebook for ideas you want to keep. Setup is optional.','Start with Travel, Reading, or an empty collection.','Your notebook is ready. You can change preferences later.'][index]:['Three field notes are ready to read.','Two favorite notes are pinned here.','Your most recently edited note: Trail notes.'][index])}</p>`;c.status(labels[index]+' view opened.');if(sequential)c.find('[data-action="back"]').disabled=index===0;};
+  c.on('[data-tab]','click',ev=>update(+ev.currentTarget.dataset.tab));
+  c.on('[data-tab]','keydown',ev=>{if(!['ArrowLeft','ArrowRight','Home','End'].includes(ev.key))return;ev.preventDefault();update(ev.key==='Home'?0:ev.key==='End'?labels.length-1:index+(ev.key==='ArrowRight'?1:-1));c.find(`[data-tab="${index}"]`).focus();});
+  c.action('next',()=>{if(index===labels.length-1)c.status('Setup complete. Your notebook is ready.');else update(index+1);});c.action('back',()=>update(index-1));c.action('skip',()=>{update(2);c.status('Setup skipped. You can start writing now.');});update(0);
+});
+register('sidebar split columns tablet-screen multitasking',c=>{
+  c.html(`<section class="panel-card split-card"><aside aria-label="Note selection" class="stack"><span class="section-label">COLLECTION</span>${notes.map((n,i)=>`<button data-note="${i}" aria-pressed="${i===0}">${e(n)}</button>`).join('')}${c.topic.kind==='columns'?'<small>Projects → Travel → Notes</small>':''}</aside><article class="stack"><span class="section-label">FIELDNOTES</span><h3 data-heading>Trail notes</h3><p data-copy>A quiet morning on the ridge. The next idea is already taking shape.</p>${field('Document text','<textarea data-editor aria-label="Document text">A quiet morning on the ridge.</textarea>')}${button('Save note','save','primary')}</article></section>`,true);
+  const texts=['A quiet morning on the ridge.','Meet at the trailhead at 09:00.','Read a chapter before the next walk.'];
+  c.on('[data-note]','click',ev=>{const i=+ev.currentTarget.dataset.note;c.root.querySelectorAll('[data-note]').forEach(b=>b.setAttribute('aria-pressed',String(b===ev.currentTarget)));c.find('[data-heading]').textContent=notes[i];c.find('[data-editor]').value=texts[i];c.status(notes[i]+' selected.');});c.action('save',()=>c.status(c.find('[data-heading]').textContent+' saved locally.'));
+});
+register('window panel adaptive-screen',c=>{
+  c.html(`<div class="mock-window"><div class="titlebar"><span>Fieldnotes / Trail notes</span><div class="row">${button('Minimize','min')}${button('Restore','restore')}</div></div><div class="window-content"><aside class="window-side"><span class="section-label">LIBRARY</span>${notes.map((n,i)=>`<button data-doc="${i}" aria-pressed="${i===0}">${e(n)}</button>`).join('')}</aside><article class="window-main stack"><h3 data-title>Trail notes</h3><p>A quiet morning on the ridge.<br>One place for ideas, plans, and small discoveries.</p><div class="row">${button('Show inspector','inspect')}${button('Save note','save','primary')}</div></article><aside class="window-inspector" hidden><h4>Inspector</h4><p>Words: 18<br>Collection: Travel</p>${button('Close','inspect')}</aside></div></div>${c.topic.kind==='adaptive-screen'?button('Change layout width','width'):''}`,true);
+  c.action('inspect',()=>{const p=c.find('.window-inspector');p.hidden=!p.hidden;c.status(p.hidden?'Inspector closed.':'Nonmodal inspector opened. The document remains usable.');});c.action('save',()=>c.status('Document saved locally.'));c.action('min',()=>{c.find('.window-content').hidden=true;c.status('Window content minimized. Use Restore to return.');});c.action('restore',()=>{c.find('.window-content').hidden=false;c.status('Window restored.');});c.action('width',()=>{const w=c.find('.mock-window');w.style.width=w.style.width==='360px'?'100%':'360px';c.status('Layout width changed.');});
+  c.on('[data-doc]','click',ev=>{c.find('[data-title]').textContent=notes[+ev.currentTarget.dataset.doc];c.root.querySelectorAll('[data-doc]').forEach(b=>b.setAttribute('aria-pressed',String(b===ev.currentTarget)));c.status('Opened '+c.find('[data-title]').textContent+'.');});
+});
+
+register('form digit-entry editor review',c=>{
+  const digit=c.topic.kind==='digit-entry',long=['editor','review'].includes(c.topic.kind);
+  c.html(`<form class="panel-card stack" novalidate><span class="section-label">${long?'LOCAL WRITING':'DATA ENTRY'}</span><h3>${e(digit?'Pickup code':c.topic.kind==='review'?'Your example review':long?'Trail notes':'Add a reading goal')}</h3>${field(digit?'Six-digit code':long?'Note text':'Goal title',long?'<textarea name="entry" aria-describedby="field-error">A quiet morning on the ridge.</textarea>':`<input name="entry" ${digit?'inputmode="numeric" pattern="[0-9]{6}" maxlength="6"':'maxlength="80"'} aria-describedby="field-error" placeholder="${digit?'123456':'Read one chapter'}">`)}<p id="field-error" class="field-error" role="alert"></p><output data-count></output><div class="row"><button type="submit" class="primary">${e(c.topic.action)}</button><button type="reset">Reset</button></div></form>`);
+  c.on('[name="entry"]','input',ev=>c.find('[data-count]').textContent=ev.target.value.length+' characters');
+  c.on('form','submit',ev=>{ev.preventDefault();const input=c.find('[name="entry"]'),value=input.value.trim(),valid=digit?/^\d{6}$/.test(value):value.length>=3;c.find('#field-error').textContent=valid?'':digit?'Enter exactly six digits.':'Enter at least three characters.';input.setAttribute('aria-invalid',String(!valid));if(valid)c.status(digit?'Example code accepted. No identity verification occurred.':c.topic.kind==='review'?'Example review saved locally; nothing was posted.':'Saved: '+value);else input.focus();});
+  c.on('form','reset',()=>{c.find('#field-error').textContent='';c.find('[name="entry"]').removeAttribute('aria-invalid');c.find('[data-count]').textContent='';c.status('Form reset.');});
+});
+register('search collection files lockups image-well',c=>{
+  let items=[...notes];
+  c.html(c.card(`<h3>${e(c.topic.kind==='files'?'Your documents':c.topic.kind==='image-well'?'Choose a cover':'Your collection')}</h3>${field('Find a note','<input type="search" data-search placeholder="Search titles">')}<div class="file-grid" data-items></div><div class="row">${button('Clear search','clear')}${c.topic.kind==='files'?button('Create folder','folder'):''}</div><output data-selected>No item selected.</output>`));
+  const draw=()=>{const query=c.find('[data-search]').value.toLowerCase(),matches=items.filter(n=>n.toLowerCase().includes(query));c.find('[data-items]').innerHTML=matches.length?matches.map(n=>`<button class="file-tile" data-item="${e(n)}"><span class="tile-art" aria-hidden="true"></span><strong>${e(n)}</strong><small>Local example · open to inspect</small></button>`).join(''):'<p>No matching notes. Clear the search to see the collection.</p>';};
+  c.on('[data-search]','input',()=>{draw();c.status(c.find('[data-items]').textContent.includes('No matching')?'No matching notes. Clear search to recover.':'Search results updated.');});c.on('[data-items]','click',ev=>{const b=ev.target.closest('[data-item]');if(b){c.find('[data-selected]').textContent='Selected: '+b.dataset.item;c.status('Opened '+b.dataset.item+'.');}});c.action('clear',()=>{c.find('[data-search]').value='';draw();c.status('Search cleared. All notes restored.');});c.action('folder',()=>{items.push('New folder '+(items.length-2));draw();c.status('Created a local example folder.');});draw();
+});
+register('table chart',c=>{
+  let reverse=false;
+  c.html(c.card(`<h3>${e(c.topic.kind==='chart'?'Weekly reading time':'Document overview')}</h3>${c.topic.kind==='chart'?'<div class="chart" aria-label="Reading minutes by day">'+[20,45,30,60,35,50,25].map((n,i)=>`<div class="chart-bar"><span style="height:${n*2}px"></span><small>${['M','T','W','T','F','S','S'][i]} · ${n}m</small></div>`).join('')+'</div>':''}<div class="table-scroll"><table class="sample-table"><caption>${c.topic.kind==='chart'?'Same data in a readable table':'Example files'}</caption><thead><tr><th scope="col">Name</th><th scope="col">${c.topic.kind==='chart'?'Minutes':'Words'}</th></tr></thead><tbody data-rows></tbody></table></div>${button(c.topic.kind==='chart'?'Change period':'Sort by name','sort')}`));
+  const data=c.topic.kind==='chart'?['Monday','Tuesday','Wednesday','Thursday','Friday','Saturday','Sunday']:notes,values=c.topic.kind==='chart'?[20,45,30,60,35,50,25]:[120,42,85];
+  const draw=()=>{const rows=data.map((n,i)=>({n,v:values[i]}));if(reverse)rows.reverse();c.find('[data-rows]').innerHTML=rows.map(r=>`<tr><th scope="row">${r.n}</th><td>${reverse&&c.topic.kind==='chart'?r.v+10:r.v}</td></tr>`).join('');if(c.topic.kind==='chart')c.root.querySelectorAll('.chart-bar').forEach((n,i)=>{const v=values[i]+(reverse?10:0);n.querySelector('span').style.height=v*2+'px';n.querySelector('small').textContent=data[i].slice(0,2)+' · '+v+'m';});};c.action('sort',()=>{reverse=!reverse;draw();c.status(c.topic.kind==='chart'?'Period changed. Table and bars show the same data.':'Sort direction changed.');});draw();
+});
+
+register('disclosure outline boxes help breadcrumbs',c=>{
+  c.html(c.card(`<span class="section-label">EXPORT / TRAIL NOTES</span><h3>${e(c.topic.title)}</h3>${c.topic.kind==='breadcrumbs'?'<nav aria-label="Folder path" class="row">'+button('Projects','projects')+'<span>/</span>'+button('Travel','travel')+'<span>/ Trail notes</span></nav>':''}<details><summary>${c.topic.kind==='help'?'How do I export a note?':'Export details'}</summary><div class="stack details-body"><p>Choose Markdown to keep headings and lists readable. Attachments remain in their original folder.</p>${field('Format','<select><option>Markdown</option><option>Plain text</option></select>')}${c.topic.kind==='outline'?'<details><summary>Attachments</summary><p>Two original illustrations</p></details>':''}</div></details>${button('Apply settings','apply','primary')}`));c.action('apply',()=>c.status('Export settings applied locally.'));c.action('projects',()=>c.status('Folder path changed to Projects.'));c.action('travel',()=>c.status('Folder path changed to Travel.'));c.on('details','toggle',ev=>c.status(ev.target.open?'Optional details expanded.':'Optional details collapsed.'));
+});
+register('tokens collaboration share',c=>{
+  const people=new Set(['Alex','Sam']);
+  c.html(c.card(`<h3>${e(c.topic.kind==='share'?'Share the itinerary':'People on this note')}</h3><p>Example names only. Invitations and sharing remain local.</p><div class="token-row" data-people></div>${field('Person name','<input data-name maxlength="40" placeholder="Add a name">')}<div class="row">${button('Add person','add','primary')}${button(c.topic.kind==='share'?'Copy itinerary':'Preview invitation','invite')}</div>`));
+  const draw=()=>{c.find('[data-people]').innerHTML=[...people].map(n=>`<span class="token">${e(n)}<button data-remove="${e(n)}" aria-label="Remove ${e(n)}">×</button></span>`).join('');};
+  c.action('add',()=>{const v=c.find('[data-name]').value.trim();if(!v){c.status('Enter a name first.');c.find('[data-name]').focus();return;}people.add(v);c.find('[data-name]').value='';draw();c.status('Added '+v+' locally.');});c.on('[data-people]','click',ev=>{const b=ev.target.closest('[data-remove]');if(b){people.delete(b.dataset.remove);draw();c.find('[data-name]').focus();c.status('Removed '+b.dataset.remove+'.');}});c.action('invite',async()=>{if(c.topic.kind==='share'){try{await navigator.clipboard.writeText('Weekend itinerary: meet at the trailhead at 09:00.');c.status('Sample itinerary copied.');}catch{c.status('Copy unavailable. Itinerary: meet at the trailhead at 09:00.');}}else c.status('Invitation preview for '+[...people].join(', ')+'. Nothing was sent.');});draw();
+});
+
+register('accessibility typography appearance palette branding app-icon icons labels writing principles rtl materials',c=>{
+  const kind=c.topic.kind;
+  const content=kind==='palette'?'<div class="palette-row"><span class="swatch" style="background:#2864d7">Information</span><span class="swatch" style="background:#246e5b">Saved ✓</span><span class="swatch" style="background:#ac3544">Error !</span></div>':kind==='app-icon'?'<div class="original-app-icon" aria-label="Original Fieldnotes app icon">F<span>•••</span></div>':kind==='icons'?'<div class="row icon-specimens"><span>✎ <b>Write</b></span><span>▤ <b>Library</b></span><span>☆ <b>Favorites</b></span></div>':'';
+  c.html(c.card(`<span class="section-label">FIELDNOTES / FOUNDATIONS</span><div class="type-specimen" data-reading><h3>Ideas worth keeping.</h3><p data-copy>A place for travel notes, reading plans, and the details you want to remember.</p>${content}<div class="row" style="margin-top:1rem">${button(kind==='labels'?'Done':'Save note','save','primary')}${button('Cancel','cancel')}</div></div>${button(c.topic.action,'change')}<output data-context>Default appearance · original educational values</output>`));
+  let changed=false;c.action('change',()=>{changed=!changed;const card=c.find('[data-reading]');
+    if(['accessibility','typography'].includes(kind)){card.style.fontSize=changed?'200%':'';card.classList.toggle('large',changed);card.querySelector('h3').style.fontSize=changed?'2.8rem':'';card.querySelector('p').style.fontSize=changed?'1.8rem':'';}
+    else if(kind==='appearance')card.classList.toggle('local-dark',changed);
+    else if(kind==='rtl')card.dir=changed?'rtl':'ltr';
+    else if(kind==='labels')c.find('[data-action="save"]').textContent=changed?'Save note':'Done';
+    else if(kind==='writing')c.find('[data-copy]').textContent=changed?'Your note is saved. You can keep editing.':'Operation successful.';
+    else if(kind==='materials'){card.style.background=changed?'#dce8f5':'#e7f0fb88';c.find('[data-context]').textContent=changed?'Solid background · no transparency':'Translucent background · text remains on a stable layer';}
+    else if(kind==='app-icon')c.find('.original-app-icon').style.background=changed?'linear-gradient(140deg,#247562,#113e52)':'linear-gradient(140deg,#285fcb,#103b68)';
+    else if(kind==='principles'){c.find('[data-copy]').textContent=changed?'Clarity: save the note with a named action and an explicit result.':'Consistency: keep the same action names and locations across views.';c.find('[data-context]').textContent=changed?'Selected principle: clarity':'Selected principle: consistency';}
+    else if(kind==='palette'){c.root.querySelectorAll('.swatch').forEach((n,i)=>n.style.background=(changed?['#235480','#255e41','#8c2941']:['#2864d7','#246e5b','#ac3544'])[i]);}
+    else if(kind==='icons')c.root.querySelectorAll('.icon-specimens b').forEach(b=>b.hidden=changed);
+    else card.style.setProperty('--accent',changed?'#246e5b':'#2864d7');
+    c.status(changed?'Alternative applied. Compare readability and context.':'Default restored.');});c.action('save',()=>c.status('Note saved locally.'));c.action('cancel',()=>c.status('Cancelled. No content changed.'));
+});
+
+register('phone-screen tv-screen focus remote pointer car',c=>{
+  const phone=c.topic.kind==='phone-screen';
+  c.html(`<section class="${phone?'phone':'panel-card'} stack"><div class="${phone?'phone-header':'section-label'}">${c.topic.kind==='car'?'DRIVING UI MODEL · USE WHILE PARKED':'FIELDNOTES / DISCOVER'}</div><div class="${phone?'phone-body':'stack'}"><h3>${c.topic.kind==='car'?'Choose a destination':'Choose your next story'}</h3><div class="focus-grid">${['Ridge walk','Coastal trail','City gardens','Forest paths'].map((n,i)=>`<button class="focus-tile" data-item="${i}" aria-pressed="false">${n}</button>`).join('')}</div><p data-selection>Nothing selected</p></div>${c.topic.kind==='remote'?'<div class="row">'+button('← Previous','prev')+button('Next →','next')+'</div>':''}</section>`);
+  let selected=0;const choose=i=>{selected=(i+4)%4;c.root.querySelectorAll('[data-item]').forEach(b=>b.setAttribute('aria-pressed',String(+b.dataset.item===selected)));c.find('[data-selection]').textContent='Selected: '+c.find(`[data-item="${selected}"]`).textContent;c.status(c.find('[data-selection]').textContent);};c.on('[data-item]','click',ev=>choose(+ev.currentTarget.dataset.item));c.on('[data-item]','keydown',ev=>{if(ev.key.startsWith('Arrow')){ev.preventDefault();choose(selected+(['ArrowRight','ArrowDown'].includes(ev.key)?1:-1));c.find(`[data-item="${selected}"]`).focus();}});c.action('prev',()=>choose(selected-1));c.action('next',()=>choose(selected+1));
+});
+register('watch-screen complication always-on widget live status-strip workout',c=>{
+  if(c.topic.kind==='status-strip'){
+    c.html(c.card('<h3>Document status</h3><div class="row"><span class="badge-pill" data-connection>Connected</span><output data-save>All changes saved</output></div>'+button('Change status','status')));let saved=true;c.action('status',()=>{saved=!saved;c.find('[data-save]').textContent=saved?'All changes saved':'Unsaved changes';c.find('[data-connection]').textContent=saved?'Connected':'Offline · local editing available';c.status(c.find('[data-save]').textContent+'. '+c.find('[data-connection]').textContent);});return;
+  }
+  const watch=['watch-screen','complication'].includes(c.topic.kind),work=c.topic.kind==='workout';let value=work?0:c.topic.kind==='live'?1:12,paused=true,ended=false;
+  c.html(`<section class="${watch?'watch':'widget-card'}"><span class="section-label">${e(c.topic.title)} · LOCAL MODEL</span><h3>${work?'Walking session':c.topic.kind==='live'?'Delivery update':'Next departure'}</h3><output class="value-display" data-value>${work?'0:00':c.topic.kind==='live'?'Preparing':'12 min'}</output><small data-description>${work?'Start when ready.':'Sample information · no device connection'}</small><div class="row">${button(c.topic.action,'advance')}${work?button('End workout','end'):button('Reset','reset')}</div></section>`);
+  const update=()=>{c.find('[data-value]').textContent=work?`${Math.floor(value/60)}:${String(value%60).padStart(2,'0')}`:c.topic.kind==='live'?['Preparing','On the way','Arrived'][Math.min(value-1,2)]:value+' min';};
+  if(work)c.interval(()=>{if(!paused&&!ended){value++;update();}},1000);
+  c.action('advance',ev=>{if(work){if(ended){value=0;ended=false;}paused=!paused;ev.currentTarget.textContent=paused?'Resume workout':'Pause workout';c.status(paused?'Workout paused.':'Fictional walking timer started.');}else if(c.topic.kind==='always-on'){c.find('.widget-card').classList.toggle('dimmed');c.status('Display brightness model toggled. Information remains readable.');}else if(c.topic.kind==='widget'){c.find('.widget-card').classList.toggle('compact-widget');c.status('Widget size changed. The same information remains available.');}else if(c.topic.slug==='watch-faces'){c.find('.watch').classList.toggle('alt-face');c.status('Watch composition changed. This is a browser illustration.');}else{value=c.topic.kind==='live'?Math.min(value+1,3):Math.max(0,value-1);update();c.status('Local information updated: '+c.find('[data-value]').textContent);}});c.action('reset',()=>{value=12;update();c.status('Local example reset.');});c.action('end',()=>{paused=true;ended=true;c.find('[data-description]').textContent='Session ended · '+value+' seconds';c.find('[data-action="advance"]').textContent='Start new workout';c.status('Workout ended. Timer stopped.');});
+});
+register('notification launch sync progress',c=>{
+  if(c.topic.kind==='notification'){
+    c.html('<section class="notification-card"><div class="row"><span class="badge-icon" aria-hidden="true">F</span><span class="section-label">FIELDNOTES · NOW</span></div><h3>Your shared note has an update</h3><p>Alex added a route to Weekend plans.</p><div class="row">'+button('Open note','open')+button('Dismiss','dismiss')+'</div></section>');c.action('open',()=>c.status('Weekend plans opened in this example.'));c.action('dismiss',()=>{c.find('.notification-card').hidden=true;c.status('Notification dismissed. No system notification was created.');});return;
+  }
+  let active=false,value=0,id;
+  c.html(c.card(`<span class="section-label">LOCAL ${c.topic.kind==='sync'?'SYNC MODEL':'LOADING DEMO'}</span><h3>Your field notes</h3><p data-description>Ready to load three sample notes.</p><progress max="100" value="0" aria-label="Loading progress"></progress><output data-percent>0%</output><div class="row">${button(c.topic.action,'start','primary')}${button('Cancel','cancel')}${button('Simulate error','error')}</div><div data-content></div>`));
+  const stop=()=>{active=false;clearInterval(id);};c.own(stop);
+  c.action('start',()=>{stop();active=true;value=0;c.find('[data-content]').textContent='';c.find('[data-description]').textContent='Loading local sample notes…';id=c.interval(()=>{if(!active)return;value=Math.min(100,value+10);c.find('progress').value=value;c.find('[data-percent]').textContent=value+'%';if(value===100){stop();c.find('[data-description]').textContent='Collection ready';c.find('[data-content]').textContent=notes.join(' · ');c.status('Loaded all three local notes.');}},120);});
+  c.action('cancel',()=>{stop();c.find('[data-description]').textContent='Loading cancelled. You can retry.';c.status('Cancelled without losing your existing notes.');});c.action('error',()=>{stop();c.find('[data-description]').textContent='Could not load the sample collection. Try loading again.';c.status('Simulated error. Retry with the load button.');});
+});
+
+register('payment accounts verification integration audio-match care survey assistant snippet pass hardware',c=>{
+  const kind=c.topic.kind;
+  if(kind==='payment'){
+    const subscription=c.topic.slug==='apple-in-app-purchase';c.html(`<section class="payment-card"><span class="simulation-label">Payment simulation · no transaction</span><h3>${subscription?'Fieldnotes Plus':'Example bakery order'}</h3><p>${subscription?'Monthly plan · cancel any time in this fictional model':'Two pastries · pickup at 09:00'}</p><div class="amount">${subscription?'$3.99 / month':'$8.00'}</div><p>No payment information is requested or transmitted.</p>${button('Review amount','review','primary')}</section>`);c.action('review',()=>openDialog(c,'Review fictional purchase','This is an educational preview. Confirming cannot charge you.','Confirm preview',()=>c.status('Preview complete. No payment made.')));return;
+  }
+  if(kind==='accounts'){
+    c.html(c.card('<span class="simulation-label">Account UI preview · no authentication</span><h3>Your notes, your choice</h3><p>Choose a fictional profile or continue without an account.</p>'+button('Continue as Alex','profile','primary')+button('Continue as guest','guest')));c.action('profile',()=>c.status('Fictional Alex profile selected. No sign-in occurred.'));c.action('guest',()=>c.status('Guest workspace opened. No account required.'));return;
+  }
+  if(kind==='pass'){
+    c.html('<section class="pass-card"><div class="pass-head"><span class="section-label">FICTIONAL EVENT PASS</span><h3>Fieldnotes gathering</h3></div><div class="pass-body stack"><p>13 October · Doors at 18:00<br>Example venue · Section A</p><div class="pass-code" aria-label="Decorative barcode; not a valid ticket"></div>'+button('Inspect pass details','inspect')+'</div></section>');c.action('inspect',()=>c.status('Fictional pass: Section A, seat 12. Nothing added to Wallet.'));return;
+  }
+  if(kind==='hardware'){
+    const labels={'action-button':['Waypoint action','Start waypoint'],'camera-control':['Exposure compensation','Apply exposure'],'digital-crown':['Timer minutes','Set timer'],'eyes':['Selection dwell model','Select focused item'],'gyro-and-accelerometer':['Tilt angle model','Apply tilt'],'nearby-interactions':['Distance in metres','Locate item'],'playing-haptics':['Feedback intensity model','Preview feedback']};const [label,action]=labels[c.topic.slug]||['Input value model',c.topic.action];
+    c.html(c.card(`<span class="simulation-label">Hardware model · pointer/keyboard input only</span><h3>${e(c.topic.title)}</h3>${field(label,'<input type="range" min="0" max="100" value="40" data-model>')}<output data-value>40</output>${button(action,'apply','primary')}<p>No sensor, gaze tracking, haptic engine, or hardware SDK is connected.</p>`));c.on('[data-model]','input',ev=>{c.find('[data-value]').textContent=ev.target.value;c.status(label+': '+ev.target.value);});c.action('apply',()=>c.status(action+' at model value '+c.find('[data-model]').value+'. Visual feedback only.'));return;
+  }
+  const flows={
+    airplay:['Choose display','Connect model','Playing on example display'],
+    'app-clips':['Review parking duration','Confirm fictional parking','Parking model active'],
+    'game-center':['View leaderboard','Preview match invitation','Invitation preview ready'],
+    'live-viewing-apps':['Choose lecture','Connect example stream','Connected model'],
+    'id-verifier':['Review requested age check','Choose what to disclose','Verification preview complete'],
+    nfc:['Review tap task','Simulate nearby tag','Sample tag read'],
+    carekit:['Review care task','Mark fictional task complete','Check-in recorded locally'],
+    researchkit:['Read fictional study consent','Choose to participate','Sample survey complete'],
+    shazamkit:['Preview listening state','Simulate recognition','Example match: Ridge Morning'],
+    'generative-ai':['Review example suggestion','Inspect uncertainty','Apply edited suggestion'],
+    'machine-learning':['Inspect example classification','Review confidence: 72%','Confirm example label'],
+    siri:['Review fictional voice request','Confirm capture intent','Example note captured'],
+    'app-shortcuts':['Review Capture note shortcut','Confirm local action','Example note captured'],
+    snippets:['Inspect short assistant result','Review suggested action','Example action confirmed']
+  };
+  const steps=flows[c.topic.slug];if(!steps)throw Error('Missing integration flow '+c.topic.slug);
+  let step=0;c.html(c.card(`<span class="simulation-label">Integration simulation · no SDK or remote service</span><h3>${e(c.topic.title)}</h3><p>${e(c.topic.scenario)}</p><div class="integration-steps">${steps.map((s,i)=>`<span class="integration-step ${i===0?'active':''}" data-step="${i}">${e(s)}</span>`).join('')}</div>${kind==='survey'?field('Fictional participation choice','<select><option>Prefer not to answer</option><option>Participate in example</option></select>'):''}<div class="row">${button(c.topic.action,'next','primary')}${button('Cancel preview','cancel')}${button('Reset','reset')}</div><output data-state>${e(steps[0])}</output>`));
+  const draw=()=>{c.root.querySelectorAll('[data-step]').forEach(n=>n.classList.toggle('active',+n.dataset.step===step));c.find('[data-state]').textContent=steps[step];c.status(steps[step]+'. Local model only.');};c.action('next',()=>{step=Math.min(2,step+1);draw();});c.action('cancel',()=>{step=0;draw();c.status('Preview cancelled. No data sent or integration invoked.');});c.action('reset',()=>{step=0;draw();});
+});
+
+register('spatial ornament',c=>{
+  let depth=false;c.html(`<div class="spatial-scene"><section class="spatial-board"><span class="simulation-label">Spatial layout simulation</span><h3>${c.topic.slug==='augmented-reality'?'Chair placement study':'A calm planning board'}</h3>${c.topic.slug==='augmented-reality'?'<div class="chair-model" role="img" aria-label="Original illustrated chair"></div>':''}<p>A stationary frame keeps the task in context. This is a flat browser illustration.</p><div class="row">${button(c.topic.action,'depth')}${button('Reset position','reset')}</div>${c.topic.kind==='ornament'?'<div class="row">'+button('Pen tool','pen')+button('Selection tool','selection')+'<output data-tool>Pen selected</output></div>':''}</section></div><p class="muted">No headset, camera, world tracking, stereoscopic rendering, or AR placement is involved.</p>`,true);
+  const update=()=>{c.find('.spatial-board').style.transform=depth?'translateY(-12px) scale(.92)':'none';c.status(depth?'Illustrated depth changed. Reference frame stays stationary.':'Illustrated board restored.');};c.action('depth',()=>{depth=!depth;update();});c.action('reset',()=>{depth=false;update();});
+  for(const name of ['pen','selection'])c.action(name,()=>{c.find('[data-tool]').textContent=name+' tool selected';c.status(name+' tool selected on the attached palette.');});
+});
+register('image photo-editing live-photo video stickers',c=>{
+  const movie=['video','live-photo'].includes(c.topic.kind);let anim,playing=false;
+  c.html(c.card(`<h3>${e(c.topic.kind==='stickers'?'A small message with character':'Ridge morning')}</h3><div class="illustration-viewport">${landscape}</div>${movie?'<p class="video-captions">Caption: a sun rises above two green hills. Original animated illustration.</p>':''}${c.topic.kind==='stickers'?'<div class="row">'+['☀','✿','☆'].map((n,i)=>button(n,'sticker-'+i)).join('')+'<p data-message>Meet at the trailhead.</p>':''}<div class="row">${button(c.topic.action,'change','primary')}${movie?button('Stop scene','stop'):button('Reset image','reset')}</div><p class="muted">${movie?'Original browser animation; this is not a native media player or Live Photo.':'Original CSS illustration; no external image or photograph is used.'}</p>`));
+  c.action('change',()=>{if(movie){anim?.cancel();playing=true;const sun=c.find('.sun');anim=sun.animate([{transform:'translateY(0)'},{transform:'translateY(-25px)'},{transform:'translateY(0)'}],{duration:c.reduced()?1:1600,iterations:1});anim.onfinish=()=>{playing=false;c.status('Scene ended. Caption preserves its meaning.');};c.status('Playing original scene. Stop is available.');}else if(c.topic.kind==='image'){const n=c.find('.landscape'),fit=n.classList.toggle('fit');n.classList.toggle('fill',!fit);c.status(fit?'Fit illustration inside the viewport.':'Fill viewport and crop the illustration.');}else{c.find('.landscape').classList.toggle('warm');c.status('Original illustration warmth changed.');}});c.action('stop',()=>{anim?.cancel();playing=false;c.status('Scene stopped.');});c.action('reset',()=>{c.find('.landscape').classList.remove('warm','fit','fill');c.status('Original illustration restored.');});c.own(()=>{anim?.cancel();playing=false;});['☀','✿','☆'].forEach((n,i)=>c.action('sticker-'+i,()=>{c.find('[data-message]').textContent='Meet at the trailhead. '+n;c.status('Original character sticker added to the sample message.');}));
+});
+register('map',c=>{
+  c.html(c.card('<h3>A morning route</h3><div class="scene-map" aria-label="Illustrated route; not real navigation">'+['Trailhead','Ridge lookout','Garden gate'].map((n,i)=>`<button class="map-stop" data-stop="${i}" aria-pressed="false">${n}</button>`).join('')+'</div><output data-route>Choose a labeled stop to inspect it.</output>'));
+  c.on('[data-stop]','click',ev=>{c.root.querySelectorAll('[data-stop]').forEach(b=>b.setAttribute('aria-pressed',String(b===ev.currentTarget)));c.find('[data-route]').textContent=ev.currentTarget.textContent+' · illustrative stop, no real directions';c.status(c.find('[data-route]').textContent);});
+});
+
+register('drawing',c=>{
+  c.html(c.card('<h3>Sketch a trail</h3><p>Draw with a pointer, or use Add waypoint for a keyboard alternative.</p><canvas class="drawing" width="580" height="200" aria-label="Trail sketch canvas"></canvas><div class="row">'+button('Add waypoint','point')+button('Clear sketch','clear')+'</div>'));
+  const canvas=c.find('canvas'),ctx=canvas.getContext('2d');let drawing=false,last;ctx.strokeStyle='#2864d7';ctx.lineWidth=3;ctx.lineCap='round';
+  const point=ev=>{const r=canvas.getBoundingClientRect();return [(ev.clientX-r.left)*canvas.width/r.width,(ev.clientY-r.top)*canvas.height/r.height];};
+  c.on('canvas','pointerdown',ev=>{drawing=true;last=point(ev);canvas.setPointerCapture(ev.pointerId);});c.on('canvas','pointermove',ev=>{if(!drawing)return;const next=point(ev);ctx.beginPath();ctx.moveTo(...last);ctx.lineTo(...next);ctx.stroke();last=next;});c.on('canvas','pointerup',()=>{drawing=false;c.status('Trail stroke added.');});c.on('canvas','pointercancel',()=>drawing=false);
+  let n=0;c.action('point',()=>{const x=40+(n++%8)*65,y=100+Math.sin(n)*35;ctx.beginPath();ctx.arc(x,y,6,0,Math.PI*2);ctx.stroke();c.status('Waypoint '+n+' added to the sketch.');});c.action('clear',()=>{ctx.clearRect(0,0,580,200);n=0;c.status('Sketch cleared.');});
+});
+register('gesture',c=>{
+  c.html(c.card('<h3>Drag, interrupt, snap.</h3><p>Drag the card. Left and Right buttons provide the same destinations.</p><div class="drag-lane"><div class="drag-card" tabindex="0" role="slider" aria-label="Card position" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0">Field note</div></div><div class="row">'+button('Snap left','left')+button('Snap right','right')+'</div>'));
+  const node=c.find('.drag-card'),lane=c.find('.drag-lane');let state={position:0,velocity:0,target:0},raf=0,last=0,dragging=false,offset=0;
+  const max=()=>Math.max(0,lane.clientWidth-140),draw=()=>{node.style.transform=`translateX(${state.position}px)`;node.setAttribute('aria-valuenow',String(Math.round(state.position/Math.max(max(),1)*100)));};
+  const tick=now=>{state=springStep(state,(now-last)/1000);last=now;draw();if(Math.abs(state.position-state.target)>.1||Math.abs(state.velocity)>.1)raf=requestAnimationFrame(tick);};
+  const target=n=>{cancelAnimationFrame(raf);state.target=n;if(c.reduced()){state.position=n;state.velocity=0;draw();}else{last=performance.now();raf=requestAnimationFrame(tick);}c.status(n?'Snapping to the right.':'Snapping to the left.');};
+  c.action('left',()=>target(0));c.action('right',()=>target(max()));c.on('.drag-card','keydown',ev=>{if(['ArrowLeft','ArrowRight'].includes(ev.key)){ev.preventDefault();target(ev.key==='ArrowLeft'?0:max());}});
+  c.on('.drag-card','pointerdown',ev=>{cancelAnimationFrame(raf);dragging=true;offset=ev.clientX-state.position;node.setPointerCapture(ev.pointerId);});c.on('.drag-card','pointermove',ev=>{if(!dragging)return;state.position=Math.max(0,Math.min(max(),ev.clientX-offset));state.velocity=0;draw();});const release=()=>{if(!dragging)return;dragging=false;target(state.position>max()/2?max():0);};c.on('.drag-card','pointerup',release);c.on('.drag-card','pointercancel',release);c.own(()=>cancelAnimationFrame(raf));
+});
+register('reorder',c=>{
+  let items=['Water bottle','Notebook','Trail map'],dragged;
+  c.html(c.card('<h3>Packing list</h3><p>Drag an item, or use its Move up/down buttons.</p><div class="reorder-list" data-list></div>'));
+  const draw=()=>{c.find('[data-list]').innerHTML=items.map((n,i)=>`<div class="reorder-item" draggable="true" data-index="${i}"><strong>${e(n)}</strong><div class="row"><button data-move="${i}" data-delta="-1" aria-label="Move ${e(n)} up" ${i===0?'disabled':''}>↑</button><button data-move="${i}" data-delta="1" aria-label="Move ${e(n)} down" ${i===items.length-1?'disabled':''}>↓</button></div></div>`).join('');};const move=(i,j)=>{if(j<0||j>=items.length||i===j)return;const [item]=items.splice(i,1);items.splice(j,0,item);draw();c.find(`[data-index="${j}"] button:not(:disabled)`)?.focus();c.status(item+' moved to position '+(j+1)+'.');};
+  c.on('[data-list]','click',ev=>{const b=ev.target.closest('[data-move]');if(b)move(+b.dataset.move,+b.dataset.move+(+b.dataset.delta));});c.on('[data-list]','dragstart',ev=>{const n=ev.target.closest('[data-index]');dragged=+n.dataset.index;ev.dataTransfer.setData('text/plain',String(dragged));});c.on('[data-list]','dragover',ev=>ev.preventDefault());c.on('[data-list]','drop',ev=>{ev.preventDefault();const n=ev.target.closest('[data-index]');if(n&&dragged!==undefined)move(dragged,+n.dataset.index);dragged=undefined;});draw();
+});
+register('game',c=>{
+  let x=2,y=2;c.html(c.card('<h3>A small trail game</h3><p>Move the token with arrow keys or the named controls.</p><div class="game-board" tabindex="0" aria-label="Trail game. Use arrow keys."><span class="game-token">●</span></div><div class="row">'+['Left','Up','Down','Right'].map(n=>button(n,n.toLowerCase())).join('')+'</div>'));
+  const moves={left:[-1,0],right:[1,0],up:[0,-1],down:[0,1]},move=n=>{const [dx,dy]=moves[n];x=Math.max(0,Math.min(4,x+dx));y=Math.max(0,Math.min(4,y+dy));c.find('.game-token').style.left=(x*20)+'%';c.find('.game-token').style.top=(y*20)+'%';c.status(`Token at column ${x+1}, row ${y+1}.`);};Object.keys(moves).forEach(n=>c.action(n,()=>move(n)));c.on('.game-board','keydown',ev=>{const n=ev.key.replace('Arrow','').toLowerCase();if(moves[n]){ev.preventDefault();move(n);}});move('up');
+});
+register('keyboard undo virtual-keyboard',c=>{
+  let history=['Trail notes'],cursor=0;
+  c.html(c.card(`<h3>${e(c.topic.kind==='virtual-keyboard'?'Onscreen query entry':'A tiny text workspace')}</h3>${field('Document title','<input data-text value="Trail notes">')}<div class="row">${button('Save state','save','primary')}${button('Undo','undo')}${button('Redo','redo')}</div>${c.topic.kind==='virtual-keyboard'?'<div class="virtual-keys">'+'TRAIL NOTES'.split('').filter(n=>n!==' ').map(n=>button(n,'key-'+n)).join('')+button('Space','space')+button('⌫','delete')+'</div>':'<p>Keyboard commands while editing: Ctrl/⌘+S saves a state; Ctrl/⌘+Z restores the previous saved state.</p>'}`));
+  const save=()=>{history=history.slice(0,cursor+1);history.push(c.find('[data-text]').value);cursor++;c.status('Text state saved locally.');};const restore=delta=>{cursor=Math.max(0,Math.min(history.length-1,cursor+delta));c.find('[data-text]').value=history[cursor];c.status('Restored: '+history[cursor]);};c.action('save',save);c.action('undo',()=>restore(-1));c.action('redo',()=>restore(1));c.on('[data-text]','keydown',ev=>{if((ev.ctrlKey||ev.metaKey)&&['s','z'].includes(ev.key.toLowerCase())){ev.preventDefault();if(ev.key.toLowerCase()==='s')save();else restore(ev.shiftKey?1:-1);}});c.on('.virtual-keys','click',ev=>{const b=ev.target.closest('[data-action]');if(!b)return;const input=c.find('[data-text]'),a=b.dataset.action;input.value=a==='delete'?input.value.slice(0,-1):input.value+(a==='space'?' ':a.slice(4));c.status('Query: '+input.value);});
+});
+register('audio',c=>{
+  let audio,osc,toneTimer;c.html(c.card('<h3>A tone with a visible equivalent</h3><p>Sound is optional and starts only after Play. The visible status conveys the same event.</p><div class="row">'+button('Play quiet tone','play','primary')+button('Stop sound','stop')+'</div><output data-sound>Silent</output>'));
+  const stop=()=>{clearTimeout(toneTimer);try{osc?.stop();}catch{}osc=null;if(audio){void audio.close();audio=null;}};c.action('play',async()=>{stop();const AC=window.AudioContext||window.webkitAudioContext;if(!AC){c.status('Audio unavailable. Visible equivalent: task completed.');return;}const context=new AC();audio=context;try{await context.resume();}catch{if(!c.signal.aborted)c.status('Audio unavailable. Visible equivalent: task completed.');return;}if(c.signal.aborted||audio!==context)return;osc=context.createOscillator();const gain=context.createGain();gain.gain.value=.025;osc.frequency.value=440;osc.connect(gain).connect(context.destination);osc.start();c.find('[data-sound]').textContent='Task complete · optional tone playing';c.status('Task complete. Quiet tone playing for half a second.');toneTimer=c.timer(()=>{stop();c.find('[data-sound]').textContent='Task complete · silent';},500);});c.action('stop',()=>{stop();c.find('[data-sound]').textContent='Silent';c.status('Sound stopped.');});c.own(stop);
+});
+register('scroll fullscreen print web-view',c=>{
+  c.html(c.card(`<h3>Notes from the ridge</h3><div class="reading-scroll" tabindex="0" aria-label="Scrollable example article"><h4>Start with the view</h4>${Array.from({length:6},(_,i)=>`<section><h4>Section ${i+1}</h4><p>Keep a record of the details that draw your attention. A trail, a change in the light, or an idea for next weekend can become a short note.</p></section>`).join('')}</div>${c.topic.kind==='web-view'?'<iframe title="Self-contained help page" sandbox srcdoc="<h2>Export help</h2><p>Choose Markdown to keep headings and lists.</p>"></iframe>':''}${button(c.topic.action,'act')}`));
+  c.action('act',()=>{if(c.topic.kind==='fullscreen'){c.find('.panel-card').classList.toggle('reading-focus');c.status('Local distraction-free reading mode toggled. Browser fullscreen was not requested.');}else if(c.topic.kind==='print'){c.find('.panel-card').classList.toggle('print-preview');c.status('Print layout preview toggled. No print job sent.');}else{c.find('.reading-scroll').scrollTo({top:150,behavior:c.reduced()?'instant':'smooth'});c.status('Moved to the next article section.');}});
+});
+register('motion',c=>c.own(mountMotion(c.root,c.status,c.reduced,new URLSearchParams(location.search).get('motion')||'spring-retarget')));

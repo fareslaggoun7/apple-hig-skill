@@ -1,0 +1,57 @@
+/** Development-only browser checks. Requires Playwright + Chromium. */
+import fs from 'node:fs';
+import assert from 'node:assert/strict';
+import {createRequire} from 'node:module';
+const {chromium}=createRequire(import.meta.url)('playwright');
+const base=process.env.GALLERY_URL||'http://127.0.0.1:8000';
+const topics=JSON.parse(fs.readFileSync(new URL('../examples/gallery/catalog.json',import.meta.url))).topics;
+const browser=await chromium.launch({headless:true,executablePath:process.env.PLAYWRIGHT_CHROMIUM_EXECUTABLE||(fs.existsSync(chromium.executablePath())?chromium.executablePath(): '/usr/bin/chromium')});
+const failures=[],errors=[];let routes=0,actions=0;
+try{
+  for(const width of (process.argv.includes('--interactions-only')?[]:[1280,390])){
+    const page=await browser.newPage({viewport:{width,height:900},reducedMotion:'reduce'});
+    page.on('pageerror',error=>errors.push(error.message));
+    for(const topic of topics){
+      try{
+        await page.goto(`${base}/?topic=${topic.slug}`);await page.waitForFunction(()=>window.galleryReady===true,null,{timeout:10000});
+        assert.equal(await page.locator('#demo-heading').textContent(),topic.title);
+        assert.ok(await page.locator('#stage').innerText());
+        const overflow=await page.evaluate(()=>document.documentElement.scrollWidth>innerWidth);
+        assert.equal(overflow,false,`horizontal overflow ${width}`);
+        const all=await page.locator('#stage').evaluate(root=>[...root.querySelectorAll('button,input,select,textarea,summary,a')].filter(n=>!n.closest('[inert]')).length);
+        assert.ok(all>0,'no interactive control');
+        const first=page.locator('#stage button:enabled:visible').first();
+        if(await first.count()){
+          await first.click();actions++;
+          if(await page.locator('dialog[open]').count())await page.keyboard.press('Escape');
+        }
+        routes++;
+      }catch(error){failures.push(`${width} ${topic.slug}: ${error.message}`);}
+    }
+    await page.close();console.log(`Completed route sweep at ${width}px.`);
+  }
+  console.log(JSON.stringify({routes,actions,routeFailures:failures},null,2));
+  assert.equal(failures.length,0,failures.join('\n'));
+  const page=await browser.newPage({viewport:{width:1280,height:900}});
+  page.on('pageerror',error=>errors.push(error.message));
+  const open=async topic=>{await page.goto(`${base}/?topic=${topic}`);await page.waitForFunction(()=>window.galleryReady);};
+  await open('sheets');await page.getByRole('button',{name:'Edit note',exact:true}).click();await page.locator('dialog input').fill('Revised trail');await page.getByRole('button',{name:'Save note',exact:true}).click();await page.waitForFunction(()=>document.querySelector('[data-note]').textContent==='Revised trail');assert.equal(await page.locator('[data-note]').textContent(),'Revised trail');
+  await page.getByRole('button',{name:'Edit note',exact:true}).click();await page.locator('dialog input').fill('Discard this');await page.keyboard.press('Escape');await page.waitForFunction(()=>!document.querySelector('#stage dialog'));assert.equal(await page.locator('[data-note]').textContent(),'Revised trail');assert.equal(await page.evaluate(()=>document.activeElement.textContent),'Edit note');
+  await open('text-fields');await page.locator('#stage form button[type=submit]').click();assert.equal(await page.locator('[name=entry]').getAttribute('aria-invalid'),'true');await page.locator('[name=entry]').fill('Read daily');await page.locator('#stage form button[type=submit]').click();assert.match(await page.locator('#result').textContent(),/Saved/);
+  await open('searching');await page.locator('[data-search]').fill('not-present');assert.match(await page.locator('[data-items]').innerText(),/No matching/);await page.getByRole('button',{name:'Clear search'}).click();assert.equal(await page.locator('[data-item]').count(),3);
+  await open('tab-bars');await page.locator('[role=tab]').first().focus();await page.keyboard.press('ArrowRight');assert.equal(await page.locator('[role=tab][aria-selected=true]').textContent(),'Favorites');
+  await open('drag-and-drop');await page.getByRole('button',{name:'Move Water bottle down'}).click();assert.match(await page.locator('.reorder-item').first().textContent(),/Notebook/);
+  await open('loading');await page.locator('[data-action=start]').click();await page.waitForFunction(()=>document.querySelector('progress').value===100);assert.match(await page.locator('[data-content]').textContent(),/Trail notes/);await page.locator('[data-action=error]').click();assert.match(await page.locator('[data-description]').textContent(),/Could not/);await page.locator('[data-action=start]').click();await page.locator('[data-action=cancel]').click();const cancelled=await page.locator('progress').getAttribute('value');await page.waitForTimeout(250);assert.equal(await page.locator('progress').getAttribute('value'),cancelled);
+  await open('popovers');await page.locator('#command-anchor').click();assert.equal(await page.locator('[popover]').evaluate(n=>n.matches(':popover-open')),true);await page.keyboard.press('Escape');assert.equal(await page.locator('[popover]').evaluate(n=>n.matches(':popover-open')),false);
+  await open('motion');for(const [id] of (await import('../examples/gallery/motion.mjs')).MOTIONS){await page.locator(`[data-motion="${id}"]`).click();await page.locator('[data-play]').click();await page.waitForTimeout(60);await page.locator('[data-pause]').click();assert.match(await page.locator('#result').textContent(),/paused/);}
+  await page.locator('[data-motion=spring-retarget]').click();await page.locator('[data-target="1"]').click();await page.waitForTimeout(80);await page.evaluate(()=>{document.querySelector('[data-target="0"]').addEventListener('click',()=>{window.retargetBefore=document.querySelector('.motion-card').style.transform;queueMicrotask(()=>window.retargetAfter=document.querySelector('.motion-card').style.transform);},{capture:true,once:true});});await page.locator('[data-target="0"]').click();assert.equal(await page.evaluate(()=>window.retargetBefore),await page.evaluate(()=>window.retargetAfter),'spring retarget must preserve the immediate position');
+  await page.locator('#reduce-motion').check();await page.locator('[data-target="1"]').click();await page.waitForTimeout(60);assert.equal(await page.locator('.motion-card').evaluate(n=>n.style.transform),'translateX(0px)');
+  await open('widgets');await page.locator('#appearance').click();assert.equal(await page.locator('body').evaluate(n=>n.classList.contains('dark')),true);
+  await open('loading');await page.locator('[data-action=start]').click();await page.locator('#topic-list [data-topic=buttons]').click();await page.waitForTimeout(300);assert.equal(await page.locator('body').getAttribute('data-topic'),'buttons');assert.match(await page.locator('#result').textContent(),/Try the controls/);assert.equal(await page.locator('#stage progress').count(),0);
+  await open('motion');await page.locator('[data-play]').click();await page.locator('#topic-list [data-topic=buttons]').click();await page.waitForTimeout(100);assert.match(await page.locator('#result').textContent(),/Try the controls/);
+  await open('playing-audio');await page.locator('[data-action=play]').click();await page.locator('#topic-list [data-topic=buttons]').click();await page.waitForTimeout(550);assert.match(await page.locator('#result').textContent(),/Try the controls/);
+  await page.close();
+  if(errors.length)failures.push(...errors);
+  console.log(JSON.stringify({routes,actions,failures},null,2));
+  assert.equal(failures.length,0,failures.join('\n'));
+}finally{await browser.close();}

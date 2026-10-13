@@ -3,6 +3,7 @@ on:
   push:
   pull_request:
   workflow_dispatch:
+  workflow_call:
 permissions:
   contents: read
 jobs:
@@ -17,6 +18,32 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: ${{ matrix.python }}
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
       - run: python -m unittest discover -s tests -v
       - run: python skills/apple-hig/scripts/hig.py audit
+      - run: python tools/build_gallery_catalog.py --check
+      - run: node --test tests/gallery.test.mjs
       - run: python tools/package.py --check
+      - run: python tools/package_gallery.py --check
+  browser:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - run: npm install --prefix work/browser-tools --no-audit --no-fund --ignore-scripts playwright@1.56.1
+      - run: node work/browser-tools/node_modules/playwright/cli.js install --with-deps chromium
+      - name: Verify every route and representative interactions
+        env:
+          NODE_PATH: ${{ github.workspace }}/work/browser-tools/node_modules
+        run: |
+          python -m http.server 8000 --directory examples/gallery --bind 127.0.0.1 > /tmp/gallery.log 2>&1 &
+          GALLERY_SERVER_PID=$!
+          trap 'kill "$GALLERY_SERVER_PID"' EXIT
+          node tools/check_gallery_browser.mjs

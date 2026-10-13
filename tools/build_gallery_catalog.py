@@ -1,5 +1,6 @@
 #!/usr/bin/env python3
 """Map every indexed HIG topic to an explicit runnable educational example."""
+import argparse
 import json
 from pathlib import Path
 ROOT=Path(__file__).resolve().parents[1]
@@ -164,9 +165,9 @@ workouts|workout|Start, pause, and end a fictional walking session|Start workout
 writing|writing|Replace vague UI messages with concrete example copy|Compare wording
 '''
 
-SIMULATED={'hardware','payment','integration','spatial','car','verification','health','care','home','sync','assistant','audio-match','pass','complication','watch-screen','rings','live'}
+SIMULATED={'hardware','payment','integration','spatial','car','verification','health','care','home','sync','assistant','audio-match','pass','complication','watch-screen','rings','live','survey','accounts','always-on'}
 
-def build():
+def build(check=False):
     source=json.loads((ROOT/'skills/apple-hig/references/catalog.json').read_text(encoding='utf-8'))
     cases={}
     for line in CASES.strip().splitlines():
@@ -181,14 +182,33 @@ def build():
         else:
             if slug not in cases:raise ValueError('Topic needs an explicit example: '+slug)
             case=cases.pop(slug)
+        card=(ROOT/'skills/apple-hig'/page['guidance_file']).read_text(encoding='utf-8').split('<!-- topic:'+slug+' -->',1)[1].split('<!-- topic:',1)[0].strip()
+        guidance=card.split('\n\n')[1]
         anchors=page['evidence_sections'];anchor=next((a for a in anchors if a!='Overview'),None)
         result.append({'slug':slug,'title':page['title'],'category':page['category'],'platforms':page['supported_platforms'],
-            **case,'mode':'simulation' if case['kind'] in SIMULATED else 'web-adaptation',
+            **case,'guidance':guidance,'mode':'simulation' if case['kind'] in SIMULATED or slug=='shareplay' else 'web-adaptation',
             'source':page['url']+('#'+anchor if anchor else ''),'children':[s.split('/')[-1] for s in page['topic_children']]})
     if cases:raise ValueError('Unmatched examples: '+str(sorted(cases)))
     output={'version':'1.1.0','snapshot':'2026-10-13','scope':'Original runnable web adaptations and explicitly labeled simulations; no native SDK or device conformance claim.','topics':result}
-    destination=ROOT/'examples/gallery/catalog.json';destination.parent.mkdir(parents=True,exist_ok=True)
-    destination.write_text(json.dumps(output,ensure_ascii=False,indent=2)+'\n',encoding='utf-8',newline='\n')
+    destination=ROOT/'examples/gallery/catalog.json'
+    files={destination:json.dumps(output,ensure_ascii=False,indent=2)+'\n'}
+    index=['# All 173 topic examples', '', 'Every row links to a runnable browser task, its actual rendered preview, and the applicable Apple source. Collection topics open a topic browser. SDK and device examples are explicitly labeled simulations.', '', 'Run the gallery using [these instructions](README.md). Serve the gallery locally to run these HTML routes; all previews are included in the repository.', '']
+    for category in ['getting-started','foundations','patterns','components','inputs','technologies']:
+        index += ['## '+category.replace('-',' ').title(), '', '| Topic and runnable route | Concrete task | Scope | Picture | Apple source |', '| --- | --- | --- | --- | --- |']
+        for t in result:
+            if t['category']==category:
+                index.append(f"| [{t['title']}](index.html?topic={t['slug']}) | {t['scenario']} | {t['mode']} | [Preview](previews/{t['slug']}.webp) | [Source]({t['source']}) |")
+        index.append('')
+    files[ROOT/'examples/gallery/TOPICS.md']='\n'.join(index)
+    for path,content in files.items():
+        if check:
+            if not path.exists() or path.read_text(encoding='utf-8')!=content:raise ValueError('Generated gallery file is stale: '+str(path))
+        else:
+            path.parent.mkdir(parents=True,exist_ok=True)
+            path.write_text(content,encoding='utf-8',newline='\n')
     print('Mapped '+str(len(result))+' topics to '+str(len({r['kind'] for r in result}))+' explicit example kinds.')
 
-if __name__=='__main__':build()
+if __name__=='__main__':
+    parser=argparse.ArgumentParser(description=__doc__)
+    parser.add_argument('--check',action='store_true')
+    build(parser.parse_args().check)

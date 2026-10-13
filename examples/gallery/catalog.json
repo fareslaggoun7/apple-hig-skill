@@ -11,6 +11,7 @@
       "kind": "topic-browser",
       "scenario": "Explore the human interface guidelines example collection",
       "action": "Choose example",
+      "guidance": "Use the six topic families to select the platform, underlying design foundations, task patterns, interface components, input methods, and system integrations relevant to the work. Consult the specific official page for detailed guidance.",
       "mode": "web-adaptation",
       "source": "https://developer.apple.com/design/human-interface-guidelines",
       "children": [
@@ -37,6 +38,7 @@
       "kind": "accessibility",
       "scenario": "Read a travel plan with adaptable text",
       "action": "Enlarge text",
+      "guidance": "Audit accessibility throughout design and support more than one sensory or physical route to important information and actions. Ideally allow text enlargement of at least 200 percent, or 140 percent on watchOS. Pair audio with captions or other suitable alternatives; provide alternatives to gestures and verify assistive-technology operation. Prefer explicit dismissal over timed disappearance, respect Reduce Motion, and preserve a simple, predictable interface.",
       "mode": "web-adaptation",
       "source": "https://developer.apple.com/design/human-interface-guidelines/accessibility#Vision",
       "children": []
@@ -52,6 +54,7 @@
       "kind": "hardware",
       "scenario": "Choose a quick action for a hiking session",
       "action": "Start waypoint",
+      "guidance": "Expose frequently useful, essential functions through App Shortcuts for the Action button; a shortcut that merely opens the app is unnecessary. Use present-tense, verb-first labels with title-style capitalization and no more than three words. Prefer system configuration guidance. On iOS, let actions work through lightweight experiences where possible. On Apple Watch Ultra, a secondary press should logically support the chosen activity rather than unexpectedly end it.",
       "mode": "simulation",
       "source": "https://developer.apple.com/design/human-interface-guidelines/action-button#Best-practices",
       "children": []
@@ -70,6 +73,7 @@
       "kind": "action-sheet",
       "scenario": "Choose what to do with a field recording",
       "action": "Choose action",
+      "guidance": "Offer an action sheet for clarifying choices after someone deliberately starts an action, and keep these interruptions infrequent. Keep titles brief, add explanatory messages only when necessary, and visibly distinguish destructive options. Provide cancellation when needed. On iPhone and iPad, avoid scrolling choices; on Apple Watch, aim for no more than three choices plus Cancel.",
       "mode": "web-adaptation",
       "source": "https://developer.apple.com/design/human-interface-guidelines/action-sheets#Best-practices",
       "children": []
@@ -86,6 +90,7 @@
       "kind": "rings",
       "scenario": "Explore a fictional person's daily activity",
       "action": "Add activity",
+      "guidance": "Include Activity rings only when personal activity progress fits the app’s purpose. Preserve their Move, Exercise, and Stand meanings and represent one individual. Retain ring colors and opacity, display them against black, and preserve outer margins. Adapt the surrounding interface to the rings rather than restyling or repurposing these progress graphics.",
       "mode": "simulation",
       "source": "https://developer.apple.com/design/human-interface-guidelines/activity-rings#Best-practices",
       "children": []
@@ -102,6 +107,7 @@
       "kind": "share",
       "scenario": "Share a weekend itinerary",
       "action": "Copy itinerary",
+      "guidance": "Use the activity view to expose sharing and other tasks relevant to the current content. Add custom activities when they offer something beyond the common actions already present. Give each custom action a concise, informative name and consider a recognizable symbol. Extensions can make custom sharing or actions available from other apps.",
       "mode": "web-adaptation",
       "source": "https://developer.apple.com/design/human-interface-guidelines/activity-views#Best-practices",
       "children": []
@@ -121,6 +127,7 @@
       "kind": "integration",
       "scenario": "Choose a playback destination for a lecture",
       "action": "Connect display",
+      "guidance": "Prefer the built-in player and supply the available resolution range so playback can suit the destination. Support streaming, mirroring, and remote playback commands. Keep explicitly streamed media playing when the source app backgrounds or the device locks, while avoiding automatic mirroring that could expose unrelated content. Do not take over another app's playback merely to show incidental or automatically playing video.",
       "mode": "simulation",
       "source": "https://developer.apple.com/design/human-interface-guidelines/airplay#Best-practices",
       "children": []
@@ -140,6 +147,7 @@
       "kind": "dialog",
       "scenario": "Confirm removal of an unsaved draft",
       "action": "Review removal",
+      "guidance": "Reserve alerts for immediately important information, problems, or consequential decisions. Avoid routine informational announcements, startup interruptions, and confirmations for ordinary actions that people can undo. On iPhone and iPad, use an action sheet when an intentional action needs additional choices. Respect each platform’s alert presentation rather than assuming one shared visual treatment.",
       "mode": "web-adaptation",
       "source": "https://developer.apple.com/design/human-interface-guidelines/alerts#Best-practices",
       "children": []
@@ -155,7 +163,8 @@
       "kind": "always-on",
       "scenario": "Keep a fictional timer glanceable",
       "action": "Dim display",
-      "mode": "web-adaptation",
+      "guidance": "For supported iPhone and Apple Watch displays, make the resting interface useful at a glance while concealing sensitive information. Preserve the spatial arrangement, dim secondary details, and keep essential information readable. Prefer subdued, infrequent changes, and let ongoing animation settle smoothly. When interaction becomes unavailable, visually disable its control rather than abruptly removing it.",
+      "mode": "simulation",
       "source": "https://developer.apple.com/design/human-interface-guidelines/always-on#Best-practices",
       "children": []
     },
@@ -170,6 +179,7 @@
       "kind": "integration",
       "scenario": "Complete a small parking-meter task",
       "action": "Begin parking",
+      "guidance": "On iOS and iPadOS, let the App Clip finish its focused task or demonstration without requiring the full app. Keep navigation linear, launch into the relevant context, include necessary assets, and remove unnecessary code and steps. Use native experiences with practical value rather than advertising. Make App Clip Codes discoverable with clear instructions and verify printed scanning quality. If using temporary notifications, respect the documented window of up to 8 hours after launch.",
       "mode": "simulation",
       "source": "https://developer.apple.com/design/human-interface-guidelines/app-clips#Designing-your-App-Clip",
       "children": []
@@ -189,6 +199,7 @@
       "kind": "app-icon",
       "scenario": "Preview an original notebook app icon",
       "action": "Change variant",
+      "guidance": "Build a simple, recognizable identity that stays consistent across supported platforms and appearance variants. Prefer layered artwork with clean foreground edges and a full-bleed, opaque background; leave masking and dynamic lighting effects to the system. Supply unmasked square layers except for rectangular tvOS artwork. Keep essential content centered and test effects and cropping with platform tools. Use text only when essential to the brand or experience.",
       "mode": "web-adaptation",
       "source": "https://developer.apple.com/design/human-interface-guidelines/app-icons#Layer-design",
       "children": []
@@ -206,6 +217,7 @@
       "kind": "assistant",
       "scenario": "Run a fictional shortcut to capture a note",
       "action": "Capture note",
+      "guidance": "Expose frequent, valuable tasks through App Shortcuts, especially distinctive functionality that app schemas do not already cover. Allow useful parameter choices and clarify incomplete requests. Choose snippets for brief information or confirmation and Live Activities for changing information relevant over time. Make spoken responses sufficiently informative when no screen is available.",
       "mode": "simulation",
       "source": "https://developer.apple.com/design/human-interface-guidelines/app-shortcuts#Best-practices",
       "children": []
@@ -225,6 +237,7 @@
       "kind": "payment",
       "scenario": "Preview a subscription choice without making a purchase",
       "action": "Preview plan",
+      "guidance": "Use in-app purchases for digital content and services, choosing the purchase type that matches whether access is consumed, permanent, or subscription based. Explain subscription value and terms clearly during signup. Offer convenient purchase assistance and the system refund flow when appropriate. For subscriptions, provide a place to change or cancel the plan inside the app.",
       "mode": "simulation",
       "source": "https://developer.apple.com/design/human-interface-guidelines/apple-in-app-purchase#Auto-renewable-subscriptions",
       "children": []
@@ -243,6 +256,7 @@
       "kind": "payment",
       "scenario": "Review a fictional bakery order without charging",
       "action": "Preview checkout",
+      "guidance": "Use Apple Pay for eligible physical purchases, services, and donations. Offer it where supported; if you query whether an active Wallet card exists, make it the primary payment choice wherever those APIs are used. Keep checkout integrated and create payment buttons with Apple's APIs. Give actionable error guidance, and cancel an in-progress payment when cancellation or timeout interrupts the flow.",
       "mode": "simulation",
       "source": "https://developer.apple.com/design/human-interface-guidelines/apple-pay#Offering-Apple-Pay",
       "children": []
@@ -257,6 +271,7 @@
       "kind": "drawing",
       "scenario": "Sketch a trail with pointer or keyboard controls",
       "action": "Clear sketch",
+      "guidance": "Let marking begin immediately when Apple Pencil touches the display, and make controls usable without forcing a switch to a finger. Use hover to preview outcomes rather than trigger actions. Make squeeze actions quick, nondestructive, and reversible, placing revealed UI close to the Pencil tip. With Scribble, keep the writing field stationary, suppress distracting suggestions and autoscrolling, and provide adequate writing space.",
       "mode": "web-adaptation",
       "source": "https://developer.apple.com/design/human-interface-guidelines/apple-pencil-and-scribble#Best-practices",
       "children": []
@@ -273,6 +288,7 @@
       "kind": "spatial",
       "scenario": "Place a virtual chair in an illustrated room",
       "action": "Place chair",
+      "guidance": "For iOS and iPadOS AR, offer capabilities only on compatible devices and give the scene most of the display. Make realistic objects fit detected surfaces, scale, and lighting, with scene updates 60 times per second. Consider built-in coaching for initialization and recovery after interruptions. Offer an easy restart when placement fails. Consult the separate visionOS section before applying handheld guidance to spatial experiences.",
       "mode": "simulation",
       "source": "https://developer.apple.com/design/human-interface-guidelines/augmented-reality#Best-practices",
       "children": []
@@ -290,6 +306,7 @@
       "kind": "boxes",
       "scenario": "Group related export settings",
       "action": "Apply settings",
+      "guidance": "Use a box to make a logically related group distinct within a larger view. Prefer a modest footprint and use spacing and alignment to express subgroups rather than relying on extra containers. Add a short descriptive title only when it clarifies the contents, and account for platform differences in background treatment and title placement.",
       "mode": "web-adaptation",
       "source": "https://developer.apple.com/design/human-interface-guidelines/boxes#Best-practices",
       "children": []
@@ -309,6 +326,7 @@
       "kind": "branding",
       "scenario": "Compare a recognizable original brand treatment",
       "action": "Switch accent",
+      "guidance": "Express identity through useful content and thoughtful customization of familiar components. Preserve expected sizing, placement, navigation, and behavior so the interface remains approachable. Keep branding unobtrusive and avoid repeatedly spending content space on a logo. A launch screen is too brief to communicate branding effectively; an appropriate welcome or onboarding experience can serve that purpose. Follow the referenced Apple trademark guidance when choosing names and imagery.",
       "mode": "web-adaptation",
       "source": "https://developer.apple.com/design/human-interface-guidelines/branding#Best-practices",
       "children": []
@@ -328,6 +346,7 @@
       "kind": "buttons",
       "scenario": "Save a field note with distinct action styles",
       "action": "Save note",
+      "guidance": "Use buttons for immediate actions and make their purpose recognizable through clear text or familiar imagery. Prefer system styles for built-in states and adaptation; give custom buttons a pressed appearance. Emphasize the likely action through visual style rather than a larger size. Assign roles deliberately: this page advises against giving destructive buttons the primary role. Keep labels distinguishable from the content behind them.",
       "mode": "web-adaptation",
       "source": "https://developer.apple.com/design/human-interface-guidelines/buttons#Best-practices",
       "children": []
@@ -342,6 +361,7 @@
       "kind": "hardware",
       "scenario": "Explore camera adjustments without camera access",
       "action": "Change exposure",
+      "guidance": "Choose Camera Control sliders for continuous values and pickers for discrete options. Represent functions with supported SF Symbols, keep names short, and attach meaningful units to slider values. Define prominent values for commonly chosen settings. Keep app UI outside the overlay area in both orientations and avoid duplicating overlay controls. Enable or disable controls for the current camera mode; the documented overlay does not permit adding or removing controls at runtime.",
       "mode": "simulation",
       "source": "https://developer.apple.com/design/human-interface-guidelines/camera-control#Anatomy",
       "children": []
@@ -357,6 +377,7 @@
       "kind": "care",
       "scenario": "Record a fictional care-task check-in",
       "action": "Mark complete",
+      "guidance": "Build care-plan experiences around appropriate task, chart, and contact views, using progress information that helps people follow their plan and reach their care team. Protect sensitive records and provide an understandable privacy policy. Request access to health, motion, or photo information in the relevant context and with permission. Consider ResearchKit's consent and survey capabilities when they fit the care experience.",
       "mode": "simulation",
       "source": "https://developer.apple.com/design/human-interface-guidelines/carekit#CareKit-views",
       "children": []
@@ -371,6 +392,7 @@
       "kind": "car",
       "scenario": "Preview a simplified driving destination choice",
       "action": "Select destination",
+      "guidance": "Design for drivers completing brief tasks with little interaction. Use the system templates suited to your app category, letting CarPlay handle display adaptation and vehicle input. Require any iPhone setup before driving; the in-car experience must work with a locked or inaccessible iPhone. Avoid demanding phone input or blocking CarPlay while a phone-side issue waits to be resolved.",
       "mode": "simulation",
       "source": "https://developer.apple.com/design/human-interface-guidelines/carplay#iPhone-interactions",
       "children": []
@@ -390,6 +412,7 @@
       "kind": "chart",
       "scenario": "Inspect weekly reading time with labels",
       "action": "Change period",
+      "guidance": "Choose a chart when it reveals something meaningful about data, such as a trend or comparison. For simply providing values, a searchable or sortable table may serve better. Favor familiar chart forms and a clear message. Keep the initial view manageable, and let people reveal additional data or functionality when they want it rather than packing everything into one graphic.",
       "mode": "web-adaptation",
       "source": "https://developer.apple.com/design/human-interface-guidelines/charting-data#Best-practices",
       "children": []
@@ -409,6 +432,7 @@
       "kind": "chart",
       "scenario": "Compare labeled fictional energy totals",
       "action": "Show detail",
+      "guidance": "Choose chart marks according to the question the data should answer, such as comparing categories or revealing change over time. Establish a clear visual hierarchy and keep essential insights visible without requiring interaction. Supplement color with other distinctions. Give important or interactive chart elements meaningful accessibility labels and consider Audio Graphs for VoiceOver users.",
       "mode": "web-adaptation",
       "source": "https://developer.apple.com/design/human-interface-guidelines/charts#Marks",
       "children": []
@@ -427,6 +451,7 @@
       "kind": "collaboration",
       "scenario": "Invite an example collaborator to a draft",
       "action": "Preview invitation",
+      "guidance": "Put sharing within easy reach and use system sharing interfaces where suitable. Describe access and editing permissions briefly, offering a small, clearly grouped set of choices. Distinguish sending a copy from collaborative access according to your infrastructure. Custom collaboration needs universal-link support for the described Messages integration. In visionOS, account for shared-window streaming pausing when an app enters a Full Space.",
       "mode": "web-adaptation",
       "source": "https://developer.apple.com/design/human-interface-guidelines/collaboration-and-sharing#Best-practices",
       "children": []
@@ -445,6 +470,7 @@
       "kind": "collection",
       "scenario": "Browse a compact collection of field notes",
       "action": "Open note",
+      "guidance": "Favor collections for ordered, visually rich content and consider a list or table for predominantly textual items. Start with familiar row or grid arrangements and make selecting an item straightforward. Add custom interactions only when needed and consider animation to explain insertion, deletion, or reordering. Treat dynamic layout changes cautiously on iPhone and iPad.",
       "mode": "web-adaptation",
       "source": "https://developer.apple.com/design/human-interface-guidelines/collections#Best-practices",
       "children": []
@@ -464,6 +490,7 @@
       "kind": "palette",
       "scenario": "Compare semantic colors in a small dashboard",
       "action": "Change palette",
+      "guidance": "Assign color meanings consistently and provide another cue for information conveyed by color. Prefer adaptive system colors; custom colors need light, dark, and increased-contrast variants, including when Liquid Glass must adapt over a single-appearance app. Apply color sparingly to glass, reserving strong emphasis for meaningful status or primary actions. Include image color profiles and test real devices, lighting, appearance changes, and surrounding content rather than judging a static swatch alone.",
       "mode": "web-adaptation",
       "source": "https://developer.apple.com/design/human-interface-guidelines/color#Best-practices",
       "children": []
@@ -481,6 +508,7 @@
       "kind": "color-well",
       "scenario": "Choose an annotation color",
       "action": "Apply color",
+      "guidance": "Use a color well when people need to adjust the color of an onscreen element, and consider the system picker to provide familiar selection behavior. On Mac, preserve the active well’s highlighted feedback and the expected ability to drag colors among wells and from the picker, rather than treating the component as a static swatch.",
       "mode": "web-adaptation",
       "source": "https://developer.apple.com/design/human-interface-guidelines/color-wells#Best-practices",
       "children": []
@@ -495,6 +523,7 @@
       "kind": "columns",
       "scenario": "Navigate a small project folder hierarchy",
       "action": "Open folder",
+      "guidance": "Consider a column view for a deep hierarchy that people traverse repeatedly when table sorting is unnecessary. Begin with the hierarchy’s root, let people adjust column widths, and consider showing details when the selected item has no children. For hierarchical content on iPad or Vision Pro, consider a split view instead.",
       "mode": "web-adaptation",
       "source": "https://developer.apple.com/design/human-interface-guidelines/column-views#Best-practices",
       "children": []
@@ -509,6 +538,7 @@
       "kind": "combo",
       "scenario": "Choose or enter a document category",
       "action": "Apply category",
+      "guidance": "Use a combo box to combine editable text entry with a list of suggested choices. Start from a meaningful listed value, explain the expected kind of input with an introductory label, and keep suggestions relevant. Ensure the text field is wide enough for the listed items so choices remain understandable when selected.",
       "mode": "web-adaptation",
       "source": "https://developer.apple.com/design/human-interface-guidelines/combo-boxes#Best-practices",
       "children": []
@@ -523,6 +553,7 @@
       "kind": "complication",
       "scenario": "Preview a watch-sized departure countdown",
       "action": "Change value",
+      "guidance": "Choose essential, changing information that people benefit from seeing on their watch face. When possible, support every complication family and consider multiple useful variants. Give different complications distinct destinations in the app. Plan updates around usefulness and privacy, and select visual forms such as rings or gauges according to the data’s meaning.",
       "mode": "simulation",
       "source": "https://developer.apple.com/design/human-interface-guidelines/complications#Best-practices",
       "children": []
@@ -535,6 +566,7 @@
       "kind": "topic-browser",
       "scenario": "Explore the components example collection",
       "action": "Choose example",
+      "guidance": "This collection organizes system component guidance by content, organization, actions, navigation, presentation, input, status, and system experiences, emphasizing familiarity and consistency.",
       "mode": "web-adaptation",
       "source": "https://developer.apple.com/design/human-interface-guidelines/components",
       "children": [
@@ -556,6 +588,7 @@
       "kind": "topic-browser",
       "scenario": "Explore the content example collection",
       "action": "Choose example",
+      "guidance": "This collection links to guidance for presenting charts, images, styled text, and embedded web content; consult the individual pages for component decisions.",
       "mode": "web-adaptation",
       "source": "https://developer.apple.com/design/human-interface-guidelines/content",
       "children": [
@@ -579,6 +612,7 @@
       "kind": "context-menu",
       "scenario": "Open contextual actions for a photograph",
       "action": "Show actions",
+      "guidance": "Keep context menus short and directly relevant to the selected item, while also exposing their commands through the main interface. Support them consistently, hide unavailable entries, and limit submenu depth. On iPhone and iPad, choose either an edit menu or a context menu for an item. Consider context menus for frequent functionality in visionOS.",
       "mode": "web-adaptation",
       "source": "https://developer.apple.com/design/human-interface-guidelines/context-menus#Best-practices",
       "children": []
@@ -595,6 +629,7 @@
       "kind": "controls",
       "scenario": "Adjust a compact set of workspace preferences",
       "action": "Reset controls",
+      "guidance": "Offer system quick-access controls for valuable actions people can perform without opening the app. Use a descriptive symbol, meaningful title and state, update after relevant events, and animate symbols to communicate changes. For a locked-device camera experience, maintain familiar camera UI; tasks beyond capture require authentication and unlocking.",
       "mode": "web-adaptation",
       "source": "https://developer.apple.com/design/human-interface-guidelines/controls#Best-practices",
       "children": []
@@ -612,6 +647,7 @@
       "kind": "appearance",
       "scenario": "Compare a reading card in light and dark",
       "action": "Switch appearance",
+      "guidance": "Follow the system appearance preference and generally avoid an independent app appearance switch. Use adaptive semantic colors and system text views; Dark Mode colors are not a simple inversion. Test contrast with Increase Contrast and Reduce Transparency, separately and together, and check full-color imagery in both appearances. Reuse assets that work in both modes, supplying variants where needed. Permanently dark presentation is a rare, context-dependent option for immersive media.",
       "mode": "web-adaptation",
       "source": "https://developer.apple.com/design/human-interface-guidelines/dark-mode#Best-practices",
       "children": []
@@ -624,6 +660,7 @@
       "kind": "principles",
       "scenario": "Refine a focused note-taking task",
       "action": "Choose principle",
+      "guidance": "Use the product's purpose to prioritize the features people need and evaluate whether each design decision serves them. Preserve agency through direct access, escape from necessary guided flows, and recovery without losing work. Design inclusively from the beginning, preserve context across configurations, and consider multiple input methods. Prototype, test in real settings, discard ineffective approaches, and keep refining the experience as platform capabilities evolve.",
       "mode": "web-adaptation",
       "source": "https://developer.apple.com/design/human-interface-guidelines/design-principles#Purpose",
       "children": []
@@ -636,6 +673,7 @@
       "kind": "game",
       "scenario": "Move a token through a keyboard-friendly game",
       "action": "Move token",
+      "guidance": "Provide useful defaults and playable content promptly, downloading additional content in the background. Teach mechanics through play and request sensitive access in the scenario that needs it. Adapt menus and artwork to supported displays and safe areas, checking text legibility and control usability on each platform. Support familiar platform input alongside controllers where possible, and let players personalize text, control mappings, motion, sound, and difficulty-related accommodations.",
       "mode": "web-adaptation",
       "source": "https://developer.apple.com/design/human-interface-guidelines/designing-for-games#Jump-into-gameplay",
       "children": []
@@ -648,6 +686,7 @@
       "kind": "phone-screen",
       "scenario": "Browse a fictional phone reading list",
       "action": "Open article",
+      "guidance": "Prioritize primary content and tasks while keeping secondary actions discoverable with little interaction. Adapt to orientation, Dynamic Type, and appearance changes. Place frequently needed controls where handheld use is comfortable, and preserve expected swipe navigation and list actions. Where permission allows, use platform capabilities to reduce manual entry and improve tasks such as payment, authentication, or location-based activity. Design for both brief visits and longer sessions.",
       "mode": "web-adaptation",
       "source": "https://developer.apple.com/design/human-interface-guidelines/designing-for-ios#Best-practices",
       "children": []
@@ -660,6 +699,7 @@
       "kind": "tablet-screen",
       "scenario": "Edit a note beside its collection",
       "action": "Choose collection",
+      "guidance": "Use the larger display to elevate content and reduce unnecessary modal interfaces and full-screen transitions. Choose density and control size with viewing distance and input mode in mind. Support fluid combinations of touch, keyboard, trackpad, and Apple Pencil rather than treating them as isolated experiences. Adapt to orientation, multitasking, text-size and appearance changes, and consider inter-app workflows such as drag and drop and the experience of running on macOS.",
       "mode": "web-adaptation",
       "source": "https://developer.apple.com/design/human-interface-guidelines/designing-for-ipados#Best-practices",
       "children": []
@@ -672,6 +712,7 @@
       "kind": "adaptive-screen",
       "scenario": "Compare compact and expanded reading layouts",
       "action": "Change layout",
+      "guidance": "Build a resizable iPhone layout using size classes, margins, safe areas, and reserved regions instead of display-specific widths. Keep functionality, state, hierarchy, and controls familiar as displays and poses change; make only the adjustments needed around the fold and cameras. Prefer adapting system split views. Follow the standard vertical placement and grouping of bars, prioritize frequently used actions during overflow, and provide titles alongside toolbar symbols.",
       "mode": "web-adaptation",
       "source": "https://developer.apple.com/design/human-interface-guidelines/designing-for-iphone-duo#Best-practices",
       "children": []
@@ -684,6 +725,7 @@
       "kind": "window",
       "scenario": "Work with a document window and command strip",
       "action": "Open inspector",
+      "guidance": "Use large displays to reduce nesting and unnecessary modality while keeping information comfortable to read. Let people move, resize, hide, and arrange windows, and support full-screen work. Make needed commands available through the menu bar, provide precise pointer interactions and keyboard shortcuts, and support keyboard-only workflows. Offer useful personalization of toolbars, views, colors, and fonts, and handle frequent switching between active and inactive apps gracefully.",
       "mode": "web-adaptation",
       "source": "https://developer.apple.com/design/human-interface-guidelines/designing-for-macos#Best-practices",
       "children": []
@@ -696,6 +738,7 @@
       "kind": "tv-screen",
       "scenario": "Choose a documentary with visible focus",
       "action": "Select film",
+      "guidance": "Design artwork, text, animation, and audio for a cinematic experience that remains understandable from across the room. Use familiar Siri Remote gestures and the tvOS focus system so people can track their position and available actions. Account for long viewing sessions and picture-in-picture use. Make shared sign-in easy and infrequent, and switch profiles appropriately when the current viewer changes to support a shared household device.",
       "mode": "web-adaptation",
       "source": "https://developer.apple.com/design/human-interface-guidelines/designing-for-tvos#Best-practices",
       "children": []
@@ -708,6 +751,7 @@
       "kind": "spatial",
       "scenario": "Explore a calm spatial planning board",
       "action": "Change depth",
+      "guidance": "Choose the minimum immersion that benefits each meaningful moment; prefer standard windows for familiar, contained tasks. Keep important content comfortably in view, avoid overwhelming motion, and prioritize indirect gestures so hands can rest. Reserve direct manipulation for reachable content and short interactions. Integrate space, passthrough, and Spatial Audio purposefully, support accessibility technologies, and consider shared activities through SharePlay when collaboration enhances the experience.",
       "mode": "simulation",
       "source": "https://developer.apple.com/design/human-interface-guidelines/designing-for-visionos#Best-practices",
       "children": []
@@ -720,6 +764,7 @@
       "kind": "watch-screen",
       "scenario": "Complete a glanceable timer task",
       "action": "Start timer",
+      "guidance": "Make interactions brief, glanceable, and focused, preferably delivering useful information and a targeted action on one screen. Keep navigation shallow and support Digital Crown navigation. Provide timely, actionable content through complications and notifications, recognizing these surfaces may be used more often than the app itself. Use backgrounds and materials to communicate context, and ensure the app offers useful details and functionality independently of those related surfaces.",
       "mode": "simulation",
       "source": "https://developer.apple.com/design/human-interface-guidelines/designing-for-watchos#Best-practices",
       "children": []
@@ -734,6 +779,7 @@
       "kind": "digit-entry",
       "scenario": "Enter a fictional six-digit pickup code",
       "action": "Verify code",
+      "guidance": "Use a digit entry view for a full-screen request for a sequence of numbers, such as a PIN, with its dedicated numeric keyboard. Explain the request through a clear title and prompt. Whenever the numbers are sensitive, use secure fields so the display masks the entered digits.",
       "mode": "web-adaptation",
       "source": "https://developer.apple.com/design/human-interface-guidelines/digit-entry-views#Best-practices",
       "children": []
@@ -749,6 +795,7 @@
       "kind": "hardware",
       "scenario": "Adjust a watch timer using a rotary-control model",
       "action": "Adjust minutes",
+      "guidance": "On Apple Watch, organize vertical navigation around Crown rotation and back it with touch interactions. When navigation is unnecessary, consider rotation for inspecting data or adjusting controls. Keep visual changes responsive to rotation speed and retain default haptic detents when they suit the content. Crown presses belong to watchOS system actions. On Apple Vision Pro, the Crown controls system functions such as immersion, volume, recentering, and returning Home.",
       "mode": "simulation",
       "source": "https://developer.apple.com/design/human-interface-guidelines/digital-crown#Apple-Watch",
       "children": []
@@ -766,6 +813,7 @@
       "kind": "disclosure",
       "scenario": "Reveal optional export details",
       "action": "Show details",
+      "guidance": "Hide secondary details behind disclosure controls until they become relevant. Distinguish a triangle that expands a view or list from a disclosure button associated with a particular control; their indicator directions differ. Give triangles descriptive labels so people can understand the information they will reveal.",
       "mode": "web-adaptation",
       "source": "https://developer.apple.com/design/human-interface-guidelines/disclosure-controls#Best-practices",
       "children": []
@@ -780,6 +828,7 @@
       "kind": "menu",
       "scenario": "Choose a task from an example Dock menu",
       "action": "Show tasks",
+      "guidance": "Use custom Dock menu entries to make especially valuable app tasks accessible from the app’s Dock icon. Label them briefly and arrange them logically alongside system entries. Also provide those commands elsewhere in the app, so people can discover and perform the tasks without knowing about secondary clicking the Dock icon.",
       "mode": "web-adaptation",
       "source": "https://developer.apple.com/design/human-interface-guidelines/dock-menus#Best-practices",
       "children": []
@@ -797,6 +846,7 @@
       "kind": "reorder",
       "scenario": "Reorder a packing list with drag or buttons",
       "action": "Move item",
+      "guidance": "Support dragging wherever it is useful, with continuous feedback about the operation and destination. Generally, dropping inside the same container moves content, while dropping into another container copies it; inter-app drops copy. Scroll a destination when needed to reach hidden content, stopping when the drag leaves it. Respect platform interactions, including gathering additional items into an iPadOS drag and spatial dragging in visionOS.",
       "mode": "web-adaptation",
       "source": "https://developer.apple.com/design/human-interface-guidelines/drag-and-drop#Providing-feedback",
       "children": []
@@ -814,6 +864,7 @@
       "kind": "edit-menu",
       "scenario": "Apply an editing action to sample text",
       "action": "Show edit actions",
+      "guidance": "Prefer the system edit menu and familiar selection gestures. Offer commands that apply to the current content, removing or disabling irrelevant ones, and place custom commands near related standard actions. When useful, allow copying text even if it is not editable. Support undo and redo where possible and avoid redundant editing controls.",
       "mode": "web-adaptation",
       "source": "https://developer.apple.com/design/human-interface-guidelines/edit-menus#Best-practices",
       "children": []
@@ -833,6 +884,7 @@
       "kind": "form",
       "scenario": "Add a reading goal with inline validation",
       "action": "Save goal",
+      "guidance": "Reduce typing by obtaining appropriate system information with permission, supplying sensible defaults, and offering selections when practical. Clearly identify requested information and support available input methods. Use protected entry for sensitive text, but never fill in a password automatically; instead support entry or appropriate authentication. On Mac, an expansion tooltip can reveal a field's clipped contents without forcing people to edit them.",
       "mode": "web-adaptation",
       "source": "https://developer.apple.com/design/human-interface-guidelines/entering-data#Best-practices",
       "children": []
@@ -847,6 +899,7 @@
       "kind": "hardware",
       "scenario": "Explore a gaze-selection model using pointer focus",
       "action": "Select focused item",
+      "guidance": "Prefer standard hover feedback and spacious, rounded targets that are easy to look at without visual distractions. For sustained reading or interaction, aim to place content at least one meter away. Give custom compound controls an encompassing highlight shape. Custom hover effects are predefined states applied outside the app process; they cannot reveal when someone looks or perform gaze-triggered app actions. Keep a stable primary view and test effects on the device.",
       "mode": "simulation",
       "source": "https://developer.apple.com/design/human-interface-guidelines/eyes#Best-practices",
       "children": []
@@ -866,6 +919,7 @@
       "kind": "feedback",
       "scenario": "Complete a local save and read its result",
       "action": "Save changes",
+      "guidance": "Match the intrusiveness of feedback to its consequence: status can remain nearby and passive, while a potential loss of work warrants attention. Combine understandable visual, textual, audio, or tactile signals so information remains accessible in different circumstances. Keep status associated with what it describes. On watchOS, avoid an indeterminate spinner that demands continued attention; indicate that completion will be announced.",
       "mode": "web-adaptation",
       "source": "https://developer.apple.com/design/human-interface-guidelines/feedback#Best-practices",
       "children": []
@@ -885,6 +939,7 @@
       "kind": "files",
       "scenario": "Rename and organize example documents",
       "action": "Create folder",
+      "guidance": "Use familiar document creation and opening commands and respect the platform's file organization. Preserve edits automatically during work and when files close or the app backgrounds. Prefer the standard Mac file browser unless a substantial reason justifies customization. Use Quick Look to preview supported file types, including attachments your app cannot itself open, so people can inspect them without leaving their context.",
       "mode": "web-adaptation",
       "source": "https://developer.apple.com/design/human-interface-guidelines/file-management#Creating-and-opening-files",
       "children": []
@@ -902,6 +957,7 @@
       "kind": "focus",
       "scenario": "Move through a selectable film grid",
       "action": "Select item",
+      "guidance": "Prefer system focus effects and avoid moving focus without interaction, apart from the documented case of a disappearing item during directional navigation. Use rings for fields and highlights for lists where appropriate. On iPadOS, Tab moves between focus groups and arrow keys within them. On tvOS, ensure directional access to elements and allow focused scaling without collisions. In visionOS, distinguish connected-input focus from the separate eye-driven hover effect.",
       "mode": "web-adaptation",
       "source": "https://developer.apple.com/design/human-interface-guidelines/focus-and-selection#Best-practices",
       "children": []
@@ -914,6 +970,7 @@
       "kind": "topic-browser",
       "scenario": "Explore the foundations example collection",
       "action": "Choose example",
+      "guidance": "Route foundational design work to the linked guidance for accessibility, visual identity, layout, materials, motion, privacy, localization, typography, and writing.",
       "mode": "web-adaptation",
       "source": "https://developer.apple.com/design/human-interface-guidelines/foundations",
       "children": [
@@ -952,6 +1009,7 @@
       "kind": "integration",
       "scenario": "Preview a fictional leaderboard and invitation",
       "action": "Preview match",
+      "guidance": "Establish the player's Game Center status at launch and integrate its social and progress features coherently. Show the access point on menu or settings screens rather than during gameplay, leaving room for its expanded state. Consider pausing while the overlay or dashboard is open. Align achievements with Game Center's defined states, and give different achievements distinctive, rewarding artwork.",
       "mode": "simulation",
       "source": "https://developer.apple.com/design/human-interface-guidelines/game-center#Accessing-Game-Center",
       "children": []
@@ -970,6 +1028,7 @@
       "kind": "game",
       "scenario": "Control a token using keys or onscreen arrows",
       "action": "Move token",
+      "guidance": "Support the platform's familiar input as a fallback where possible, even when controllers are supported. On iPhone and iPad, favor direct object interaction where it works and place virtual controls within comfortable reach and safe areas. Frequently used touch controls need at least 44×44 pt; less important controls at least 28×28 pt. Match prompts to the actual connected controller, provide press feedback, and let keyboard players customize comfortable bindings.",
       "mode": "web-adaptation",
       "source": "https://developer.apple.com/design/human-interface-guidelines/game-controls#Touch-controls",
       "children": []
@@ -988,6 +1047,7 @@
       "kind": "gauge",
       "scenario": "Read and adjust a fictional storage gauge",
       "action": "Add file",
+      "guidance": "Use a gauge to position a numerical value within a meaningful range. Label the present value and range endpoints concisely so people can interpret the display. Consider a gradient when it helps explain what the scale represents. On macOS, also evaluate the platform’s level indicator for values within a range.",
       "mode": "web-adaptation",
       "source": "https://developer.apple.com/design/human-interface-guidelines/gauges#Best-practices",
       "children": []
@@ -1007,6 +1067,7 @@
       "kind": "assistant",
       "scenario": "Review a labeled example AI suggestion before applying it",
       "action": "Preview suggestion",
+      "guidance": "Add generation where it provides a clear benefit, disclose its use and limitations, and keep people able to edit, reject, retry, or reverse results. Consider a usable alternative when AI is complementary or unavailable. Assess diverse users and inputs for harmful assumptions. Choose processing that fits the feature while protecting privacy; minimize server-bound information and explain off-device handling. Retest model changes for unexpected behavior.",
       "mode": "simulation",
       "source": "https://developer.apple.com/design/human-interface-guidelines/generative-ai#Best-practices",
       "children": []
@@ -1026,6 +1087,7 @@
       "kind": "gesture",
       "scenario": "Drag a card and release it to a snap point",
       "action": "Reset card",
+      "guidance": "Preserve familiar gesture meanings, respond immediately, and explain unavailable interactions through clear UI state. Provide alternatives to important gesture actions. Add custom gestures only for necessary specialized tasks; make them discoverable, simple, and distinct, retaining standard navigation. In visionOS, prefer indirect gestures for common UI and direct gestures for brief nearby manipulation. Custom hand gestures require a Full Space and permission, and must avoid conflicts with system overlay gestures.",
       "mode": "web-adaptation",
       "source": "https://developer.apple.com/design/human-interface-guidelines/gestures#Best-practices",
       "children": []
@@ -1038,6 +1100,7 @@
       "kind": "topic-browser",
       "scenario": "Explore the getting started example collection",
       "action": "Choose example",
+      "guidance": "Begin with design principles, then select the guidance for each supported platform or games to understand its characteristic use, inputs, and system expectations.",
       "mode": "web-adaptation",
       "source": "https://developer.apple.com/design/human-interface-guidelines/getting-started",
       "children": [
@@ -1064,6 +1127,7 @@
       "kind": "fullscreen",
       "scenario": "Focus on a distraction-free reading panel",
       "action": "Toggle reading mode",
+      "guidance": "Offer full-screen presentation when it helps concentration or media immersion on iPhone, iPad, or Mac. Preserve essential controls and make temporarily hidden controls easy to restore. Adapt layout subtly without resizing the window programmatically. Keep Dock access except where a game's needs justify otherwise, preserve the person's place across switching, and let them decide when to leave. Use the system's Mac full-screen support.",
       "mode": "web-adaptation",
       "source": "https://developer.apple.com/design/human-interface-guidelines/going-full-screen#Best-practices",
       "children": []
@@ -1083,6 +1147,7 @@
       "kind": "hardware",
       "scenario": "Explore a tilt model with explicit controls",
       "action": "Tilt model",
+      "guidance": "Collect motion information only when it provides a tangible benefit, such as meaningful activity feedback or gameplay. Supply purpose copy explaining why access is needed for the system permission request. Outside active gameplay, avoid using gyroscope or accelerometer movement to manipulate the interface directly: reproducing motion precisely can be difficult, physically demanding, and costly in battery usage.",
       "mode": "simulation",
       "source": "https://developer.apple.com/design/human-interface-guidelines/gyro-and-accelerometer#Best-practices",
       "children": []
@@ -1099,6 +1164,7 @@
       "kind": "health",
       "scenario": "Review fictional health-sharing permissions",
       "action": "Review permissions",
+      "guidance": "Request health information only for relevant health or fitness functionality, at the moment it is needed. Explain the benefit in the standard permission interface, protect the information, and publish a clear privacy policy. Remember that permission can change. If showing Activity rings or Apple Health branding, follow the dedicated presentation and naming guidance rather than repurposing recognizable elements.",
       "mode": "simulation",
       "source": "https://developer.apple.com/design/human-interface-guidelines/healthkit#Privacy-protection",
       "children": []
@@ -1114,6 +1180,7 @@
       "kind": "menu",
       "scenario": "Choose a capture task from quick actions",
       "action": "Show quick actions",
+      "guidance": "Choose compelling, high-value tasks for Home Screen quick actions and keep changes predictable. Give each action a brief title that explains its outcome and a familiar interface icon. Use the supplied design template for custom icons, and use a symbol or designed icon rather than substituting an emoji.",
       "mode": "web-adaptation",
       "source": "https://developer.apple.com/design/human-interface-guidelines/home-screen-quick-actions#Best-practices",
       "children": []
@@ -1133,6 +1200,7 @@
       "kind": "home",
       "scenario": "Adjust a fictional room's lights locally",
       "action": "Toggle lights",
+      "guidance": "Follow HomeKit's household hierarchy and familiar terminology so app controls, automations, and voice requests stay understandable. Use the standard accessory setup experience, then highlight your accessory's distinctive capabilities. Suggest practical names suited to Siri instead of company or model names. Treat rooms as meaningful groupings and zones as optional collections of rooms that make broader control convenient.",
       "mode": "simulation",
       "source": "https://developer.apple.com/design/human-interface-guidelines/homekit#Terminology-and-layout",
       "children": []
@@ -1152,6 +1220,7 @@
       "kind": "sync",
       "scenario": "Preview local-to-cloud sync states with sample files",
       "action": "Simulate sync",
+      "guidance": "Make synchronization feel automatic, keeping content and relevant cross-device state current without asking people to manage every document. Balance freshness against bandwidth and storage, and show unobtrusive download or offline status when useful. Store user-created information rather than regenerable resources. Because deleting a synced document also removes its other copies, explain that consequence and obtain confirmation before deletion.",
       "mode": "simulation",
       "source": "https://developer.apple.com/design/human-interface-guidelines/icloud#Best-practices",
       "children": []
@@ -1171,6 +1240,7 @@
       "kind": "icons",
       "scenario": "Compare original icons with text labels",
       "action": "Change label mode",
+      "guidance": "Use recognizable, simplified metaphors and keep icon detail, perspective, optical weight, and apparent size consistent. Match adjacent text weight in general, adjusting padding for optical alignment where necessary. Prefer vector assets or suitable SF Symbols, and provide accessibility descriptions for custom icons. Localize essential text and reading-direction imagery. Standard components normally supply their own selected appearance, so add separate selected artwork only when necessary.",
       "mode": "web-adaptation",
       "source": "https://developer.apple.com/design/human-interface-guidelines/icons#Best-practices",
       "children": []
@@ -1185,6 +1255,7 @@
       "kind": "verification",
       "scenario": "Walk through an illustrative identity-check request",
       "action": "Review request",
+      "guidance": "For in-person mobile-ID checks on supported iPhones, ask for the smallest amount of information that completes the verification. An age-threshold check should not request a birth date merely to establish eligibility. Use a display-only request for visual confirmation when app access to identity data is unnecessary. A data-transfer request is reserved for a legal verification need requiring processing or retention and needs the additional entitlement.",
       "mode": "simulation",
       "source": "https://developer.apple.com/design/human-interface-guidelines/id-verifier#Best-practices",
       "children": []
@@ -1204,6 +1275,7 @@
       "kind": "image",
       "scenario": "Inspect an original landscape illustration",
       "action": "Fit image",
+      "guidance": "Choose an image view when the view’s main job is displaying imagery; consider a symbol or interface icon for interface commands. Protect the readability of any overlaid text and keep animated frames consistently sized. On Mac, use an image well for editable imagery. Account for visionOS support for spatial imagery.",
       "mode": "web-adaptation",
       "source": "https://developer.apple.com/design/human-interface-guidelines/image-views#Best-practices",
       "children": []
@@ -1218,6 +1290,7 @@
       "kind": "image-well",
       "scenario": "Choose an original cover illustration",
       "action": "Choose cover",
+      "guidance": "Choose an image well when people need to replace or manipulate an image rather than merely view it. Support dropping a replacement image without requiring prior selection. If an image is mandatory, restore a default after deletion. When copy and paste are supported, expose the usual menu commands and keyboard interactions.",
       "mode": "web-adaptation",
       "source": "https://developer.apple.com/design/human-interface-guidelines/image-wells#Best-practices",
       "children": []
@@ -1237,6 +1310,7 @@
       "kind": "image",
       "scenario": "Compare fit and fill on an original landscape",
       "action": "Change fitting",
+      "guidance": "Provide bitmap assets at the scale factors needed by supported platforms, choose image formats for the content, embed color profiles, and inspect results on real devices. In tvOS layered artwork, preserve essential foreground content within a safe zone and keep the background opaque. In visionOS, prefer vectors for scalable 2D artwork; higher-resolution raster images trade sharpness for file size and runtime cost. Test scaling, clipping, and viewing distance.",
       "mode": "web-adaptation",
       "source": "https://developer.apple.com/design/human-interface-guidelines/images#Resolution",
       "children": []
@@ -1252,6 +1326,7 @@
       "kind": "stickers",
       "scenario": "Choose an original sticker for a sample message",
       "action": "Add sticker",
+      "guidance": "Keep an iMessage app centered on an immediately understandable activity that fits the ongoing conversation. Expose common actions in the compact view, generally moving text editing to the expanded view. Make stickers readable across backgrounds, rotations, and scaling, and supply localized descriptions for VoiceOver. Choose a consistent sticker size throughout a pack and prepare icons using the system's masking rules.",
       "mode": "web-adaptation",
       "source": "https://developer.apple.com/design/human-interface-guidelines/imessage-apps-and-stickers#Best-practices",
       "children": []
@@ -1266,6 +1341,7 @@
       "kind": "spatial",
       "scenario": "Compare a contained scene and a wider spatial stage",
       "action": "Change immersion",
+      "guidance": "Reserve increased immersion for meaningful tasks and let people explicitly choose when to enter or leave it. Prefer starting in Shared Space or mixed immersion to preserve control. Match immersion style to expected movement; progressive and full styles have an approximately 1.5-meter boundary. Keep transitions gentle, avoid demanding movement, and retain awareness of surroundings. If hand tracking fails while virtual hands are shown, reveal the person's real hands instead of freezing the substitutes.",
       "mode": "simulation",
       "source": "https://developer.apple.com/design/human-interface-guidelines/immersive-experiences#Best-practices",
       "children": []
@@ -1285,6 +1361,7 @@
       "kind": "inclusion",
       "scenario": "Choose inclusive sample profile preferences",
       "action": "Update profile",
+      "guidance": "Investigate diverse goals and perspectives, revisiting assumptions throughout design. Review how words, images, and tone may communicate unintended meanings. Use plain, respectful language that remains understandable across cultures; avoid unexplained jargon, colloquialisms, and unnecessary gender references. Prepare for languages, regional formats, and cultural color meanings. Where people represent their identity, prefer customization; if gender information is necessary, consider inclusive choices rather than a forced binary.",
       "mode": "web-adaptation",
       "source": "https://developer.apple.com/design/human-interface-guidelines/inclusion#Inclusive-by-design",
       "children": []
@@ -1297,6 +1374,7 @@
       "kind": "topic-browser",
       "scenario": "Explore the inputs example collection",
       "action": "Choose example",
+      "guidance": "Select the input-specific guidance for supported devices, covering hardware controls, Pencil, eyes, focus, controllers, gestures, motion, keyboards, nearby interactions, pointers, and remotes.",
       "mode": "web-adaptation",
       "source": "https://developer.apple.com/design/human-interface-guidelines/inputs",
       "children": [
@@ -1329,6 +1407,7 @@
       "kind": "keyboard",
       "scenario": "Use visible keyboard commands in a tiny editor",
       "action": "Try command",
+      "guidance": "Support and test Full Keyboard Access where available, respecting the distinction between standard iPadOS focus navigation and accessibility access to controls. Preserve familiar shortcuts; define custom shortcuts mainly for frequent app-specific actions. Prefer Command as the main modifier, using related modifiers consistently and checking localized keyboards. Let the system localize and mirror shortcuts. In visionOS, give discoverable shortcuts descriptive titles that make sense without submenu context.",
       "mode": "web-adaptation",
       "source": "https://developer.apple.com/design/human-interface-guidelines/keyboards#Best-practices",
       "children": []
@@ -1348,6 +1427,7 @@
       "kind": "labels",
       "scenario": "Compare informative and ambiguous control labels",
       "action": "Improve labels",
+      "guidance": "Use a label for a small amount of text that people read rather than edit. Prefer system typography and semantic label colors to communicate the information’s relative importance. Allow selection when copying the text would be useful. Avoid treating a static label as the appropriate component for editable or extensive content.",
       "mode": "web-adaptation",
       "source": "https://developer.apple.com/design/human-interface-guidelines/labels#Best-practices",
       "children": []
@@ -1367,6 +1447,7 @@
       "kind": "launch",
       "scenario": "Move from a simple launch state into a useful screen",
       "action": "Open workspace",
+      "guidance": "Get people to usable content promptly and restore detailed prior state on return. Where a launch screen is required, make it closely resemble the initial interface and match current appearance and orientation; avoid fixed text and decorative branding there. Keep any splash presentation separate from launching. For immersive visionOS apps, consider beginning in Shared Space so people can choose the transition after receiving context.",
       "mode": "web-adaptation",
       "source": "https://developer.apple.com/design/human-interface-guidelines/launching#Best-practices",
       "children": []
@@ -1386,6 +1467,7 @@
       "kind": "adaptive-screen",
       "scenario": "Resize an example document layout",
       "action": "Change width",
+      "guidance": "Express hierarchy with reading order, alignment, grouping, and progressive disclosure. Adapt to real available space, text size, locale, and system features using margins, layout guides, and safe areas. In iOS and iPadOS, base layout decisions on size classes rather than device identity or orientation. Preserve functionality and recognizable structure as size changes, exposing more controls when room permits. Separate navigation and controls visually from the underlying content.",
       "mode": "web-adaptation",
       "source": "https://developer.apple.com/design/human-interface-guidelines/layout#Visual-hierarchy",
       "children": []
@@ -1398,6 +1480,7 @@
       "kind": "topic-browser",
       "scenario": "Explore the layout and organization example collection",
       "action": "Choose example",
+      "guidance": "This collection groups components for arranging content and hierarchy, including lists, collections, split views, outlines, columns, tabs, labels, boxes, and disclosure controls.",
       "mode": "web-adaptation",
       "source": "https://developer.apple.com/design/human-interface-guidelines/layout-and-organization",
       "children": [
@@ -1428,6 +1511,7 @@
       "kind": "table",
       "scenario": "Sort a fictional document table",
       "action": "Sort by name",
+      "guidance": "Favor lists or tables for textual data. Keep rows concise, preserve readability when text is long, and give multicolumn tables descriptive headings. Show appropriate selection feedback and allow editing when useful. Sorting by column can help on Mac, while limiting the number of rows generally suits Apple Watch.",
       "mode": "web-adaptation",
       "source": "https://developer.apple.com/design/human-interface-guidelines/lists-and-tables#Best-practices",
       "children": []
@@ -1445,6 +1529,7 @@
       "kind": "live",
       "scenario": "Follow and end a fictional delivery task",
       "action": "Advance delivery",
+      "guidance": "Use Live Activities for bounded tasks or events whose progress matters at a glance. Exclude promotions; protect sensitive information with innocuous summaries or redaction and the documented person-controlled choice. Keep interactions simple and deep-link to related content. Start at expected moments, offer controls to stop, and update when information changes. End immediately when the task ends; subsequent dismissal timing can differ by presentation.",
       "mode": "simulation",
       "source": "https://developer.apple.com/design/human-interface-guidelines/live-activities#Best-practices",
       "children": []
@@ -1463,6 +1548,7 @@
       "kind": "live-photo",
       "scenario": "Play a short original still-to-motion illustration",
       "action": "Play moment",
+      "guidance": "Preserve a Live Photo's combined sound and moving imagery rather than presenting its pieces separately. Apply edits across its frames or offer conversion to a still. Let people preview all content before sharing and choose a still version. Indicate download progress and playability. Distinguish Live Photos through restrained movement or the standard badge, and show a still in environments without support.",
       "mode": "web-adaptation",
       "source": "https://developer.apple.com/design/human-interface-guidelines/live-photos#Best-practices",
       "children": []
@@ -1482,6 +1568,7 @@
       "kind": "integration",
       "scenario": "Connect to a fictional live event with explicit status",
       "action": "Preview connection",
+      "guidance": "Make live programming prominent and immediately playable, with as little interaction as practical. Clearly distinguish live and on-demand material and consider showing how far an in-progress program has advanced. Keep playback primary while presenting supported alternatives, such as restart or recording, in a consistent order. If offering channel browsing during playback, keep its overlay readable and visibly identify the channel already playing.",
       "mode": "simulation",
       "source": "https://developer.apple.com/design/human-interface-guidelines/live-viewing-apps#Best-practices",
       "children": []
@@ -1501,6 +1588,7 @@
       "kind": "progress",
       "scenario": "Load a local sample collection with visible status",
       "action": "Load collection",
+      "guidance": "Display useful content or placeholders quickly and load remaining material in the background where possible. Let people continue other activities, and make unavoidable waiting informative without repeating filler. Use determinate progress when duration is known and indeterminate progress otherwise. On Apple Watch, aim for immediate content; a short loading indication is preferable to an empty display when a brief wait cannot be avoided.",
       "mode": "web-adaptation",
       "source": "https://developer.apple.com/design/human-interface-guidelines/loading#Best-practices",
       "children": []
@@ -1515,6 +1603,7 @@
       "kind": "lockups",
       "scenario": "Explore related image-title-description groups",
       "action": "Select feature",
+      "guidance": "Use a lockup to combine related views into one selectable unit on Apple TV. Keep units consistently sized within a group or row and allow space for their expansion when focused. The header, content, and footer expand together. Choose among cards, caption buttons, monograms, and posters according to the app’s needs.",
       "mode": "web-adaptation",
       "source": "https://developer.apple.com/design/human-interface-guidelines/lockups#Best-practices",
       "children": []
@@ -1530,6 +1619,7 @@
       "kind": "adaptive-screen",
       "scenario": "Compare one document task across compact and desktop layouts",
       "action": "Change context",
+      "guidance": "Assess whether the iPad experience depends on capabilities unavailable on Mac before adapting it with Catalyst. Build on support for keyboard navigation, dragging, resizing, and multiple windows. Choose the appropriate interface idiom, then adapt navigation, layout, icons, and menus for Mac expectations. Provide a complete menu bar and comfortable pointer and keyboard behavior instead of assuming the original touch layout is sufficient.",
       "mode": "web-adaptation",
       "source": "https://developer.apple.com/design/human-interface-guidelines/mac-catalyst#Before-you-start",
       "children": []
@@ -1549,6 +1639,7 @@
       "kind": "assistant",
       "scenario": "Review a fictional image classification with uncertainty",
       "action": "Inspect prediction",
+      "guidance": "Define the feature's role before designing its interface: whether it is essential, what sensitive data it needs, and how visible or proactive it should be. Plan for mistakes and explain meaningful limits so expectations remain realistic. Consider offering alternative results and corrections to preserve control. Where useful, explain the rationale for a result rather than exposing technical model details.",
       "mode": "simulation",
       "source": "https://developer.apple.com/design/human-interface-guidelines/machine-learning#The-role-of-machine-learning-in-your-app",
       "children": []
@@ -1568,7 +1659,8 @@
       "kind": "accounts",
       "scenario": "Choose a local demo profile or guest mode",
       "action": "Continue as guest",
-      "mode": "web-adaptation",
+      "guidance": "Require an account only when core functionality needs one, explain its benefit, and defer authentication until people have experienced value. Consider Sign in with Apple; otherwise prefer passkeys on the documented platforms. Identify only authentication methods actually available in the context. If your app lets people create an account, it must also support deletion of the account rather than merely disabling it.",
+      "mode": "simulation",
       "source": "https://developer.apple.com/design/human-interface-guidelines/managing-accounts#Best-practices",
       "children": []
     },
@@ -1587,6 +1679,7 @@
       "kind": "notification-settings",
       "scenario": "Choose which sample notifications are relevant",
       "action": "Save preferences",
+      "guidance": "Obtain permission and respect delivery scheduling and Focus choices. Classify communication and other notifications appropriately, representing urgency accurately instead of escalating routine updates. Reserve Time Sensitive alerts for something happening now or within an hour. Marketing messages require explicit agreement to receive promotional content; do not treat general notification authorization as sufficient consent for that purpose.",
       "mode": "web-adaptation",
       "source": "https://developer.apple.com/design/human-interface-guidelines/managing-notifications#Integrating-with-Focus",
       "children": []
@@ -1606,6 +1699,7 @@
       "kind": "map",
       "scenario": "Explore a small illustrated route with labeled stops",
       "action": "Choose stop",
+      "guidance": "Normally support familiar map exploration and make selected places clear. Choose standard emphasis for ordinary maps or muted emphasis when custom information should stand out. Offer relevant search and category filtering, and consider place cards for richer location details. Apple Watch maps differ: they are noninteractive snapshots that open Maps when tapped and can contain up to five annotations.",
       "mode": "web-adaptation",
       "source": "https://developer.apple.com/design/human-interface-guidelines/maps#Best-practices",
       "children": []
@@ -1625,6 +1719,7 @@
       "kind": "materials",
       "scenario": "Compare a functional translucent layer and a solid alternative",
       "action": "Toggle transparency",
+      "guidance": "Use Liquid Glass sparingly for the functional layer of controls and navigation, and standard materials to structure content beneath it. Prefer regular glass when text or complex backgrounds demand legibility; reserve clear glass for visually rich media backgrounds. Consider a 35-percent dark dimming layer over bright content, unless standard playback controls already provide one. Select standard materials semantically and use appropriate vibrant foreground colors rather than relying on a material's apparent color.",
       "mode": "web-adaptation",
       "source": "https://developer.apple.com/design/human-interface-guidelines/materials#Liquid-Glass",
       "children": []
@@ -1644,6 +1739,7 @@
       "kind": "menu",
       "scenario": "Choose an export format from a structured menu",
       "action": "Open menu",
+      "guidance": "Use menus for commands that can remain concealed until people request them. Write concise, descriptive labels with platform-consistent capitalization; indicate when a command cannot be used. Add an ellipsis when completing an action requires further input. Choose menu layouts appropriate to the platform instead of assuming all icon-only or size arrangements are universally available.",
       "mode": "web-adaptation",
       "source": "https://developer.apple.com/design/human-interface-guidelines/menus#Labels",
       "children": []
@@ -1656,6 +1752,7 @@
       "kind": "topic-browser",
       "scenario": "Explore the menus and actions example collection",
       "action": "Choose example",
+      "guidance": "This collection connects guidance for buttons, menus, sharing, toolbars, ornaments, and system action entry points; individual pages define their distinct purposes and interactions.",
       "mode": "web-adaptation",
       "source": "https://developer.apple.com/design/human-interface-guidelines/menus-and-actions",
       "children": [
@@ -1688,6 +1785,7 @@
       "kind": "dialog",
       "scenario": "Complete a focused task and return to its context",
       "action": "Open task",
+      "guidance": "Interrupt with a modal only when focus or a consequential choice benefits the person. Keep the task identifiable, brief, and easy to exit, avoiding complicated nested navigation. Provide a clear dismissal action and protect unsaved work before closing. Dismiss one modal before introducing another where possible; never show multiple alerts simultaneously. Consider a fuller presentation when sustained work legitimately needs extra space and concentration.",
       "mode": "web-adaptation",
       "source": "https://developer.apple.com/design/human-interface-guidelines/modality#Best-practices",
       "children": []
@@ -1707,6 +1805,7 @@
       "kind": "motion",
       "scenario": "Compare purposeful transitions with a reduced-motion equivalent",
       "action": "Replay transition",
+      "guidance": "Use motion to explain changes or provide feedback, keeping it brief, precise, and consistent with gestures. Make important information available without motion and let people cancel animations instead of waiting. Avoid adding repetitive spectacle to frequent UI actions. In visionOS, minimize peripheral movement and world rotation, provide stationary references, and consider fades when relocation conveys no useful meaning. Test large moving objects for comfort and respect accessibility preferences.",
       "mode": "web-adaptation",
       "source": "https://developer.apple.com/design/human-interface-guidelines/motion#Best-practices",
       "children": []
@@ -1725,6 +1824,7 @@
       "kind": "multitasking",
       "scenario": "Switch between two local document workspaces",
       "action": "Switch workspace",
+      "guidance": "Prepare to preserve and restore context whenever people change apps. Pause activities that need active attention so people can resume without missing content. Handle brief audio interruptions differently from a new primary listening activity, restoring playback appropriately. Design for each platform's multitasking model, including concurrent windows on iPad and Mac and the distinction between Shared Space and Full Space in visionOS.",
       "mode": "web-adaptation",
       "source": "https://developer.apple.com/design/human-interface-guidelines/multitasking#Best-practices",
       "children": []
@@ -1737,6 +1837,7 @@
       "kind": "topic-browser",
       "scenario": "Explore the navigation and search example collection",
       "action": "Choose example",
+      "guidance": "This collection links to sidebars, tab bars, search fields, path controls, and token fields for navigating app content and entering structured search information.",
       "mode": "web-adaptation",
       "source": "https://developer.apple.com/design/human-interface-guidelines/navigation-and-search",
       "children": [
@@ -1759,6 +1860,7 @@
       "kind": "hardware",
       "scenario": "Explore a nearby-item distance model",
       "action": "Move closer",
+      "guidance": "Use proximity, direction, and context to make a physical-world task feel natural, with continuous visual, audio, or haptic feedback suited to the activity. Provide another way to complete the task. Guide people toward portrait holding where appropriate, and explain that intervening objects or a peer outside the sensor's directional view can reduce information. Require permission and account for hardware support instead of assuming the interaction is always available.",
       "mode": "simulation",
       "source": "https://developer.apple.com/design/human-interface-guidelines/nearby-interactions#Best-practices",
       "children": []
@@ -1774,6 +1876,7 @@
       "kind": "verification",
       "scenario": "Preview a tap-to-read task with explicit consent",
       "action": "Begin preview",
+      "guidance": "For supported tag-reading experiences, explain the object to scan using short, friendly instructions and the system scanning sheet. Describe bringing the device near the object, avoiding wording that requires physical contact or knowledge of NFC terminology. Update instructions for subsequent scans. Account for background reading being unavailable during competing uses such as camera or Wallet activity, Airplane Mode, or the locked state after restart.",
       "mode": "simulation",
       "source": "https://developer.apple.com/design/human-interface-guidelines/nfc#In-app-tag-reading",
       "children": []
@@ -1793,6 +1896,7 @@
       "kind": "notification",
       "scenario": "Inspect a contextual event notification",
       "action": "Show notification",
+      "guidance": "Send brief, useful notifications for timely information that people can grasp quickly. Avoid repeated notices for an unchanged event and avoid sensitive content. Handle delivery thoughtfully while the app is open. Use alerts for errors rather than notifications. On Apple Watch, account for the different information needs of short-look and long-look presentations.",
       "mode": "web-adaptation",
       "source": "https://developer.apple.com/design/human-interface-guidelines/notifications#Best-practices",
       "children": []
@@ -1812,6 +1916,7 @@
       "kind": "help",
       "scenario": "Find contextual guidance without leaving the task",
       "action": "Open help",
+      "guidance": "Relate help to the person's current task and actual device or input method, keeping terminology consistent and dismissal easy. Explain app-specific actions rather than reteaching familiar system controls. Use short, actionable tips for simple discoveries; a feature taking more than three actions is probably too complex for one tip. Choose inline or popover placement according to surrounding content and the need to identify a control.",
       "mode": "web-adaptation",
       "source": "https://developer.apple.com/design/human-interface-guidelines/offering-help#Best-practices",
       "children": []
@@ -1831,6 +1936,7 @@
       "kind": "onboarding",
       "scenario": "Set up a small notebook in three optional steps",
       "action": "Continue",
+      "guidance": "When onboarding is needed, keep it brief and engaging after launch completes. Prefer safe hands-on learning or instructions beside the feature people are using. Make a separate tutorial optional when appropriate, remember when people skip it, and leave it discoverable later. Focus on the app's experience, use practical defaults, and postpone nonessential configuration instead of blocking initial interaction.",
       "mode": "web-adaptation",
       "source": "https://developer.apple.com/design/human-interface-guidelines/onboarding#Best-practices",
       "children": []
@@ -1845,6 +1951,7 @@
       "kind": "ornament",
       "scenario": "Keep a tool palette associated with a spatial board",
       "action": "Choose tool",
+      "guidance": "Consider an ornament for frequently needed controls or information associated with a visionOS window. Generally keep it visible and avoid covering the window’s content. Balance multiple ornaments and aim for a width no greater than the associated window. Prefer system toolbars and tab bars unless customization is needed, and consider borderless buttons.",
       "mode": "web-adaptation",
       "source": "https://developer.apple.com/design/human-interface-guidelines/ornaments#Best-practices",
       "children": []
@@ -1859,6 +1966,7 @@
       "kind": "outline",
       "scenario": "Expand and select a nested outline",
       "action": "Expand section",
+      "guidance": "Use an outline view for hierarchical, usually textual data, and a table for data without hierarchy. Show the hierarchy only in the first column, supply informative headings, and allow resizing. Consider sorting through column headings. Make expanding and collapsing nested content straightforward, often alongside related content in a split view.",
       "mode": "web-adaptation",
       "source": "https://developer.apple.com/design/human-interface-guidelines/outline-views#Best-practices",
       "children": []
@@ -1877,6 +1985,7 @@
       "kind": "pages",
       "scenario": "Move between three short introductory pages",
       "action": "Next page",
+      "guidance": "Use page indicators for movement through an ordered, flat sequence, avoiding an excessive number of pages. Place the control centrally near the view’s bottom where appropriate to the platform. On Apple TV, apply it to full-screen page collections. In visionOS, the indicators communicate position but do not provide interactive navigation.",
       "mode": "web-adaptation",
       "source": "https://developer.apple.com/design/human-interface-guidelines/page-controls#Best-practices",
       "children": []
@@ -1891,6 +2000,7 @@
       "kind": "panel",
       "scenario": "Open a nonmodal inspector beside a document",
       "action": "Toggle inspector",
+      "guidance": "Use a floating panel to keep supplementary controls or information readily available for the active window or selection. Consider it for inspectors and prefer straightforward adjustment controls with a brief purpose-specific title. Show and hide panels appropriately, keep them out of the Window menu’s document list, and generally omit minimization.",
       "mode": "web-adaptation",
       "source": "https://developer.apple.com/design/human-interface-guidelines/panels#Best-practices",
       "children": []
@@ -1905,6 +2015,7 @@
       "kind": "breadcrumbs",
       "scenario": "Navigate a labeled folder path",
       "action": "Go to folder",
+      "guidance": "Use a path control to show the selected file or folder’s place in the file system. Choose a linear path or a compact pop-up presentation according to the desired display. Put it within the window’s content area; the page explicitly excludes placement in toolbars, the window frame, and status bars.",
       "mode": "web-adaptation",
       "source": "https://developer.apple.com/design/human-interface-guidelines/path-controls#Best-practices",
       "children": []
@@ -1917,6 +2028,7 @@
       "kind": "topic-browser",
       "scenario": "Explore the patterns example collection",
       "action": "Choose example",
+      "guidance": "Use this collection to locate guidance for recurring actions, tasks, and experiences, then apply the relevant pattern alongside its platform-specific considerations.",
       "mode": "web-adaptation",
       "source": "https://developer.apple.com/design/human-interface-guidelines/patterns",
       "children": [
@@ -1959,6 +2071,7 @@
       "kind": "photo-editing",
       "scenario": "Adjust an original illustration without affecting a source file",
       "action": "Adjust warmth",
+      "guidance": "Within a Photos editing extension, preserve a clear preview of the person's changes and use the host's existing top toolbar. Ask before discarding edits when cancellation would lose work, while skipping that confirmation when nothing changed. Use the app's own icon for the extension. Respect the Photos workflow, which saves edited results while retaining the originals.",
       "mode": "web-adaptation",
       "source": "https://developer.apple.com/design/human-interface-guidelines/photo-editing#Best-practices",
       "children": []
@@ -1978,6 +2091,7 @@
       "kind": "picker",
       "scenario": "Choose a date and document category",
       "action": "Apply selection",
+      "guidance": "Consider a picker for a medium or long set of distinct choices. Arrange values predictably and avoid making people leave the current view just to select one. Use date and time picker styles suited to the platform and task; reduce minute precision when appropriate. On Apple Watch, design for precise selection with the Digital Crown.",
       "mode": "web-adaptation",
       "source": "https://developer.apple.com/design/human-interface-guidelines/pickers#Best-practices",
       "children": []
@@ -1997,6 +2111,7 @@
       "kind": "audio",
       "scenario": "Play an optional locally generated tone with visible status",
       "action": "Play tone",
+      "guidance": "Choose audio behavior that matches people's expectations for silence, background playback, and coexistence with other sound. Respect system volume, adjusting only the mix within your experience. Support output routing when possible and prefer the standard volume controls. Reroute smoothly when headphones connect and pause promptly when they disconnect. Treat explicitly requested playback differently from incidental effects when the device is silenced.",
       "mode": "web-adaptation",
       "source": "https://developer.apple.com/design/human-interface-guidelines/playing-audio#Best-practices",
       "children": []
@@ -2016,6 +2131,7 @@
       "kind": "hardware",
       "scenario": "Compare a meaningful feedback event with a visual equivalent",
       "action": "Preview feedback",
+      "guidance": "Use familiar haptic patterns for their intended meaning and maintain a predictable relationship between an action and its tactile result. Complement other feedback, matching timing and intensity to the visual or audio event. Avoid excessive repetition and test the experience with people. Select patterns and custom effects according to the supported device or connected accessory rather than assuming every platform offers identical tactile capabilities.",
       "mode": "simulation",
       "source": "https://developer.apple.com/design/human-interface-guidelines/playing-haptics#Best-practices",
       "children": []
@@ -2035,6 +2151,7 @@
       "kind": "video",
       "scenario": "Control an original animated scene and its captions",
       "action": "Play scene",
+      "guidance": "Prefer the built-in video player and familiar playback behavior. Keep video at its native aspect ratio and avoid embedded bars that interfere with scaling or Picture in Picture. When integrating with the TV app, transition cleanly into playback and help people remain oriented when it ends. Avoid unnecessary loading screens; if loading exceeds two seconds, consider the documented plain loading treatment.",
       "mode": "web-adaptation",
       "source": "https://developer.apple.com/design/human-interface-guidelines/playing-video#Best-practices",
       "children": []
@@ -2052,6 +2169,7 @@
       "kind": "pointer",
       "scenario": "Explore hover, focus, and direct pointer feedback",
       "action": "Select target",
+      "guidance": "Preserve familiar pointer and trackpad behavior and let people switch input modes without relearning tasks. On iPadOS, use highlight for small transparent elements, lift for small opaque elements, and hover for large elements. Keep custom effects useful and simple, with comfortable hit regions and contiguous regions for adjacent bar buttons. Distinguish pointer precision from touch only where it improves the task; avoid decorative effects and instructional text attached to the pointer.",
       "mode": "web-adaptation",
       "source": "https://developer.apple.com/design/human-interface-guidelines/pointing-devices#Best-practices",
       "children": []
@@ -2069,6 +2187,7 @@
       "kind": "select",
       "scenario": "Choose one persistent export format",
       "action": "Apply format",
+      "guidance": "Use a pop-up button for a flat set of mutually exclusive options, especially when space is limited. Supply a useful default and enough context to predict the choices before opening the menu. For commands, multiple selection, or submenus, choose a pull-down button instead. Consider a Custom option when occasional choices would otherwise clutter the interface.",
       "mode": "web-adaptation",
       "source": "https://developer.apple.com/design/human-interface-guidelines/pop-up-buttons#Best-practices",
       "children": []
@@ -2086,6 +2205,7 @@
       "kind": "popover",
       "scenario": "Open contextual details beside their source",
       "action": "Show details",
+      "guidance": "Use a popover for a small, temporary amount of contextual information or functionality. Position it appropriately, present only one at once, and avoid layering another view above it. Preserve work when a nonmodal popover closes automatically. Avoid popovers in compact iPhone or iPad views; a Mac popover may become a detachable panel.",
       "mode": "web-adaptation",
       "source": "https://developer.apple.com/design/human-interface-guidelines/popovers#Best-practices",
       "children": []
@@ -2098,6 +2218,7 @@
       "kind": "topic-browser",
       "scenario": "Explore the presentation example collection",
       "action": "Choose example",
+      "guidance": "This collection groups guidance for temporary presentations, windows, scrolling, and pagination, including sheets, alerts, action sheets, panels, popovers, page controls, and scroll views.",
       "mode": "web-adaptation",
       "source": "https://developer.apple.com/design/human-interface-guidelines/presentation",
       "children": [
@@ -2124,6 +2245,7 @@
       "kind": "print",
       "scenario": "Review a printable document layout",
       "action": "Preview print",
+      "guidance": "Place printing where people expect to find it and use the standard print interface for relevant printer-supported options. When printing is impossible, disable the Mac menu command and remove the iOS or iPadOS action; hide or disable custom buttons as appropriate. On Mac, add an app-specific options category only when needed and make dependent or advanced options understandable.",
       "mode": "web-adaptation",
       "source": "https://developer.apple.com/design/human-interface-guidelines/printing#Best-practices",
       "children": []
@@ -2143,6 +2265,7 @@
       "kind": "consent",
       "scenario": "Choose what to share for a fictional location task",
       "action": "Save privacy choices",
+      "guidance": "Request only necessary data when the relevant feature makes the need clear, using a specific, understandable purpose sentence. Process locally where possible and respect people's privacy choices. If a pre-alert explanation is essential, follow the documented single-button pattern without misleading the person: its action opens the system alert. Prefer system authentication and keychain storage over custom schemes or plaintext secrets, and avoid requesting access at launch unless the app requires it to function.",
       "mode": "web-adaptation",
       "source": "https://developer.apple.com/design/human-interface-guidelines/privacy#Best-practices",
       "children": []
@@ -2162,6 +2285,7 @@
       "kind": "progress",
       "scenario": "Compare measurable and indeterminate loading",
       "action": "Start loading",
+      "guidance": "Prefer measurable progress when the operation permits an accurate estimate, and keep indicators moving during ongoing work. On Mac, an indeterminate bar can become determinate when enough information is available; avoid changing from circular to bar form. Keep placement stable and add a short description when helpful. Remove the indicator when the operation finishes.",
       "mode": "web-adaptation",
       "source": "https://developer.apple.com/design/human-interface-guidelines/progress-indicators#Best-practices",
       "children": []
@@ -2179,6 +2303,7 @@
       "kind": "menu",
       "scenario": "Choose an action from a compact pull-down menu",
       "action": "Open actions",
+      "guidance": "Group commands or items directly related to a button’s action in its pull-down menu, such as variants of adding or sorting. Keep the menu manageable and avoid concentrating every action in the view behind one button. For mutually exclusive choices that are not commands, choose a pop-up button instead.",
       "mode": "web-adaptation",
       "source": "https://developer.apple.com/design/human-interface-guidelines/pull-down-buttons#Best-practices",
       "children": []
@@ -2193,6 +2318,7 @@
       "kind": "rating",
       "scenario": "Set an editable rating with a readable value",
       "action": "Rate item",
+      "guidance": "Use a rating indicator to express rank with repeated symbols, normally stars. The described component rounds to whole symbols rather than showing fractional ones. Let people adjust an individual item’s rating directly within a list, and replace stars only when the alternative symbol still communicates a rating scale clearly.",
       "mode": "web-adaptation",
       "source": "https://developer.apple.com/design/human-interface-guidelines/rating-indicators#Best-practices",
       "children": []
@@ -2212,6 +2338,7 @@
       "kind": "review",
       "scenario": "Write a local example review at a chosen moment",
       "action": "Preview review",
+      "guidance": "Request a rating after meaningful engagement and at a natural stopping point, avoiding first launch, onboarding, and active tasks. Leave substantial time between requests rather than repeatedly interrupting people. On iOS, iPadOS, and macOS, prefer the standard review prompt; the documented limit is three displays per app during a 365-day period. Weigh a summary-rating reset against the loss of accumulated ratings visible to prospective users.",
       "mode": "web-adaptation",
       "source": "https://developer.apple.com/design/human-interface-guidelines/ratings-and-reviews#Best-practices",
       "children": []
@@ -2226,6 +2353,7 @@
       "kind": "remote",
       "scenario": "Navigate a film grid with a remote-control model",
       "action": "Move focus",
+      "guidance": "Preserve standard remote gestures and move focus in the direction people gesture. Treat a press as intentional activation and consider accidental taps, especially during live playback. Normally, Back opens the parent in the app hierarchy rather than replaying visit history. During gameplay, use Back for the pause menu and resume behavior. Make Play/Pause control media as expected, and map compatible guide-browsing buttons according to whether people browse a guide or watch content.",
       "mode": "web-adaptation",
       "source": "https://developer.apple.com/design/human-interface-guidelines/remotes#Best-practices",
       "children": []
@@ -2241,7 +2369,8 @@
       "kind": "survey",
       "scenario": "Walk through a fictional research consent and survey",
       "action": "Review consent",
-      "mode": "web-adaptation",
+      "guidance": "Order research onboarding as introduction, eligibility, informed consent, then required data permissions. Explain only necessary eligibility criteria early and make consent understandable, with digestible sections and access to the complete form before agreement. Describe why essential device information is requested. Give returning participants a direct route back to the study and accessible ways to manage personal details and see progress.",
+      "mode": "simulation",
       "source": "https://developer.apple.com/design/human-interface-guidelines/researchkit#Creating-the-onboarding-experience",
       "children": []
     },
@@ -2260,6 +2389,7 @@
       "kind": "rtl",
       "scenario": "Compare the same interface in both reading directions",
       "action": "Change direction",
+      "guidance": "Use standard layouts that mirror for right-to-left contexts, then check meaning rather than flipping everything. Align longer paragraphs by their own language while keeping list alignment consistent. Reverse progress and ordered navigation, preserving actual physical directions and the digit order within a number. Retain logos, universal signs, and generally the orientation of real-world object icons. Localize text-bearing icons and review components of complex icons individually to preserve meaning and visual balance.",
       "mode": "web-adaptation",
       "source": "https://developer.apple.com/design/human-interface-guidelines/right-to-left#Text-alignment",
       "children": []
@@ -2279,6 +2409,7 @@
       "kind": "scroll",
       "scenario": "Read a bounded article with natural scrolling",
       "action": "Go to section",
+      "guidance": "Support familiar scrolling gestures and keyboard commands, and make additional content discoverable. Avoid nesting scroll views that move along the same axis. Consider paging when it fits the content, and automatically reveal a selected or edited location when needed. Prefer vertical movement on Apple Watch and respect platform-specific scroll indicator behavior.",
       "mode": "web-adaptation",
       "source": "https://developer.apple.com/design/human-interface-guidelines/scroll-views#Best-practices",
       "children": []
@@ -2298,6 +2429,7 @@
       "kind": "search",
       "scenario": "Find an item in a local reading collection",
       "action": "Search titles",
+      "guidance": "Explain the searchable scope through a useful placeholder. When feasible, begin searching as people type, suggest likely queries, and simplify the resulting display. Consider filters for narrowing matches. Choose the entry point and input presentation for the platform; Apple Watch presents text input full-screen, and Apple TV combines a keyboard with results below it.",
       "mode": "web-adaptation",
       "source": "https://developer.apple.com/design/human-interface-guidelines/search-fields#Best-practices",
       "children": []
@@ -2317,6 +2449,7 @@
       "kind": "search",
       "scenario": "Refine a local search and recover from no results",
       "action": "Search collection",
+      "guidance": "Make important search easy to find, ideally through one clear entry point covering the app's content. If a local search is useful, visibly communicate its scope. Suggestions and prior queries can reduce typing, but consider privacy and let people erase displayed history. For supported system search, index appropriate content with descriptive metadata so it can be found outside the app.",
       "mode": "web-adaptation",
       "source": "https://developer.apple.com/design/human-interface-guidelines/searching#Best-practices",
       "children": []
@@ -2335,6 +2468,7 @@
       "kind": "segments",
       "scenario": "Switch between two related views of a reading goal",
       "action": "Change view",
+      "guidance": "Use a segmented control for a few closely related choices that affect a view, state, or object and benefit from visible selection. Keep segment types, content format, and sizing consistent; generally choose either text or imagery throughout. On Apple TV, consider a split view when filtering content rather than assuming segments are the best fit.",
       "mode": "web-adaptation",
       "source": "https://developer.apple.com/design/human-interface-guidelines/segmented-controls#Best-practices",
       "children": []
@@ -2347,6 +2481,7 @@
       "kind": "topic-browser",
       "scenario": "Explore the selection and input example collection",
       "action": "Choose example",
+      "guidance": "This collection links to components for choosing values, entering text or digits, editing images and colors, adjusting ranges, and managing opposing states.",
       "mode": "web-adaptation",
       "source": "https://developer.apple.com/design/human-interface-guidelines/selection-and-input",
       "children": [
@@ -2378,6 +2513,7 @@
       "kind": "settings",
       "scenario": "Change local demo preferences with explicit values",
       "action": "Restore defaults",
+      "guidance": "Choose useful defaults and offer only settings that people need, respecting their system preferences. Put frequent task-specific choices beside the task and infrequently changed general options in the app's settings area. Follow expected platform access patterns and keyboard shortcuts where relevant; watchOS apps instead expose a small set of essential choices within the app.",
       "mode": "web-adaptation",
       "source": "https://developer.apple.com/design/human-interface-guidelines/settings#Best-practices",
       "children": []
@@ -2397,6 +2533,7 @@
       "kind": "icons",
       "scenario": "Preview original substitute icons and purposeful symbol motion",
       "action": "Change emphasis",
+      "guidance": "Choose rendering mode, weight, scale, and variants to fit meaning, adjacent typography, and legibility in every context. Use variable color to communicate a changing value, while hierarchical rendering communicates depth. Apply animation only when it clarifies action or status. Base custom symbols on templates, preserve optical consistency, annotate layers for supported effects, and supply accessibility descriptions. Check system-version availability and symbol-specific usage restrictions before adopting or customizing artwork.",
       "mode": "web-adaptation",
       "source": "https://developer.apple.com/design/human-interface-guidelines/sf-symbols#Rendering-modes",
       "children": []
@@ -2415,7 +2552,8 @@
       "kind": "collaboration",
       "scenario": "Coordinate a fictional shared viewing session",
       "action": "Advance shared state",
-      "mode": "web-adaptation",
+      "guidance": "Design SharePlay around simultaneous participation, with recognizable entry and a direct route into shared content. Adapt to different devices and participant roles, minimizing prerequisites and unrelated setup. If continued asynchronous work matters, offer another way to save or share afterward. On visionOS, preserve a coherent shared spatial context and choose an appropriate seating template rather than assuming every participant uses a spatial Persona.",
+      "mode": "simulation",
       "source": "https://developer.apple.com/design/human-interface-guidelines/shareplay#Best-practices",
       "children": []
     },
@@ -2434,6 +2572,7 @@
       "kind": "audio-match",
       "scenario": "Explore a simulated song-match result without microphone access",
       "action": "Preview match",
+      "guidance": "Use audio recognition to support a concrete experience, such as synchronized content or accessible media enhancements. If recognition needs microphone input, explain the purpose and request permission first. End recording once the necessary sample is captured instead of leaving the microphone active. Obtain a separate opt-in before saving recognized songs from your app to the person's iCloud library.",
       "mode": "simulation",
       "source": "https://developer.apple.com/design/human-interface-guidelines/shazamkit#Best-practices",
       "children": []
@@ -2453,6 +2592,7 @@
       "kind": "sheet",
       "scenario": "Edit a note in a focused sheet with clear exit choices",
       "action": "Edit note",
+      "guidance": "Choose a sheet for a limited task tied to the current context, considering alternatives for long or complicated flows. Show only one from the main interface at a time. Use a nonmodal view for supplementary controls affecting the parent task. Always pair Done with Cancel or Back, and avoid showing all three together. Follow each platform’s sheet conventions.",
       "mode": "web-adaptation",
       "source": "https://developer.apple.com/design/human-interface-guidelines/sheets#Best-practices",
       "children": []
@@ -2471,6 +2611,7 @@
       "kind": "sidebar",
       "scenario": "Navigate collections beside a selected document",
       "action": "Choose collection",
+      "guidance": "Use a leading sidebar for app areas or major content collections. Keep hierarchy shallow, generally within two levels, and use clear group labels and disclosure where needed. Consider familiar symbols, customization, and the ability to hide the sidebar. On visionOS, a sidebar within a tab can help with deeper content organization.",
       "mode": "web-adaptation",
       "source": "https://developer.apple.com/design/human-interface-guidelines/sidebars#Best-practices",
       "children": []
@@ -2490,7 +2631,8 @@
       "kind": "accounts",
       "scenario": "Preview a sign-in choice without authentication",
       "action": "Review account choices",
-      "mode": "web-adaptation",
+      "guidance": "Explain the benefit of authentication and defer it until useful. Consider linking an existing account so people retain their information. Request little additional personal data, explaining any necessity. Prefer system-created buttons for a consistent presentation; if customization is necessary, follow the dedicated artwork, contrast, sizing, and platform rules rather than treating the Apple logo as unrestricted decoration.",
+      "mode": "simulation",
       "source": "https://developer.apple.com/design/human-interface-guidelines/sign-in-with-apple#Offering-Sign-in-with-Apple",
       "children": []
     },
@@ -2509,6 +2651,7 @@
       "kind": "assistant",
       "scenario": "Review a fictional voice-intent result with confirmation",
       "action": "Preview request",
+      "guidance": "Prioritize useful app actions and relevant content for Siri, exposing them through the documented intents and entities approach. Use names people already recognize and supply meaningful context for onscreen or searchable content where appropriate. Prefer built-in responses unless they cannot express the task, and keep advertisements out of delivered content. Use app schemas or shortcuts according to the supported integration path.",
       "mode": "simulation",
       "source": "https://developer.apple.com/design/human-interface-guidelines/siri#Getting-your-app-to-work-with-Siri",
       "children": []
@@ -2527,6 +2670,7 @@
       "kind": "slider",
       "scenario": "Adjust narration volume with a visible value",
       "action": "Change volume",
+      "guidance": "Use sliders for adjusting values within a range and preserve expected directions from minimum to maximum. Consider an accompanying text field and stepper when exact entry matters. Prefer horizontal sliders in visionOS. For audio volume on iPhone and iPad, use the dedicated volume view rather than repurposing an ordinary slider.",
       "mode": "web-adaptation",
       "source": "https://developer.apple.com/design/human-interface-guidelines/sliders#Best-practices",
       "children": []
@@ -2543,6 +2687,7 @@
       "kind": "snippet",
       "scenario": "Review a concise example assistant result and its action",
       "action": "Inspect result",
+      "guidance": "Use snippets for compact task results and optional confirmations from Siri, Spotlight, or Shortcuts. Keep custom content brief and legible across appearances and text sizes; deep-link to the app for longer details. Label confirmation actions specifically. Make the custom view communicate its purpose while retaining meaningful spoken dialogue for interactions without a visible screen.",
       "mode": "web-adaptation",
       "source": "https://developer.apple.com/design/human-interface-guidelines/snippets#Anatomy",
       "children": []
@@ -2557,6 +2702,7 @@
       "kind": "spatial",
       "scenario": "Arrange a small spatial board with a stable reference frame",
       "action": "Change position",
+      "guidance": "Place important content comfortably in view and anchor it in space rather than rigidly to the wearer's head. Use depth to clarify hierarchy, avoiding unnecessary depth on text and frequent refocusing. Preserve dynamic scale for usable interactive content; reserve fixed scale mainly for objects needing realistic physical size. Prioritize indirect interaction, provide enough target spacing for eye selection, and avoid requiring physical movement unless it is essential to the experience.",
       "mode": "simulation",
       "source": "https://developer.apple.com/design/human-interface-guidelines/spatial-layout#Field-of-view",
       "children": []
@@ -2576,6 +2722,7 @@
       "kind": "split",
       "scenario": "Inspect a document beside its selection list",
       "action": "Select document",
+      "guidance": "Use adjacent panes to connect navigation and related content, preserving selection highlights along the path to the detail view. Consider drag and drop between panes. Prefer a regular-width environment on iPhone; pane arrangements vary elsewhere. In visionOS, favor a split view for supplementary information, while watchOS displays its list or detail one full-screen view at a time.",
       "mode": "web-adaptation",
       "source": "https://developer.apple.com/design/human-interface-guidelines/split-views#Best-practices",
       "children": []
@@ -2588,6 +2735,7 @@
       "kind": "topic-browser",
       "scenario": "Explore the status example collection",
       "action": "Choose example",
+      "guidance": "This collection links to Activity rings, gauges, progress indicators, and rating indicators, with each page defining the meaning and appropriate use of its display.",
       "mode": "web-adaptation",
       "source": "https://developer.apple.com/design/human-interface-guidelines/status",
       "children": [
@@ -2608,6 +2756,7 @@
       "kind": "status-strip",
       "scenario": "Read a small app's connection and save states",
       "action": "Change status",
+      "guidance": "Keep the device status bar readable by obscuring app content underneath it. Consider hiding it temporarily for full-screen media when that improves the experience, but avoid permanently withholding the device information people expect there, such as the time and battery level.",
       "mode": "web-adaptation",
       "source": "https://developer.apple.com/design/human-interface-guidelines/status-bars#Best-practices",
       "children": []
@@ -2625,6 +2774,7 @@
       "kind": "stepper",
       "scenario": "Adjust a bounded number of reading sessions",
       "action": "Increase sessions",
+      "guidance": "Use a stepper for incremental increases and decreases, and make the associated value easy to identify. When people may need a large change, consider a companion text field instead of requiring many small steps. On Mac, consider supporting Shift-click for faster adjustment through a large value range.",
       "mode": "web-adaptation",
       "source": "https://developer.apple.com/design/human-interface-guidelines/steppers#Best-practices",
       "children": []
@@ -2637,6 +2787,7 @@
       "kind": "topic-browser",
       "scenario": "Explore the system experiences example collection",
       "action": "Choose example",
+      "guidance": "This collection groups integrations with system surfaces, including shortcuts, complications, quick controls, Live Activities, notifications, snippets, status bars, Top Shelf, watch faces, and widgets.",
       "mode": "web-adaptation",
       "source": "https://developer.apple.com/design/human-interface-guidelines/system-experiences",
       "children": [
@@ -2666,6 +2817,7 @@
       "kind": "tabs",
       "scenario": "Move among stable app destinations",
       "action": "Open destination",
+      "guidance": "Use a tab bar for navigating top-level app sections and keep it available as people move among them. Label tabs clearly, avoid overflow where possible, and keep tabs present even when their content is unavailable. Respect platform placement: iPhone tabs float near the bottom, iPad tabs near the top, and visionOS tabs vertically beside the window.",
       "mode": "web-adaptation",
       "source": "https://developer.apple.com/design/human-interface-guidelines/tab-bars#Best-practices",
       "children": []
@@ -2681,6 +2833,7 @@
       "kind": "tabs",
       "scenario": "Switch between related document views",
       "action": "Change view",
+      "guidance": "Use a tab view for closely related, mutually exclusive content panes, and keep each pane’s controls scoped to its own content. Name tabs by their contents, avoid a pop-up selector for switching, and avoid more than six tabs. For comparable iPhone or iPad functionality, consider segments; Apple Watch represents tab views through page controls.",
       "mode": "web-adaptation",
       "source": "https://developer.apple.com/design/human-interface-guidelines/tab-views#Best-practices",
       "children": []
@@ -2695,6 +2848,7 @@
       "kind": "payment",
       "scenario": "Preview a merchant payment request without a transaction",
       "action": "Review amount",
+      "guidance": "Prepare merchants before a customer checkout: arrange the supported payment-provider integration and entitlement, and collect required terms acceptance from an administrator before device configuration. Follow provider-specific setup requirements. Distinguish successful card reading from the eventual transaction outcome; after a successful tap, your app still needs to report processing results. When reading fails, help the merchant offer another payment method.",
       "mode": "simulation",
       "source": "https://developer.apple.com/design/human-interface-guidelines/tap-to-pay-on-iphone#Enabling-Tap-to-Pay-on-iPhone",
       "children": []
@@ -2707,6 +2861,7 @@
       "kind": "topic-browser",
       "scenario": "Explore the technologies example collection",
       "action": "Choose example",
+      "guidance": "Use this collection to identify Apple capabilities, features, and services relevant to the experience, then consult each technology's integration and platform guidance.",
       "mode": "web-adaptation",
       "source": "https://developer.apple.com/design/human-interface-guidelines/technologies",
       "children": [
@@ -2756,6 +2911,7 @@
       "kind": "form",
       "scenario": "Enter and validate a short document title",
       "action": "Save title",
+      "guidance": "Use text fields for small, specific inputs. Supply a helpful hint, mask sensitive entry, and size and space fields for the expected information. Keep keyboard focus order predictable and validate when useful. Offer a trailing clear control on iPhone and iPad; use text entry sparingly on Apple Watch.",
       "mode": "web-adaptation",
       "source": "https://developer.apple.com/design/human-interface-guidelines/text-fields#Best-practices",
       "children": []
@@ -2775,6 +2931,7 @@
       "kind": "editor",
       "scenario": "Edit a longer note with a character count",
       "action": "Save note",
+      "guidance": "Choose a text view for lengthy, formatted, or editable text, using simpler labels or fields for short content. Maintain legibility with adaptable typography and accessibility testing, and consider allowing useful information to be selected and copied. Match the input keyboard to the content on iPhone and iPad. On Apple TV, editable text uses fields instead.",
       "mode": "web-adaptation",
       "source": "https://developer.apple.com/design/human-interface-guidelines/text-views#Best-practices",
       "children": []
@@ -2790,6 +2947,7 @@
       "kind": "menu-bar",
       "scenario": "Access a document command independently of its toolbar",
       "action": "Open File menu",
+      "guidance": "Preserve standard menus, their order, and their familiar keyboard shortcuts. Keep the set of commands stable and use short menu titles and recognizable imagery. Add modifier-dependent commands only as discoverable alternatives to actions available elsewhere. On Mac, menu bar extras can expose app functionality while another app is active, but available space can constrain their visibility.",
       "mode": "web-adaptation",
       "source": "https://developer.apple.com/design/human-interface-guidelines/the-menu-bar#Best-practices",
       "children": []
@@ -2809,6 +2967,7 @@
       "kind": "toggle",
       "scenario": "Change an independent reading preference",
       "action": "Enable reminders",
+      "guidance": "Use toggles for opposing states, identify what changes, and communicate state through more than color alone. On iPhone and iPad, reserve switches for list rows and use toggle-like buttons elsewhere. On Mac, choose switches, checkboxes, or radio groups according to emphasis, hierarchy, and exclusivity; show a mixed checkbox state when subordinate choices differ.",
       "mode": "web-adaptation",
       "source": "https://developer.apple.com/design/human-interface-guidelines/toggles#Best-practices",
       "children": []
@@ -2823,6 +2982,7 @@
       "kind": "tokens",
       "scenario": "Add and remove named collaborators as tokens",
       "action": "Add person",
+      "guidance": "Use a token field when entered text benefits from becoming individually selectable, manipulable tokens. Consider a context menu for useful actions on a token and additional shortcuts for creating tokens. Suggestions can help during entry; consider delaying them when immediate presentation would distract people from typing.",
       "mode": "web-adaptation",
       "source": "https://developer.apple.com/design/human-interface-guidelines/token-fields#Best-practices",
       "children": []
@@ -2842,6 +3002,7 @@
       "kind": "toolbar",
       "scenario": "Act on the current document using a compact toolbar",
       "action": "Export document",
+      "guidance": "Choose toolbar items deliberately so frequent actions remain easy to find without crowding. Prefer standard components, reduce unnecessary backgrounds and tinting, and keep labels distinct from underlying content. Group additional actions in a More menu where appropriate. Consider customization on iPad and Mac. On Mac, also expose every toolbar item as a menu-bar command so hiding or customizing the toolbar preserves access.",
       "mode": "web-adaptation",
       "source": "https://developer.apple.com/design/human-interface-guidelines/toolbars#Best-practices",
       "children": []
@@ -2856,6 +3017,7 @@
       "kind": "tv-screen",
       "scenario": "Preview directly relevant featured film content",
       "action": "Open feature",
+      "guidance": "Use Apple TV’s Top Shelf to help people enter compelling content quickly. Feature fresh or personalized material, avoid advertisements and prices, and prefer engaging dynamic presentations. Supply at least a static fallback when the recommended full-screen content is absent, and choose among the documented layouts according to the content being showcased.",
       "mode": "web-adaptation",
       "source": "https://developer.apple.com/design/human-interface-guidelines/top-shelf#Best-practices",
       "children": []
@@ -2875,6 +3037,7 @@
       "kind": "typography",
       "scenario": "Compare scalable text hierarchy in a reading card",
       "action": "Change type scale",
+      "guidance": "Use readable platform-appropriate sizes and weights, testing actual viewing conditions rather than relying on a mockup. Prefer built-in text styles for hierarchy and supported text-size adaptation. Custom fonts need equivalent accessibility behavior. At larger text sizes, preserve information priority, grow meaningful icons, reduce truncation, and consider stacking inline content or reducing columns. Keep hierarchy consistent as size changes, and avoid light weights where they impair legibility.",
       "mode": "web-adaptation",
       "source": "https://developer.apple.com/design/human-interface-guidelines/typography#Ensuring-legibility",
       "children": []
@@ -2892,6 +3055,7 @@
       "kind": "undo",
       "scenario": "Edit a short title and recover earlier states",
       "action": "Undo edit",
+      "guidance": "Help people foresee what undo or redo will change and visibly reveal its effect, even when the affected content has moved offscreen. Support repeated reversal without arbitrary restrictions and consider grouping related adjustments. Preserve standard gestures and keyboard behavior. On Mac, place the commands in Edit and support Command–Z and Shift–Command–Z; add dedicated toolbar controls only when useful.",
       "mode": "web-adaptation",
       "source": "https://developer.apple.com/design/human-interface-guidelines/undo-and-redo#Best-practices",
       "children": []
@@ -2910,6 +3074,7 @@
       "kind": "virtual-keyboard",
       "scenario": "Enter a short query with onscreen keys",
       "action": "Enter query",
+      "guidance": "Match keyboard type to the input task and consider a Return-key label that explains the action. Consider a custom keyboard for distinctive systemwide input needs, with an obvious route to other keyboards, avoiding duplicate features. Account for secure-entry exceptions and platform differences, including direct or indirect input on visionOS and device-dependent keyboard availability on Apple Watch.",
       "mode": "web-adaptation",
       "source": "https://developer.apple.com/design/human-interface-guidelines/virtual-keyboards#Best-practices",
       "children": []
@@ -2929,6 +3094,7 @@
       "kind": "accessibility",
       "scenario": "Explore semantic labels and a readable result sequence",
       "action": "Show semantic outline",
+      "guidance": "Describe important controls, images, and infographics with meaningful alternative information, excluding decorative imagery. Preserve interactive chart access as well as its description. Expose titles, headings, grouping, reading order, and content changes so navigation conveys the relationships seen visually. In visionOS, account for custom hand gestures being unavailable by default while VoiceOver is active, with Direct Gesture mode changing that behavior.",
       "mode": "web-adaptation",
       "source": "https://developer.apple.com/design/human-interface-guidelines/voiceover#Descriptions",
       "children": []
@@ -2947,6 +3113,7 @@
       "kind": "pass",
       "scenario": "Preview a fictional event pass without adding it to Wallet",
       "action": "Inspect pass",
+      "guidance": "Offer to add passes when they become useful, bundle related passes, and avoid repeating a suggestion after refusal. Provide an add button or direct Wallet link where appropriate. Choose the pass style that fits the item and create a clean Wallet-native presentation. Supply semantic tags for the pass types that require them and retain pass fields for compatibility with older system versions.",
       "mode": "simulation",
       "source": "https://developer.apple.com/design/human-interface-guidelines/wallet#Passes",
       "children": []
@@ -2961,6 +3128,7 @@
       "kind": "watch-screen",
       "scenario": "Preview a simple watch-style clock composition",
       "action": "Change composition",
+      "guidance": "Help people discover useful complications by sharing watch-face configurations that include them. Show a preview of each shared face, aim to provide options across Apple Watch devices, and handle an incompatible selection gracefully. Consider offering a compatible alternative configuration instead of displaying an error when a face cannot be used.",
       "mode": "simulation",
       "source": "https://developer.apple.com/design/human-interface-guidelines/watch-faces#Best-practices",
       "children": []
@@ -2978,6 +3146,7 @@
       "kind": "web-view",
       "scenario": "Read self-contained help content in a bounded frame",
       "action": "Open help page",
+      "guidance": "Use a web view for rich web material inside the app’s current context. When people may visit several pages, explicitly provide forward and back navigation and corresponding controls; those interactions are not automatically exposed. Keep the experience focused on contextual content rather than attempting to reproduce a full browser’s functionality.",
       "mode": "web-adaptation",
       "source": "https://developer.apple.com/design/human-interface-guidelines/web-views#Best-practices",
       "children": []
@@ -2996,6 +3165,7 @@
       "kind": "widget",
       "scenario": "Choose a compact local information widget",
       "action": "Change size",
+      "guidance": "Choose a focused widget purpose with information people want frequently, and offer additional sizes only when useful. Match refreshes to the data; widgets do not continuously update in real time. Keep interactions simple and link directly to related app content. Adapt content to platform layouts and provide realistic previews and recognizable loading placeholders.",
       "mode": "web-adaptation",
       "source": "https://developer.apple.com/design/human-interface-guidelines/widgets#Best-practices",
       "children": []
@@ -3012,6 +3182,7 @@
       "kind": "window",
       "scenario": "Open and restore a document window with clear commands",
       "action": "Open inspector",
+      "guidance": "Make windows adapt smoothly as people resize and multitask, and open new windows at appropriate moments. Prefer system window controls and consider an explicit option to open content separately. In visionOS, favor a glass-backed window for familiar interface tasks and a volume for bounded, rich 3D content that people inspect from different angles.",
       "mode": "web-adaptation",
       "source": "https://developer.apple.com/design/human-interface-guidelines/windows#Best-practices",
       "children": []
@@ -3028,6 +3199,7 @@
       "kind": "workout",
       "scenario": "Start, pause, and end a fictional walking session",
       "action": "Start workout",
+      "guidance": "During an Apple Watch workout session, prioritize the live metrics and controls relevant to the current activity. Make an active session visually recognizable and provide easy pause, resume, and stop actions with clear start and finish feedback. Keep unrelated navigation out of the workout flow. When sensors cannot supply certain measurements, explain what information remains available and how the experience continues.",
       "mode": "web-adaptation",
       "source": "https://developer.apple.com/design/human-interface-guidelines/workouts#Best-practices",
       "children": []
@@ -3047,6 +3219,7 @@
       "kind": "writing",
       "scenario": "Replace vague UI messages with concrete example copy",
       "action": "Compare wording",
+      "guidance": "Establish a consistent vocabulary and voice, adapting tone to the seriousness and context of the task. Use clear, inclusive wording, action-oriented labels, and capitalization patterns suited to each component. Order information by importance and make multistep progress understandable. Empty states should suggest a useful next action. Put helpful, blame-free error guidance near the problem, and describe gestures accurately for the device instead of using one interaction term everywhere.",
       "mode": "web-adaptation",
       "source": "https://developer.apple.com/design/human-interface-guidelines/writing#Getting-started",
       "children": []

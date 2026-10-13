@@ -30,6 +30,8 @@ The search is lexical; use related terms or the category files if results are in
 
 Read the target platform page, relevant foundation cards, and the component/pattern/technology cards that govern the actual task. Load only applicable references:
 
+For concrete controls, screens, and motion, see [the runnable examples guide](references/runnable-examples.md). It routes to all 173 companion gallery tasks and distinguishes browser interactions from simulated hardware and SDK behavior.
+
 | Need | Reference |
 | --- | --- |
 | Platform conventions, games, design principles | [Getting started](references/getting-started.md) |

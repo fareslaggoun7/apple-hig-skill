@@ -1,0 +1,27 @@
+name: Publish verified release
+on:
+  push:
+    tags: ['v1.*']
+permissions:
+  contents: read
+jobs:
+  checks:
+    uses: ./.github/workflows/validate.yml
+  release:
+    needs: checks
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+      - name: Publish the portable skill and standalone gallery
+        env:
+          GH_TOKEN: ${{ github.token }}
+          RELEASE_TAG: ${{ github.ref_name }}
+          GH_REPO: ${{ github.repository }}
+        run: |
+          if gh release view "$RELEASE_TAG" > /dev/null 2>&1; then
+            echo "Existing release preserved."
+            exit 0
+          fi
+          gh release create "$RELEASE_TAG" dist/apple-hig.zip dist/SHA256SUMS dist/apple-hig-gallery.zip dist/GALLERY_SHA256SUMS --verify-tag --title "Apple HIG Skill $RELEASE_TAG" --notes-file "docs/releases/$RELEASE_TAG.md"

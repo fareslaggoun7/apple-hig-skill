@@ -45,6 +45,6 @@ Do not convert a recommendation into an absolute rule. When source paragraphs co
 
 ## Examples and limits
 
-[Prompt library](../examples/prompts.md) · [Worked review](../examples/review-walkthrough.md) · [Interactive web adaptation](../examples/web-adaptation/README.md)
+[Prompt library](../examples/prompts.md) · [Worked review](../examples/review-walkthrough.md) · [Interactive web adaptation](../examples/web-adaptation/README.md) · [All 173 gallery tasks](../examples/gallery/TOPICS.md) · [Ten motion experiments](../examples/gallery/MOTION.md)
 
 The project does not promise that any assistant will reach the same answer on every run. [Coverage](COVERAGE.md) explains which checks were performed and why the requested numerical error threshold has not been established.

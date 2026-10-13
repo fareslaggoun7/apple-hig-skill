@@ -7,10 +7,18 @@ export const MOTIONS = [
   ['reorder-list','List reordering'],['reduced-motion','Reduced alternative'],
 ];
 export function springStep(state,elapsed){
-  const dt=Math.min(Math.max(elapsed,0),1/60);
-  const acceleration=(state.target-state.position)*260-state.velocity*32;
-  const velocity=state.velocity+acceleration*dt;
-  return {...state,velocity,position:state.position+velocity*dt};
+  // Substeps preserve elapsed time across ordinary frame rates without instability.
+  const duration=Math.min(Math.max(elapsed,0),.1),steps=Math.max(1,Math.ceil(duration*240)),dt=duration/steps;
+  let {position,velocity}=state;
+  for(let i=0;i<steps;i++){velocity+=((state.target-position)*260-velocity*32)*dt;position+=velocity*dt;}
+  return {...state,velocity,position};
+}
+export function retarget(state,target){return {...state,target};}
+export function springAt(time){
+  let state={position:0,velocity:0,target:0};
+  const targetAt=t=>t<.35?0:t<.53?1:t<.8?.35:t<1.7?1:0;
+  for(let t=0;t<Math.min(Math.max(time,0),3);t+=1/240)state=springStep(retarget(state,targetAt(t)),Math.min(1/240,time-t));
+  return state;
 }
 export function ease(t){t=Math.max(0,Math.min(1,t));return t*t*(3-2*t);}
 export function phase(time){
@@ -18,7 +26,7 @@ export function phase(time){
   if(time<1.7)return 1;if(time<2.35)return 1-ease((time-1.7)/.65);return 0;
 }
 export function frameState(name,time,reduced=false){
-  const p=phase(time);
+  const p=name==='spring-retarget'?springAt(time).position:phase(time);
   const value=reduced?(p>=.5?1:0):p;
   return {name,time,value,position:20+value*260,opacity:reduced?1:value,
     progress:Math.round(20+value*65),scale:1-value*.05,active:value>=.5,reduced};
@@ -65,20 +73,32 @@ export function renderFrame(stage,name,time,reduced=false){
   }else if(name==='reorder-list'){
     const nodes=stage.querySelectorAll('.motion-list div');nodes[0].style.transform=`translateY(${52*p}px)`;nodes[1].style.transform=`translateY(${52*(1-p)}px)`;nodes[2].style.transform='translateY(104px)';
   }else{
-    const width=stage.clientWidth||600;
+  const width=stage.clientWidth||600;
     const x=20+p*Math.max(0,width-180);
-    find('.motion-card').style.transform=`translateX(${name==='reduced-motion'||reduced?(state.active?Math.max(0,width-180):0):x-20}px)`;
+    find('.motion-card').style.transform=`translateX(${name==='reduced-motion'||reduced?0:x-20}px)`;
+    if(name==='reduced-motion'||reduced)find('.motion-card').textContent=state.active?'Updated':'Ready';
   }
   return state;
 }
 export function mountMotion(root,onStatus,getReduced,initial='spring-retarget'){
-  let name=initial,raf=0,started=0,paused=false,lastTime=0;
+  if(!MOTIONS.some(m=>m[0]===initial))initial='spring-retarget';
+  let name=initial,raf=0,started=0,paused=false,lastTime=0,spring={position:0,velocity:0,target:0},manual=false,lastFrame=0;
   root.innerHTML='<div class="motion-lab"><div class="motion-choices" role="group" aria-label="Motion examples">'+MOTIONS.map(([id,label])=>`<button data-motion="${id}" aria-pressed="${id===name}">${label}</button>`).join('')+'</div><div class="motion-stage" aria-label="Motion preview"></div><div class="motion-foot"><button class="primary" data-play>Replay animation</button><button data-pause disabled>Pause</button><small>Original timing values · reduced-motion support</small></div></div>';
   const stage=root.querySelector('.motion-stage'),pause=root.querySelector('[data-pause]');
-  const choose=next=>{cancelAnimationFrame(raf);name=next;stage.innerHTML=motionMarkup(name);renderFrame(stage,name,0,getReduced());for(const b of root.querySelectorAll('[data-motion]'))b.setAttribute('aria-pressed',String(b.dataset.motion===name));pause.disabled=true;onStatus('Selected '+MOTIONS.find(m=>m[0]===name)[1]+'. Replay when ready.');};
-  const tick=now=>{if(paused)return;lastTime=Math.min((now-started)/1000,2.8);renderFrame(stage,name,lastTime,getReduced());if(lastTime<2.8)raf=requestAnimationFrame(tick);else{pause.disabled=true;onStatus('Animation complete. '+(getReduced()?'Reduced motion preserved the same outcome.':'Replay or choose another example.'));}};
-  root.querySelector('[data-play]').addEventListener('click',()=>{cancelAnimationFrame(raf);paused=false;started=performance.now();pause.disabled=false;pause.textContent='Pause';raf=requestAnimationFrame(tick);onStatus('Playing '+name+'. You can pause or replay immediately.');});
-  pause.addEventListener('click',()=>{paused=!paused;pause.textContent=paused?'Resume':'Pause';if(paused){cancelAnimationFrame(raf);onStatus('Animation paused.');}else{started=performance.now()-lastTime*1000;raf=requestAnimationFrame(tick);}});
+  stage.inert=true;
+  const controls=document.createElement('div');controls.className='row spring-controls';controls.innerHTML='<button data-target="0">Retarget left</button><button data-target="1">Retarget right</button><output aria-live="polite">Position and velocity continue across target changes.</output>';root.querySelector('.motion-foot').after(controls);
+  const choose=next=>{cancelAnimationFrame(raf);name=next;manual=false;spring={position:0,velocity:0,target:0};controls.hidden=name!=='spring-retarget';stage.innerHTML=motionMarkup(name);renderFrame(stage,name,0,getReduced());for(const b of root.querySelectorAll('[data-motion]'))b.setAttribute('aria-pressed',String(b.dataset.motion===name));pause.disabled=true;onStatus('Selected '+MOTIONS.find(m=>m[0]===name)[1]+'. Replay when ready.');};
+  const tick=now=>{if(paused)return;lastTime=Math.min((now-started)/1000,2.8);
+    if(manual&&name==='spring-retarget'){
+      spring=getReduced()?{...spring,position:spring.target,velocity:0}:springStep(spring,(now-lastFrame)/1000);
+      stage.querySelector('.motion-card').style.transform=`translateX(${getReduced()?0:spring.position*Math.max(0,stage.clientWidth-180)}px)`;
+      if(getReduced())stage.querySelector('.motion-card').textContent=spring.target?'Right selected':'Left selected';
+    }else{renderFrame(stage,name,lastTime,getReduced());if(name==='spring-retarget')spring=springAt(lastTime);}
+    lastFrame=now;
+    if(manual?(Math.abs(spring.position-spring.target)>.001||Math.abs(spring.velocity)>.001):lastTime<2.8)raf=requestAnimationFrame(tick);else{pause.disabled=true;onStatus('Animation complete. '+(getReduced()?'Reduced motion preserved the same outcome.':'Replay or retarget immediately.'));}};
+  root.querySelector('[data-play]').addEventListener('click',()=>{cancelAnimationFrame(raf);manual=false;paused=false;started=lastFrame=performance.now();pause.disabled=false;pause.textContent='Pause';raf=requestAnimationFrame(tick);onStatus('Playing '+name+'. You can pause or replay immediately.');});
+  for(const b of controls.querySelectorAll('[data-target]'))b.addEventListener('click',()=>{cancelAnimationFrame(raf);manual=true;spring=retarget(spring,+b.dataset.target);paused=false;pause.disabled=false;pause.textContent='Pause';lastFrame=performance.now();raf=requestAnimationFrame(tick);onStatus('Retargeted '+(spring.target?'right':'left')+' from the current position and velocity.');});
+  pause.addEventListener('click',()=>{paused=!paused;pause.textContent=paused?'Resume':'Pause';if(paused){cancelAnimationFrame(raf);onStatus('Animation paused.');}else{lastFrame=performance.now();started=lastFrame-lastTime*1000;raf=requestAnimationFrame(tick);}});
   for(const button of root.querySelectorAll('[data-motion]'))button.addEventListener('click',()=>choose(button.dataset.motion));
   choose(name);return ()=>cancelAnimationFrame(raf);
 }

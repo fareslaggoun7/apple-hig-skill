@@ -13,3 +13,7 @@ Start with a [prompt](prompts.md), inspect a [worked review](review-walkthrough.
 | Source-conflict prompt | Leaving conflicting exact measurements unresolved |
 
 Run helper commands from the repository root. Prefix Claude Code prompts with `/apple-hig`, or Codex prompts with `$apple-hig`. In Claude chat, ask for the `apple-hig` skill by name.
+
+## Complete interface gallery
+
+[Run the gallery](gallery/README.md), explore [all 173 topic tasks and pictures](gallery/TOPICS.md), and compare [ten motion experiments](gallery/MOTION.md). These are original browser adaptations and explicitly labeled device/SDK models. The skill ZIP remains portable; the complete gallery is distributed separately.
