@@ -55,6 +55,9 @@ try{
   await open('playing-audio');await page.locator('[data-action=play]').click();await page.locator('#topic-list [data-topic=buttons]').click();await page.clock.runFor(550);assert.match(await page.locator('#result').textContent(),/Try the controls/);
   await open('researchkit');await page.locator('[data-action=next]').click();assert.match(await page.locator('#result').textContent(),/declined/);await page.locator('[data-consent]').selectOption('yes');await page.locator('[data-action=next]').click();await page.locator('[data-action=next]').click();assert.match(await page.locator('#result').textContent(),/survey complete/);
   await open('generative-ai');await page.locator('[data-suggestion]').fill('My reviewed note.');await page.locator('[data-action=next]').click();await page.locator('[data-action=next]').click();assert.match(await page.locator('[data-state]').textContent(),/Applied locally: My reviewed note/);
+  await open('file-management');await page.locator('[data-item]').first().click();await page.locator('[data-rename]').fill('Morning notes');await page.getByRole('button',{name:'Rename selected document'}).click();assert.equal(await page.locator('[data-item="Morning notes"]').count(),1);
+  await open('voiceover');await page.getByRole('button',{name:'Show semantic outline'}).click();assert.match(await page.locator('[data-context]').textContent(),/status, polite/);
+  await open('web-views');await page.getByRole('button',{name:'Open help page'}).click();assert.equal(await page.locator('iframe').isVisible(),true);await page.getByRole('button',{name:'Close help page'}).click();assert.equal(await page.locator('iframe').isVisible(),false);
   await page.close();
   if(errors.length)failures.push(...errors);
   console.log(JSON.stringify({routes,actions,failures},null,2));
