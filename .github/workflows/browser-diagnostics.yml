@@ -10,6 +10,7 @@ jobs:
   previous-failure:
     runs-on: ubuntu-latest
     steps:
+      - uses: actions/checkout@v4
       - name: Read this repository's previously failed browser check
         env:
           GH_TOKEN: ${{ github.token }}
@@ -47,10 +48,18 @@ jobs:
           Path('/tmp/previous-browser-exception.txt').write_text('\n'.join(lines[i] for i in sorted(selected))+'\n')
           PY
       - name: Publish the exception for the continuation's diagnosis
+        if: always()
         env:
           GH_TOKEN: ${{ github.token }}
           GH_REPO: ${{ github.repository }}
-        run: gh release upload v1.1.1 /tmp/previous-browser-exception.txt
+        run: |
+          if [ ! -f /tmp/previous-browser-exception.txt ]; then
+            printf 'Collector did not produce an exception.\n' > /tmp/previous-browser-exception.txt
+            if [ -f /tmp/previous-browser-request-status.txt ]; then cat /tmp/previous-browser-request-status.txt >> /tmp/previous-browser-exception.txt; fi
+            if [ -f /tmp/previous-browser-request-error.txt ]; then cat /tmp/previous-browser-request-error.txt >> /tmp/previous-browser-exception.txt; fi
+          fi
+          cp /tmp/previous-browser-exception.txt /tmp/previous-browser-exception-${GITHUB_RUN_ID}.txt
+          gh release upload --repo "$GH_REPO" v1.1.1 /tmp/previous-browser-exception-${GITHUB_RUN_ID}.txt
   diagnose:
     if: github.event_name == 'workflow_dispatch'
     runs-on: ubuntu-latest
