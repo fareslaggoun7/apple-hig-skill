@@ -19,7 +19,7 @@
   "inventory_coverage_percent": 100.0,
   "skill_format_validation": "passed",
   "local_catalog_audit": "passed; 0 errors",
-  "markdown_links_checked": 716,
+  "markdown_links_checked": 1363,
   "source_fidelity_validation": {
     "source_fidelity_checks": "passed",
     "corpus_counts": {
@@ -61,7 +61,7 @@
     "interpretation_accuracy": "Not established by parser or structural checks."
   },
   "live_drift_check": {
-    "checked_at_utc": "2026-10-13T07:44:32.404369+00:00",
+    "checked_at_utc": "2026-10-13T22:33:47.944562+00:00",
     "snapshot_date": "2026-10-13",
     "discovered_pages": 173,
     "added": [],
@@ -95,5 +95,37 @@
     "Image/video semantics were not visually audited.",
     "Other Apple documentation, SDK/API contracts, policy, translations, unlinked pages and future changes are outside the snapshot.",
     "Interpretation error below 0.01% is not established or guaranteed."
-  ]
+  ],
+  "quality_enhancement": {
+    "source_readback_date": "2026-10-13",
+    "method": "Agent-performed targeted current prose/table readback; not independent empirical output grading.",
+    "source_topics_consulted": [
+      "accessibility",
+      "alerts",
+      "buttons",
+      "designing-for-games",
+      "designing-for-macos",
+      "designing-for-tvos",
+      "designing-for-visionos",
+      "designing-for-watchos",
+      "layout",
+      "live-activities",
+      "materials",
+      "motion",
+      "privacy",
+      "progress-indicators",
+      "sheets",
+      "toolbars",
+      "typography"
+    ],
+    "source_pointer_corrected": {
+      "topic": "designing-for-games",
+      "previous_section": "Enable-intuitive-interactions",
+      "correct_section": "Look-stunning-on-every-display",
+      "reason": "The conflicting button-size prose and default/minimum table are in the display section."
+    },
+    "independent_empirical_task_evaluations": 0,
+    "semantic_error_target_established": false,
+    "media_visually_audited_in_this_readback": false
+  }
 }

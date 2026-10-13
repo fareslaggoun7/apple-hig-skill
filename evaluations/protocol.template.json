@@ -1,0 +1,20 @@
+{
+  "schema_version": 1,
+  "id": "unregistered-evaluation-template",
+  "metric": "task-result-with-any-material-error",
+  "confidence": 0.95,
+  "target_error_fraction": 0.0001,
+  "skill_sha256": "UNREGISTERED",
+  "registered_at_utc": null,
+  "sampling": {
+    "method": "unregistered",
+    "population_definition": "Define actual skill/model/client/platform/OS/task scope before selecting trials.",
+    "independence_justification": "No independent representative sample has been obtained."
+  },
+  "authors_and_runners": [],
+  "reviewers": [],
+  "selected_trials_file": "selected-trials.jsonl",
+  "selected_trials_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "registration_evidence_file": "registration.txt",
+  "registration_evidence_sha256": null
+}

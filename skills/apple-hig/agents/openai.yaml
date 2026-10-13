@@ -1,4 +1,4 @@
 interface:
   display_name: "Apple Human Interface Guidelines"
-  short_description: "Source-backed Apple interface design and review"
-  default_prompt: "Use $apple-hig to design or review this interface for its target Apple platform."
+  short_description: "Platform-aware design with source and behavior checks"
+  default_prompt: "Use $apple-hig to design or review this interface for its target platform. Define task success, cite applicable Apple sections, implement relevant states, and inspect/test/correct the result. Distinguish product choices and report unverified claims honestly."

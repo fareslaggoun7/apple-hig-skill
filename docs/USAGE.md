@@ -23,6 +23,8 @@ Run these paths from the repository root. For an installed skill, replace `skill
 | `fetch sidebars --section Best-practices` | Selected current official content | Yes |
 | `audit` | Local catalog and source-link consistency | No |
 | `refresh --report work/drift.json` | Newly discovered, changed, failed, or unreached topics | Yes |
+| `plan --platform ipados --goal "Edit a document" --output work/design/record.json` | Unfinished design/evidence record with applicable source topics and review checks | No |
+| `check work/design/record.json` | Source integrity, scope, completeness, and declared check results; no semantic certification | Local recorded evidence |
 
 Prefix each command with `python skills/apple-hig/scripts/hig.py`. Supported platform filters are `ios`, `ipados`, `macos`, `tvos`, `visionos`, and `watchos`. Filters use page-level metadata; specific guidance may have narrower scope. Search uses words and topic ancestry, not embeddings.
 
@@ -42,6 +44,14 @@ Validation: what was checked and what remains unverified
 ```
 
 Do not convert a recommendation into an absolute rule. When source paragraphs conflict, disclose the ambiguity. SDK contracts require separate official API documentation; HIG platform tags do not prove API availability.
+
+## Design quality and accuracy
+
+For new screens or substantial changes, use the [design playbook](../skills/apple-hig/references/design-playbook.md): define the primary task, compare suitable structures, record consequential decisions and sources, implement relevant states/exits, and inspect/test/correct. Keep the user's product identity and constraints. For a small fix, apply the relevant steps compactly.
+
+`plan` creates an unfinished JSON record. Select applicable sections and sources, fill actual context and decisions, attach hashed complete live section results, and record real checks and remaining findings. `check` exits 2 until the record is complete and intact, then reports readiness for human review. General dated guidance can be used with `--allow-snapshot`; exact numeric/version claims still need current evidence. See the playbook for fields, freshness policy, source drift, and separate API review.
+
+For a numerical claim, use the [evaluation protocol](../skills/apple-hig/references/evaluation-protocol.md) and [repository evaluation guide](../evaluations/README.md). `python skills/apple-hig/scripts/assurance.py estimate --trials 29956 --errors 0` is a hypothetical calculation. `evaluate` derives counts from registered actual task outputs and independent review artifacts. Neither calculator output, self-review, source hashes, nor authored challenge prompts prove an empirical error rate.
 
 ## Examples and limits
 

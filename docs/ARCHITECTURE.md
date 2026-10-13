@@ -43,6 +43,14 @@ dist/              Portable skill and standalone gallery ZIPs with checksums
 
 The Markdown package is client-neutral. Codex's optional UI metadata is separate; Claude-specific configuration and model/API dependencies are unnecessary. No accounts or keys are required by the skill itself.
 
+## Design quality and empirical assurance
+
+`references/design-playbook.md` specifies a task-centered source → structure → states → inspect/test/correct loop. `hig.py plan` uses six platform profiles and explicit topic selection to create an unfinished record. `design_quality.py` checks source anchors and platform metadata, safe artifact paths, hashes, snapshot comparison, a project-defined seven-day live-evidence window, complete parser output, decision qualifiers, declared checks, and unresolved findings. A skill fingerprint binds distributable files while excluding runtime artifacts, so writing a plan does not invalidate itself.
+
+`references/evaluation-protocol.md` defines a task-level material-error metric. `assurance.py` derives counts from hashed preregistration/selected-trial evidence, actual prompts/outputs, and distinct declared independent reviews. It counts missing/ambiguous outcomes conservatively and calculates an exact one-sided Clopper–Pearson upper bound. Its integrity checks cannot establish genuine independent people, representative sampling, source entailment, or native behavior; those require external audit. Its calculator mode is explicitly hypothetical.
+
+`evaluations/` contains 30 authored challenge prompts, an unregistered protocol template, empty empirical observations, and a reproducible `not-established` report. Regression tests verify these tools without misrepresenting synthetic fixtures as independently evaluated assistant outputs. [Quality evidence](QUALITY.md) reports the current scope.
+
 ## Companion gallery
 
 `tools/build_gallery_catalog.py` maps every indexed topic to an explicit scenario and renderer kind, carries its dated source-card interpretation, and generates both `examples/gallery/catalog.json` and the complete topic index. There are 173 routes and 121 registered renderer kinds. Missing kinds or unmatched topics fail validation; there is no generic placeholder renderer.

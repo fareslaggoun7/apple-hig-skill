@@ -21,6 +21,8 @@
 
 A portable Agent Skill for designing, implementing, and reviewing interfaces with traceable Apple sources. It combines **173 indexed topics**, concise platform-aware guidance, live official-source lookup, and an original interactive gallery. The gallery has a concrete task and a rendered picture for every topic, plus ten motion experiments with animated previews.
 
+The design workflow now starts with the person's task, compares appropriate structures, records consequential decisions with their sources, and tests the relevant states and accessibility behavior. It includes platform-aware planning and an evidence checker that flags incomplete source records and missing check evidence. [Design playbook](skills/apple-hig/references/design-playbook.md) · [Quality evidence](docs/QUALITY.md)
+
 ## Install once. Use in your client.
 
 | Client | Install | First prompt |
@@ -100,11 +102,24 @@ The six reference families cover getting started, foundations, patterns, compone
 
 [Prompt library](examples/prompts.md) · [Worked reviews](examples/review-walkthrough.md) · [Usage](docs/USAGE.md) · [Architecture](docs/ARCHITECTURE.md)
 
+## A design process you can inspect
+
+For substantial work, the assistant defines task success, reads applicable current sections, compares plausible structures, implements relevant states/exits, and inspects/tests/corrects the result. Apple recommendations, original product choices, SDK contracts, and unresolved claims stay explicit in the decision record.
+
+```sh
+python skills/apple-hig/scripts/hig.py plan --platform ipados --goal "Edit and recover a document" --topic undo-and-redo --output work/design/record.json
+python skills/apple-hig/scripts/hig.py check work/design/record.json
+```
+
+The generated plan is unfinished. Fill its context, decisions, exact source evidence, and actual test results before checking it. The checker validates evidence integrity and review completeness; it cannot certify guideline interpretation or native behavior. [Thirty challenge prompts and independent-evaluation protocol](evaluations/README.md) make the remaining accuracy work reproducible.
+
 ## Coverage and evidence
 
 The **13 October 2026** source snapshot covers all **173/173** pages discovered in the recorded English HIG topic tree. The gallery covers all 173 routes with 121 explicitly registered renderer kinds; related topics share appropriate controls while retaining their own task and source. Topic presence does not establish exhaustive interpretation of every sentence, accurate native geometry, or SDK conformance.
 
 **A semantic error rate below 0.01% is unproven and is not guaranteed.** [Coverage](docs/COVERAGE.md) documents source ambiguities and unverified media semantics. Browser validation covers all routes at desktop and phone widths and representative keyboard, cancellation, validation, search, loading, and motion interactions. It does not establish full accessibility conformance, model response quality, Apple-device behavior, or a live installation in your Claude account.
+
+A fresh official crawl on 13 October 2026 reached all 173 pages with no content drift, failed pages, or unfamiliar nodes. That is source consistency evidence. The [current empirical report](evaluations/current-report.json) has zero qualifying independent task evaluations; source hashes and regression tests do not establish the requested numerical accuracy. No workflow can establish a universally best design for every future user and model.
 
 ## Contribute
 

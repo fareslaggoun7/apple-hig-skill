@@ -65,7 +65,7 @@ def retrieve(path):
     if not isinstance(doc,dict) or not doc.get('metadata',{}).get('title'):
         raise ValueError('Unrecognized DocC document')
     canonical=normalize(doc.get('identifier',{}).get('url'))
-    if not canonical:raise ValueError('Document identity is outside the HIG namespace')
+    if canonical != path:raise ValueError('Document identity does not match the requested HIG topic')
     return raw,doc
 
 def plain(value,refs):
@@ -255,6 +255,14 @@ def main():
     p=sub.add_parser('fetch');p.add_argument('slug');p.add_argument('--outline',action='store_true',help='Outline is the default.')
     p.add_argument('--section');p.add_argument('--max-words',type=int,default=1200)
     sub.add_parser('audit');p=sub.add_parser('refresh');p.add_argument('--report')
+    p=sub.add_parser('plan',help='Create an unfinished platform-aware design/evidence record')
+    p.add_argument('--platform',choices=['ios','ipados','macos','tvos','visionos','watchos'],required=True)
+    p.add_argument('--goal',required=True);p.add_argument('--minimum-os',default='unspecified')
+    p.add_argument('--surface',choices=['native','web-adaptation'],default='native')
+    p.add_argument('--topic',action='append',default=[]);p.add_argument('--output',type=pathlib.Path)
+    p=sub.add_parser('check',help='Check a design evidence contract; does not certify semantics')
+    p.add_argument('record',type=pathlib.Path);p.add_argument('--allow-snapshot',action='store_true')
+    p.add_argument('--output',type=pathlib.Path)
     args=parser.parse_args()
     if getattr(args,'max_words',1)<1 or getattr(args,'limit',1)<1:parser.error('Limits must be positive')
     catalog=load_catalog()
@@ -269,6 +277,19 @@ def main():
     elif args.command=='fetch':fetch(args,catalog)
     elif args.command=='audit':return audit(catalog)
     elif args.command=='refresh':return refresh(args,catalog)
+    elif args.command in ('plan','check'):
+        import design_quality
+        if args.command=='plan':
+            result=design_quality.plan(args.platform,args.goal,args.minimum_os,args.surface,args.topic)
+        else:
+            record=json.loads(args.record.read_text(encoding='utf-8'))
+            if not isinstance(record,dict):raise ValueError('Design record must be a JSON object')
+            result=design_quality.check(record,args.record.resolve().parent,args.allow_snapshot)
+        if args.output:
+            args.output.parent.mkdir(parents=True,exist_ok=True)
+            args.output.write_text(json.dumps(result,ensure_ascii=False,indent=2)+'\n',encoding='utf-8')
+        print(json.dumps(result,ensure_ascii=False,indent=2))
+        if args.command=='check' and not result['ready_for_human_review']:return 2
     return 0
 
 if __name__=='__main__':

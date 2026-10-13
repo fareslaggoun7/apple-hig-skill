@@ -5,6 +5,7 @@ import io
 import json
 from pathlib import Path
 import re
+import shutil
 import tempfile
 import unittest
 from urllib.parse import urlsplit,unquote
@@ -113,6 +114,16 @@ class PackageTests(unittest.TestCase):
         with zipfile.ZipFile(io.BytesIO(expected)) as source,zipfile.ZipFile(changed,'w') as target:
             for name in source.namelist():target.writestr(name,source.read(name)+(b'changed' if name.endswith('/SKILL.md') else b''))
         self.assertFalse(packager.archives_equivalent(changed.getvalue(),expected))
+
+    def test_runtime_evidence_is_excluded_from_portable_zip(self):
+        with tempfile.TemporaryDirectory() as temp:
+            source=Path(temp)/'apple-hig'
+            shutil.copytree(packager.SOURCE,source,ignore=shutil.ignore_patterns('__pycache__'))
+            work=source/'work/design';work.mkdir(parents=True)
+            (work/'record.json').write_text('Private runtime fixture',encoding='utf-8')
+            with zipfile.ZipFile(io.BytesIO(packager.archive_bytes(source))) as archive:
+                self.assertIn('apple-hig/SKILL.md',archive.namelist())
+                self.assertFalse(any('/work/' in name for name in archive.namelist()))
 
     def test_no_machine_specific_private_paths(self):
         for folder in [ROOT/'skills',ROOT/'docs',ROOT/'examples']:

@@ -34,7 +34,7 @@ Local source fingerprints are documentation evidence identifiers. No native bina
 
 ## Known source ambiguity
 
-The [games guidance](https://developer.apple.com/design/human-interface-guidelines/designing-for-games#Enable-intuitive-interactions) gives inconsistent iOS target-size advice between prose and the adjacent default/minimum table. The relevant card records the conflict. Inspect the current `Enable-intuitive-interactions` section and platform context before choosing a value; do not silently turn one value into a universal minimum. The [buttons](https://developer.apple.com/design/human-interface-guidelines/buttons#Role) and [alerts](https://developer.apple.com/design/human-interface-guidelines/alerts#Buttons) pages also need to be read in their own action/confirmation contexts when considering destructive defaults.
+The [games display guidance](https://developer.apple.com/design/human-interface-guidelines/designing-for-games#Look-stunning-on-every-display) gives inconsistent iOS target-size advice between prose and the adjacent default/minimum table. The relevant card records the conflict. Inspect the current `Look-stunning-on-every-display` section and platform context before choosing a value; do not silently turn one value into a universal minimum. The [buttons](https://developer.apple.com/design/human-interface-guidelines/buttons#Role) and [alerts](https://developer.apple.com/design/human-interface-guidelines/alerts#Buttons) pages also need to be read in their own action/confirmation contexts when considering destructive defaults.
 
 ## The requested error threshold
 
@@ -43,3 +43,9 @@ The [games guidance](https://developer.apple.com/design/human-interface-guidelin
 For illustration, even with zero observed errors, an independent Bernoulli sample would need at least 29,956 representative trials to put a one-sided 95% upper confidence bound below 0.01%. HIG decisions are often correlated and context-sensitive, so those assumptions would themselves require justification. The available structural checks and 12-card review do not meet that benchmark.
 
 To update, run `scripts/hig.py refresh --report <output-path>`, inspect changed and added official pages, revise their cards, and update catalog metadata/fingerprints together. Failed requests or unrecognized structure require follow-up; neither proves a page was removed. Run the local audit after revisions.
+
+## Stronger workflow and empirical evaluation
+
+The [design playbook](design-playbook.md) adds task success criteria, platform context, structural alternatives, consequential decision records, and an inspect/test/correct loop. `hig.py plan` creates an unfinished record; `hig.py check` checks exact URLs/anchors, source scope, artifact hashes, freshness/completeness, declared review evidence, and unresolved findings. These are integrity/completeness checks, not semantic certification.
+
+The [evaluation protocol](evaluation-protocol.md) defines complete-task material error, independent representative sampling, two qualified independent reviews, preregistration, missing/ambiguous-result handling, and revision/model/client/OS scope. `assurance.py` derives empirical counts from submitted artifacts and calculates exact one-sided confidence bounds. Its calculator mode is explicitly hypothetical. No qualifying independent empirical dataset is included. The numerical target therefore remains unproven.

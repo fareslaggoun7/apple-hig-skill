@@ -14,7 +14,7 @@ def archive_bytes(source=SOURCE):
     buffer=io.BytesIO()
     with zipfile.ZipFile(buffer,'w',compression=zipfile.ZIP_DEFLATED,compresslevel=9) as archive:
         for path in sorted(source.rglob('*'),key=lambda p:p.relative_to(source).as_posix()):
-            if not path.is_file() or '__pycache__' in path.parts or path.suffix=='.pyc':continue
+            if not path.is_file() or '__pycache__' in path.parts or path.suffix=='.pyc' or path.relative_to(source).parts[0]=='work':continue
             name='apple-hig/'+path.relative_to(source).as_posix()
             info=zipfile.ZipInfo(name,date_time=(2026,10,13,0,0,0))
             info.compress_type=zipfile.ZIP_DEFLATED

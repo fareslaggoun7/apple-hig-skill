@@ -1,7 +1,11 @@
 # Changelog
 
-## Unreleased
+## 1.2.0 — 2026-10-13
 
+- Adds a task-centered design playbook with platform profiles, structural tradeoffs, exact-section decision records, and an inspect/test/correct loop.
+- Adds portable `plan` and `check` commands for source identity/scope/integrity, complete current evidence, declared behavior/accessibility checks, and unresolved material findings.
+- Adds an independent task-evaluation protocol, 30 authored challenge prompts, and an exact binomial scorer that rejects inflated or incomplete evidence. The published empirical baseline has zero independent trials; below-0.01% error and universally best designs remain unproven.
+- Fresh official crawl reaches all 173 topics without drift or failures; corrects the games sizing ambiguity's source-section pointer and rejects mismatched live document identities.
 - Browser verification waits for the gallery HTTP server and checks its topic catalog before launching Chromium, preventing a cold-start connection race. Failed CI checks also include the server log.
 
 ## 1.1.1 — 2026-10-13

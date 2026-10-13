@@ -1,0 +1,33 @@
+{
+  "schema_version": 1,
+  "protocol_id": "unregistered-evaluation-template",
+  "status": "not-established",
+  "evidence_admissible": false,
+  "statistical_target_met": false,
+  "statistics": {
+    "trials": 0,
+    "errors": 0,
+    "confidence": 0.95,
+    "observed_error_fraction": null,
+    "target_error_fraction": 0.0001,
+    "target_error_percent": 0.01,
+    "upper_error_fraction": 1.0,
+    "upper_error_percent": 100.0,
+    "bound_below_target": false,
+    "minimum_zero_error_trials": 29956,
+    "scope": "Complete task results in the submitted registered population; missing or ambiguous results count as failures."
+  },
+  "reviewed_trials": 0,
+  "missing_trials": 0,
+  "review_disagreements": 0,
+  "strata": {},
+  "evidence_problems": [
+    "Regression/challenge cases do not establish representative independent sampling",
+    "Protocol must bind the exact installed skill revision",
+    "Record author/runner identities so self-review can be excluded",
+    "At least two qualified reviewers independent of author and runner are required",
+    "Preregistration/selected-trial evidence unavailable: An actual timezone-aware UTC timestamp is required",
+    "No registered empirical trials are available"
+  ],
+  "limitations": "Code checks integrity and declared review metadata, not reviewer identity, genuine preregistration, representative sampling, source entailment, native behavior, or globally best design. Independent audit must establish those premises. Pooling platforms does not prove a bound for each platform. This evidence applies only to the registered skill/model/client/OS population; it is not a universal guarantee."
+}

@@ -22,13 +22,23 @@ Repository tests validate the complete topic tree, portable paths, helper behavi
 
 The companion gallery maps all 173 indexed topics to concrete tasks across 121 explicitly registered renderer kinds. Every topic has a picture captured from the actual browser renderer. Ten motion experiments have recorded animated previews. Device, payment, account, and SDK integrations are simulations; browser controls and local state changes are real.
 
-Validation includes 11 Python tests, five Node tests, both distribution archives, and 346 browser route checks at 1280px and 390px. Focused browser checks cover saving/cancellation and focus recovery, validation, search recovery, tabs, reordering, loading cancellation and retry, popover dismissal, motion interruption/reduced alternatives, cleanup, fictional consent, reviewed suggestions, document rename, semantic outlines, and contextual help. Motion checks use controlled time to avoid depending on CI worker scheduling.
+Validation includes 47 Python tests across packaging, gallery, and design/evaluation tooling, five Node tests, both distribution archives, and 346 browser route checks at 1280px and 390px. Focused browser checks cover saving/cancellation and focus recovery, validation, search recovery, tabs, reordering, loading cancellation and retry, popover dismissal, motion interruption/reduced alternatives, cleanup, fictional consent, reviewed suggestions, document rename, semantic outlines, and contextual help. Motion checks use controlled time to avoid depending on CI worker scheduling.
 
 During the cloud continuation, live Apple retrieval was denied by the environment network policy. The gallery uses the dated source-card interpretations and provides official source links; it does not claim a fresh source crawl. Route counts, pictures, and passing checks do not measure semantic accuracy, assistive-technology conformance, native geometry, SDK correctness, or spatial comfort.
+
+## Design quality enhancement
+
+A later successful live crawl on 13 October 2026 reached all 173 topics without source drift, failures, or unhandled nodes. The [latest machine-readable source audit](source-audit.json) records that check. Targeted source readback also corrected the games sizing ambiguity's section pointer to `Look-stunning-on-every-display`; the card already preserved the conflicting prose/table values.
+
+The [design playbook](../skills/apple-hig/references/design-playbook.md) now defines task success, platform context, structural tradeoffs, exact-section decisions, and an inspect/test/correct loop. The evidence checker rejects mismatched anchors/platforms/hashes, incomplete or stale source sections, missing declared checks, unsupported snapshot numeric claims, and unresolved material findings. Passing it validates the recorded contract, not the truth of every statement or declared observation.
+
+[Thirty authored challenge prompts](../evaluations/design-cases.json) and adversarial regression tests exercise these protections and the exact confidence-bound scorer. They are not independent gold labels or sampled real model outputs. The [published empirical baseline](../evaluations/current-report.json) records **0 qualifying independent trials** and `statistical_target_met: false`. [Quality evidence](QUALITY.md) distinguishes each result.
 
 ## Accuracy target
 
 An error rate **below 0.01% is unproven and not guaranteed**. A valid claim would require a defined population of decisions, a scoring rubric, platform/version scope, and representative independent evaluation. Page counts and source hashes do not measure semantic error. See the evidence reference for the confidence-bound example and known source ambiguity.
+
+The [independent evaluation protocol](../skills/apple-hig/references/evaluation-protocol.md) uses complete task results: any material semantic error, unresolved ambiguity, or missing selected result counts as a failure. It requires a registered population/revision/model/client/OS scope, representative independent sampling, and qualified independent reviews. Even a passing statistical bound would be conditional and scoped; it would not guarantee best designs for everyone.
 
 ## Updating
 
