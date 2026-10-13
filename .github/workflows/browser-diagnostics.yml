@@ -1,102 +1,25 @@
-name: Browser diagnostic report
+name: Remove temporary browser diagnostic reports
 on:
   push:
     branches: ['codex/visual-gallery']
-  workflow_dispatch:
 permissions:
   contents: write
-  actions: read
 jobs:
-  previous-failure:
+  cleanup:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
-      - name: Read this repository's previously failed browser check
+      - name: Remove only the reports created during this continuation
         env:
           GH_TOKEN: ${{ github.token }}
           GH_REPO: ${{ github.repository }}
         run: |
-          set +e
-          gh api --allow-escape-sequences "repos/${GH_REPO}/actions/jobs/115433412925/logs" > /tmp/previous-browser-check.log 2> /tmp/previous-browser-request-error.txt
-          LOG_REQUEST_STATUS=$?
-          printf '%s\n' "$LOG_REQUEST_STATUS" > /tmp/previous-browser-request-status.txt
-      - name: Extract only the browser exception and assertion context
-        run: |
-          python3 - <<'PY'
-          import gzip, io, zipfile
-          from pathlib import Path
-          status=Path('/tmp/previous-browser-request-status.txt').read_text().strip()
-          if status!='0':
-              Path('/tmp/previous-browser-exception.txt').write_text('Historical job log request failed, exit '+status+'\n'+Path('/tmp/previous-browser-request-error.txt').read_text())
-              raise SystemExit(0)
-          raw=Path('/tmp/previous-browser-check.log').read_bytes()
-          if raw.startswith(b'PK'):
-              with zipfile.ZipFile(io.BytesIO(raw)) as archive:
-                  raw=b'\n'.join(archive.read(n) for n in archive.namelist() if n.endswith('.txt'))
-          elif raw.startswith(b'\x1f\x8b'):
-              raw=gzip.decompress(raw)
-          lines=raw.decode('utf-8','replace').splitlines()
-          markers=('AssertionError','TimeoutError','TypeError','ReferenceError','locator.','page.waitFor','horizontal overflow','no interactive control')
-          positions=[i for i,line in enumerate(lines) if any(m in line for m in markers)]
-          selected=set()
-          for i in positions:
-              selected.update(range(max(0,i-8),min(len(lines),i+45)))
-          if not selected:
-              # The tail of this controlled job identifies failures before Node
-              # starts (for example a browser installer or local HTTP server).
-              selected.update(range(max(0,len(lines)-100),len(lines)))
-          Path('/tmp/previous-browser-exception.txt').write_text('\n'.join(lines[i] for i in sorted(selected))+'\n')
-          PY
-      - name: Publish the exception for the continuation's diagnosis
-        if: always()
-        env:
-          GH_TOKEN: ${{ github.token }}
-          GH_REPO: ${{ github.repository }}
-        run: |
-          if [ ! -f /tmp/previous-browser-exception.txt ]; then
-            printf 'Collector did not produce an exception.\n' > /tmp/previous-browser-exception.txt
-            if [ -f /tmp/previous-browser-request-status.txt ]; then cat /tmp/previous-browser-request-status.txt >> /tmp/previous-browser-exception.txt; fi
-            if [ -f /tmp/previous-browser-request-error.txt ]; then cat /tmp/previous-browser-request-error.txt >> /tmp/previous-browser-exception.txt; fi
-          fi
-          cp /tmp/previous-browser-exception.txt /tmp/previous-browser-exception-${GITHUB_RUN_ID}.txt
-          gh release upload --repo "$GH_REPO" v1.1.1 /tmp/previous-browser-exception-${GITHUB_RUN_ID}.txt
-  diagnose:
-    if: github.event_name == 'workflow_dispatch'
-    runs-on: ubuntu-latest
-    strategy:
-      fail-fast: false
-      matrix:
-        attempt: [1, 2, 3]
-    steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-python@v5
-        with:
-          python-version: '3.12'
-      - uses: actions/setup-node@v4
-        with:
-          node-version: '22'
-      - run: npm install --prefix work/browser-tools --no-audit --no-fund --ignore-scripts --save-exact playwright@1.56.1
-      - run: node work/browser-tools/node_modules/playwright/cli.js install --with-deps chromium
-      - name: Record the browser check and preserve its result
-        env:
-          NODE_PATH: ${{ github.workspace }}/work/browser-tools/node_modules
-        run: |
-          python -m http.server 8000 --directory examples/gallery --bind 127.0.0.1 > /tmp/gallery.log 2>&1 &
-          GALLERY_SERVER_PID=$!
-          trap 'kill "$GALLERY_SERVER_PID"' EXIT
-          set +e
-          node tools/check_gallery_browser.mjs > work/browser-check-${{ matrix.attempt }}.txt 2>&1
-          BROWSER_CHECK_STATUS=$?
-          printf '\nUnderlying check exit status: %s\n' "$BROWSER_CHECK_STATUS" >> work/browser-check-${{ matrix.attempt }}.txt
-          cat work/browser-check-${{ matrix.attempt }}.txt
-          exit "$BROWSER_CHECK_STATUS"
-      - name: Publish the controlled test output for diagnosis
-        if: always()
-        env:
-          GH_TOKEN: ${{ github.token }}
-          GH_REPO: ${{ github.repository }}
-        run: |
-          if [ -f work/browser-check-${{ matrix.attempt }}.txt ]; then
-            cp work/browser-check-${{ matrix.attempt }}.txt work/browser-check-${GITHUB_RUN_ID}-${{ matrix.attempt }}.txt
-            gh release upload v1.1.1 work/browser-check-${GITHUB_RUN_ID}-${{ matrix.attempt }}.txt
-          fi
+          python3 - <<'PYCODE'
+          import json, os, re, subprocess
+          repo=os.environ['GH_REPO']
+          release=json.loads(subprocess.check_output(['gh','api',f'repos/{repo}/releases/tags/v1.1.1']))
+          assert release['tag_name']=='v1.1.1'
+          for asset in release['assets']:
+              if re.fullmatch(r'(browser-check-[0-9]+-[123]|previous-browser-exception-[0-9]+)\.txt',asset['name']):
+                  subprocess.run(['gh','api','--method','DELETE',f"repos/{repo}/releases/assets/{asset['id']}"],check=True)
+                  print('Removed temporary report:',asset['name'])
+          PYCODE

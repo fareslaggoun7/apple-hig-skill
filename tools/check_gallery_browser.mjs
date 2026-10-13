@@ -5,6 +5,28 @@ import {createRequire} from 'node:module';
 const {chromium}=createRequire(import.meta.url)('playwright');
 const base=process.env.GALLERY_URL||'http://127.0.0.1:8000';
 const topics=JSON.parse(fs.readFileSync(new URL('../examples/gallery/catalog.json',import.meta.url))).topics;
+// A background HTTP server may not yet be listening when a CI worker starts
+// Node. Check readiness once, before opening Chromium; never retry a route test.
+async function waitForGallery(){
+  const deadline=Date.now()+15000;
+  let lastError;
+  while(Date.now()<deadline){
+    try{
+      const response=await fetch(`${base}/catalog.json`,{signal:AbortSignal.timeout(1000)});
+      if(!response.ok)throw new Error(`catalog.json returned HTTP ${response.status}`);
+      const catalog=await response.json();
+      assert.deepEqual(catalog.topics.map(topic=>topic.slug),topics.map(topic=>topic.slug),'The served gallery must match this checkout');
+      console.log('Gallery HTTP server is ready.');
+      return;
+    }catch(error){
+      if(error instanceof assert.AssertionError)throw error;
+      lastError=error;
+      await new Promise(resolve=>setTimeout(resolve,100));
+    }
+  }
+  throw new Error(`Gallery server did not become ready at ${base} within 15 seconds: ${lastError?.message}`,{cause:lastError});
+}
+await waitForGallery();
 const browser=await chromium.launch({headless:true,executablePath:process.env.PLAYWRIGHT_CHROMIUM_EXECUTABLE||(fs.existsSync(chromium.executablePath())?chromium.executablePath(): '/usr/bin/chromium')});
 const failures=[],errors=[];let routes=0,actions=0;
 try{

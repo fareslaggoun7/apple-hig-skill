@@ -50,6 +50,7 @@ jobs:
           node tools/check_gallery_browser.mjs > /tmp/browser-check.log 2>&1
           BROWSER_CHECK_STATUS=$?
           cat /tmp/browser-check.log
+          if [ "$BROWSER_CHECK_STATUS" -ne 0 ]; then cat /tmp/gallery.log; fi
           {
             printf '### Browser verification\n\n```text\n'
             tail -n 160 /tmp/browser-check.log

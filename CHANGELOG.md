@@ -1,5 +1,9 @@
 # Changelog
 
+## Unreleased
+
+- Browser verification waits for the gallery HTTP server and checks its topic catalog before launching Chromium, preventing a cold-start connection race. Failed CI checks also include the server log.
+
 ## 1.1.1 — 2026-10-13
 
 - Motion checks advance a controlled browser clock, so Pause and retarget assertions do not depend on worker scheduling.
