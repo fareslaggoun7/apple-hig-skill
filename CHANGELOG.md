@@ -1,5 +1,11 @@
 # Changelog
 
+## 1.1.1 — 2026-10-13
+
+- Motion checks advance a controlled browser clock, so Pause and retarget assertions do not depend on worker scheduling.
+- Browser CI writes diagnostic results into the job summary while preserving the check's exit status.
+- Publishes the complete gallery and portable skill archives after tagged CI verification. The v1.1.0 Git tag is preserved; its automated ZIP release was withheld by a browser-check failure.
+
 ## 1.1.0 — 2026-10-13
 
 - Runnable gallery routes and actual browser pictures for all 173 indexed topics.
