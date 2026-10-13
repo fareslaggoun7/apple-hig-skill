@@ -101,6 +101,16 @@ class PackageTests(unittest.TestCase):
                     self.assertTrue(resolved.is_relative_to(ROOT),str(file)+' '+target)
                     self.assertTrue(resolved.exists(),str(file)+' '+target)
 
+    def test_package_comparison_ignores_platform_order(self):
+        expected=packager.archive_bytes();reordered=io.BytesIO()
+        with zipfile.ZipFile(io.BytesIO(expected)) as source,zipfile.ZipFile(reordered,'w') as target:
+            for name in reversed(source.namelist()):target.writestr(name,source.read(name))
+        self.assertTrue(packager.archives_equivalent(reordered.getvalue(),expected))
+        changed=io.BytesIO()
+        with zipfile.ZipFile(io.BytesIO(expected)) as source,zipfile.ZipFile(changed,'w') as target:
+            for name in source.namelist():target.writestr(name,source.read(name)+(b'changed' if name.endswith('/SKILL.md') else b''))
+        self.assertFalse(packager.archives_equivalent(changed.getvalue(),expected))
+
     def test_no_machine_specific_private_paths(self):
         for folder in [ROOT/'skills',ROOT/'docs',ROOT/'examples']:
             for file in folder.rglob('*'):
