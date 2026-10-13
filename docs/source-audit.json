@@ -1,0 +1,99 @@
+{
+  "snapshot_date": "2026-10-13",
+  "source_pages": 173,
+  "cards": 173,
+  "retrieval_failures": 0,
+  "category_counts": {
+    "getting-started": 11,
+    "foundations": 19,
+    "patterns": 26,
+    "components": 73,
+    "inputs": 14,
+    "technologies": 30
+  },
+  "maximum_card_prose_words": 90,
+  "source_heading_nodes": 1742,
+  "source_text_blocks": 5520,
+  "media_nodes_not_visually_inspected": 1533,
+  "interpretation_error_rate": "Not measured; cannot substantiate less than 0.01%.",
+  "inventory_coverage_percent": 100.0,
+  "skill_format_validation": "passed",
+  "local_catalog_audit": "passed; 0 errors",
+  "markdown_links_checked": 716,
+  "source_fidelity_validation": {
+    "source_fidelity_checks": "passed",
+    "corpus_counts": {
+      "pages": 173,
+      "headings": 1742,
+      "tables": 294,
+      "media": 1533,
+      "tabs": 50
+    },
+    "parser_shapes": {
+      "tabNavigator": {
+        "type": "tabNavigator",
+        "tab_keys": [
+          [
+            "content",
+            "title"
+          ],
+          [
+            "content",
+            "title"
+          ]
+        ]
+      },
+      "aside": {
+        "name": "Developer note",
+        "style": "note",
+        "type": "aside"
+      }
+    },
+    "fixture_checks": [
+      "nested section ancestry",
+      "separate table cells and units",
+      "inline API identifiers",
+      "tab context",
+      "aside qualifications",
+      "unknown schema flagged",
+      "official HTTPS source boundary"
+    ],
+    "interpretation_accuracy": "Not established by parser or structural checks."
+  },
+  "live_drift_check": {
+    "checked_at_utc": "2026-10-13T07:44:32.404369+00:00",
+    "snapshot_date": "2026-10-13",
+    "discovered_pages": 173,
+    "added": [],
+    "changed_content_or_metadata": [],
+    "snapshot_pages_not_reached_or_failed": [],
+    "failures": [],
+    "unhandled_node_types": {},
+    "action": "Review changed/new pages; update cards and catalog together. Unreached is not proof of removal; failures leave graph coverage incomplete."
+  },
+  "independent_review": {
+    "cards_reviewed": 12,
+    "reviewed_slugs": [
+      "alerts",
+      "sheets",
+      "tab-bars",
+      "sidebars",
+      "buttons",
+      "windows",
+      "widgets",
+      "live-activities",
+      "progress-indicators",
+      "toolbars",
+      "search-fields",
+      "toggles"
+    ],
+    "material_issues_corrected": 6,
+    "scope": "Targeted evidence audit; not random sampling or exhaustive semantic validation."
+  },
+  "limits": [
+    "Summaries are selective; detailed official sections are retrieved on demand.",
+    "Image/video semantics were not visually audited.",
+    "Other Apple documentation, SDK/API contracts, policy, translations, unlinked pages and future changes are outside the snapshot.",
+    "Interpretation error below 0.01% is not established or guaranteed."
+  ]
+}

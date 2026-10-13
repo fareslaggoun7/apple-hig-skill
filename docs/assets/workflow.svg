@@ -1,0 +1,40 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="355" viewBox="0 0 1200 355" role="img" aria-labelledby="title"><title id="title">Five steps from a platform-specific question to a validated interface decision</title><rect width="100%" height="100%" fill="#f5f8fc"/>
+<text x="38" y="59.599999999999994" font-family="Segoe UI,Arial,sans-serif" font-size="30" font-weight="650" fill="#152b46">A repeatable path from question to evidence.</text>
+<rect x="38" y="110" width="196" height="190" rx="17" fill="white" stroke="#d9e2ed"/>
+<text x="56" y="145.94" font-family="Segoe UI,Arial,sans-serif" font-size="17" font-weight="650" fill="#285fcb">01</text>
+<text x="56" y="192.14" font-family="Segoe UI,Arial,sans-serif" font-size="27" font-weight="650" fill="#152b46">Context</text>
+<text x="56" y="232.94" font-family="Segoe UI,Arial,sans-serif" font-size="17" font-weight="400" fill="#53677f">Platform, task,</text>
+<text x="56" y="260.94" font-family="Segoe UI,Arial,sans-serif" font-size="17" font-weight="400" fill="#53677f">inputs and states</text>
+<path d="M242 205 L262 205" stroke="#285fcb" stroke-width="2"/>
+<path d="M254 199 L262 205" stroke="#285fcb" stroke-width="2"/>
+<path d="M254 211 L262 205" stroke="#285fcb" stroke-width="2"/>
+<rect x="270" y="110" width="196" height="190" rx="17" fill="white" stroke="#d9e2ed"/>
+<text x="288" y="145.94" font-family="Segoe UI,Arial,sans-serif" font-size="17" font-weight="650" fill="#285fcb">02</text>
+<text x="288" y="192.14" font-family="Segoe UI,Arial,sans-serif" font-size="27" font-weight="650" fill="#152b46">Find</text>
+<text x="288" y="232.94" font-family="Segoe UI,Arial,sans-serif" font-size="17" font-weight="400" fill="#53677f">Relevant topics</text>
+<text x="288" y="260.94" font-family="Segoe UI,Arial,sans-serif" font-size="17" font-weight="400" fill="#53677f">and source cards</text>
+<path d="M474 205 L494 205" stroke="#285fcb" stroke-width="2"/>
+<path d="M486 199 L494 205" stroke="#285fcb" stroke-width="2"/>
+<path d="M486 211 L494 205" stroke="#285fcb" stroke-width="2"/>
+<rect x="502" y="110" width="196" height="190" rx="17" fill="white" stroke="#d9e2ed"/>
+<text x="520" y="145.94" font-family="Segoe UI,Arial,sans-serif" font-size="17" font-weight="650" fill="#285fcb">03</text>
+<text x="520" y="192.14" font-family="Segoe UI,Arial,sans-serif" font-size="27" font-weight="650" fill="#152b46">Verify</text>
+<text x="520" y="232.94" font-family="Segoe UI,Arial,sans-serif" font-size="17" font-weight="400" fill="#53677f">Current official</text>
+<text x="520" y="260.94" font-family="Segoe UI,Arial,sans-serif" font-size="17" font-weight="400" fill="#53677f">sections and scope</text>
+<path d="M706 205 L726 205" stroke="#285fcb" stroke-width="2"/>
+<path d="M718 199 L726 205" stroke="#285fcb" stroke-width="2"/>
+<path d="M718 211 L726 205" stroke="#285fcb" stroke-width="2"/>
+<rect x="734" y="110" width="196" height="190" rx="17" fill="white" stroke="#d9e2ed"/>
+<text x="752" y="145.94" font-family="Segoe UI,Arial,sans-serif" font-size="17" font-weight="650" fill="#285fcb">04</text>
+<text x="752" y="192.14" font-family="Segoe UI,Arial,sans-serif" font-size="27" font-weight="650" fill="#152b46">Apply</text>
+<text x="752" y="232.94" font-family="Segoe UI,Arial,sans-serif" font-size="17" font-weight="400" fill="#53677f">A concrete design</text>
+<text x="752" y="260.94" font-family="Segoe UI,Arial,sans-serif" font-size="17" font-weight="400" fill="#53677f">or implementation</text>
+<path d="M938 205 L958 205" stroke="#285fcb" stroke-width="2"/>
+<path d="M950 199 L958 205" stroke="#285fcb" stroke-width="2"/>
+<path d="M950 211 L958 205" stroke="#285fcb" stroke-width="2"/>
+<rect x="966" y="110" width="196" height="190" rx="17" fill="white" stroke="#d9e2ed"/>
+<text x="984" y="145.94" font-family="Segoe UI,Arial,sans-serif" font-size="17" font-weight="650" fill="#285fcb">05</text>
+<text x="984" y="192.14" font-family="Segoe UI,Arial,sans-serif" font-size="27" font-weight="650" fill="#152b46">Check</text>
+<text x="984" y="232.94" font-family="Segoe UI,Arial,sans-serif" font-size="17" font-weight="400" fill="#53677f">Changed behavior</text>
+<text x="984" y="260.94" font-family="Segoe UI,Arial,sans-serif" font-size="17" font-weight="400" fill="#53677f">and remaining gaps</text>
+</svg>

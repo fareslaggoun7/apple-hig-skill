@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="450" viewBox="0 0 1200 450" role="img" aria-labelledby="title"><title id="title">Install the same portable skill in Claude chat, Claude Code, or Codex</title><rect width="100%" height="100%" fill="#f5f8fc"/>
+<text x="38" y="61.239999999999995" font-family="Segoe UI,Arial,sans-serif" font-size="32" font-weight="650" fill="#152b46">One skill folder. Three ways to use it.</text>
+<rect x="38" y="111" width="344" height="262" rx="20" fill="white" stroke="#d9e2ed"/>
+<rect x="60" y="134" width="44" height="44" rx="11" fill="#edf3fb"/>
+<text x="73" y="163.04" font-family="Segoe UI,Arial,sans-serif" font-size="22" font-weight="650" fill="#285fcb">1</text>
+<text x="60" y="220.96" font-family="Segoe UI,Arial,sans-serif" font-size="28" font-weight="650" fill="#152b46">Claude chat</text>
+<text x="60" y="263.58" font-family="Segoe UI,Arial,sans-serif" font-size="19" font-weight="400" fill="#53677f">Upload the prepared ZIP</text>
+<text x="60" y="296.94" font-family="Segoe UI,Arial,sans-serif" font-size="17" font-weight="400" fill="#53677f">Customize → Skills</text>
+<text x="60" y="334.76" font-family="Segoe UI,Arial,sans-serif" font-size="18" font-weight="650" fill="#2c7869">Enable apple-hig</text>
+<rect x="428" y="111" width="344" height="262" rx="20" fill="white" stroke="#d9e2ed"/>
+<rect x="450" y="134" width="44" height="44" rx="11" fill="#edf3fb"/>
+<text x="463" y="163.04" font-family="Segoe UI,Arial,sans-serif" font-size="22" font-weight="650" fill="#285fcb">2</text>
+<text x="450" y="220.96" font-family="Segoe UI,Arial,sans-serif" font-size="28" font-weight="650" fill="#152b46">Claude Code</text>
+<text x="450" y="263.58" font-family="Segoe UI,Arial,sans-serif" font-size="19" font-weight="400" fill="#53677f">Copy the skill folder</text>
+<text x="450" y="296.94" font-family="Segoe UI,Arial,sans-serif" font-size="17" font-weight="400" fill="#53677f">~/.claude/skills/apple-hig</text>
+<text x="450" y="334.76" font-family="Segoe UI,Arial,sans-serif" font-size="18" font-weight="650" fill="#2c7869">Invoke /apple-hig</text>
+<rect x="818" y="111" width="344" height="262" rx="20" fill="white" stroke="#d9e2ed"/>
+<rect x="840" y="134" width="44" height="44" rx="11" fill="#edf3fb"/>
+<text x="853" y="163.04" font-family="Segoe UI,Arial,sans-serif" font-size="22" font-weight="650" fill="#285fcb">3</text>
+<text x="840" y="220.96" font-family="Segoe UI,Arial,sans-serif" font-size="28" font-weight="650" fill="#152b46">Codex</text>
+<text x="840" y="263.58" font-family="Segoe UI,Arial,sans-serif" font-size="19" font-weight="400" fill="#53677f">Copy the skill folder</text>
+<text x="840" y="296.94" font-family="Segoe UI,Arial,sans-serif" font-size="17" font-weight="400" fill="#53677f">~/.codex/skills/apple-hig</text>
+<text x="840" y="334.76" font-family="Segoe UI,Arial,sans-serif" font-size="18" font-weight="650" fill="#2c7869">Invoke $apple-hig</text>
+<text x="40" y="418.94" font-family="Segoe UI,Arial,sans-serif" font-size="17" font-weight="400" fill="#53677f">Use the installation guide for current controls, account settings, and custom paths.</text>
+</svg>

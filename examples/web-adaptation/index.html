@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Fieldnotes — HIG-based web adaptation</title>
+  <style>
+    :root { color-scheme:light; --bg:#f4f5f7; --surface:#fff; --ink:#172435; --muted:#526073; --line:#d4dbe4; --accent:#205bc4; font:100%/1.5 system-ui,sans-serif; }
+    body.dark { color-scheme:dark; --bg:#121923; --surface:#1c2736; --ink:#f4f6fa; --muted:#c0cbd9; --line:#4a5b71; --accent:#a7c9ff; }
+    * { box-sizing:border-box; } body { margin:0; background:var(--bg); color:var(--ink); }
+    button,input,textarea { font:inherit; } button { cursor:pointer; min-height:2.8rem; padding:.65rem 1.05rem; border:1px solid var(--line); border-radius:.7rem; background:var(--surface); color:var(--ink); }
+    button:hover { filter:brightness(.95); } :focus-visible { outline:3px solid var(--accent); outline-offset:4px; }
+    .primary { background:var(--accent); color:var(--surface); border-color:var(--accent); font-weight:650; }
+    .danger { color:#ab2931; } .dark .danger { color:#ffb2b8; }
+    a { color:var(--accent); } header { max-width:72rem; margin:auto; padding:2rem 2rem 1rem; display:flex; justify-content:space-between; gap:1rem; align-items:center; flex-wrap:wrap; }
+    .brand { font-size:1.45rem; font-weight:750; letter-spacing:-.035em; } .tag { color:var(--muted); font-size:.85rem; }
+    .controls { display:flex; flex-wrap:wrap; gap:.6rem; } main { max-width:72rem; margin:0 auto; padding:1rem 2rem 2rem; display:grid; grid-template-columns:15rem 1fr; gap:1.5rem; }
+    nav { padding:1.4rem 0; } nav h2 { font-size:.8rem; text-transform:uppercase; letter-spacing:.12em; color:var(--muted); }
+    .nav-item { display:block; border-radius:.65rem; padding:.8rem 1rem; text-decoration:none; color:var(--ink); } .nav-item[aria-current] { background:var(--surface); font-weight:650; }
+    article { background:var(--surface); border:1px solid var(--line); border-radius:1.2rem; padding:2rem; }
+    h1 { font-size:2.35rem; line-height:1.15; letter-spacing:-.045em; margin:.6rem 0 .7rem; } p { max-width:55ch; }
+    .eyebrow { text-transform:uppercase; color:var(--muted); letter-spacing:.1em; font-size:.75rem; font-weight:650; }
+    label { display:block; margin:1.5rem 0 .4rem; font-weight:600; } input,textarea { width:100%; background:var(--surface); color:var(--ink); border:1px solid var(--line); border-radius:.7rem; padding:.9rem; } textarea { min-height:9rem; resize:vertical; }
+    .actions { display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:1rem; margin-top:1.4rem; } #status { min-height:1.5em; color:var(--muted); }
+    footer { max-width:72rem; margin:auto; padding:0 2rem 2rem; color:var(--muted); font-size:.85rem; } dialog { border:1px solid var(--line); border-radius:1rem; padding:2rem; max-width:min(30rem,90vw); background:var(--surface); color:var(--ink); } dialog::backdrop { background:#101a2e88; } dialog h2 { margin-top:0; } dialog .actions { justify-content:flex-end; }
+    .large-text { font-size:125%; }
+    @media(max-width:48rem) { main { grid-template-columns:1fr; padding:1rem; } header { padding:1.5rem 1rem 0; } nav { padding:0; } nav h2 { display:none; } .nav-item { display:inline-block; } article { padding:1.3rem; } footer { padding:0 1rem 2rem; } }
+    @media(prefers-reduced-motion:reduce) { * { scroll-behavior:auto !important; } }
+  </style>
+</head>
+<body>
+  <header><div><div class="brand">Fieldnotes</div><div class="tag">An original web adaptation</div></div><div class="controls"><button id="text-size" aria-pressed="false">Larger text</button><button id="theme" aria-pressed="false">Dark appearance</button></div></header>
+  <main>
+    <nav aria-label="Sections"><h2>Your workspace</h2><a class="nav-item" href="#editor" aria-current="page">Recipe editor</a><a class="nav-item" href="#about">About this demo</a></nav>
+    <article id="editor" aria-labelledby="editor-title"><div class="eyebrow">Kitchen notebook / Personal</div><h1 id="editor-title">Save something worth making.</h1><p>Clear actions, comfortable reading, and a way to change your mind.</p>
+      <form id="recipe-form"><label for="recipe-name">Recipe name</label><input id="recipe-name" name="recipe-name" value="Lemon & olive oil cake" required>
+        <label for="notes">Notes</label><textarea id="notes" name="notes">A bright, simple cake for slow afternoons. Add fresh lemon zest and serve with a little yogurt.</textarea>
+        <div class="actions"><button type="button" id="delete" class="danger">Reset recipe…</button><button type="submit" class="primary">Save recipe</button></div>
+      </form><p id="status" role="status" aria-live="polite">Changes stay in this demo only.</p>
+    </article>
+  </main>
+  <footer id="about">Educational example from Apple HIG Skill. Original UI, not an Apple screenshot. No network requests, accounts, or persistent storage.</footer>
+  <dialog id="confirm-reset" aria-labelledby="reset-title" aria-describedby="reset-description"><h2 id="reset-title">Reset this recipe?</h2><p id="reset-description">This clears the current demo fields. You can cancel and keep editing.</p><div class="actions"><button id="cancel-reset" autofocus>Cancel</button><button id="confirm-action" class="danger">Reset recipe</button></div></dialog>
+  <script>
+    const status = document.querySelector('#status');
+    const dialog = document.querySelector('#confirm-reset');
+    document.querySelector('#recipe-form').addEventListener('submit', event => { event.preventDefault(); status.textContent = 'Recipe saved for this demo.'; });
+    document.querySelector('#delete').addEventListener('click', () => dialog.showModal());
+    document.querySelector('#cancel-reset').addEventListener('click', () => dialog.close());
+    document.querySelector('#confirm-action').addEventListener('click', () => { document.querySelector('#recipe-name').value=''; document.querySelector('#notes').value=''; dialog.close(); status.textContent='Recipe reset. Enter a new name to start again.'; document.querySelector('#recipe-name').focus(); });
+    document.querySelector('#theme').addEventListener('click', event => { const on=document.body.classList.toggle('dark');event.currentTarget.setAttribute('aria-pressed',String(on)); });
+    document.querySelector('#text-size').addEventListener('click', event => { const on=document.documentElement.classList.toggle('large-text');event.currentTarget.setAttribute('aria-pressed',String(on)); });
+  </script>
+</body>
+</html>

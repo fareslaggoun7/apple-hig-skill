@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="680" viewBox="0 0 1200 680" role="img" aria-labelledby="title"><title id="title">Illustrative review: clarify actions, give an exit alternative, and provide status feedback</title><rect width="100%" height="100%" fill="#f5f8fc"/>
+<text x="38" y="59.599999999999994" font-family="Segoe UI,Arial,sans-serif" font-size="30" font-weight="650" fill="#152b46">A review connects an observation to a correction.</text>
+<text x="40" y="95.94" font-family="Segoe UI,Arial,sans-serif" font-size="17" font-weight="400" fill="#53677f">Original educational mockup — not an Apple screenshot or exact geometry specification.</text>
+<text x="40" y="160.86" font-family="Segoe UI,Arial,sans-serif" font-size="23" font-weight="650" fill="#152b46">Before / restricted exit</text>
+<rect x="40" y="187" width="520" height="334" rx="22" fill="white" stroke="#d9e2ed"/>
+<text x="67" y="238.32" font-family="Segoe UI,Arial,sans-serif" font-size="26" font-weight="650" fill="#152b46">Edit recipe</text>
+<text x="67" y="282.94" font-family="Segoe UI,Arial,sans-serif" font-size="17" font-weight="650" fill="#53677f">Recipe name</text>
+<rect x="66" y="301" width="468" height="57" rx="10" fill="#f7f9fc" stroke="#d9e2ed"/>
+<text x="80" y="335.4" font-family="Segoe UI,Arial,sans-serif" font-size="20" font-weight="400" fill="#152b46">Lemon &amp; olive oil cake</text>
+<text x="640" y="160.86" font-family="Segoe UI,Arial,sans-serif" font-size="23" font-weight="650" fill="#152b46">After / clear alternatives</text>
+<rect x="640" y="187" width="520" height="334" rx="22" fill="white" stroke="#d9e2ed"/>
+<text x="667" y="238.32" font-family="Segoe UI,Arial,sans-serif" font-size="26" font-weight="650" fill="#152b46">Edit recipe</text>
+<text x="667" y="282.94" font-family="Segoe UI,Arial,sans-serif" font-size="17" font-weight="650" fill="#53677f">Recipe name</text>
+<rect x="666" y="301" width="468" height="57" rx="10" fill="#f7f9fc" stroke="#d9e2ed"/>
+<text x="680" y="335.4" font-family="Segoe UI,Arial,sans-serif" font-size="20" font-weight="400" fill="#152b46">Lemon &amp; olive oil cake</text>
+<rect x="420" y="419" width="110" height="54" rx="11" fill="#152b46"/>
+<text x="450" y="450.58" font-family="Segoe UI,Arial,sans-serif" font-size="19" font-weight="650" fill="white">Done</text>
+<rect x="666" y="419" width="115" height="54" rx="11" fill="white" stroke="#d9e2ed"/>
+<text x="691" y="450.58" font-family="Segoe UI,Arial,sans-serif" font-size="19" font-weight="650" fill="#152b46">Cancel</text>
+<rect x="985" y="419" width="145" height="54" rx="11" fill="#285fcb"/>
+<text x="1005" y="450.58" font-family="Segoe UI,Arial,sans-serif" font-size="19" font-weight="650" fill="white">Save recipe</text>
+<text x="667" y="500.12" font-family="Segoe UI,Arial,sans-serif" font-size="16" font-weight="400" fill="#53677f">Changes stay in this demo only.</text>
+<path d="M578 351 L621 351" stroke="#285fcb" stroke-width="2"/>
+<path d="M613 345 L621 351" stroke="#285fcb" stroke-width="2"/>
+<path d="M613 357 L621 351" stroke="#285fcb" stroke-width="2"/>
+<text x="40" y="575.4" font-family="Segoe UI,Arial,sans-serif" font-size="20" font-weight="400" fill="#53677f">Observed: completion appears to be</text>
+<text x="40" y="606.4" font-family="Segoe UI,Arial,sans-serif" font-size="20" font-weight="400" fill="#53677f">the only visible way to exit.</text>
+<text x="640" y="575.4" font-family="Segoe UI,Arial,sans-serif" font-size="20" font-weight="400" fill="#2c7869">Proposed: named actions, a cancel path,</text>
+<text x="640" y="606.4" font-family="Segoe UI,Arial,sans-serif" font-size="20" font-weight="400" fill="#2c7869">and explicit feedback. Validate behavior.</text>
+</svg>
