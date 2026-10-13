@@ -1,5 +1,7 @@
 # Continue the Apple HIG public gallery and README update
 
+> This file records the historical checkpoint at `255553198897576b1dfd8d49535c4daa2172d762`. Current features and run instructions are in the [project README](../README.md), [gallery guide](../examples/gallery/README.md), and [changelog](../CHANGELOG.md).
+
 The user requested continuation in a cloud session with **GPT-6.1 Sol, Extra High**. Preserve that choice; do not pretend the model was set if the surface cannot verify it.
 
 ## User requirements

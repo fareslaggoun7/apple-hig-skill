@@ -18,6 +18,14 @@ The original corpus parser checks accounted for 1,742 headings, 294 tables, 50 t
 
 Repository tests validate the complete topic tree, portable paths, helper behavior, section/table parsing, installer preservation, ZIP layout, and documentation links. They run offline and do not depend on accounts. A manual live fetch verifies the online route. Claude account installation, native device behavior, and model response quality are not certified by these checks.
 
+## Gallery validation
+
+The companion gallery maps all 173 indexed topics to concrete tasks across 121 explicitly registered renderer kinds. Every topic has a picture captured from the actual browser renderer. Ten motion experiments have recorded animated previews. Device, payment, account, and SDK integrations are simulations; browser controls and local state changes are real.
+
+Validation includes 11 Python tests, five Node tests, both distribution archives, and 346 browser route checks at 1280px and 390px. Focused browser checks cover saving/cancellation and focus recovery, validation, search recovery, tabs, reordering, loading cancellation and retry, popover dismissal, motion interruption/reduced alternatives, cleanup, fictional consent, reviewed suggestions, document rename, semantic outlines, and contextual help. Motion checks use controlled time to avoid depending on CI worker scheduling.
+
+During the cloud continuation, live Apple retrieval was denied by the environment network policy. The gallery uses the dated source-card interpretations and provides official source links; it does not claim a fresh source crawl. Route counts, pictures, and passing checks do not measure semantic accuracy, assistive-technology conformance, native geometry, SDK correctness, or spatial comfort.
+
 ## Accuracy target
 
 An error rate **below 0.01% is unproven and not guaranteed**. A valid claim would require a defined population of decisions, a scoring rubric, platform/version scope, and representative independent evaluation. Page counts and source hashes do not measure semantic error. See the evidence reference for the confidence-bound example and known source ambiguity.

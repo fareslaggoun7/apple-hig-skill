@@ -34,11 +34,21 @@ flowchart TD
 ```text
 skills/apple-hig/   Installable skill: instructions, references, helper
 docs/              Installation, usage, architecture, coverage, original images
-examples/          Prompts, worked reviews, runnable web adaptation
-tools/             Safe local installer, deterministic packaging, image builder
-tests/             Offline portability and behavior checks
-dist/              Ready-to-upload skill ZIP and SHA-256 checksum
-.github/workflows/ Automated offline validation
+examples/          Prompts, worked reviews, runnable gallery and web adaptation
+tools/             Safe local installer, deterministic packaging, gallery catalog/capture tools, image builder
+tests/             Python/Node package, catalog, and behavior checks
+dist/              Portable skill and standalone gallery ZIPs with checksums
+.github/workflows/ Cross-platform validation, browser QA, release, optional Pages
 ```
 
 The Markdown package is client-neutral. Codex's optional UI metadata is separate; Claude-specific configuration and model/API dependencies are unnecessary. No accounts or keys are required by the skill itself.
+
+## Companion gallery
+
+`tools/build_gallery_catalog.py` maps every indexed topic to an explicit scenario and renderer kind, carries its dated source-card interpretation, and generates both `examples/gallery/catalog.json` and the complete topic index. There are 173 routes and 121 registered renderer kinds. Missing kinds or unmatched topics fail validation; there is no generic placeholder renderer.
+
+`gallery.mjs` owns routing, history, filters, appearance, and reduced-motion preferences. `specimens.mjs` mounts each example with an abort signal and owned cleanup callbacks. Leaving an example removes listeners and stops timers, audio, dialogs, and animation frames. Device, account, payment, and SDK models are explicitly labeled simulations.
+
+`motion.mjs` contains ten preview renderers plus a substepped spring model. Retargeting retains position and velocity. Browser QA controls time during interruption assertions, while the actual gallery uses animation frames. The capture tool records actual renderers; pictures are not substitutes for functional or native-device checks.
+
+The portable skill includes a routing reference, while the larger browser gallery has its own standalone ZIP. Visitors need only a static HTTP server and a modern browser. Optional developer tools are isolated in ignored `work/`. Release automation publishes both archives only after the required CI jobs pass; Pages deployment is optional.
