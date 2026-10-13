@@ -1,0 +1,47 @@
+name: Browser diagnostic report
+on:
+  push:
+    branches: ['codex/visual-gallery']
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  diagnose:
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        attempt: [1, 2, 3]
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - run: npm install --prefix work/browser-tools --no-audit --no-fund --ignore-scripts --save-exact playwright@1.56.1
+      - run: node work/browser-tools/node_modules/playwright/cli.js install --with-deps chromium
+      - name: Record the browser check and preserve its result
+        env:
+          NODE_PATH: ${{ github.workspace }}/work/browser-tools/node_modules
+        run: |
+          python -m http.server 8000 --directory examples/gallery --bind 127.0.0.1 > /tmp/gallery.log 2>&1 &
+          GALLERY_SERVER_PID=$!
+          trap 'kill "$GALLERY_SERVER_PID"' EXIT
+          set +e
+          node tools/check_gallery_browser.mjs > work/browser-check-${{ matrix.attempt }}.txt 2>&1
+          BROWSER_CHECK_STATUS=$?
+          printf '\nUnderlying check exit status: %s\n' "$BROWSER_CHECK_STATUS" >> work/browser-check-${{ matrix.attempt }}.txt
+          cat work/browser-check-${{ matrix.attempt }}.txt
+          exit "$BROWSER_CHECK_STATUS"
+      - name: Publish the controlled test output for diagnosis
+        if: always()
+        env:
+          GH_TOKEN: ${{ github.token }}
+          GH_REPO: ${{ github.repository }}
+        run: |
+          if [ -f work/browser-check-${{ matrix.attempt }}.txt ]; then
+            cp work/browser-check-${{ matrix.attempt }}.txt work/browser-check-${GITHUB_RUN_ID}-${{ matrix.attempt }}.txt
+            gh release upload v1.1.1 work/browser-check-${GITHUB_RUN_ID}-${{ matrix.attempt }}.txt
+          fi
