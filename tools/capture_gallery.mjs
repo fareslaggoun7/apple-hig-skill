@@ -16,7 +16,9 @@ const screenshots={};
 try{
   const page=await browser.newPage({viewport:{width:1400,height:1050},deviceScaleFactor:1,reducedMotion:'reduce'});
   const open=async topic=>{await page.goto(`${base}/?topic=${topic}`);await page.waitForFunction(()=>window.galleryReady);await page.evaluate(()=>document.fonts.ready);};
-  for(const t of JSON.parse(fs.readFileSync(path.join(root,'examples/gallery/catalog.json'))).topics){
+  const selected=process.argv.find(s=>s.startsWith('--topics='))?.slice(9).split(',');
+  const targets=JSON.parse(fs.readFileSync(path.join(root,'examples/gallery/catalog.json'))).topics.filter(t=>!selected||selected.includes(t.slug));
+  for(const t of targets){
     await open(t.slug);
     if(['dialog','sheet','action-sheet'].includes(t.kind)){await page.locator('#stage button').first().click();}
     else if(t.kind==='popover'){await page.locator('#command-anchor').click();}
@@ -28,7 +30,7 @@ try{
       const file=path.join(assets,'specimen-'+t.slug+'.png');fs.writeFileSync(file,png);screenshots[t.slug]=file;
     }
   }
-  console.log('Captured 173 rendered topic previews.');
+  console.log('Captured '+targets.length+' rendered topic previews.');
   await open('buttons');await page.screenshot({path:path.join(assets,'gallery-desktop.png'),fullPage:true});
   await page.setViewportSize({width:390,height:1000});await open('sidebars');await page.screenshot({path:path.join(assets,'gallery-mobile.png'),fullPage:true});
   await page.setViewportSize({width:820,height:370});await page.emulateMedia({reducedMotion:'no-preference'});
@@ -42,7 +44,7 @@ try{
     execFileSync('python3',['-c',"from PIL import Image; import pathlib,sys; files=sorted(pathlib.Path(sys.argv[1]).glob('*.png')); frames=[Image.open(p).convert('RGB').resize((640,256)) for p in files]; frames[0].save(sys.argv[2],save_all=True,append_images=frames[1:],duration=67,loop=0,optimize=True)",dir,path.join(assets,'motion-'+name+'.gif')]);
     console.log('Captured motion preview: '+name);
   }
-  const data=name=>'data:image/png;base64,'+fs.readFileSync(screenshots[name]).toString('base64');
+  const data=name=>'data:image/png;base64,'+fs.readFileSync(screenshots[name]||path.join(assets,'specimen-'+name+'.png')).toString('base64');
   await page.setViewportSize({width:1600,height:850});
   await page.setContent(`<!doctype html><html><head><style>
     *{box-sizing:border-box}body{margin:0;font-family:system-ui,sans-serif;background:#081625;color:#eaf5ff}.hero{height:850px;padding:56px 64px;background:radial-gradient(ellipse at 90% 0,#123b53,transparent 60%),linear-gradient(145deg,#101f35,#081625)}header{display:flex;justify-content:space-between;align-items:center;color:#93b7d0;font-size:16px;letter-spacing:2px}.mark{width:46px;height:46px;border:1px solid #5c8eae;border-radius:13px;display:grid;place-items:center;color:#adf3f6;font-weight:750;font-size:25px;letter-spacing:0}header>div{display:flex;align-items:center;gap:15px}.intro{display:flex;justify-content:space-between;align-items:end;margin:30px 0 38px}h1{font-size:88px;letter-spacing:-5px;line-height:1.02;margin:0}h1 span{color:#73dae2}.copy{font-size:24px;line-height:1.5;color:#a3bdd2;margin:20px 0 0}.stats{display:flex;gap:38px;padding-bottom:10px}.stat strong{display:block;font-size:44px;font-weight:650;color:#83e0e6;letter-spacing:-2px}.stat small{display:block;color:#a3bdd2;font-size:14px}.cards{display:grid;grid-template-columns:1fr 1fr 1fr;gap:22px}.card{background:#14283e;border:1px solid #34516b;border-radius:20px;overflow:hidden}.cap{display:flex;justify-content:space-between;padding:18px 20px;font-size:16px;color:#c8e3f1}.cap small{color:#78cdd8;font-size:12px;letter-spacing:1px}.art{height:228px;background:#f4f7fc;display:grid;place-items:center;overflow:hidden}.art img{width:100%;height:100%;object-fit:contain}.card p{font-size:15px;color:#94b5cf;margin:17px 20px 20px}.footer{display:flex;justify-content:space-between;align-items:center;margin-top:30px;color:#94b5cf;font-size:15px}.clients{display:flex;gap:10px}.clients span{border:1px solid #3d586e;padding:8px 14px;border-radius:20px;color:#d6e9f3;font-size:13px}.eyebrow{color:#81d2dc;font-size:14px;letter-spacing:3px;margin-bottom:16px}

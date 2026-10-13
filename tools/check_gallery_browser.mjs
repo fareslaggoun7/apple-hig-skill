@@ -50,6 +50,8 @@ try{
   await open('loading');await page.locator('[data-action=start]').click();await page.locator('#topic-list [data-topic=buttons]').click();await page.waitForTimeout(300);assert.equal(await page.locator('body').getAttribute('data-topic'),'buttons');assert.match(await page.locator('#result').textContent(),/Try the controls/);assert.equal(await page.locator('#stage progress').count(),0);
   await open('motion');await page.locator('[data-play]').click();await page.locator('#topic-list [data-topic=buttons]').click();await page.waitForTimeout(100);assert.match(await page.locator('#result').textContent(),/Try the controls/);
   await open('playing-audio');await page.locator('[data-action=play]').click();await page.locator('#topic-list [data-topic=buttons]').click();await page.waitForTimeout(550);assert.match(await page.locator('#result').textContent(),/Try the controls/);
+  await open('researchkit');await page.locator('[data-action=next]').click();assert.match(await page.locator('#result').textContent(),/declined/);await page.locator('[data-consent]').selectOption('yes');await page.locator('[data-action=next]').click();await page.locator('[data-action=next]').click();assert.match(await page.locator('#result').textContent(),/survey complete/);
+  await open('generative-ai');await page.locator('[data-suggestion]').fill('My reviewed note.');await page.locator('[data-action=next]').click();await page.locator('[data-action=next]').click();assert.match(await page.locator('[data-state]').textContent(),/Applied locally: My reviewed note/);
   await page.close();
   if(errors.length)failures.push(...errors);
   console.log(JSON.stringify({routes,actions,failures},null,2));
