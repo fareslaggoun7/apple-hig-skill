@@ -1,5 +1,12 @@
 # Changelog
 
+## 1.3.0 — 2026-10-14
+
+- Adds the requested 18-cohort study matrix for three clients and six Apple platforms, with actual protocol/record integrity checks and simultaneous Bonferroni confidence bounds. Missing or weak cohorts cannot be hidden by pooling.
+- Adds adversarial cohort-assessment and source-snapshot consistency tests, plus a report separating executable software checks from unavailable empirical/native-device studies.
+- Refreshes source metadata for all 173 pages and reviews changed CarPlay, Live Activities, and Widgets guidance, including HomeView household visibility, limited-width Dynamic Island layouts, and container-relative corners.
+- The matrix contains zero qualifying independent task outputs; the requested below-0.01% error rate remains unproven.
+
 ## 1.2.0 — 2026-10-13
 
 - Adds a task-centered design playbook with platform profiles, structural tradeoffs, exact-section decision records, and an inspect/test/correct loop.

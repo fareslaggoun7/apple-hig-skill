@@ -1,0 +1,528 @@
+{
+  "schema_version": 1,
+  "study_id": "apple-hig-three-clients-six-platforms",
+  "status": "not-established",
+  "statistical_target_met": false,
+  "family_confidence": 0.95,
+  "target_error_fraction": 0.0001,
+  "target_error_percent": 0.01,
+  "method": "Bonferroni one-sided exact binomial bounds; no pooling",
+  "cohort_count": 18,
+  "required_per_cohort_confidence": 0.9972222222222222,
+  "minimum_zero_error_independent_trials_per_cohort": 58859,
+  "minimum_zero_error_independent_trials_total": 1059462,
+  "empirical_trials": 0,
+  "reviewed_trials": 0,
+  "supported_cohorts": 0,
+  "evidence_problems": [
+    "The study is not bound to the current installed skill revision",
+    "Study preregistration evidence unavailable: An actual timezone-aware UTC timestamp is required"
+  ],
+  "cohorts": [
+    {
+      "client": "claude-chat",
+      "platform": "ios",
+      "model": null,
+      "model_settings": null,
+      "minimum_os": null,
+      "status": "not-established",
+      "statistical_target_met": false,
+      "statistics": {
+        "trials": 0,
+        "errors": 0,
+        "confidence": 0.9972222222222222,
+        "observed_error_fraction": null,
+        "target_error_fraction": 0.0001,
+        "target_error_percent": 0.01,
+        "upper_error_fraction": 1.0,
+        "upper_error_percent": 100.0,
+        "bound_below_target": false,
+        "minimum_zero_error_trials": 58859,
+        "scope": "No qualifying empirical observations supplied for this cohort; this is an evidence requirement."
+      },
+      "reviewed_trials": 0,
+      "missing_trials": 0,
+      "evidence_problems": [
+        "Actual model/settings and deployment OS are not pinned",
+        "Preregistered protocol and independently reviewed task records are unavailable"
+      ]
+    },
+    {
+      "client": "claude-chat",
+      "platform": "ipados",
+      "model": null,
+      "model_settings": null,
+      "minimum_os": null,
+      "status": "not-established",
+      "statistical_target_met": false,
+      "statistics": {
+        "trials": 0,
+        "errors": 0,
+        "confidence": 0.9972222222222222,
+        "observed_error_fraction": null,
+        "target_error_fraction": 0.0001,
+        "target_error_percent": 0.01,
+        "upper_error_fraction": 1.0,
+        "upper_error_percent": 100.0,
+        "bound_below_target": false,
+        "minimum_zero_error_trials": 58859,
+        "scope": "No qualifying empirical observations supplied for this cohort; this is an evidence requirement."
+      },
+      "reviewed_trials": 0,
+      "missing_trials": 0,
+      "evidence_problems": [
+        "Actual model/settings and deployment OS are not pinned",
+        "Preregistered protocol and independently reviewed task records are unavailable"
+      ]
+    },
+    {
+      "client": "claude-chat",
+      "platform": "macos",
+      "model": null,
+      "model_settings": null,
+      "minimum_os": null,
+      "status": "not-established",
+      "statistical_target_met": false,
+      "statistics": {
+        "trials": 0,
+        "errors": 0,
+        "confidence": 0.9972222222222222,
+        "observed_error_fraction": null,
+        "target_error_fraction": 0.0001,
+        "target_error_percent": 0.01,
+        "upper_error_fraction": 1.0,
+        "upper_error_percent": 100.0,
+        "bound_below_target": false,
+        "minimum_zero_error_trials": 58859,
+        "scope": "No qualifying empirical observations supplied for this cohort; this is an evidence requirement."
+      },
+      "reviewed_trials": 0,
+      "missing_trials": 0,
+      "evidence_problems": [
+        "Actual model/settings and deployment OS are not pinned",
+        "Preregistered protocol and independently reviewed task records are unavailable"
+      ]
+    },
+    {
+      "client": "claude-chat",
+      "platform": "tvos",
+      "model": null,
+      "model_settings": null,
+      "minimum_os": null,
+      "status": "not-established",
+      "statistical_target_met": false,
+      "statistics": {
+        "trials": 0,
+        "errors": 0,
+        "confidence": 0.9972222222222222,
+        "observed_error_fraction": null,
+        "target_error_fraction": 0.0001,
+        "target_error_percent": 0.01,
+        "upper_error_fraction": 1.0,
+        "upper_error_percent": 100.0,
+        "bound_below_target": false,
+        "minimum_zero_error_trials": 58859,
+        "scope": "No qualifying empirical observations supplied for this cohort; this is an evidence requirement."
+      },
+      "reviewed_trials": 0,
+      "missing_trials": 0,
+      "evidence_problems": [
+        "Actual model/settings and deployment OS are not pinned",
+        "Preregistered protocol and independently reviewed task records are unavailable"
+      ]
+    },
+    {
+      "client": "claude-chat",
+      "platform": "visionos",
+      "model": null,
+      "model_settings": null,
+      "minimum_os": null,
+      "status": "not-established",
+      "statistical_target_met": false,
+      "statistics": {
+        "trials": 0,
+        "errors": 0,
+        "confidence": 0.9972222222222222,
+        "observed_error_fraction": null,
+        "target_error_fraction": 0.0001,
+        "target_error_percent": 0.01,
+        "upper_error_fraction": 1.0,
+        "upper_error_percent": 100.0,
+        "bound_below_target": false,
+        "minimum_zero_error_trials": 58859,
+        "scope": "No qualifying empirical observations supplied for this cohort; this is an evidence requirement."
+      },
+      "reviewed_trials": 0,
+      "missing_trials": 0,
+      "evidence_problems": [
+        "Actual model/settings and deployment OS are not pinned",
+        "Preregistered protocol and independently reviewed task records are unavailable"
+      ]
+    },
+    {
+      "client": "claude-chat",
+      "platform": "watchos",
+      "model": null,
+      "model_settings": null,
+      "minimum_os": null,
+      "status": "not-established",
+      "statistical_target_met": false,
+      "statistics": {
+        "trials": 0,
+        "errors": 0,
+        "confidence": 0.9972222222222222,
+        "observed_error_fraction": null,
+        "target_error_fraction": 0.0001,
+        "target_error_percent": 0.01,
+        "upper_error_fraction": 1.0,
+        "upper_error_percent": 100.0,
+        "bound_below_target": false,
+        "minimum_zero_error_trials": 58859,
+        "scope": "No qualifying empirical observations supplied for this cohort; this is an evidence requirement."
+      },
+      "reviewed_trials": 0,
+      "missing_trials": 0,
+      "evidence_problems": [
+        "Actual model/settings and deployment OS are not pinned",
+        "Preregistered protocol and independently reviewed task records are unavailable"
+      ]
+    },
+    {
+      "client": "claude-code",
+      "platform": "ios",
+      "model": null,
+      "model_settings": null,
+      "minimum_os": null,
+      "status": "not-established",
+      "statistical_target_met": false,
+      "statistics": {
+        "trials": 0,
+        "errors": 0,
+        "confidence": 0.9972222222222222,
+        "observed_error_fraction": null,
+        "target_error_fraction": 0.0001,
+        "target_error_percent": 0.01,
+        "upper_error_fraction": 1.0,
+        "upper_error_percent": 100.0,
+        "bound_below_target": false,
+        "minimum_zero_error_trials": 58859,
+        "scope": "No qualifying empirical observations supplied for this cohort; this is an evidence requirement."
+      },
+      "reviewed_trials": 0,
+      "missing_trials": 0,
+      "evidence_problems": [
+        "Actual model/settings and deployment OS are not pinned",
+        "Preregistered protocol and independently reviewed task records are unavailable"
+      ]
+    },
+    {
+      "client": "claude-code",
+      "platform": "ipados",
+      "model": null,
+      "model_settings": null,
+      "minimum_os": null,
+      "status": "not-established",
+      "statistical_target_met": false,
+      "statistics": {
+        "trials": 0,
+        "errors": 0,
+        "confidence": 0.9972222222222222,
+        "observed_error_fraction": null,
+        "target_error_fraction": 0.0001,
+        "target_error_percent": 0.01,
+        "upper_error_fraction": 1.0,
+        "upper_error_percent": 100.0,
+        "bound_below_target": false,
+        "minimum_zero_error_trials": 58859,
+        "scope": "No qualifying empirical observations supplied for this cohort; this is an evidence requirement."
+      },
+      "reviewed_trials": 0,
+      "missing_trials": 0,
+      "evidence_problems": [
+        "Actual model/settings and deployment OS are not pinned",
+        "Preregistered protocol and independently reviewed task records are unavailable"
+      ]
+    },
+    {
+      "client": "claude-code",
+      "platform": "macos",
+      "model": null,
+      "model_settings": null,
+      "minimum_os": null,
+      "status": "not-established",
+      "statistical_target_met": false,
+      "statistics": {
+        "trials": 0,
+        "errors": 0,
+        "confidence": 0.9972222222222222,
+        "observed_error_fraction": null,
+        "target_error_fraction": 0.0001,
+        "target_error_percent": 0.01,
+        "upper_error_fraction": 1.0,
+        "upper_error_percent": 100.0,
+        "bound_below_target": false,
+        "minimum_zero_error_trials": 58859,
+        "scope": "No qualifying empirical observations supplied for this cohort; this is an evidence requirement."
+      },
+      "reviewed_trials": 0,
+      "missing_trials": 0,
+      "evidence_problems": [
+        "Actual model/settings and deployment OS are not pinned",
+        "Preregistered protocol and independently reviewed task records are unavailable"
+      ]
+    },
+    {
+      "client": "claude-code",
+      "platform": "tvos",
+      "model": null,
+      "model_settings": null,
+      "minimum_os": null,
+      "status": "not-established",
+      "statistical_target_met": false,
+      "statistics": {
+        "trials": 0,
+        "errors": 0,
+        "confidence": 0.9972222222222222,
+        "observed_error_fraction": null,
+        "target_error_fraction": 0.0001,
+        "target_error_percent": 0.01,
+        "upper_error_fraction": 1.0,
+        "upper_error_percent": 100.0,
+        "bound_below_target": false,
+        "minimum_zero_error_trials": 58859,
+        "scope": "No qualifying empirical observations supplied for this cohort; this is an evidence requirement."
+      },
+      "reviewed_trials": 0,
+      "missing_trials": 0,
+      "evidence_problems": [
+        "Actual model/settings and deployment OS are not pinned",
+        "Preregistered protocol and independently reviewed task records are unavailable"
+      ]
+    },
+    {
+      "client": "claude-code",
+      "platform": "visionos",
+      "model": null,
+      "model_settings": null,
+      "minimum_os": null,
+      "status": "not-established",
+      "statistical_target_met": false,
+      "statistics": {
+        "trials": 0,
+        "errors": 0,
+        "confidence": 0.9972222222222222,
+        "observed_error_fraction": null,
+        "target_error_fraction": 0.0001,
+        "target_error_percent": 0.01,
+        "upper_error_fraction": 1.0,
+        "upper_error_percent": 100.0,
+        "bound_below_target": false,
+        "minimum_zero_error_trials": 58859,
+        "scope": "No qualifying empirical observations supplied for this cohort; this is an evidence requirement."
+      },
+      "reviewed_trials": 0,
+      "missing_trials": 0,
+      "evidence_problems": [
+        "Actual model/settings and deployment OS are not pinned",
+        "Preregistered protocol and independently reviewed task records are unavailable"
+      ]
+    },
+    {
+      "client": "claude-code",
+      "platform": "watchos",
+      "model": null,
+      "model_settings": null,
+      "minimum_os": null,
+      "status": "not-established",
+      "statistical_target_met": false,
+      "statistics": {
+        "trials": 0,
+        "errors": 0,
+        "confidence": 0.9972222222222222,
+        "observed_error_fraction": null,
+        "target_error_fraction": 0.0001,
+        "target_error_percent": 0.01,
+        "upper_error_fraction": 1.0,
+        "upper_error_percent": 100.0,
+        "bound_below_target": false,
+        "minimum_zero_error_trials": 58859,
+        "scope": "No qualifying empirical observations supplied for this cohort; this is an evidence requirement."
+      },
+      "reviewed_trials": 0,
+      "missing_trials": 0,
+      "evidence_problems": [
+        "Actual model/settings and deployment OS are not pinned",
+        "Preregistered protocol and independently reviewed task records are unavailable"
+      ]
+    },
+    {
+      "client": "codex",
+      "platform": "ios",
+      "model": null,
+      "model_settings": null,
+      "minimum_os": null,
+      "status": "not-established",
+      "statistical_target_met": false,
+      "statistics": {
+        "trials": 0,
+        "errors": 0,
+        "confidence": 0.9972222222222222,
+        "observed_error_fraction": null,
+        "target_error_fraction": 0.0001,
+        "target_error_percent": 0.01,
+        "upper_error_fraction": 1.0,
+        "upper_error_percent": 100.0,
+        "bound_below_target": false,
+        "minimum_zero_error_trials": 58859,
+        "scope": "No qualifying empirical observations supplied for this cohort; this is an evidence requirement."
+      },
+      "reviewed_trials": 0,
+      "missing_trials": 0,
+      "evidence_problems": [
+        "Actual model/settings and deployment OS are not pinned",
+        "Preregistered protocol and independently reviewed task records are unavailable"
+      ]
+    },
+    {
+      "client": "codex",
+      "platform": "ipados",
+      "model": null,
+      "model_settings": null,
+      "minimum_os": null,
+      "status": "not-established",
+      "statistical_target_met": false,
+      "statistics": {
+        "trials": 0,
+        "errors": 0,
+        "confidence": 0.9972222222222222,
+        "observed_error_fraction": null,
+        "target_error_fraction": 0.0001,
+        "target_error_percent": 0.01,
+        "upper_error_fraction": 1.0,
+        "upper_error_percent": 100.0,
+        "bound_below_target": false,
+        "minimum_zero_error_trials": 58859,
+        "scope": "No qualifying empirical observations supplied for this cohort; this is an evidence requirement."
+      },
+      "reviewed_trials": 0,
+      "missing_trials": 0,
+      "evidence_problems": [
+        "Actual model/settings and deployment OS are not pinned",
+        "Preregistered protocol and independently reviewed task records are unavailable"
+      ]
+    },
+    {
+      "client": "codex",
+      "platform": "macos",
+      "model": null,
+      "model_settings": null,
+      "minimum_os": null,
+      "status": "not-established",
+      "statistical_target_met": false,
+      "statistics": {
+        "trials": 0,
+        "errors": 0,
+        "confidence": 0.9972222222222222,
+        "observed_error_fraction": null,
+        "target_error_fraction": 0.0001,
+        "target_error_percent": 0.01,
+        "upper_error_fraction": 1.0,
+        "upper_error_percent": 100.0,
+        "bound_below_target": false,
+        "minimum_zero_error_trials": 58859,
+        "scope": "No qualifying empirical observations supplied for this cohort; this is an evidence requirement."
+      },
+      "reviewed_trials": 0,
+      "missing_trials": 0,
+      "evidence_problems": [
+        "Actual model/settings and deployment OS are not pinned",
+        "Preregistered protocol and independently reviewed task records are unavailable"
+      ]
+    },
+    {
+      "client": "codex",
+      "platform": "tvos",
+      "model": null,
+      "model_settings": null,
+      "minimum_os": null,
+      "status": "not-established",
+      "statistical_target_met": false,
+      "statistics": {
+        "trials": 0,
+        "errors": 0,
+        "confidence": 0.9972222222222222,
+        "observed_error_fraction": null,
+        "target_error_fraction": 0.0001,
+        "target_error_percent": 0.01,
+        "upper_error_fraction": 1.0,
+        "upper_error_percent": 100.0,
+        "bound_below_target": false,
+        "minimum_zero_error_trials": 58859,
+        "scope": "No qualifying empirical observations supplied for this cohort; this is an evidence requirement."
+      },
+      "reviewed_trials": 0,
+      "missing_trials": 0,
+      "evidence_problems": [
+        "Actual model/settings and deployment OS are not pinned",
+        "Preregistered protocol and independently reviewed task records are unavailable"
+      ]
+    },
+    {
+      "client": "codex",
+      "platform": "visionos",
+      "model": null,
+      "model_settings": null,
+      "minimum_os": null,
+      "status": "not-established",
+      "statistical_target_met": false,
+      "statistics": {
+        "trials": 0,
+        "errors": 0,
+        "confidence": 0.9972222222222222,
+        "observed_error_fraction": null,
+        "target_error_fraction": 0.0001,
+        "target_error_percent": 0.01,
+        "upper_error_fraction": 1.0,
+        "upper_error_percent": 100.0,
+        "bound_below_target": false,
+        "minimum_zero_error_trials": 58859,
+        "scope": "No qualifying empirical observations supplied for this cohort; this is an evidence requirement."
+      },
+      "reviewed_trials": 0,
+      "missing_trials": 0,
+      "evidence_problems": [
+        "Actual model/settings and deployment OS are not pinned",
+        "Preregistered protocol and independently reviewed task records are unavailable"
+      ]
+    },
+    {
+      "client": "codex",
+      "platform": "watchos",
+      "model": null,
+      "model_settings": null,
+      "minimum_os": null,
+      "status": "not-established",
+      "statistical_target_met": false,
+      "statistics": {
+        "trials": 0,
+        "errors": 0,
+        "confidence": 0.9972222222222222,
+        "observed_error_fraction": null,
+        "target_error_fraction": 0.0001,
+        "target_error_percent": 0.01,
+        "upper_error_fraction": 1.0,
+        "upper_error_percent": 100.0,
+        "bound_below_target": false,
+        "minimum_zero_error_trials": 58859,
+        "scope": "No qualifying empirical observations supplied for this cohort; this is an evidence requirement."
+      },
+      "reviewed_trials": 0,
+      "missing_trials": 0,
+      "evidence_problems": [
+        "Actual model/settings and deployment OS are not pinned",
+        "Preregistered protocol and independently reviewed task records are unavailable"
+      ]
+    }
+  ],
+  "limitations": "Conditional on genuine preregistration, representative sampling, independent trials within each cohort, and qualified independent source/runtime review. Bonferroni does not require independence between cohorts. Counts/calculations and passing software checks are not empirical semantic proof. This cannot establish universally best designs or performance for untested models, OS versions, or future sources."
+}

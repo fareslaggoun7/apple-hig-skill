@@ -42,6 +42,20 @@ python scripts/assurance.py evaluate --protocol work/evaluation/protocol.json --
 
 Do not pool clients, models, platforms, or OS versions and imply a separate <0.01% bound for each. Publish stratum counts and subgroup bounds when justified. A claim about all six platforms requires an appropriately scoped evaluation of all six; a claim about every future user, model, or Apple update cannot follow from a finite benchmark. Re-evaluate after skill/model/source changes and retain failed runs; do not select the first passing repeated benchmark.
 
+## All three clients and six platforms
+
+The requested scope contains 18 client/platform cohorts: Claude chat, Claude Code, and Codex, each on iOS, iPadOS, macOS, tvOS, visionOS, and watchOS. Pin the actual exposed model/settings, client context, OS, and task population for each. Adding models or OS versions expands the study; an 18-cohort result cannot cover every future version.
+
+For a **simultaneous 95%** confidence claim that all 18 error rates are below 0.01%, this project uses conservative Bonferroni control: each one-sided confidence bound uses confidence `1 - 0.05 / 18`, approximately 99.7222%. Under the independent-within-cohort Bernoulli assumptions, zero errors need at least **58,859 trials per cohort, 1,059,462 total**. Bonferroni does not require independence between cohorts. Nonzero errors require more evidence. Eighteen separate marginal 95% bounds, or one pooled bound, do not establish the requested joint 95% statement.
+
+```sh
+python scripts/assurance.py matrix --study work/evaluation/study-matrix.json --output work/evaluation/matrix-report.json
+```
+
+The matrix command requires each client/platform pair exactly once. Each cohort specifies `client`, `platform`, `model`, `model_settings`, `minimum_os`, `protocol_file`, `protocol_sha256`, `records_file`, and `records_sha256`. It reads actual hashed protocols and records, validates registered trial context, and invokes the single-cohort evaluator. It does not accept passing-summary counters as empirical evidence. Missing or unsupported cohorts prevent the all-cohort claim even if pooled counts are large.
+
+The overall study has `schema_version: 1`, `id`, `family_confidence`, `target_error_fraction`, `skill_sha256`, `registered_at_utc`, `registration_evidence_file`, `registration_evidence_sha256`, and `cohorts`. Register the overall study before its cohort protocols, and the cohort protocols before trials. Paths are relative to the study directory; each protocol's internal artifacts are relative to its own directory. The [repository matrix template](https://github.com/fareslaggoun7/apple-hig-skill/blob/main/evaluations/study-matrix.json) has unresolved model/OS fields, no registration or outputs, and no available independent reviewers. It is a draft, not an executed study. Exit 2 reports the unestablished target; valid conditional support still needs independent audit of the premises.
+
 ## Portable input contract
 
 All artifact paths are relative to the protocol directory and must remain within it. Hash exact file bytes with SHA-256. Records are one JSON object per line. Keep prompts, outputs, registration, and reviews available for independent audit; protect private user data when preparing a public dataset.

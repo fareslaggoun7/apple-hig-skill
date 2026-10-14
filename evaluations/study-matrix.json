@@ -1,0 +1,216 @@
+{
+  "schema_version": 1,
+  "id": "apple-hig-three-clients-six-platforms",
+  "status": "draft-not-preregistered",
+  "family_confidence": 0.95,
+  "target_error_fraction": 0.0001,
+  "skill_sha256": null,
+  "task_population_definition": "Complete design, implementation, and review tasks using English Apple HIG guidance. Representative sampling, actual models, OS versions, runtime evidence, and independent reviewers must be specified before registration.",
+  "resources": {
+    "qualifying_empirical_outputs_available": false,
+    "qualified_independent_reviewers_available": false
+  },
+  "cohorts": [
+    {
+      "client": "claude-chat",
+      "platform": "ios",
+      "model": null,
+      "model_settings": null,
+      "minimum_os": null,
+      "protocol_file": null,
+      "protocol_sha256": null,
+      "records_file": null,
+      "records_sha256": null
+    },
+    {
+      "client": "claude-chat",
+      "platform": "ipados",
+      "model": null,
+      "model_settings": null,
+      "minimum_os": null,
+      "protocol_file": null,
+      "protocol_sha256": null,
+      "records_file": null,
+      "records_sha256": null
+    },
+    {
+      "client": "claude-chat",
+      "platform": "macos",
+      "model": null,
+      "model_settings": null,
+      "minimum_os": null,
+      "protocol_file": null,
+      "protocol_sha256": null,
+      "records_file": null,
+      "records_sha256": null
+    },
+    {
+      "client": "claude-chat",
+      "platform": "tvos",
+      "model": null,
+      "model_settings": null,
+      "minimum_os": null,
+      "protocol_file": null,
+      "protocol_sha256": null,
+      "records_file": null,
+      "records_sha256": null
+    },
+    {
+      "client": "claude-chat",
+      "platform": "visionos",
+      "model": null,
+      "model_settings": null,
+      "minimum_os": null,
+      "protocol_file": null,
+      "protocol_sha256": null,
+      "records_file": null,
+      "records_sha256": null
+    },
+    {
+      "client": "claude-chat",
+      "platform": "watchos",
+      "model": null,
+      "model_settings": null,
+      "minimum_os": null,
+      "protocol_file": null,
+      "protocol_sha256": null,
+      "records_file": null,
+      "records_sha256": null
+    },
+    {
+      "client": "claude-code",
+      "platform": "ios",
+      "model": null,
+      "model_settings": null,
+      "minimum_os": null,
+      "protocol_file": null,
+      "protocol_sha256": null,
+      "records_file": null,
+      "records_sha256": null
+    },
+    {
+      "client": "claude-code",
+      "platform": "ipados",
+      "model": null,
+      "model_settings": null,
+      "minimum_os": null,
+      "protocol_file": null,
+      "protocol_sha256": null,
+      "records_file": null,
+      "records_sha256": null
+    },
+    {
+      "client": "claude-code",
+      "platform": "macos",
+      "model": null,
+      "model_settings": null,
+      "minimum_os": null,
+      "protocol_file": null,
+      "protocol_sha256": null,
+      "records_file": null,
+      "records_sha256": null
+    },
+    {
+      "client": "claude-code",
+      "platform": "tvos",
+      "model": null,
+      "model_settings": null,
+      "minimum_os": null,
+      "protocol_file": null,
+      "protocol_sha256": null,
+      "records_file": null,
+      "records_sha256": null
+    },
+    {
+      "client": "claude-code",
+      "platform": "visionos",
+      "model": null,
+      "model_settings": null,
+      "minimum_os": null,
+      "protocol_file": null,
+      "protocol_sha256": null,
+      "records_file": null,
+      "records_sha256": null
+    },
+    {
+      "client": "claude-code",
+      "platform": "watchos",
+      "model": null,
+      "model_settings": null,
+      "minimum_os": null,
+      "protocol_file": null,
+      "protocol_sha256": null,
+      "records_file": null,
+      "records_sha256": null
+    },
+    {
+      "client": "codex",
+      "platform": "ios",
+      "model": null,
+      "model_settings": null,
+      "minimum_os": null,
+      "protocol_file": null,
+      "protocol_sha256": null,
+      "records_file": null,
+      "records_sha256": null
+    },
+    {
+      "client": "codex",
+      "platform": "ipados",
+      "model": null,
+      "model_settings": null,
+      "minimum_os": null,
+      "protocol_file": null,
+      "protocol_sha256": null,
+      "records_file": null,
+      "records_sha256": null
+    },
+    {
+      "client": "codex",
+      "platform": "macos",
+      "model": null,
+      "model_settings": null,
+      "minimum_os": null,
+      "protocol_file": null,
+      "protocol_sha256": null,
+      "records_file": null,
+      "records_sha256": null
+    },
+    {
+      "client": "codex",
+      "platform": "tvos",
+      "model": null,
+      "model_settings": null,
+      "minimum_os": null,
+      "protocol_file": null,
+      "protocol_sha256": null,
+      "records_file": null,
+      "records_sha256": null
+    },
+    {
+      "client": "codex",
+      "platform": "visionos",
+      "model": null,
+      "model_settings": null,
+      "minimum_os": null,
+      "protocol_file": null,
+      "protocol_sha256": null,
+      "records_file": null,
+      "records_sha256": null
+    },
+    {
+      "client": "codex",
+      "platform": "watchos",
+      "model": null,
+      "model_settings": null,
+      "minimum_os": null,
+      "protocol_file": null,
+      "protocol_sha256": null,
+      "records_file": null,
+      "records_sha256": null
+    }
+  ],
+  "registered_at_utc": null,
+  "registration_evidence_file": null,
+  "registration_evidence_sha256": null
+}

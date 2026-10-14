@@ -1,6 +1,6 @@
 # Components
 
-English HIG snapshot: 2026-10-13. Read applicable cards; verify exact measurements and changing behavior in the linked official sections. Cards condense guidance and are not exhaustive transcriptions.
+English HIG snapshot: 2026-10-14. Read applicable cards; verify exact measurements and changing behavior in the linked official sections. Cards condense guidance and are not exhaustive transcriptions.
 
 <!-- topic:action-sheets -->
 <a id="action-sheets"></a>
@@ -332,11 +332,11 @@ Evidence sections: [Best-practices](https://developer.apple.com/design/human-int
 Source: [Live Activities](https://developer.apple.com/design/human-interface-guidelines/live-activities).
 Platforms in page metadata: ios, ipados, macos, watchos.
 
-Use Live Activities for bounded tasks or events whose progress matters at a glance. Exclude promotions; protect sensitive information with innocuous summaries or redaction and the documented person-controlled choice. Keep interactions simple and deep-link to related content. Start at expected moments, offer controls to stop, and update when information changes. End immediately when the task ends; subsequent dismissal timing can differ by presentation.
+Use Live Activities for bounded tasks or events whose progress matters at a glance. Exclude promotions and protect sensitive information with innocuous summaries, redaction, and documented person-controlled choices. Keep interactions simple and deep-link to related content. Adapt compact and minimal layouts for limited-width Dynamic Island contexts on iPhone using abbreviations or graphics, with a leading-only view when appropriate. Use container-relative corner geometry rather than hard-coded radii. Start at expected moments, offer controls to stop, and update when information changes. End immediately when the task ends; subsequent dismissal timing can differ by presentation.
 
 Scope / uncertainty: The page excludes tvOS and visionOS.
 
-Evidence sections: [Best-practices](https://developer.apple.com/design/human-interface-guidelines/live-activities#Best-practices), [Offering-interactivity](https://developer.apple.com/design/human-interface-guidelines/live-activities#Offering-interactivity), [Starting-updating-and-ending-a-Live-Activity](https://developer.apple.com/design/human-interface-guidelines/live-activities#Starting-updating-and-ending-a-Live-Activity), [Platform-considerations](https://developer.apple.com/design/human-interface-guidelines/live-activities#Platform-considerations).
+Evidence sections: [Best-practices](https://developer.apple.com/design/human-interface-guidelines/live-activities#Best-practices), [Creating-Live-Activity-layouts](https://developer.apple.com/design/human-interface-guidelines/live-activities#Creating-Live-Activity-layouts), [Offering-interactivity](https://developer.apple.com/design/human-interface-guidelines/live-activities#Offering-interactivity), [Starting-updating-and-ending-a-Live-Activity](https://developer.apple.com/design/human-interface-guidelines/live-activities#Starting-updating-and-ending-a-Live-Activity), [Platform-considerations](https://developer.apple.com/design/human-interface-guidelines/live-activities#Platform-considerations).
 
 <!-- topic:lockups -->
 <a id="lockups"></a>
@@ -824,11 +824,11 @@ Evidence sections: [Overview](https://developer.apple.com/design/human-interface
 Source: [Widgets](https://developer.apple.com/design/human-interface-guidelines/widgets).
 Platforms in page metadata: ios, ipados, macos, watchos, visionos.
 
-Choose a focused widget purpose with information people want frequently, and offer additional sizes only when useful. Match refreshes to the data; widgets do not continuously update in real time. Keep interactions simple and link directly to related app content. Adapt content to platform layouts and provide realistic previews and recognizable loading placeholders.
+Choose a focused widget purpose with information people want frequently, and offer additional sizes only when useful. Match refreshes to the data; widgets do not continuously update in real time. Keep interactions simple and link directly to related app content. Adapt content to platform layouts and provide realistic previews and recognizable loading placeholders. On Apple HomeView, consider whose connected-device content other household members can see: the Modular face is shared, while enrolled members have separate personalized Home Screens.
 
 Scope / uncertainty: The page excludes tvOS; visionOS widgets have spatial placement and treatment considerations.
 
-Evidence sections: [Best-practices](https://developer.apple.com/design/human-interface-guidelines/widgets#Best-practices), [Updating-widget-content](https://developer.apple.com/design/human-interface-guidelines/widgets#Updating-widget-content), [Adding-interactivity](https://developer.apple.com/design/human-interface-guidelines/widgets#Adding-interactivity), [Previews-and-placeholders](https://developer.apple.com/design/human-interface-guidelines/widgets#Previews-and-placeholders).
+Evidence sections: [Best-practices](https://developer.apple.com/design/human-interface-guidelines/widgets#Best-practices), [Updating-widget-content](https://developer.apple.com/design/human-interface-guidelines/widgets#Updating-widget-content), [Adding-interactivity](https://developer.apple.com/design/human-interface-guidelines/widgets#Adding-interactivity), [Previews-and-placeholders](https://developer.apple.com/design/human-interface-guidelines/widgets#Previews-and-placeholders), [Apple-HomeView](https://developer.apple.com/design/human-interface-guidelines/widgets#Apple-HomeView).
 
 <!-- topic:windows -->
 <a id="windows"></a>

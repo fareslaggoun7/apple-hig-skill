@@ -1,6 +1,6 @@
 # Inputs
 
-English HIG snapshot: 2026-10-13. Read applicable cards; verify exact measurements and changing behavior in the linked official sections. Cards condense guidance and are not exhaustive transcriptions.
+English HIG snapshot: 2026-10-14. Read applicable cards; verify exact measurements and changing behavior in the linked official sections. Cards condense guidance and are not exhaustive transcriptions.
 
 <!-- topic:action-button -->
 <a id="action-button"></a>

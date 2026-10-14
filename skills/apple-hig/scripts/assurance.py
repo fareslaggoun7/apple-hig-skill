@@ -13,7 +13,9 @@ import math
 from pathlib import Path
 import sys
 
-from design_quality import PLATFORMS, checked_artifact, skill_fingerprint
+from design_quality import PLATFORMS, artifact_path, checked_artifact, skill_fingerprint
+
+CLIENTS = ('claude-chat', 'claude-code', 'codex')
 
 ERROR_CATEGORIES = (
     'unsupported-source', 'wrong-platform', 'lost-qualifier', 'invented-number',
@@ -161,7 +163,7 @@ def evaluate(protocol, records, root):
                     raise ValueError('Result differs from its registered context: ' + key)
             if any(not isinstance(row[key], str) or not row[key].strip() for key in ('model', 'minimum_os')):
                 raise ValueError('Actual model and OS scope must be recorded')
-            if row['platform'] not in PLATFORMS or row['client'] not in ('claude-chat', 'claude-code', 'codex') or not isinstance(row['model_settings'], dict):
+            if row['platform'] not in PLATFORMS or row['client'] not in CLIENTS or not isinstance(row['model_settings'], dict):
                 raise ValueError('Platform/client/settings context is unrecognized')
             if row.get('prompt_sha256') != prompt_hash:
                 raise ValueError('Task input differs from its registered input')
@@ -211,6 +213,98 @@ def evaluate(protocol, records, root):
     }
 
 
+def matrix(study, root):
+    """Assess all 18 cohorts separately with Bonferroni simultaneous coverage.
+
+Read actual protocol/record artifacts, not caller-supplied passing summaries.
+The statistical conclusion remains conditional on independently audited premises.
+"""
+    if not isinstance(study, dict) or study.get('schema_version') != 1:
+        raise ValueError('Require a schema-1 study object')
+    confidence = study.get('family_confidence', 0.95)
+    target = study.get('target_error_fraction', 0.0001)
+    validate_parameters(0, 0, confidence, target)
+    expected = {(client, platform) for client in CLIENTS for platform in PLATFORMS}
+    cohorts = study.get('cohorts')
+    if not isinstance(cohorts, list) or any(not isinstance(c, dict) for c in cohorts):
+        raise ValueError('Cohorts must be an array of objects')
+    pairs = [(c.get('client'), c.get('platform')) for c in cohorts]
+    if len(pairs) != len(expected) or set(pairs) != expected:
+        raise ValueError('Study must contain each of the 18 client/platform pairs exactly once')
+    per_confidence = 1 - (1 - confidence) / len(expected)
+    validate_parameters(0, 0, per_confidence, target)
+    minimum = estimate(0, 0, per_confidence, target)['minimum_zero_error_trials']
+    global_problems = []
+    if study.get('skill_sha256') != skill_fingerprint():
+        global_problems.append('The study is not bound to the current installed skill revision')
+    registered = None
+    try:
+        registered = utc(study.get('registered_at_utc'))
+        checked_artifact(root, study.get('registration_evidence_file'), study.get('registration_evidence_sha256'))
+    except (OSError, ValueError, TypeError, AttributeError) as exc:
+        global_problems.append('Study preregistration evidence unavailable: ' + str(exc))
+    assessed = []
+    for cohort in cohorts:
+        problems = []
+        context = {key: cohort.get(key) for key in ('client', 'platform', 'model', 'model_settings', 'minimum_os')}
+        if any(not isinstance(context[key], str) or not context[key].strip() for key in ('model', 'minimum_os')) or not isinstance(context['model_settings'], dict):
+            problems.append('Actual model/settings and deployment OS are not pinned')
+        result = None
+        if not cohort.get('protocol_file') or not cohort.get('records_file'):
+            problems.append('Preregistered protocol and independently reviewed task records are unavailable')
+        else:
+            try:
+                protocol = json.loads(checked_artifact(root, cohort['protocol_file'], cohort.get('protocol_sha256')))
+                records = json_lines(checked_artifact(root, cohort['records_file'], cohort.get('records_sha256')))
+                protocol_root = artifact_path(root, cohort['protocol_file']).parent
+                if not isinstance(protocol, dict): raise ValueError('Protocol must be an object')
+                if protocol.get('skill_sha256') != study.get('skill_sha256'):
+                    raise ValueError('Protocol skill revision differs from the study')
+                if registered is None or utc(protocol.get('registered_at_utc')) < registered:
+                    raise ValueError('Cohort protocol must be registered after the overall study')
+                pc = protocol.get('confidence', 0.95); pt = protocol.get('target_error_fraction', 0.0001)
+                validate_parameters(0, 0, pc, pt)
+                if pc < per_confidence or pt > target:
+                    raise ValueError('Protocol confidence/target does not meet the simultaneous study requirement')
+                registry = json_lines(checked_artifact(protocol_root, protocol.get('selected_trials_file'), protocol.get('selected_trials_sha256')))
+                if any(any(row.get(key) != value for key, value in context.items()) for row in registry):
+                    raise ValueError('Registered trial context differs from the designated cohort')
+                result = evaluate(protocol, records, protocol_root)
+                problems.extend(result['evidence_problems'])
+            except (OSError, ValueError, TypeError, KeyError, AttributeError) as exc:
+                problems.append('Cohort artifacts invalid: ' + str(exc))
+        stats = result['statistics'] if result else estimate(0, 0, per_confidence, target)
+        if not result:
+            stats['scope'] = 'No qualifying empirical observations supplied for this cohort; this is an evidence requirement.'
+        established = not global_problems and not problems and result is not None and result['statistical_target_met'] is True
+        assessed.append({
+            **context, 'status': 'bounded-target-supported-conditionally' if established else 'not-established',
+            'statistical_target_met': established, 'statistics': stats,
+            'reviewed_trials': result['reviewed_trials'] if result else 0,
+            'missing_trials': result['missing_trials'] if result else 0,
+            'evidence_problems': problems,
+        })
+    supported = not global_problems and all(c['statistical_target_met'] for c in assessed)
+    return {
+        'schema_version': 1, 'study_id': study.get('id'),
+        'status': 'all-cohorts-supported-conditionally' if supported else 'not-established',
+        'statistical_target_met': supported, 'family_confidence': confidence,
+        'target_error_fraction': target, 'target_error_percent': target * 100,
+        'method': 'Bonferroni one-sided exact binomial bounds; no pooling',
+        'cohort_count': len(expected), 'required_per_cohort_confidence': per_confidence,
+        'minimum_zero_error_independent_trials_per_cohort': minimum,
+        'minimum_zero_error_independent_trials_total': minimum * len(expected),
+        'empirical_trials': sum(c['statistics']['trials'] for c in assessed),
+        'reviewed_trials': sum(c['reviewed_trials'] for c in assessed),
+        'supported_cohorts': sum(c['statistical_target_met'] for c in assessed),
+        'evidence_problems': global_problems, 'cohorts': assessed,
+        'limitations': 'Conditional on genuine preregistration, representative sampling, independent trials within each cohort, '
+                      'and qualified independent source/runtime review. Bonferroni does not require independence between cohorts. '
+                      'Counts/calculations and passing software checks are not empirical semantic proof. '
+                      'This cannot establish universally best designs or performance for untested models, OS versions, or future sources.',
+    }
+
+
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
     commands = parser.add_subparsers(dest='command', required=True)
@@ -220,17 +314,22 @@ def main():
     item = commands.add_parser('evaluate')
     item.add_argument('--protocol', type=Path, required=True); item.add_argument('--records', type=Path, required=True)
     item.add_argument('--output', type=Path)
+    item = commands.add_parser('matrix', help='Assess all three clients and six platforms with simultaneous bounds')
+    item.add_argument('--study', type=Path, required=True); item.add_argument('--output', type=Path)
     args = parser.parse_args()
     if args.command == 'estimate':
         result = estimate(args.trials, args.errors, args.confidence, args.target)
-    else:
+    elif args.command == 'evaluate':
         protocol = json.loads(args.protocol.read_text(encoding='utf-8'))
         result = evaluate(protocol, json_lines(args.records.read_bytes()), args.protocol.resolve().parent)
-        if args.output:
-            args.output.parent.mkdir(parents=True, exist_ok=True)
-            args.output.write_text(json.dumps(result, ensure_ascii=False, indent=2) + '\n', encoding='utf-8')
+    else:
+        study = json.loads(args.study.read_text(encoding='utf-8'))
+        result = matrix(study, args.study.resolve().parent)
+    if getattr(args, 'output', None):
+        args.output.parent.mkdir(parents=True, exist_ok=True)
+        args.output.write_text(json.dumps(result, ensure_ascii=False, indent=2) + '\n', encoding='utf-8')
     print(json.dumps(result, ensure_ascii=False, indent=2))
-    return 2 if args.command == 'evaluate' and not result['statistical_target_met'] else 0
+    return 2 if args.command in ('evaluate', 'matrix') and not result['statistical_target_met'] else 0
 
 
 if __name__ == '__main__':

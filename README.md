@@ -115,11 +115,11 @@ The generated plan is unfinished. Fill its context, decisions, exact source evid
 
 ## Coverage and evidence
 
-The **13 October 2026** source snapshot covers all **173/173** pages discovered in the recorded English HIG topic tree. The gallery covers all 173 routes with 121 explicitly registered renderer kinds; related topics share appropriate controls while retaining their own task and source. Topic presence does not establish exhaustive interpretation of every sentence, accurate native geometry, or SDK conformance.
+The **14 October 2026** source snapshot covers all **173/173** pages discovered in the recorded English HIG topic tree. The gallery covers all 173 routes with 121 explicitly registered renderer kinds; related topics share appropriate controls while retaining their own task and source. Topic presence does not establish exhaustive interpretation of every sentence, accurate native geometry, or SDK conformance.
 
 **A semantic error rate below 0.01% is unproven and is not guaranteed.** [Coverage](docs/COVERAGE.md) documents source ambiguities and unverified media semantics. Browser validation covers all routes at desktop and phone widths and representative keyboard, cancellation, validation, search, loading, and motion interactions. It does not establish full accessibility conformance, model response quality, Apple-device behavior, or a live installation in your Claude account.
 
-A fresh official crawl on 13 October 2026 reached all 173 pages with no content drift, failed pages, or unfamiliar nodes. That is source consistency evidence. The [current empirical report](evaluations/current-report.json) has zero qualifying independent task evaluations; source hashes and regression tests do not establish the requested numerical accuracy. No workflow can establish a universally best design for every future user and model.
+A fresh official crawl on 14 October 2026 reached all 173 pages and detected updates on CarPlay, Live Activities, and Widgets; source readback refreshed their cards and the source records. No page failed or introduced unfamiliar nodes. That is source inventory/review evidence. The requested [18-cohort study](evaluations/matrix-report.json) has zero qualifying independent task evaluations; source hashes and regression tests do not establish the requested numerical accuracy. No workflow can establish a universally best design for every future user and model. [Executed checks and remaining blockers](docs/TESTING.md) distinguish software verification from empirical proof.
 
 ## Contribute
 

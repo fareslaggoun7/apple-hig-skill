@@ -1,6 +1,6 @@
 # Technologies
 
-English HIG snapshot: 2026-10-13. Read applicable cards; verify exact measurements and changing behavior in the linked official sections. Cards condense guidance and are not exhaustive transcriptions.
+English HIG snapshot: 2026-10-14. Read applicable cards; verify exact measurements and changing behavior in the linked official sections. Cards condense guidance and are not exhaustive transcriptions.
 
 <!-- topic:airplay -->
 <a id="airplay"></a>
@@ -68,7 +68,7 @@ Evidence sections: [Overview](https://developer.apple.com/design/human-interface
 Source: [CarPlay](https://developer.apple.com/design/human-interface-guidelines/carplay).
 Platforms in page metadata: ios.
 
-Design for drivers completing brief tasks with little interaction. Use the system templates suited to your app category, letting CarPlay handle display adaptation and vehicle input. Require any iPhone setup before driving; the in-car experience must work with a locked or inaccessible iPhone. Avoid demanding phone input or blocking CarPlay while a phone-side issue waits to be resolved.
+Design for drivers completing brief tasks with little interaction. Use the system templates suited to your app category, letting CarPlay handle display adaptation and vehicle input. Require any iPhone setup before driving; the in-car experience must work with a locked or inaccessible iPhone. Avoid demanding phone input or blocking CarPlay while a phone-side issue waits to be resolved. The page also describes audio and video apps on Apple HomeView; inspect the linked platform and API guidance before making availability claims.
 
 Evidence sections: [Overview](https://developer.apple.com/design/human-interface-guidelines/carplay), [iPhone-interactions](https://developer.apple.com/design/human-interface-guidelines/carplay#iPhone-interactions).
 

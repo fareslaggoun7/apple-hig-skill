@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "snapshot_date": "2026-10-13",
+  "snapshot_date": "2026-10-14",
   "source_root": "https://developer.apple.com/design/human-interface-guidelines",
   "scope": "English public HIG documents reachable through HIG article references and topic edges from the root; excludes other Apple documentation, images/video semantics and unlinked pages.",
   "source_failures": [],
@@ -39,7 +39,8 @@
       "source_heading_count": 3,
       "source_text_block_count": 3,
       "media_nodes_not_visually_inspected": 0,
-      "canonical_path": "/design/human-interface-guidelines"
+      "canonical_path": "/design/human-interface-guidelines",
+      "source_checked_at_utc": "2026-10-14T04:34:26.351097+00:00"
     },
     {
       "path": "/design/human-interface-guidelines/accessibility",
@@ -89,7 +90,8 @@
       "source_heading_count": 12,
       "source_text_block_count": 71,
       "media_nodes_not_visually_inspected": 30,
-      "canonical_path": "/design/human-interface-guidelines/accessibility"
+      "canonical_path": "/design/human-interface-guidelines/accessibility",
+      "source_checked_at_utc": "2026-10-14T04:34:26.351097+00:00"
     },
     {
       "path": "/design/human-interface-guidelines/action-button",
@@ -130,7 +132,8 @@
       "source_heading_count": 7,
       "source_text_block_count": 17,
       "media_nodes_not_visually_inspected": 1,
-      "canonical_path": "/design/human-interface-guidelines/action-button"
+      "canonical_path": "/design/human-interface-guidelines/action-button",
+      "source_checked_at_utc": "2026-10-14T04:34:26.351097+00:00"
     },
     {
       "path": "/design/human-interface-guidelines/action-sheets",
@@ -174,7 +177,8 @@
       "source_heading_count": 7,
       "source_text_block_count": 19,
       "media_nodes_not_visually_inspected": 4,
-      "canonical_path": "/design/human-interface-guidelines/action-sheets"
+      "canonical_path": "/design/human-interface-guidelines/action-sheets",
+      "source_checked_at_utc": "2026-10-14T04:34:26.351097+00:00"
     },
     {
       "path": "/design/human-interface-guidelines/activity-rings",
@@ -216,7 +220,8 @@
       "source_heading_count": 8,
       "source_text_block_count": 26,
       "media_nodes_not_visually_inspected": 7,
-      "canonical_path": "/design/human-interface-guidelines/activity-rings"
+      "canonical_path": "/design/human-interface-guidelines/activity-rings",
+      "source_checked_at_utc": "2026-10-14T04:34:26.351097+00:00"
     },
     {
       "path": "/design/human-interface-guidelines/activity-views",
@@ -257,7 +262,8 @@
       "source_heading_count": 7,
       "source_text_block_count": 23,
       "media_nodes_not_visually_inspected": 3,
-      "canonical_path": "/design/human-interface-guidelines/activity-views"
+      "canonical_path": "/design/human-interface-guidelines/activity-views",
+      "source_checked_at_utc": "2026-10-14T04:34:26.351097+00:00"
     },
     {
       "path": "/design/human-interface-guidelines/airplay",
@@ -304,7 +310,8 @@
       "source_heading_count": 12,
       "source_text_block_count": 33,
       "media_nodes_not_visually_inspected": 14,
-      "canonical_path": "/design/human-interface-guidelines/airplay"
+      "canonical_path": "/design/human-interface-guidelines/airplay",
+      "source_checked_at_utc": "2026-10-14T04:34:26.351097+00:00"
     },
     {
       "path": "/design/human-interface-guidelines/alerts",
@@ -354,7 +361,8 @@
       "source_heading_count": 12,
       "source_text_block_count": 40,
       "media_nodes_not_visually_inspected": 8,
-      "canonical_path": "/design/human-interface-guidelines/alerts"
+      "canonical_path": "/design/human-interface-guidelines/alerts",
+      "source_checked_at_utc": "2026-10-14T04:34:26.351097+00:00"
     },
     {
       "path": "/design/human-interface-guidelines/always-on",
@@ -393,7 +401,8 @@
       "source_heading_count": 7,
       "source_text_block_count": 13,
       "media_nodes_not_visually_inspected": 1,
-      "canonical_path": "/design/human-interface-guidelines/always-on"
+      "canonical_path": "/design/human-interface-guidelines/always-on",
+      "source_checked_at_utc": "2026-10-14T04:34:26.351097+00:00"
     },
     {
       "path": "/design/human-interface-guidelines/app-clips",
@@ -447,7 +456,8 @@
       "source_heading_count": 20,
       "source_text_block_count": 124,
       "media_nodes_not_visually_inspected": 28,
-      "canonical_path": "/design/human-interface-guidelines/app-clips"
+      "canonical_path": "/design/human-interface-guidelines/app-clips",
+      "source_checked_at_utc": "2026-10-14T04:34:26.351097+00:00"
     },
     {
       "path": "/design/human-interface-guidelines/app-icons",
@@ -500,7 +510,8 @@
       "source_heading_count": 15,
       "source_text_block_count": 47,
       "media_nodes_not_visually_inspected": 15,
-      "canonical_path": "/design/human-interface-guidelines/app-icons"
+      "canonical_path": "/design/human-interface-guidelines/app-icons",
+      "source_checked_at_utc": "2026-10-14T04:34:26.351097+00:00"
     },
     {
       "path": "/design/human-interface-guidelines/app-shortcuts",
@@ -547,7 +558,8 @@
       "source_heading_count": 11,
       "source_text_block_count": 31,
       "media_nodes_not_visually_inspected": 2,
-      "canonical_path": "/design/human-interface-guidelines/app-shortcuts"
+      "canonical_path": "/design/human-interface-guidelines/app-shortcuts",
+      "source_checked_at_utc": "2026-10-14T04:34:26.351097+00:00"
     },
     {
       "path": "/design/human-interface-guidelines/apple-in-app-purchase",
@@ -599,7 +611,8 @@
       "source_heading_count": 14,
       "source_text_block_count": 71,
       "media_nodes_not_visually_inspected": 21,
-      "canonical_path": "/design/human-interface-guidelines/apple-in-app-purchase"
+      "canonical_path": "/design/human-interface-guidelines/apple-in-app-purchase",
+      "source_checked_at_utc": "2026-10-14T04:34:26.351097+00:00"
     },
     {
       "path": "/design/human-interface-guidelines/apple-pay",
@@ -662,7 +675,8 @@
       "source_heading_count": 26,
       "source_text_block_count": 101,
       "media_nodes_not_visually_inspected": 71,
-      "canonical_path": "/design/human-interface-guidelines/apple-pay"
+      "canonical_path": "/design/human-interface-guidelines/apple-pay",
+      "source_checked_at_utc": "2026-10-14T04:34:26.351097+00:00"
     },
     {
       "path": "/design/human-interface-guidelines/apple-pencil-and-scribble",
@@ -708,7 +722,8 @@
       "source_heading_count": 13,
       "source_text_block_count": 38,
       "media_nodes_not_visually_inspected": 14,
-      "canonical_path": "/design/human-interface-guidelines/apple-pencil-and-scribble"
+      "canonical_path": "/design/human-interface-guidelines/apple-pencil-and-scribble",
+      "source_checked_at_utc": "2026-10-14T04:34:26.351097+00:00"
     },
     {
       "path": "/design/human-interface-guidelines/augmented-reality",
@@ -759,7 +774,8 @@
       "source_heading_count": 16,
       "source_text_block_count": 67,
       "media_nodes_not_visually_inspected": 24,
-      "canonical_path": "/design/human-interface-guidelines/augmented-reality"
+      "canonical_path": "/design/human-interface-guidelines/augmented-reality",
+      "source_checked_at_utc": "2026-10-14T04:34:26.351097+00:00"
     },
     {
       "path": "/design/human-interface-guidelines/boxes",
@@ -803,7 +819,8 @@
       "source_heading_count": 8,
       "source_text_block_count": 11,
       "media_nodes_not_visually_inspected": 1,
-      "canonical_path": "/design/human-interface-guidelines/boxes"
+      "canonical_path": "/design/human-interface-guidelines/boxes",
+      "source_checked_at_utc": "2026-10-14T04:34:26.351097+00:00"
     },
     {
       "path": "/design/human-interface-guidelines/branding",
@@ -844,7 +861,8 @@
       "source_heading_count": 6,
       "source_text_block_count": 15,
       "media_nodes_not_visually_inspected": 5,
-      "canonical_path": "/design/human-interface-guidelines/branding"
+      "canonical_path": "/design/human-interface-guidelines/branding",
+      "source_checked_at_utc": "2026-10-14T04:34:26.351097+00:00"
     },
     {
       "path": "/design/human-interface-guidelines/buttons",
@@ -899,7 +917,8 @@
       "source_heading_count": 17,
       "source_text_block_count": 79,
       "media_nodes_not_visually_inspected": 25,
-      "canonical_path": "/design/human-interface-guidelines/buttons"
+      "canonical_path": "/design/human-interface-guidelines/buttons",
+      "source_checked_at_utc": "2026-10-14T04:34:26.351097+00:00"
     },
     {
       "path": "/design/human-interface-guidelines/camera-control",
@@ -937,7 +956,8 @@
       "source_heading_count": 7,
       "source_text_block_count": 22,
       "media_nodes_not_visually_inspected": 18,
-      "canonical_path": "/design/human-interface-guidelines/camera-control"
+      "canonical_path": "/design/human-interface-guidelines/camera-control",
+      "source_checked_at_utc": "2026-10-14T04:34:26.351097+00:00"
     },
     {
       "path": "/design/human-interface-guidelines/carekit",
@@ -988,14 +1008,15 @@
       "source_heading_count": 17,
       "source_text_block_count": 66,
       "media_nodes_not_visually_inspected": 14,
-      "canonical_path": "/design/human-interface-guidelines/carekit"
+      "canonical_path": "/design/human-interface-guidelines/carekit",
+      "source_checked_at_utc": "2026-10-14T04:34:26.351097+00:00"
     },
     {
       "path": "/design/human-interface-guidelines/carplay",
       "url": "https://developer.apple.com/design/human-interface-guidelines/carplay",
       "data_url": "https://developer.apple.com/tutorials/data/design/human-interface-guidelines/carplay.json",
-      "sha256": "ad82dc60d7179fdb902569e4b703482985f7f9f41299dbd62fc3ab18401ffb10",
-      "bytes": 22865,
+      "sha256": "67b91743f7e1ac46d98cafe69330cd49c8e93429cabb318176dde82a52bd5489",
+      "bytes": 23084,
       "title": "CarPlay",
       "topic_children": [],
       "parents": [
@@ -1026,12 +1047,13 @@
       "supported_platforms": [
         "ios"
       ],
-      "semantic_sha256": "6cd90842cd4858bf3e4acf051de0d725ef1c3ed134a7e8842a4e458056c2743c",
-      "guidance_word_count": 58,
+      "semantic_sha256": "6401ae1d4661e88097252ea97ff78161c4f643c900af7d13eb949354e36d1ebb",
+      "guidance_word_count": 80,
       "source_heading_count": 12,
-      "source_text_block_count": 37,
+      "source_text_block_count": 38,
       "media_nodes_not_visually_inspected": 1,
-      "canonical_path": "/design/human-interface-guidelines/carplay"
+      "canonical_path": "/design/human-interface-guidelines/carplay",
+      "source_checked_at_utc": "2026-10-14T04:34:26.351097+00:00"
     },
     {
       "path": "/design/human-interface-guidelines/charting-data",
@@ -1076,7 +1098,8 @@
       "source_heading_count": 8,
       "source_text_block_count": 20,
       "media_nodes_not_visually_inspected": 3,
-      "canonical_path": "/design/human-interface-guidelines/charting-data"
+      "canonical_path": "/design/human-interface-guidelines/charting-data",
+      "source_checked_at_utc": "2026-10-14T04:34:26.351097+00:00"
     },
     {
       "path": "/design/human-interface-guidelines/charts",
@@ -1128,7 +1151,8 @@
       "source_heading_count": 14,
       "source_text_block_count": 52,
       "media_nodes_not_visually_inspected": 12,
-      "canonical_path": "/design/human-interface-guidelines/charts"
+      "canonical_path": "/design/human-interface-guidelines/charts",
+      "source_checked_at_utc": "2026-10-14T04:34:26.351097+00:00"
     },
     {
       "path": "/design/human-interface-guidelines/collaboration-and-sharing",
@@ -1173,7 +1197,8 @@
       "source_heading_count": 9,
       "source_text_block_count": 19,
       "media_nodes_not_visually_inspected": 6,
-      "canonical_path": "/design/human-interface-guidelines/collaboration-and-sharing"
+      "canonical_path": "/design/human-interface-guidelines/collaboration-and-sharing",
+      "source_checked_at_utc": "2026-10-14T04:34:26.351097+00:00"
     },
     {
       "path": "/design/human-interface-guidelines/collections",
@@ -1216,7 +1241,8 @@
       "source_heading_count": 6,
       "source_text_block_count": 13,
       "media_nodes_not_visually_inspected": 1,
-      "canonical_path": "/design/human-interface-guidelines/collections"
+      "canonical_path": "/design/human-interface-guidelines/collections",
+      "source_checked_at_utc": "2026-10-14T04:34:26.351097+00:00"
     },
     {
       "path": "/design/human-interface-guidelines/color",
@@ -1274,7 +1300,8 @@
       "source_heading_count": 20,
       "source_text_block_count": 54,
       "media_nodes_not_visually_inspected": 88,
-      "canonical_path": "/design/human-interface-guidelines/color"
+      "canonical_path": "/design/human-interface-guidelines/color",
+      "source_checked_at_utc": "2026-10-14T04:34:26.351097+00:00"
     },
     {
       "path": "/design/human-interface-guidelines/color-wells",
@@ -1316,7 +1343,8 @@
       "source_heading_count": 6,
       "source_text_block_count": 10,
       "media_nodes_not_visually_inspected": 1,
-      "canonical_path": "/design/human-interface-guidelines/color-wells"
+      "canonical_path": "/design/human-interface-guidelines/color-wells",
+      "source_checked_at_utc": "2026-10-14T04:34:26.351097+00:00"
     },
     {
       "path": "/design/human-interface-guidelines/column-views",
@@ -1353,7 +1381,8 @@
       "source_heading_count": 5,
       "source_text_block_count": 11,
       "media_nodes_not_visually_inspected": 1,
-      "canonical_path": "/design/human-interface-guidelines/column-views"
+      "canonical_path": "/design/human-interface-guidelines/column-views",
+      "source_checked_at_utc": "2026-10-14T04:34:26.351097+00:00"
     },
     {
       "path": "/design/human-interface-guidelines/combo-boxes",
@@ -1390,7 +1419,8 @@
       "source_heading_count": 5,
       "source_text_block_count": 10,
       "media_nodes_not_visually_inspected": 1,
-      "canonical_path": "/design/human-interface-guidelines/combo-boxes"
+      "canonical_path": "/design/human-interface-guidelines/combo-boxes",
+      "source_checked_at_utc": "2026-10-14T04:34:26.351097+00:00"
     },
     {
       "path": "/design/human-interface-guidelines/complications",
@@ -1439,7 +1469,8 @@
       "source_heading_count": 17,
       "source_text_block_count": 89,
       "media_nodes_not_visually_inspected": 54,
-      "canonical_path": "/design/human-interface-guidelines/complications"
+      "canonical_path": "/design/human-interface-guidelines/complications",
+      "source_checked_at_utc": "2026-10-14T04:34:26.351097+00:00"
     },
     {
       "path": "/design/human-interface-guidelines/components",
@@ -1475,7 +1506,8 @@
       "source_heading_count": 0,
       "source_text_block_count": 0,
       "media_nodes_not_visually_inspected": 0,
-      "canonical_path": "/design/human-interface-guidelines/components"
+      "canonical_path": "/design/human-interface-guidelines/components",
+      "source_checked_at_utc": "2026-10-14T04:34:26.351097+00:00"
     },
     {
       "path": "/design/human-interface-guidelines/content",
@@ -1507,7 +1539,8 @@
       "source_heading_count": 0,
       "source_text_block_count": 0,
       "media_nodes_not_visually_inspected": 0,
-      "canonical_path": "/design/human-interface-guidelines/content"
+      "canonical_path": "/design/human-interface-guidelines/content",
+      "source_checked_at_utc": "2026-10-14T04:34:26.351097+00:00"
     },
     {
       "path": "/design/human-interface-guidelines/context-menus",
@@ -1554,7 +1587,8 @@
       "source_heading_count": 10,
       "source_text_block_count": 34,
       "media_nodes_not_visually_inspected": 1,
-      "canonical_path": "/design/human-interface-guidelines/context-menus"
+      "canonical_path": "/design/human-interface-guidelines/context-menus",
+      "source_checked_at_utc": "2026-10-14T04:34:26.351097+00:00"
     },
     {
       "path": "/design/human-interface-guidelines/controls",
@@ -1597,7 +1631,8 @@
       "source_heading_count": 8,
       "source_text_block_count": 26,
       "media_nodes_not_visually_inspected": 12,
-      "canonical_path": "/design/human-interface-guidelines/controls"
+      "canonical_path": "/design/human-interface-guidelines/controls",
+      "source_checked_at_utc": "2026-10-14T04:34:26.351097+00:00"
     },
     {
       "path": "/design/human-interface-guidelines/dark-mode",
@@ -1644,7 +1679,8 @@
       "source_heading_count": 11,
       "source_text_block_count": 25,
       "media_nodes_not_visually_inspected": 14,
-      "canonical_path": "/design/human-interface-guidelines/dark-mode"
+      "canonical_path": "/design/human-interface-guidelines/dark-mode",
+      "source_checked_at_utc": "2026-10-14T04:34:26.351097+00:00"
     },
     {
       "path": "/design/human-interface-guidelines/design-principles",
@@ -1694,7 +1730,8 @@
       "source_heading_count": 19,
       "source_text_block_count": 43,
       "media_nodes_not_visually_inspected": 8,
-      "canonical_path": "/design/human-interface-guidelines/design-principles"
+      "canonical_path": "/design/human-interface-guidelines/design-principles",
+      "source_checked_at_utc": "2026-10-14T04:34:26.351097+00:00"
     },
     {
       "path": "/design/human-interface-guidelines/designing-for-games",
@@ -1735,7 +1772,8 @@
       "source_heading_count": 10,
       "source_text_block_count": 36,
       "media_nodes_not_visually_inspected": 1,
-      "canonical_path": "/design/human-interface-guidelines/designing-for-games"
+      "canonical_path": "/design/human-interface-guidelines/designing-for-games",
+      "source_checked_at_utc": "2026-10-14T04:34:26.351097+00:00"
     },
     {
       "path": "/design/human-interface-guidelines/designing-for-ios",
@@ -1769,7 +1807,8 @@
       "source_heading_count": 5,
       "source_text_block_count": 18,
       "media_nodes_not_visually_inspected": 1,
-      "canonical_path": "/design/human-interface-guidelines/designing-for-ios"
+      "canonical_path": "/design/human-interface-guidelines/designing-for-ios",
+      "source_checked_at_utc": "2026-10-14T04:34:26.351097+00:00"
     },
     {
       "path": "/design/human-interface-guidelines/designing-for-ipados",
@@ -1803,7 +1842,8 @@
       "source_heading_count": 5,
       "source_text_block_count": 16,
       "media_nodes_not_visually_inspected": 1,
-      "canonical_path": "/design/human-interface-guidelines/designing-for-ipados"
+      "canonical_path": "/design/human-interface-guidelines/designing-for-ipados",
+      "source_checked_at_utc": "2026-10-14T04:34:26.351097+00:00"
     },
     {
       "path": "/design/human-interface-guidelines/designing-for-iphone-duo",
@@ -1847,7 +1887,8 @@
       "source_heading_count": 13,
       "source_text_block_count": 61,
       "media_nodes_not_visually_inspected": 20,
-      "canonical_path": "/design/human-interface-guidelines/designing-for-iphone-duo"
+      "canonical_path": "/design/human-interface-guidelines/designing-for-iphone-duo",
+      "source_checked_at_utc": "2026-10-14T04:34:26.351097+00:00"
     },
     {
       "path": "/design/human-interface-guidelines/designing-for-macos",
@@ -1881,7 +1922,8 @@
       "source_heading_count": 5,
       "source_text_block_count": 19,
       "media_nodes_not_visually_inspected": 1,
-      "canonical_path": "/design/human-interface-guidelines/designing-for-macos"
+      "canonical_path": "/design/human-interface-guidelines/designing-for-macos",
+      "source_checked_at_utc": "2026-10-14T04:34:26.351097+00:00"
     },
     {
       "path": "/design/human-interface-guidelines/designing-for-tvos",
@@ -1916,7 +1958,8 @@
       "source_heading_count": 6,
       "source_text_block_count": 18,
       "media_nodes_not_visually_inspected": 1,
-      "canonical_path": "/design/human-interface-guidelines/designing-for-tvos"
+      "canonical_path": "/design/human-interface-guidelines/designing-for-tvos",
+      "source_checked_at_utc": "2026-10-14T04:34:26.351097+00:00"
     },
     {
       "path": "/design/human-interface-guidelines/designing-for-visionos",
@@ -1951,7 +1994,8 @@
       "source_heading_count": 6,
       "source_text_block_count": 24,
       "media_nodes_not_visually_inspected": 1,
-      "canonical_path": "/design/human-interface-guidelines/designing-for-visionos"
+      "canonical_path": "/design/human-interface-guidelines/designing-for-visionos",
+      "source_checked_at_utc": "2026-10-14T04:34:26.351097+00:00"
     },
     {
       "path": "/design/human-interface-guidelines/designing-for-watchos",
@@ -1986,7 +2030,8 @@
       "source_heading_count": 6,
       "source_text_block_count": 21,
       "media_nodes_not_visually_inspected": 1,
-      "canonical_path": "/design/human-interface-guidelines/designing-for-watchos"
+      "canonical_path": "/design/human-interface-guidelines/designing-for-watchos",
+      "source_checked_at_utc": "2026-10-14T04:34:26.351097+00:00"
     },
     {
       "path": "/design/human-interface-guidelines/digit-entry-views",
@@ -2023,7 +2068,8 @@
       "source_heading_count": 5,
       "source_text_block_count": 6,
       "media_nodes_not_visually_inspected": 1,
-      "canonical_path": "/design/human-interface-guidelines/digit-entry-views"
+      "canonical_path": "/design/human-interface-guidelines/digit-entry-views",
+      "source_checked_at_utc": "2026-10-14T04:34:26.351097+00:00"
     },
     {
       "path": "/design/human-interface-guidelines/digital-crown",
@@ -2062,7 +2108,8 @@
       "source_heading_count": 7,
       "source_text_block_count": 23,
       "media_nodes_not_visually_inspected": 3,
-      "canonical_path": "/design/human-interface-guidelines/digital-crown"
+      "canonical_path": "/design/human-interface-guidelines/digital-crown",
+      "source_checked_at_utc": "2026-10-14T04:34:26.351097+00:00"
     },
     {
       "path": "/design/human-interface-guidelines/disclosure-controls",
@@ -2107,7 +2154,8 @@
       "source_heading_count": 9,
       "source_text_block_count": 18,
       "media_nodes_not_visually_inspected": 5,
-      "canonical_path": "/design/human-interface-guidelines/disclosure-controls"
+      "canonical_path": "/design/human-interface-guidelines/disclosure-controls",
+      "source_checked_at_utc": "2026-10-14T04:34:26.351097+00:00"
     },
     {
       "path": "/design/human-interface-guidelines/dock-menus",
@@ -2144,7 +2192,8 @@
       "source_heading_count": 5,
       "source_text_block_count": 9,
       "media_nodes_not_visually_inspected": 1,
-      "canonical_path": "/design/human-interface-guidelines/dock-menus"
+      "canonical_path": "/design/human-interface-guidelines/dock-menus",
+      "source_checked_at_utc": "2026-10-14T04:34:26.351097+00:00"
     },
     {
       "path": "/design/human-interface-guidelines/drag-and-drop",
@@ -2192,7 +2241,8 @@
       "source_heading_count": 12,
       "source_text_block_count": 41,
       "media_nodes_not_visually_inspected": 2,
-      "canonical_path": "/design/human-interface-guidelines/drag-and-drop"
+      "canonical_path": "/design/human-interface-guidelines/drag-and-drop",
+      "source_checked_at_utc": "2026-10-14T04:34:26.351097+00:00"
     },
     {
       "path": "/design/human-interface-guidelines/edit-menus",
@@ -2235,7 +2285,8 @@
       "source_heading_count": 9,
       "source_text_block_count": 27,
       "media_nodes_not_visually_inspected": 1,
-      "canonical_path": "/design/human-interface-guidelines/edit-menus"
+      "canonical_path": "/design/human-interface-guidelines/edit-menus",
+      "source_checked_at_utc": "2026-10-14T04:34:26.351097+00:00"
     },
     {
       "path": "/design/human-interface-guidelines/entering-data",
@@ -2280,7 +2331,8 @@
       "source_heading_count": 8,
       "source_text_block_count": 18,
       "media_nodes_not_visually_inspected": 1,
-      "canonical_path": "/design/human-interface-guidelines/entering-data"
+      "canonical_path": "/design/human-interface-guidelines/entering-data",
+      "source_checked_at_utc": "2026-10-14T04:34:26.351097+00:00"
     },
     {
       "path": "/design/human-interface-guidelines/eyes",
@@ -2323,7 +2375,8 @@
       "source_heading_count": 10,
       "source_text_block_count": 30,
       "media_nodes_not_visually_inspected": 6,
-      "canonical_path": "/design/human-interface-guidelines/eyes"
+      "canonical_path": "/design/human-interface-guidelines/eyes",
+      "source_checked_at_utc": "2026-10-14T04:34:26.351097+00:00"
     },
     {
       "path": "/design/human-interface-guidelines/feedback",
@@ -2367,7 +2420,8 @@
       "source_heading_count": 7,
       "source_text_block_count": 18,
       "media_nodes_not_visually_inspected": 1,
-      "canonical_path": "/design/human-interface-guidelines/feedback"
+      "canonical_path": "/design/human-interface-guidelines/feedback",
+      "source_checked_at_utc": "2026-10-14T04:34:26.351097+00:00"
     },
     {
       "path": "/design/human-interface-guidelines/file-management",
@@ -2420,7 +2474,8 @@
       "source_heading_count": 15,
       "source_text_block_count": 41,
       "media_nodes_not_visually_inspected": 2,
-      "canonical_path": "/design/human-interface-guidelines/file-management"
+      "canonical_path": "/design/human-interface-guidelines/file-management",
+      "source_checked_at_utc": "2026-10-14T04:34:26.351097+00:00"
     },
     {
       "path": "/design/human-interface-guidelines/focus-and-selection",
@@ -2466,7 +2521,8 @@
       "source_heading_count": 10,
       "source_text_block_count": 32,
       "media_nodes_not_visually_inspected": 9,
-      "canonical_path": "/design/human-interface-guidelines/focus-and-selection"
+      "canonical_path": "/design/human-interface-guidelines/focus-and-selection",
+      "source_checked_at_utc": "2026-10-14T04:34:26.351097+00:00"
     },
     {
       "path": "/design/human-interface-guidelines/foundations",
@@ -2512,7 +2568,8 @@
       "source_heading_count": 0,
       "source_text_block_count": 0,
       "media_nodes_not_visually_inspected": 0,
-      "canonical_path": "/design/human-interface-guidelines/foundations"
+      "canonical_path": "/design/human-interface-guidelines/foundations",
+      "source_checked_at_utc": "2026-10-14T04:34:26.351097+00:00"
     },
     {
       "path": "/design/human-interface-guidelines/game-center",
@@ -2567,7 +2624,8 @@
       "source_heading_count": 17,
       "source_text_block_count": 76,
       "media_nodes_not_visually_inspected": 23,
-      "canonical_path": "/design/human-interface-guidelines/game-center"
+      "canonical_path": "/design/human-interface-guidelines/game-center",
+      "source_checked_at_utc": "2026-10-14T04:34:26.351097+00:00"
     },
     {
       "path": "/design/human-interface-guidelines/game-controls",
@@ -2614,7 +2672,8 @@
       "source_heading_count": 10,
       "source_text_block_count": 36,
       "media_nodes_not_visually_inspected": 10,
-      "canonical_path": "/design/human-interface-guidelines/game-controls"
+      "canonical_path": "/design/human-interface-guidelines/game-controls",
+      "source_checked_at_utc": "2026-10-14T04:34:26.351097+00:00"
     },
     {
       "path": "/design/human-interface-guidelines/gauges",
@@ -2659,7 +2718,8 @@
       "source_heading_count": 8,
       "source_text_block_count": 19,
       "media_nodes_not_visually_inspected": 4,
-      "canonical_path": "/design/human-interface-guidelines/gauges"
+      "canonical_path": "/design/human-interface-guidelines/gauges",
+      "source_checked_at_utc": "2026-10-14T04:34:26.351097+00:00"
     },
     {
       "path": "/design/human-interface-guidelines/generative-ai",
@@ -2710,7 +2770,8 @@
       "source_heading_count": 13,
       "source_text_block_count": 37,
       "media_nodes_not_visually_inspected": 1,
-      "canonical_path": "/design/human-interface-guidelines/generative-ai"
+      "canonical_path": "/design/human-interface-guidelines/generative-ai",
+      "source_checked_at_utc": "2026-10-14T04:34:26.351097+00:00"
     },
     {
       "path": "/design/human-interface-guidelines/gestures",
@@ -2766,7 +2827,8 @@
       "source_heading_count": 18,
       "source_text_block_count": 50,
       "media_nodes_not_visually_inspected": 10,
-      "canonical_path": "/design/human-interface-guidelines/gestures"
+      "canonical_path": "/design/human-interface-guidelines/gestures",
+      "source_checked_at_utc": "2026-10-14T04:34:26.351097+00:00"
     },
     {
       "path": "/design/human-interface-guidelines/getting-started",
@@ -2803,7 +2865,8 @@
       "source_heading_count": 0,
       "source_text_block_count": 0,
       "media_nodes_not_visually_inspected": 0,
-      "canonical_path": "/design/human-interface-guidelines/getting-started"
+      "canonical_path": "/design/human-interface-guidelines/getting-started",
+      "source_checked_at_utc": "2026-10-14T04:34:26.351097+00:00"
     },
     {
       "path": "/design/human-interface-guidelines/going-full-screen",
@@ -2846,7 +2909,8 @@
       "source_heading_count": 9,
       "source_text_block_count": 23,
       "media_nodes_not_visually_inspected": 1,
-      "canonical_path": "/design/human-interface-guidelines/going-full-screen"
+      "canonical_path": "/design/human-interface-guidelines/going-full-screen",
+      "source_checked_at_utc": "2026-10-14T04:34:26.351097+00:00"
     },
     {
       "path": "/design/human-interface-guidelines/gyro-and-accelerometer",
@@ -2888,7 +2952,8 @@
       "source_heading_count": 6,
       "source_text_block_count": 7,
       "media_nodes_not_visually_inspected": 1,
-      "canonical_path": "/design/human-interface-guidelines/gyro-and-accelerometer"
+      "canonical_path": "/design/human-interface-guidelines/gyro-and-accelerometer",
+      "source_checked_at_utc": "2026-10-14T04:34:26.351097+00:00"
     },
     {
       "path": "/design/human-interface-guidelines/healthkit",
@@ -2932,7 +2997,8 @@
       "source_heading_count": 9,
       "source_text_block_count": 38,
       "media_nodes_not_visually_inspected": 5,
-      "canonical_path": "/design/human-interface-guidelines/healthkit"
+      "canonical_path": "/design/human-interface-guidelines/healthkit",
+      "source_checked_at_utc": "2026-10-14T04:34:26.351097+00:00"
     },
     {
       "path": "/design/human-interface-guidelines/home-screen-quick-actions",
@@ -2969,7 +3035,8 @@
       "source_heading_count": 5,
       "source_text_block_count": 11,
       "media_nodes_not_visually_inspected": 1,
-      "canonical_path": "/design/human-interface-guidelines/home-screen-quick-actions"
+      "canonical_path": "/design/human-interface-guidelines/home-screen-quick-actions",
+      "source_checked_at_utc": "2026-10-14T04:34:26.351097+00:00"
     },
     {
       "path": "/design/human-interface-guidelines/homekit",
@@ -3032,7 +3099,8 @@
       "source_heading_count": 25,
       "source_text_block_count": 91,
       "media_nodes_not_visually_inspected": 36,
-      "canonical_path": "/design/human-interface-guidelines/homekit"
+      "canonical_path": "/design/human-interface-guidelines/homekit",
+      "source_checked_at_utc": "2026-10-14T04:34:26.351097+00:00"
     },
     {
       "path": "/design/human-interface-guidelines/icloud",
@@ -3073,7 +3141,8 @@
       "source_heading_count": 5,
       "source_text_block_count": 15,
       "media_nodes_not_visually_inspected": 1,
-      "canonical_path": "/design/human-interface-guidelines/icloud"
+      "canonical_path": "/design/human-interface-guidelines/icloud",
+      "source_checked_at_utc": "2026-10-14T04:34:26.351097+00:00"
     },
     {
       "path": "/design/human-interface-guidelines/icons",
@@ -3127,7 +3196,8 @@
       "source_heading_count": 18,
       "source_text_block_count": 48,
       "media_nodes_not_visually_inspected": 66,
-      "canonical_path": "/design/human-interface-guidelines/icons"
+      "canonical_path": "/design/human-interface-guidelines/icons",
+      "source_checked_at_utc": "2026-10-14T04:34:26.351097+00:00"
     },
     {
       "path": "/design/human-interface-guidelines/id-verifier",
@@ -3165,7 +3235,8 @@
       "source_heading_count": 7,
       "source_text_block_count": 18,
       "media_nodes_not_visually_inspected": 3,
-      "canonical_path": "/design/human-interface-guidelines/id-verifier"
+      "canonical_path": "/design/human-interface-guidelines/id-verifier",
+      "source_checked_at_utc": "2026-10-14T04:34:26.351097+00:00"
     },
     {
       "path": "/design/human-interface-guidelines/image-views",
@@ -3215,7 +3286,8 @@
       "source_heading_count": 12,
       "source_text_block_count": 21,
       "media_nodes_not_visually_inspected": 1,
-      "canonical_path": "/design/human-interface-guidelines/image-views"
+      "canonical_path": "/design/human-interface-guidelines/image-views",
+      "source_checked_at_utc": "2026-10-14T04:34:26.351097+00:00"
     },
     {
       "path": "/design/human-interface-guidelines/image-wells",
@@ -3252,7 +3324,8 @@
       "source_heading_count": 5,
       "source_text_block_count": 7,
       "media_nodes_not_visually_inspected": 1,
-      "canonical_path": "/design/human-interface-guidelines/image-wells"
+      "canonical_path": "/design/human-interface-guidelines/image-wells",
+      "source_checked_at_utc": "2026-10-14T04:34:26.351097+00:00"
     },
     {
       "path": "/design/human-interface-guidelines/images",
@@ -3304,7 +3377,8 @@
       "source_heading_count": 14,
       "source_text_block_count": 46,
       "media_nodes_not_visually_inspected": 5,
-      "canonical_path": "/design/human-interface-guidelines/images"
+      "canonical_path": "/design/human-interface-guidelines/images",
+      "source_checked_at_utc": "2026-10-14T04:34:26.351097+00:00"
     },
     {
       "path": "/design/human-interface-guidelines/imessage-apps-and-stickers",
@@ -3347,7 +3421,8 @@
       "source_heading_count": 10,
       "source_text_block_count": 21,
       "media_nodes_not_visually_inspected": 4,
-      "canonical_path": "/design/human-interface-guidelines/imessage-apps-and-stickers"
+      "canonical_path": "/design/human-interface-guidelines/imessage-apps-and-stickers",
+      "source_checked_at_utc": "2026-10-14T04:34:26.351097+00:00"
     },
     {
       "path": "/design/human-interface-guidelines/immersive-experiences",
@@ -3393,7 +3468,8 @@
       "source_heading_count": 13,
       "source_text_block_count": 44,
       "media_nodes_not_visually_inspected": 7,
-      "canonical_path": "/design/human-interface-guidelines/immersive-experiences"
+      "canonical_path": "/design/human-interface-guidelines/immersive-experiences",
+      "source_checked_at_utc": "2026-10-14T04:34:26.351097+00:00"
     },
     {
       "path": "/design/human-interface-guidelines/inclusion",
@@ -3444,7 +3520,8 @@
       "source_heading_count": 13,
       "source_text_block_count": 63,
       "media_nodes_not_visually_inspected": 4,
-      "canonical_path": "/design/human-interface-guidelines/inclusion"
+      "canonical_path": "/design/human-interface-guidelines/inclusion",
+      "source_checked_at_utc": "2026-10-14T04:34:26.351097+00:00"
     },
     {
       "path": "/design/human-interface-guidelines/inputs",
@@ -3485,7 +3562,8 @@
       "source_heading_count": 0,
       "source_text_block_count": 0,
       "media_nodes_not_visually_inspected": 0,
-      "canonical_path": "/design/human-interface-guidelines/inputs"
+      "canonical_path": "/design/human-interface-guidelines/inputs",
+      "source_checked_at_utc": "2026-10-14T04:34:26.351097+00:00"
     },
     {
       "path": "/design/human-interface-guidelines/keyboards",
@@ -3531,7 +3609,8 @@
       "source_heading_count": 9,
       "source_text_block_count": 32,
       "media_nodes_not_visually_inspected": 6,
-      "canonical_path": "/design/human-interface-guidelines/keyboards"
+      "canonical_path": "/design/human-interface-guidelines/keyboards",
+      "source_checked_at_utc": "2026-10-14T04:34:26.351097+00:00"
     },
     {
       "path": "/design/human-interface-guidelines/labels",
@@ -3575,7 +3654,8 @@
       "source_heading_count": 8,
       "source_text_block_count": 24,
       "media_nodes_not_visually_inspected": 3,
-      "canonical_path": "/design/human-interface-guidelines/labels"
+      "canonical_path": "/design/human-interface-guidelines/labels",
+      "source_checked_at_utc": "2026-10-14T04:34:26.351097+00:00"
     },
     {
       "path": "/design/human-interface-guidelines/launching",
@@ -3623,7 +3703,8 @@
       "source_heading_count": 11,
       "source_text_block_count": 20,
       "media_nodes_not_visually_inspected": 1,
-      "canonical_path": "/design/human-interface-guidelines/launching"
+      "canonical_path": "/design/human-interface-guidelines/launching",
+      "source_checked_at_utc": "2026-10-14T04:34:26.351097+00:00"
     },
     {
       "path": "/design/human-interface-guidelines/layout",
@@ -3684,7 +3765,8 @@
       "source_heading_count": 23,
       "source_text_block_count": 66,
       "media_nodes_not_visually_inspected": 17,
-      "canonical_path": "/design/human-interface-guidelines/layout"
+      "canonical_path": "/design/human-interface-guidelines/layout",
+      "source_checked_at_utc": "2026-10-14T04:34:26.351097+00:00"
     },
     {
       "path": "/design/human-interface-guidelines/layout-and-organization",
@@ -3722,7 +3804,8 @@
       "source_heading_count": 0,
       "source_text_block_count": 0,
       "media_nodes_not_visually_inspected": 0,
-      "canonical_path": "/design/human-interface-guidelines/layout-and-organization"
+      "canonical_path": "/design/human-interface-guidelines/layout-and-organization",
+      "source_checked_at_utc": "2026-10-14T04:34:26.351097+00:00"
     },
     {
       "path": "/design/human-interface-guidelines/lists-and-tables",
@@ -3773,14 +3856,15 @@
       "source_heading_count": 13,
       "source_text_block_count": 27,
       "media_nodes_not_visually_inspected": 3,
-      "canonical_path": "/design/human-interface-guidelines/lists-and-tables"
+      "canonical_path": "/design/human-interface-guidelines/lists-and-tables",
+      "source_checked_at_utc": "2026-10-14T04:34:26.351097+00:00"
     },
     {
       "path": "/design/human-interface-guidelines/live-activities",
       "url": "https://developer.apple.com/design/human-interface-guidelines/live-activities",
       "data_url": "https://developer.apple.com/tutorials/data/design/human-interface-guidelines/live-activities.json",
-      "sha256": "f9b894e9a5044d01fe2ffd100700eae14d4b6b672927e3af3b58ea47ca69a279",
-      "bytes": 98950,
+      "sha256": "c32933a4135e6eff3edc2041166ae664c7a0b9ef9287cf8137a1eaebf2aaacf3",
+      "bytes": 94885,
       "title": "Live Activities",
       "topic_children": [],
       "parents": [
@@ -3792,6 +3876,7 @@
       "guidance_anchor": "live-activities",
       "evidence_sections": [
         "Best-practices",
+        "Creating-Live-Activity-layouts",
         "Offering-interactivity",
         "Starting-updating-and-ending-a-Live-Activity",
         "Platform-considerations"
@@ -3836,12 +3921,13 @@
         "macos",
         "watchos"
       ],
-      "semantic_sha256": "459c4993ae999a1ec3fb42153447fb9103722f4f25e53f73cca50b77534342b9",
-      "guidance_word_count": 69,
+      "semantic_sha256": "95c9f74be06561e97e8e50c30d32c49cca61ad67eb14a5cec149e3721d30be88",
+      "guidance_word_count": 92,
       "source_heading_count": 32,
-      "source_text_block_count": 105,
+      "source_text_block_count": 102,
       "media_nodes_not_visually_inspected": 39,
-      "canonical_path": "/design/human-interface-guidelines/live-activities"
+      "canonical_path": "/design/human-interface-guidelines/live-activities",
+      "source_checked_at_utc": "2026-10-14T04:34:26.351097+00:00"
     },
     {
       "path": "/design/human-interface-guidelines/live-photos",
@@ -3881,7 +3967,8 @@
       "source_heading_count": 6,
       "source_text_block_count": 13,
       "media_nodes_not_visually_inspected": 3,
-      "canonical_path": "/design/human-interface-guidelines/live-photos"
+      "canonical_path": "/design/human-interface-guidelines/live-photos",
+      "source_checked_at_utc": "2026-10-14T04:34:26.351097+00:00"
     },
     {
       "path": "/design/human-interface-guidelines/live-viewing-apps",
@@ -3923,7 +4010,8 @@
       "source_heading_count": 6,
       "source_text_block_count": 27,
       "media_nodes_not_visually_inspected": 1,
-      "canonical_path": "/design/human-interface-guidelines/live-viewing-apps"
+      "canonical_path": "/design/human-interface-guidelines/live-viewing-apps",
+      "source_checked_at_utc": "2026-10-14T04:34:26.351097+00:00"
     },
     {
       "path": "/design/human-interface-guidelines/loading",
@@ -3969,7 +4057,8 @@
       "source_heading_count": 9,
       "source_text_block_count": 13,
       "media_nodes_not_visually_inspected": 1,
-      "canonical_path": "/design/human-interface-guidelines/loading"
+      "canonical_path": "/design/human-interface-guidelines/loading",
+      "source_checked_at_utc": "2026-10-14T04:34:26.351097+00:00"
     },
     {
       "path": "/design/human-interface-guidelines/lockups",
@@ -4010,7 +4099,8 @@
       "source_heading_count": 9,
       "source_text_block_count": 20,
       "media_nodes_not_visually_inspected": 6,
-      "canonical_path": "/design/human-interface-guidelines/lockups"
+      "canonical_path": "/design/human-interface-guidelines/lockups",
+      "source_checked_at_utc": "2026-10-14T04:34:26.351097+00:00"
     },
     {
       "path": "/design/human-interface-guidelines/mac-catalyst",
@@ -4058,7 +4148,8 @@
       "source_heading_count": 14,
       "source_text_block_count": 65,
       "media_nodes_not_visually_inspected": 3,
-      "canonical_path": "/design/human-interface-guidelines/mac-catalyst"
+      "canonical_path": "/design/human-interface-guidelines/mac-catalyst",
+      "source_checked_at_utc": "2026-10-14T04:34:26.351097+00:00"
     },
     {
       "path": "/design/human-interface-guidelines/machine-learning",
@@ -4118,7 +4209,8 @@
       "source_heading_count": 22,
       "source_text_block_count": 134,
       "media_nodes_not_visually_inspected": 9,
-      "canonical_path": "/design/human-interface-guidelines/machine-learning"
+      "canonical_path": "/design/human-interface-guidelines/machine-learning",
+      "source_checked_at_utc": "2026-10-14T04:34:26.351097+00:00"
     },
     {
       "path": "/design/human-interface-guidelines/managing-accounts",
@@ -4165,7 +4257,8 @@
       "source_heading_count": 10,
       "source_text_block_count": 32,
       "media_nodes_not_visually_inspected": 1,
-      "canonical_path": "/design/human-interface-guidelines/managing-accounts"
+      "canonical_path": "/design/human-interface-guidelines/managing-accounts",
+      "source_checked_at_utc": "2026-10-14T04:34:26.351097+00:00"
     },
     {
       "path": "/design/human-interface-guidelines/managing-notifications",
@@ -4212,7 +4305,8 @@
       "source_heading_count": 9,
       "source_text_block_count": 26,
       "media_nodes_not_visually_inspected": 1,
-      "canonical_path": "/design/human-interface-guidelines/managing-notifications"
+      "canonical_path": "/design/human-interface-guidelines/managing-notifications",
+      "source_checked_at_utc": "2026-10-14T04:34:26.351097+00:00"
     },
     {
       "path": "/design/human-interface-guidelines/maps",
@@ -4261,7 +4355,8 @@
       "source_heading_count": 12,
       "source_text_block_count": 56,
       "media_nodes_not_visually_inspected": 17,
-      "canonical_path": "/design/human-interface-guidelines/maps"
+      "canonical_path": "/design/human-interface-guidelines/maps",
+      "source_checked_at_utc": "2026-10-14T04:34:26.351097+00:00"
     },
     {
       "path": "/design/human-interface-guidelines/materials",
@@ -4310,7 +4405,8 @@
       "source_heading_count": 13,
       "source_text_block_count": 59,
       "media_nodes_not_visually_inspected": 23,
-      "canonical_path": "/design/human-interface-guidelines/materials"
+      "canonical_path": "/design/human-interface-guidelines/materials",
+      "source_checked_at_utc": "2026-10-14T04:34:26.351097+00:00"
     },
     {
       "path": "/design/human-interface-guidelines/menus",
@@ -4361,7 +4457,8 @@
       "source_heading_count": 13,
       "source_text_block_count": 49,
       "media_nodes_not_visually_inspected": 9,
-      "canonical_path": "/design/human-interface-guidelines/menus"
+      "canonical_path": "/design/human-interface-guidelines/menus",
+      "source_checked_at_utc": "2026-10-14T04:34:26.351097+00:00"
     },
     {
       "path": "/design/human-interface-guidelines/menus-and-actions",
@@ -4401,7 +4498,8 @@
       "source_heading_count": 0,
       "source_text_block_count": 0,
       "media_nodes_not_visually_inspected": 0,
-      "canonical_path": "/design/human-interface-guidelines/menus-and-actions"
+      "canonical_path": "/design/human-interface-guidelines/menus-and-actions",
+      "source_checked_at_utc": "2026-10-14T04:34:26.351097+00:00"
     },
     {
       "path": "/design/human-interface-guidelines/modality",
@@ -4443,7 +4541,8 @@
       "source_heading_count": 7,
       "source_text_block_count": 25,
       "media_nodes_not_visually_inspected": 1,
-      "canonical_path": "/design/human-interface-guidelines/modality"
+      "canonical_path": "/design/human-interface-guidelines/modality",
+      "source_checked_at_utc": "2026-10-14T04:34:26.351097+00:00"
     },
     {
       "path": "/design/human-interface-guidelines/motion",
@@ -4492,7 +4591,8 @@
       "source_heading_count": 11,
       "source_text_block_count": 28,
       "media_nodes_not_visually_inspected": 1,
-      "canonical_path": "/design/human-interface-guidelines/motion"
+      "canonical_path": "/design/human-interface-guidelines/motion",
+      "source_checked_at_utc": "2026-10-14T04:34:26.351097+00:00"
     },
     {
       "path": "/design/human-interface-guidelines/multitasking",
@@ -4541,7 +4641,8 @@
       "source_heading_count": 12,
       "source_text_block_count": 32,
       "media_nodes_not_visually_inspected": 6,
-      "canonical_path": "/design/human-interface-guidelines/multitasking"
+      "canonical_path": "/design/human-interface-guidelines/multitasking",
+      "source_checked_at_utc": "2026-10-14T04:34:26.351097+00:00"
     },
     {
       "path": "/design/human-interface-guidelines/navigation-and-search",
@@ -4574,7 +4675,8 @@
       "source_heading_count": 0,
       "source_text_block_count": 0,
       "media_nodes_not_visually_inspected": 0,
-      "canonical_path": "/design/human-interface-guidelines/navigation-and-search"
+      "canonical_path": "/design/human-interface-guidelines/navigation-and-search",
+      "source_checked_at_utc": "2026-10-14T04:34:26.351097+00:00"
     },
     {
       "path": "/design/human-interface-guidelines/nearby-interactions",
@@ -4619,7 +4721,8 @@
       "source_heading_count": 10,
       "source_text_block_count": 17,
       "media_nodes_not_visually_inspected": 1,
-      "canonical_path": "/design/human-interface-guidelines/nearby-interactions"
+      "canonical_path": "/design/human-interface-guidelines/nearby-interactions",
+      "source_checked_at_utc": "2026-10-14T04:34:26.351097+00:00"
     },
     {
       "path": "/design/human-interface-guidelines/nfc",
@@ -4656,7 +4759,8 @@
       "source_heading_count": 5,
       "source_text_block_count": 11,
       "media_nodes_not_visually_inspected": 3,
-      "canonical_path": "/design/human-interface-guidelines/nfc"
+      "canonical_path": "/design/human-interface-guidelines/nfc",
+      "source_checked_at_utc": "2026-10-14T04:34:26.351097+00:00"
     },
     {
       "path": "/design/human-interface-guidelines/notifications",
@@ -4707,7 +4811,8 @@
       "source_heading_count": 15,
       "source_text_block_count": 50,
       "media_nodes_not_visually_inspected": 3,
-      "canonical_path": "/design/human-interface-guidelines/notifications"
+      "canonical_path": "/design/human-interface-guidelines/notifications",
+      "source_checked_at_utc": "2026-10-14T04:34:26.351097+00:00"
     },
     {
       "path": "/design/human-interface-guidelines/offering-help",
@@ -4752,7 +4857,8 @@
       "source_heading_count": 9,
       "source_text_block_count": 27,
       "media_nodes_not_visually_inspected": 13,
-      "canonical_path": "/design/human-interface-guidelines/offering-help"
+      "canonical_path": "/design/human-interface-guidelines/offering-help",
+      "source_checked_at_utc": "2026-10-14T04:34:26.351097+00:00"
     },
     {
       "path": "/design/human-interface-guidelines/onboarding",
@@ -4797,7 +4903,8 @@
       "source_heading_count": 8,
       "source_text_block_count": 17,
       "media_nodes_not_visually_inspected": 1,
-      "canonical_path": "/design/human-interface-guidelines/onboarding"
+      "canonical_path": "/design/human-interface-guidelines/onboarding",
+      "source_checked_at_utc": "2026-10-14T04:34:26.351097+00:00"
     },
     {
       "path": "/design/human-interface-guidelines/ornaments",
@@ -4836,7 +4943,8 @@
       "source_heading_count": 7,
       "source_text_block_count": 13,
       "media_nodes_not_visually_inspected": 1,
-      "canonical_path": "/design/human-interface-guidelines/ornaments"
+      "canonical_path": "/design/human-interface-guidelines/ornaments",
+      "source_checked_at_utc": "2026-10-14T04:34:26.351097+00:00"
     },
     {
       "path": "/design/human-interface-guidelines/outline-views",
@@ -4874,7 +4982,8 @@
       "source_heading_count": 6,
       "source_text_block_count": 20,
       "media_nodes_not_visually_inspected": 1,
-      "canonical_path": "/design/human-interface-guidelines/outline-views"
+      "canonical_path": "/design/human-interface-guidelines/outline-views",
+      "source_checked_at_utc": "2026-10-14T04:34:26.351097+00:00"
     },
     {
       "path": "/design/human-interface-guidelines/page-controls",
@@ -4922,7 +5031,8 @@
       "source_heading_count": 11,
       "source_text_block_count": 31,
       "media_nodes_not_visually_inspected": 8,
-      "canonical_path": "/design/human-interface-guidelines/page-controls"
+      "canonical_path": "/design/human-interface-guidelines/page-controls",
+      "source_checked_at_utc": "2026-10-14T04:34:26.351097+00:00"
     },
     {
       "path": "/design/human-interface-guidelines/panels",
@@ -4960,7 +5070,8 @@
       "source_heading_count": 6,
       "source_text_block_count": 24,
       "media_nodes_not_visually_inspected": 2,
-      "canonical_path": "/design/human-interface-guidelines/panels"
+      "canonical_path": "/design/human-interface-guidelines/panels",
+      "source_checked_at_utc": "2026-10-14T04:34:26.351097+00:00"
     },
     {
       "path": "/design/human-interface-guidelines/path-controls",
@@ -4997,7 +5108,8 @@
       "source_heading_count": 5,
       "source_text_block_count": 8,
       "media_nodes_not_visually_inspected": 3,
-      "canonical_path": "/design/human-interface-guidelines/path-controls"
+      "canonical_path": "/design/human-interface-guidelines/path-controls",
+      "source_checked_at_utc": "2026-10-14T04:34:26.351097+00:00"
     },
     {
       "path": "/design/human-interface-guidelines/patterns",
@@ -5050,7 +5162,8 @@
       "source_heading_count": 0,
       "source_text_block_count": 0,
       "media_nodes_not_visually_inspected": 0,
-      "canonical_path": "/design/human-interface-guidelines/patterns"
+      "canonical_path": "/design/human-interface-guidelines/patterns",
+      "source_checked_at_utc": "2026-10-14T04:34:26.351097+00:00"
     },
     {
       "path": "/design/human-interface-guidelines/photo-editing",
@@ -5088,7 +5201,8 @@
       "source_heading_count": 5,
       "source_text_block_count": 9,
       "media_nodes_not_visually_inspected": 1,
-      "canonical_path": "/design/human-interface-guidelines/photo-editing"
+      "canonical_path": "/design/human-interface-guidelines/photo-editing",
+      "source_checked_at_utc": "2026-10-14T04:34:26.351097+00:00"
     },
     {
       "path": "/design/human-interface-guidelines/pickers",
@@ -5136,7 +5250,8 @@
       "source_heading_count": 10,
       "source_text_block_count": 34,
       "media_nodes_not_visually_inspected": 9,
-      "canonical_path": "/design/human-interface-guidelines/pickers"
+      "canonical_path": "/design/human-interface-guidelines/pickers",
+      "source_checked_at_utc": "2026-10-14T04:34:26.351097+00:00"
     },
     {
       "path": "/design/human-interface-guidelines/playing-audio",
@@ -5185,7 +5300,8 @@
       "source_heading_count": 13,
       "source_text_block_count": 37,
       "media_nodes_not_visually_inspected": 1,
-      "canonical_path": "/design/human-interface-guidelines/playing-audio"
+      "canonical_path": "/design/human-interface-guidelines/playing-audio",
+      "source_checked_at_utc": "2026-10-14T04:34:26.351097+00:00"
     },
     {
       "path": "/design/human-interface-guidelines/playing-haptics",
@@ -5236,7 +5352,8 @@
       "source_heading_count": 14,
       "source_text_block_count": 42,
       "media_nodes_not_visually_inspected": 19,
-      "canonical_path": "/design/human-interface-guidelines/playing-haptics"
+      "canonical_path": "/design/human-interface-guidelines/playing-haptics",
+      "source_checked_at_utc": "2026-10-14T04:34:26.351097+00:00"
     },
     {
       "path": "/design/human-interface-guidelines/playing-video",
@@ -5287,7 +5404,8 @@
       "source_heading_count": 13,
       "source_text_block_count": 49,
       "media_nodes_not_visually_inspected": 11,
-      "canonical_path": "/design/human-interface-guidelines/playing-video"
+      "canonical_path": "/design/human-interface-guidelines/playing-video",
+      "source_checked_at_utc": "2026-10-14T04:34:26.351097+00:00"
     },
     {
       "path": "/design/human-interface-guidelines/pointing-devices",
@@ -5339,7 +5457,8 @@
       "source_heading_count": 16,
       "source_text_block_count": 54,
       "media_nodes_not_visually_inspected": 29,
-      "canonical_path": "/design/human-interface-guidelines/pointing-devices"
+      "canonical_path": "/design/human-interface-guidelines/pointing-devices",
+      "source_checked_at_utc": "2026-10-14T04:34:26.351097+00:00"
     },
     {
       "path": "/design/human-interface-guidelines/pop-up-buttons",
@@ -5380,7 +5499,8 @@
       "source_heading_count": 7,
       "source_text_block_count": 18,
       "media_nodes_not_visually_inspected": 3,
-      "canonical_path": "/design/human-interface-guidelines/pop-up-buttons"
+      "canonical_path": "/design/human-interface-guidelines/pop-up-buttons",
+      "source_checked_at_utc": "2026-10-14T04:34:26.351097+00:00"
     },
     {
       "path": "/design/human-interface-guidelines/popovers",
@@ -5423,7 +5543,8 @@
       "source_heading_count": 7,
       "source_text_block_count": 24,
       "media_nodes_not_visually_inspected": 3,
-      "canonical_path": "/design/human-interface-guidelines/popovers"
+      "canonical_path": "/design/human-interface-guidelines/popovers",
+      "source_checked_at_utc": "2026-10-14T04:34:26.351097+00:00"
     },
     {
       "path": "/design/human-interface-guidelines/presentation",
@@ -5459,7 +5580,8 @@
       "source_heading_count": 0,
       "source_text_block_count": 0,
       "media_nodes_not_visually_inspected": 0,
-      "canonical_path": "/design/human-interface-guidelines/presentation"
+      "canonical_path": "/design/human-interface-guidelines/presentation",
+      "source_checked_at_utc": "2026-10-14T04:34:26.351097+00:00"
     },
     {
       "path": "/design/human-interface-guidelines/printing",
@@ -5499,7 +5621,8 @@
       "source_heading_count": 6,
       "source_text_block_count": 14,
       "media_nodes_not_visually_inspected": 1,
-      "canonical_path": "/design/human-interface-guidelines/printing"
+      "canonical_path": "/design/human-interface-guidelines/printing",
+      "source_checked_at_utc": "2026-10-14T04:34:26.351097+00:00"
     },
     {
       "path": "/design/human-interface-guidelines/privacy",
@@ -5551,7 +5674,8 @@
       "source_heading_count": 14,
       "source_text_block_count": 58,
       "media_nodes_not_visually_inspected": 24,
-      "canonical_path": "/design/human-interface-guidelines/privacy"
+      "canonical_path": "/design/human-interface-guidelines/privacy",
+      "source_checked_at_utc": "2026-10-14T04:34:26.351097+00:00"
     },
     {
       "path": "/design/human-interface-guidelines/progress-indicators",
@@ -5597,7 +5721,8 @@
       "source_heading_count": 9,
       "source_text_block_count": 31,
       "media_nodes_not_visually_inspected": 11,
-      "canonical_path": "/design/human-interface-guidelines/progress-indicators"
+      "canonical_path": "/design/human-interface-guidelines/progress-indicators",
+      "source_checked_at_utc": "2026-10-14T04:34:26.351097+00:00"
     },
     {
       "path": "/design/human-interface-guidelines/pull-down-buttons",
@@ -5638,7 +5763,8 @@
       "source_heading_count": 7,
       "source_text_block_count": 21,
       "media_nodes_not_visually_inspected": 3,
-      "canonical_path": "/design/human-interface-guidelines/pull-down-buttons"
+      "canonical_path": "/design/human-interface-guidelines/pull-down-buttons",
+      "source_checked_at_utc": "2026-10-14T04:34:26.351097+00:00"
     },
     {
       "path": "/design/human-interface-guidelines/rating-indicators",
@@ -5676,7 +5802,8 @@
       "source_heading_count": 6,
       "source_text_block_count": 7,
       "media_nodes_not_visually_inspected": 1,
-      "canonical_path": "/design/human-interface-guidelines/rating-indicators"
+      "canonical_path": "/design/human-interface-guidelines/rating-indicators",
+      "source_checked_at_utc": "2026-10-14T04:34:26.351097+00:00"
     },
     {
       "path": "/design/human-interface-guidelines/ratings-and-reviews",
@@ -5717,7 +5844,8 @@
       "source_heading_count": 6,
       "source_text_block_count": 11,
       "media_nodes_not_visually_inspected": 2,
-      "canonical_path": "/design/human-interface-guidelines/ratings-and-reviews"
+      "canonical_path": "/design/human-interface-guidelines/ratings-and-reviews",
+      "source_checked_at_utc": "2026-10-14T04:34:26.351097+00:00"
     },
     {
       "path": "/design/human-interface-guidelines/remotes",
@@ -5755,7 +5883,8 @@
       "source_heading_count": 7,
       "source_text_block_count": 19,
       "media_nodes_not_visually_inspected": 1,
-      "canonical_path": "/design/human-interface-guidelines/remotes"
+      "canonical_path": "/design/human-interface-guidelines/remotes",
+      "source_checked_at_utc": "2026-10-14T04:34:26.351097+00:00"
     },
     {
       "path": "/design/human-interface-guidelines/researchkit",
@@ -5802,7 +5931,8 @@
       "source_heading_count": 13,
       "source_text_block_count": 31,
       "media_nodes_not_visually_inspected": 11,
-      "canonical_path": "/design/human-interface-guidelines/researchkit"
+      "canonical_path": "/design/human-interface-guidelines/researchkit",
+      "source_checked_at_utc": "2026-10-14T04:34:26.351097+00:00"
     },
     {
       "path": "/design/human-interface-guidelines/right-to-left",
@@ -5850,7 +5980,8 @@
       "source_heading_count": 10,
       "source_text_block_count": 32,
       "media_nodes_not_visually_inspected": 55,
-      "canonical_path": "/design/human-interface-guidelines/right-to-left"
+      "canonical_path": "/design/human-interface-guidelines/right-to-left",
+      "source_checked_at_utc": "2026-10-14T04:34:26.351097+00:00"
     },
     {
       "path": "/design/human-interface-guidelines/scroll-views",
@@ -5901,7 +6032,8 @@
       "source_heading_count": 13,
       "source_text_block_count": 42,
       "media_nodes_not_visually_inspected": 4,
-      "canonical_path": "/design/human-interface-guidelines/scroll-views"
+      "canonical_path": "/design/human-interface-guidelines/scroll-views",
+      "source_checked_at_utc": "2026-10-14T04:34:26.351097+00:00"
     },
     {
       "path": "/design/human-interface-guidelines/search-fields",
@@ -5954,7 +6086,8 @@
       "source_heading_count": 15,
       "source_text_block_count": 50,
       "media_nodes_not_visually_inspected": 11,
-      "canonical_path": "/design/human-interface-guidelines/search-fields"
+      "canonical_path": "/design/human-interface-guidelines/search-fields",
+      "source_checked_at_utc": "2026-10-14T04:34:26.351097+00:00"
     },
     {
       "path": "/design/human-interface-guidelines/searching",
@@ -5998,7 +6131,8 @@
       "source_heading_count": 8,
       "source_text_block_count": 17,
       "media_nodes_not_visually_inspected": 1,
-      "canonical_path": "/design/human-interface-guidelines/searching"
+      "canonical_path": "/design/human-interface-guidelines/searching",
+      "source_checked_at_utc": "2026-10-14T04:34:26.351097+00:00"
     },
     {
       "path": "/design/human-interface-guidelines/segmented-controls",
@@ -6046,7 +6180,8 @@
       "source_heading_count": 11,
       "source_text_block_count": 24,
       "media_nodes_not_visually_inspected": 6,
-      "canonical_path": "/design/human-interface-guidelines/segmented-controls"
+      "canonical_path": "/design/human-interface-guidelines/segmented-controls",
+      "source_checked_at_utc": "2026-10-14T04:34:26.351097+00:00"
     },
     {
       "path": "/design/human-interface-guidelines/selection-and-input",
@@ -6085,7 +6220,8 @@
       "source_heading_count": 0,
       "source_text_block_count": 0,
       "media_nodes_not_visually_inspected": 0,
-      "canonical_path": "/design/human-interface-guidelines/selection-and-input"
+      "canonical_path": "/design/human-interface-guidelines/selection-and-input",
+      "source_checked_at_utc": "2026-10-14T04:34:26.351097+00:00"
     },
     {
       "path": "/design/human-interface-guidelines/settings",
@@ -6134,7 +6270,8 @@
       "source_heading_count": 11,
       "source_text_block_count": 24,
       "media_nodes_not_visually_inspected": 1,
-      "canonical_path": "/design/human-interface-guidelines/settings"
+      "canonical_path": "/design/human-interface-guidelines/settings",
+      "source_checked_at_utc": "2026-10-14T04:34:26.351097+00:00"
     },
     {
       "path": "/design/human-interface-guidelines/sf-symbols",
@@ -6185,7 +6322,8 @@
       "source_heading_count": 13,
       "source_text_block_count": 77,
       "media_nodes_not_visually_inspected": 29,
-      "canonical_path": "/design/human-interface-guidelines/sf-symbols"
+      "canonical_path": "/design/human-interface-guidelines/sf-symbols",
+      "source_checked_at_utc": "2026-10-14T04:34:26.351097+00:00"
     },
     {
       "path": "/design/human-interface-guidelines/shareplay",
@@ -6234,7 +6372,8 @@
       "source_heading_count": 12,
       "source_text_block_count": 40,
       "media_nodes_not_visually_inspected": 7,
-      "canonical_path": "/design/human-interface-guidelines/shareplay"
+      "canonical_path": "/design/human-interface-guidelines/shareplay",
+      "source_checked_at_utc": "2026-10-14T04:34:26.351097+00:00"
     },
     {
       "path": "/design/human-interface-guidelines/shazamkit",
@@ -6275,7 +6414,8 @@
       "source_heading_count": 5,
       "source_text_block_count": 10,
       "media_nodes_not_visually_inspected": 2,
-      "canonical_path": "/design/human-interface-guidelines/shazamkit"
+      "canonical_path": "/design/human-interface-guidelines/shazamkit",
+      "source_checked_at_utc": "2026-10-14T04:34:26.351097+00:00"
     },
     {
       "path": "/design/human-interface-guidelines/sheets",
@@ -6324,7 +6464,8 @@
       "source_heading_count": 11,
       "source_text_block_count": 41,
       "media_nodes_not_visually_inspected": 24,
-      "canonical_path": "/design/human-interface-guidelines/sheets"
+      "canonical_path": "/design/human-interface-guidelines/sheets",
+      "source_checked_at_utc": "2026-10-14T04:34:26.351097+00:00"
     },
     {
       "path": "/design/human-interface-guidelines/sidebars",
@@ -6371,7 +6512,8 @@
       "source_heading_count": 10,
       "source_text_block_count": 27,
       "media_nodes_not_visually_inspected": 6,
-      "canonical_path": "/design/human-interface-guidelines/sidebars"
+      "canonical_path": "/design/human-interface-guidelines/sidebars",
+      "source_checked_at_utc": "2026-10-14T04:34:26.351097+00:00"
     },
     {
       "path": "/design/human-interface-guidelines/sign-in-with-apple",
@@ -6426,7 +6568,8 @@
       "source_heading_count": 17,
       "source_text_block_count": 78,
       "media_nodes_not_visually_inspected": 30,
-      "canonical_path": "/design/human-interface-guidelines/sign-in-with-apple"
+      "canonical_path": "/design/human-interface-guidelines/sign-in-with-apple",
+      "source_checked_at_utc": "2026-10-14T04:34:26.351097+00:00"
     },
     {
       "path": "/design/human-interface-guidelines/siri",
@@ -6474,7 +6617,8 @@
       "source_heading_count": 10,
       "source_text_block_count": 38,
       "media_nodes_not_visually_inspected": 1,
-      "canonical_path": "/design/human-interface-guidelines/siri"
+      "canonical_path": "/design/human-interface-guidelines/siri",
+      "source_checked_at_utc": "2026-10-14T04:34:26.351097+00:00"
     },
     {
       "path": "/design/human-interface-guidelines/sliders",
@@ -6521,7 +6665,8 @@
       "source_heading_count": 10,
       "source_text_block_count": 23,
       "media_nodes_not_visually_inspected": 8,
-      "canonical_path": "/design/human-interface-guidelines/sliders"
+      "canonical_path": "/design/human-interface-guidelines/sliders",
+      "source_checked_at_utc": "2026-10-14T04:34:26.351097+00:00"
     },
     {
       "path": "/design/human-interface-guidelines/snippets",
@@ -6564,7 +6709,8 @@
       "source_heading_count": 8,
       "source_text_block_count": 18,
       "media_nodes_not_visually_inspected": 8,
-      "canonical_path": "/design/human-interface-guidelines/snippets"
+      "canonical_path": "/design/human-interface-guidelines/snippets",
+      "source_checked_at_utc": "2026-10-14T04:34:26.351097+00:00"
     },
     {
       "path": "/design/human-interface-guidelines/spatial-layout",
@@ -6607,7 +6753,8 @@
       "source_heading_count": 10,
       "source_text_block_count": 31,
       "media_nodes_not_visually_inspected": 8,
-      "canonical_path": "/design/human-interface-guidelines/spatial-layout"
+      "canonical_path": "/design/human-interface-guidelines/spatial-layout",
+      "source_checked_at_utc": "2026-10-14T04:34:26.351097+00:00"
     },
     {
       "path": "/design/human-interface-guidelines/split-views",
@@ -6658,7 +6805,8 @@
       "source_heading_count": 13,
       "source_text_block_count": 27,
       "media_nodes_not_visually_inspected": 5,
-      "canonical_path": "/design/human-interface-guidelines/split-views"
+      "canonical_path": "/design/human-interface-guidelines/split-views",
+      "source_checked_at_utc": "2026-10-14T04:34:26.351097+00:00"
     },
     {
       "path": "/design/human-interface-guidelines/status",
@@ -6690,7 +6838,8 @@
       "source_heading_count": 0,
       "source_text_block_count": 0,
       "media_nodes_not_visually_inspected": 0,
-      "canonical_path": "/design/human-interface-guidelines/status"
+      "canonical_path": "/design/human-interface-guidelines/status",
+      "source_checked_at_utc": "2026-10-14T04:34:26.351097+00:00"
     },
     {
       "path": "/design/human-interface-guidelines/status-bars",
@@ -6727,7 +6876,8 @@
       "source_heading_count": 4,
       "source_text_block_count": 6,
       "media_nodes_not_visually_inspected": 3,
-      "canonical_path": "/design/human-interface-guidelines/status-bars"
+      "canonical_path": "/design/human-interface-guidelines/status-bars",
+      "source_checked_at_utc": "2026-10-14T04:34:26.351097+00:00"
     },
     {
       "path": "/design/human-interface-guidelines/steppers",
@@ -6769,7 +6919,8 @@
       "source_heading_count": 6,
       "source_text_block_count": 9,
       "media_nodes_not_visually_inspected": 1,
-      "canonical_path": "/design/human-interface-guidelines/steppers"
+      "canonical_path": "/design/human-interface-guidelines/steppers",
+      "source_checked_at_utc": "2026-10-14T04:34:26.351097+00:00"
     },
     {
       "path": "/design/human-interface-guidelines/system-experiences",
@@ -6807,7 +6958,8 @@
       "source_heading_count": 0,
       "source_text_block_count": 0,
       "media_nodes_not_visually_inspected": 0,
-      "canonical_path": "/design/human-interface-guidelines/system-experiences"
+      "canonical_path": "/design/human-interface-guidelines/system-experiences",
+      "source_checked_at_utc": "2026-10-14T04:34:26.351097+00:00"
     },
     {
       "path": "/design/human-interface-guidelines/tab-bars",
@@ -6855,7 +7007,8 @@
       "source_heading_count": 11,
       "source_text_block_count": 45,
       "media_nodes_not_visually_inspected": 11,
-      "canonical_path": "/design/human-interface-guidelines/tab-bars"
+      "canonical_path": "/design/human-interface-guidelines/tab-bars",
+      "source_checked_at_utc": "2026-10-14T04:34:26.351097+00:00"
     },
     {
       "path": "/design/human-interface-guidelines/tab-views",
@@ -6898,7 +7051,8 @@
       "source_heading_count": 9,
       "source_text_block_count": 17,
       "media_nodes_not_visually_inspected": 3,
-      "canonical_path": "/design/human-interface-guidelines/tab-views"
+      "canonical_path": "/design/human-interface-guidelines/tab-views",
+      "source_checked_at_utc": "2026-10-14T04:34:26.351097+00:00"
     },
     {
       "path": "/design/human-interface-guidelines/tap-to-pay-on-iphone",
@@ -6940,7 +7094,8 @@
       "source_heading_count": 10,
       "source_text_block_count": 56,
       "media_nodes_not_visually_inspected": 19,
-      "canonical_path": "/design/human-interface-guidelines/tap-to-pay-on-iphone"
+      "canonical_path": "/design/human-interface-guidelines/tap-to-pay-on-iphone",
+      "source_checked_at_utc": "2026-10-14T04:34:26.351097+00:00"
     },
     {
       "path": "/design/human-interface-guidelines/technologies",
@@ -6997,7 +7152,8 @@
       "source_heading_count": 0,
       "source_text_block_count": 0,
       "media_nodes_not_visually_inspected": 0,
-      "canonical_path": "/design/human-interface-guidelines/technologies"
+      "canonical_path": "/design/human-interface-guidelines/technologies",
+      "source_checked_at_utc": "2026-10-14T04:34:26.351097+00:00"
     },
     {
       "path": "/design/human-interface-guidelines/text-fields",
@@ -7043,7 +7199,8 @@
       "source_heading_count": 9,
       "source_text_block_count": 25,
       "media_nodes_not_visually_inspected": 5,
-      "canonical_path": "/design/human-interface-guidelines/text-fields"
+      "canonical_path": "/design/human-interface-guidelines/text-fields",
+      "source_checked_at_utc": "2026-10-14T04:34:26.351097+00:00"
     },
     {
       "path": "/design/human-interface-guidelines/text-views",
@@ -7088,7 +7245,8 @@
       "source_heading_count": 8,
       "source_text_block_count": 14,
       "media_nodes_not_visually_inspected": 1,
-      "canonical_path": "/design/human-interface-guidelines/text-views"
+      "canonical_path": "/design/human-interface-guidelines/text-views",
+      "source_checked_at_utc": "2026-10-14T04:34:26.351097+00:00"
     },
     {
       "path": "/design/human-interface-guidelines/the-menu-bar",
@@ -7142,7 +7300,8 @@
       "source_heading_count": 20,
       "source_text_block_count": 82,
       "media_nodes_not_visually_inspected": 3,
-      "canonical_path": "/design/human-interface-guidelines/the-menu-bar"
+      "canonical_path": "/design/human-interface-guidelines/the-menu-bar",
+      "source_checked_at_utc": "2026-10-14T04:34:26.351097+00:00"
     },
     {
       "path": "/design/human-interface-guidelines/toggles",
@@ -7191,7 +7350,8 @@
       "source_heading_count": 11,
       "source_text_block_count": 32,
       "media_nodes_not_visually_inspected": 13,
-      "canonical_path": "/design/human-interface-guidelines/toggles"
+      "canonical_path": "/design/human-interface-guidelines/toggles",
+      "source_checked_at_utc": "2026-10-14T04:34:26.351097+00:00"
     },
     {
       "path": "/design/human-interface-guidelines/token-fields",
@@ -7228,7 +7388,8 @@
       "source_heading_count": 5,
       "source_text_block_count": 12,
       "media_nodes_not_visually_inspected": 3,
-      "canonical_path": "/design/human-interface-guidelines/token-fields"
+      "canonical_path": "/design/human-interface-guidelines/token-fields",
+      "source_checked_at_utc": "2026-10-14T04:34:26.351097+00:00"
     },
     {
       "path": "/design/human-interface-guidelines/toolbars",
@@ -7282,7 +7443,8 @@
       "source_heading_count": 16,
       "source_text_block_count": 62,
       "media_nodes_not_visually_inspected": 32,
-      "canonical_path": "/design/human-interface-guidelines/toolbars"
+      "canonical_path": "/design/human-interface-guidelines/toolbars",
+      "source_checked_at_utc": "2026-10-14T04:34:26.351097+00:00"
     },
     {
       "path": "/design/human-interface-guidelines/top-shelf",
@@ -7327,7 +7489,8 @@
       "source_heading_count": 13,
       "source_text_block_count": 34,
       "media_nodes_not_visually_inspected": 5,
-      "canonical_path": "/design/human-interface-guidelines/top-shelf"
+      "canonical_path": "/design/human-interface-guidelines/top-shelf",
+      "source_checked_at_utc": "2026-10-14T04:34:26.351097+00:00"
     },
     {
       "path": "/design/human-interface-guidelines/typography",
@@ -7419,7 +7582,8 @@
       "source_heading_count": 54,
       "source_text_block_count": 81,
       "media_nodes_not_visually_inspected": 13,
-      "canonical_path": "/design/human-interface-guidelines/typography"
+      "canonical_path": "/design/human-interface-guidelines/typography",
+      "source_checked_at_utc": "2026-10-14T04:34:26.351097+00:00"
     },
     {
       "path": "/design/human-interface-guidelines/undo-and-redo",
@@ -7462,7 +7626,8 @@
       "source_heading_count": 8,
       "source_text_block_count": 15,
       "media_nodes_not_visually_inspected": 1,
-      "canonical_path": "/design/human-interface-guidelines/undo-and-redo"
+      "canonical_path": "/design/human-interface-guidelines/undo-and-redo",
+      "source_checked_at_utc": "2026-10-14T04:34:26.351097+00:00"
     },
     {
       "path": "/design/human-interface-guidelines/virtual-keyboards",
@@ -7511,7 +7676,8 @@
       "source_heading_count": 12,
       "source_text_block_count": 29,
       "media_nodes_not_visually_inspected": 20,
-      "canonical_path": "/design/human-interface-guidelines/virtual-keyboards"
+      "canonical_path": "/design/human-interface-guidelines/virtual-keyboards",
+      "source_checked_at_utc": "2026-10-14T04:34:26.351097+00:00"
     },
     {
       "path": "/design/human-interface-guidelines/voiceover",
@@ -7557,7 +7723,8 @@
       "source_heading_count": 9,
       "source_text_block_count": 21,
       "media_nodes_not_visually_inspected": 5,
-      "canonical_path": "/design/human-interface-guidelines/voiceover"
+      "canonical_path": "/design/human-interface-guidelines/voiceover",
+      "source_checked_at_utc": "2026-10-14T04:34:26.351097+00:00"
     },
     {
       "path": "/design/human-interface-guidelines/wallet",
@@ -7624,7 +7791,8 @@
       "source_heading_count": 30,
       "source_text_block_count": 116,
       "media_nodes_not_visually_inspected": 60,
-      "canonical_path": "/design/human-interface-guidelines/wallet"
+      "canonical_path": "/design/human-interface-guidelines/wallet",
+      "source_checked_at_utc": "2026-10-14T04:34:26.351097+00:00"
     },
     {
       "path": "/design/human-interface-guidelines/watch-faces",
@@ -7661,7 +7829,8 @@
       "source_heading_count": 5,
       "source_text_block_count": 10,
       "media_nodes_not_visually_inspected": 1,
-      "canonical_path": "/design/human-interface-guidelines/watch-faces"
+      "canonical_path": "/design/human-interface-guidelines/watch-faces",
+      "source_checked_at_utc": "2026-10-14T04:34:26.351097+00:00"
     },
     {
       "path": "/design/human-interface-guidelines/web-views",
@@ -7702,14 +7871,15 @@
       "source_heading_count": 6,
       "source_text_block_count": 6,
       "media_nodes_not_visually_inspected": 1,
-      "canonical_path": "/design/human-interface-guidelines/web-views"
+      "canonical_path": "/design/human-interface-guidelines/web-views",
+      "source_checked_at_utc": "2026-10-14T04:34:26.351097+00:00"
     },
     {
       "path": "/design/human-interface-guidelines/widgets",
       "url": "https://developer.apple.com/design/human-interface-guidelines/widgets",
       "data_url": "https://developer.apple.com/tutorials/data/design/human-interface-guidelines/widgets.json",
-      "sha256": "31bd8239f7bbd95985d426342b0329ff78b781e152e4200a3e1d9c7c4bd42613",
-      "bytes": 142173,
+      "sha256": "25dc580b5eedfb5b040f2a7ff149c1f0e9a16a6ffdda6817f73e1df8ea0a88cf",
+      "bytes": 144537,
       "title": "Widgets",
       "topic_children": [],
       "parents": [
@@ -7723,7 +7893,8 @@
         "Best-practices",
         "Updating-widget-content",
         "Adding-interactivity",
-        "Previews-and-placeholders"
+        "Previews-and-placeholders",
+        "Apple-HomeView"
       ],
       "source_anchors": [
         "Anatomy",
@@ -7744,6 +7915,7 @@
         "Platform-considerations",
         "iOS-iPadOS",
         "StandBy-and-CarPlay",
+        "Apple-HomeView",
         "visionOS",
         "Thresholds-and-sizes",
         "Mounting-styles",
@@ -7767,12 +7939,13 @@
         "watchos",
         "visionos"
       ],
-      "semantic_sha256": "fd0ecf93d318fed7747f2fe8e4f4f4d4ee055c4fd8c6c751f8f074a250121a9f",
-      "guidance_word_count": 65,
-      "source_heading_count": 33,
-      "source_text_block_count": 115,
+      "semantic_sha256": "2b832a0994abe295c68ef55f5a3fdde0622655aa95e7162f2ce277f54b0553ea",
+      "guidance_word_count": 78,
+      "source_heading_count": 34,
+      "source_text_block_count": 118,
       "media_nodes_not_visually_inspected": 38,
-      "canonical_path": "/design/human-interface-guidelines/widgets"
+      "canonical_path": "/design/human-interface-guidelines/widgets",
+      "source_checked_at_utc": "2026-10-14T04:34:26.351097+00:00"
     },
     {
       "path": "/design/human-interface-guidelines/windows",
@@ -7821,7 +7994,8 @@
       "source_heading_count": 14,
       "source_text_block_count": 54,
       "media_nodes_not_visually_inspected": 9,
-      "canonical_path": "/design/human-interface-guidelines/windows"
+      "canonical_path": "/design/human-interface-guidelines/windows",
+      "source_checked_at_utc": "2026-10-14T04:34:26.351097+00:00"
     },
     {
       "path": "/design/human-interface-guidelines/workouts",
@@ -7859,7 +8033,8 @@
       "source_heading_count": 6,
       "source_text_block_count": 16,
       "media_nodes_not_visually_inspected": 7,
-      "canonical_path": "/design/human-interface-guidelines/workouts"
+      "canonical_path": "/design/human-interface-guidelines/workouts",
+      "source_checked_at_utc": "2026-10-14T04:34:26.351097+00:00"
     },
     {
       "path": "/design/human-interface-guidelines/writing",
@@ -7902,7 +8077,8 @@
       "source_heading_count": 7,
       "source_text_block_count": 27,
       "media_nodes_not_visually_inspected": 4,
-      "canonical_path": "/design/human-interface-guidelines/writing"
+      "canonical_path": "/design/human-interface-guidelines/writing",
+      "source_checked_at_utc": "2026-10-14T04:34:26.351097+00:00"
     }
   ]
 }

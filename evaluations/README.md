@@ -16,3 +16,17 @@ python skills/apple-hig/scripts/assurance.py evaluate --protocol evaluations/pro
 The first command is hypothetical. The second intentionally exits **2** because the repository has no registered empirical evaluation. A malformed input exits 1. Counts come from registered trials and actual hashed outputs/reviews; missing/ambiguous results count as failures, and duplicated inputs/outputs or self-review cannot establish independent sample size. The exact binomial upper bound is conditional on independently audited sampling and review premises. It does not certify every design, user, model, platform, or future Apple update.
 
 Offline tests cover the scorer and design-evidence checker, including tampered sources, wrong anchors/platforms, truncation, missing check evidence, stale sources, conflicts, nonzero-error bounds, missing outputs, disagreement, duplicate results, self-review, and revision mismatch. Passing those tests proves their tested behavior; it does not convert them into semantic evaluations of real assistant outputs.
+
+## Requested all-client/all-platform scope
+
+[Study matrix](study-matrix.json) · [Current 18-cohort assessment](matrix-report.json)
+
+The user selected all three supported clients and all six Apple platforms and confirmed that no independent outputs or qualified reviewers are available. The matrix explicitly records 18 cohorts with unresolved actual model/settings and OS fields. It has **0 qualifying empirical trials and 0 supported cohorts**; it is not a preregistered or executed study.
+
+```sh
+python skills/apple-hig/scripts/assurance.py matrix --study evaluations/study-matrix.json --output evaluations/matrix-report.json
+```
+
+Exit 2 is expected until all cohorts have admissible actual evidence. The evaluator reads hashed protocols/records and rejects missing/duplicate cohorts, wrong registered contexts, altered files, insufficient simultaneous confidence, and absent registration. It never substitutes unit tests or synthetic fixtures for task outputs. For simultaneous 95% confidence across all 18, the conservative zero-error minimum is **58,859 independent representative results per cohort (1,059,462 total)**. This differs from the 29,956 requirement for one marginal 95% bound. See the protocol for assumptions and independent audit.
+
+[Executed checks and unavailable empirical/device checks](../docs/TESTING.md) distinguish runnable software verification from the remaining proof requirements.

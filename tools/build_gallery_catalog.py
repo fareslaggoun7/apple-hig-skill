@@ -189,7 +189,7 @@ def build(check=False):
             **case,'guidance':guidance,'mode':'simulation' if case['kind'] in SIMULATED or slug=='shareplay' else 'web-adaptation',
             'source':page['url']+('#'+anchor if anchor else ''),'children':[s.split('/')[-1] for s in page['topic_children']]})
     if cases:raise ValueError('Unmatched examples: '+str(sorted(cases)))
-    output={'version':'1.1.1','snapshot':'2026-10-13','scope':'Original runnable web adaptations and explicitly labeled simulations; no native SDK or device conformance claim.','topics':result}
+    output={'version':'1.3.0','snapshot':source['snapshot_date'],'scope':'Original runnable web adaptations and explicitly labeled simulations; no native SDK or device conformance claim.','topics':result}
     destination=ROOT/'examples/gallery/catalog.json'
     files={destination:json.dumps(output,ensure_ascii=False,indent=2)+'\n'}
     index=['# All 173 topic examples', '', 'Every row links to a runnable browser task, its actual rendered preview, and the applicable Apple source. Collection topics open a topic browser. SDK and device examples are explicitly labeled simulations.', '', 'Run the gallery using [these instructions](README.md). Serve the gallery locally to run these HTML routes; all previews are included in the repository.', '']

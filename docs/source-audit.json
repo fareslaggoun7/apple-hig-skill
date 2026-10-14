@@ -1,5 +1,5 @@
 {
-  "snapshot_date": "2026-10-13",
+  "snapshot_date": "2026-10-14",
   "source_pages": 173,
   "cards": 173,
   "retrieval_failures": 0,
@@ -11,21 +11,21 @@
     "inputs": 14,
     "technologies": 30
   },
-  "maximum_card_prose_words": 90,
-  "source_heading_nodes": 1742,
-  "source_text_blocks": 5520,
+  "maximum_card_prose_words": 92,
+  "source_heading_nodes": 1743,
+  "source_text_blocks": 5521,
   "media_nodes_not_visually_inspected": 1533,
   "interpretation_error_rate": "Not measured; cannot substantiate less than 0.01%.",
   "inventory_coverage_percent": 100.0,
   "skill_format_validation": "passed",
   "local_catalog_audit": "passed; 0 errors",
-  "markdown_links_checked": 1363,
+  "markdown_links_checked": 1379,
   "source_fidelity_validation": {
     "source_fidelity_checks": "passed",
     "corpus_counts": {
       "pages": 173,
-      "headings": 1742,
-      "tables": 294,
+      "headings": 1743,
+      "tables": 293,
       "media": 1533,
       "tabs": 50
     },
@@ -61,8 +61,8 @@
     "interpretation_accuracy": "Not established by parser or structural checks."
   },
   "live_drift_check": {
-    "checked_at_utc": "2026-10-13T22:33:47.944562+00:00",
-    "snapshot_date": "2026-10-13",
+    "checked_at_utc": "2026-10-14T04:42:52.482615+00:00",
+    "snapshot_date": "2026-10-14",
     "discovered_pages": 173,
     "added": [],
     "changed_content_or_metadata": [],
@@ -127,5 +127,20 @@
     "independent_empirical_task_evaluations": 0,
     "semantic_error_target_established": false,
     "media_visually_audited_in_this_readback": false
+  },
+  "source_updates_2026_10_14": {
+    "checked_at_utc": "2026-10-14T04:34:26.351097+00:00",
+    "changed_topics": [
+      "carplay",
+      "live-activities",
+      "widgets"
+    ],
+    "updates": [
+      "CarPlay audio/video scope on Apple HomeView; availability still needs official API evidence.",
+      "Live Activity limited-width Dynamic Island layouts and container-relative corner geometry.",
+      "Widget shared household visibility and the Apple HomeView section."
+    ],
+    "review_method": "Agent source readback; not independent task-output grading.",
+    "independent_empirical_task_evaluations": 0
   }
 }

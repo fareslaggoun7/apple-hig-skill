@@ -51,6 +51,8 @@ The Markdown package is client-neutral. Codex's optional UI metadata is separate
 
 `evaluations/` contains 30 authored challenge prompts, an unregistered protocol template, empty empirical observations, and a reproducible `not-established` report. Regression tests verify these tools without misrepresenting synthetic fixtures as independently evaluated assistant outputs. [Quality evidence](QUALITY.md) reports the current scope.
 
+`assurance.py matrix` assesses the Cartesian product of three clients and six platforms. It reads hashed source protocols/records, checks registered context and overall/cohort registration ordering, then invokes the existing evaluator. Bonferroni one-sided bounds provide simultaneous family coverage under the stated assumptions; no pooled score can clear an unsupported cohort. `study-matrix.json` and `matrix-report.json` record the user's requested scope and the currently absent empirical evidence.
+
 ## Companion gallery
 
 `tools/build_gallery_catalog.py` maps every indexed topic to an explicit scenario and renderer kind, carries its dated source-card interpretation, and generates both `examples/gallery/catalog.json` and the complete topic index. There are 173 routes and 121 registered renderer kinds. Missing kinds or unmatched topics fail validation; there is no generic placeholder renderer.

@@ -205,6 +205,25 @@ class DesignEvidenceTests(unittest.TestCase):
             self.assertTrue(case['prompt']); self.assertTrue(case['review_for'])
             for slug in case['topics']: hig.resolve(hig.load_catalog(), slug)
 
+    def test_source_snapshot_dates_are_consistent_with_the_gallery(self):
+        catalog = hig.load_catalog();date = catalog['snapshot_date']
+        skill = (hig.BASE / 'SKILL.md').read_text(encoding='utf-8')
+        self.assertIn('snapshot-date: "' + date + '"', skill)
+        for group in ('getting-started','foundations','patterns','components','inputs','technologies'):
+            self.assertIn('English HIG snapshot: ' + date + '.', (hig.BASE/'references'/(group+'.md')).read_text(encoding='utf-8'))
+        gallery = json.loads((ROOT/'examples/gallery/catalog.json').read_text(encoding='utf-8'))
+        self.assertEqual(gallery['snapshot'], date)
+
+    def test_changed_source_cards_retain_scope_and_point_to_reviewed_sections(self):
+        catalog = hig.load_catalog()
+        page = hig.resolve(catalog, 'widgets')
+        self.assertIn('Apple-HomeView', page['evidence_sections'])
+        self.assertIn('Apple-HomeView', page['source_anchors'])
+        self.assertIn('household', hig.card(page))
+        self.assertIn('Creating-Live-Activity-layouts', hig.resolve(catalog, 'live-activities')['evidence_sections'])
+        self.assertIn('limited-width', hig.card(hig.resolve(catalog, 'live-activities')))
+        self.assertIn('before driving', hig.card(hig.resolve(catalog, 'carplay')))
+
 
 class AssuranceTests(unittest.TestCase):
     def setUp(self):

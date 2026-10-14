@@ -1,6 +1,6 @@
 # Evidence, scope, and accuracy
 
-Snapshot date: **13 October 2026**. Source authority: [Apple Human Interface Guidelines](https://developer.apple.com/design/human-interface-guidelines). This is an independently authored skill; it is not an Apple publication or certification.
+Snapshot date: **14 October 2026**. Source authority: [Apple Human Interface Guidelines](https://developer.apple.com/design/human-interface-guidelines). This is an independently authored skill; it is not an Apple publication or certification.
 
 ## What was inspected
 
@@ -22,9 +22,11 @@ This is **100% coverage of the discovered page inventory**, not a claim that eve
 
 ## Verification and remaining limits
 
-The parser was checked against all 173 source documents: 1,742 headings, 294 tables, 50 tab navigators, and 1,533 image/video nodes were accounted for. Tests cover heading ancestry, table cells and units, inline identifiers, tab context, unfamiliar-node reporting, and the official HTTPS boundary. Image/video node counts demonstrate inventory only; those media examples were not visually validated. The skill therefore instructs users of the skill to inspect applicable examples before making visual-fidelity claims.
+The current parser inventory covers all 173 source documents: 1,743 headings, 293 tables, 50 tab navigators, and 1,533 image/video nodes were accounted for. Tests cover heading ancestry, table cells and units, inline identifiers, tab context, unfamiliar-node reporting, and the official HTTPS boundary. Image/video node counts demonstrate inventory only; those media examples were not visually validated. The skill therefore instructs users of the skill to inspect applicable examples before making visual-fidelity claims.
 
 A second full live crawl found no new, changed, failed, or unreached pages relative to the snapshot. Matching hashes establish agreement with the retrieved source; they do not establish that a design interpretation is correct. The selected-payload fingerprint includes prose, tables, topic edges, title/custom metadata, and topic-reference titles; it does not cover every external resource or SDK dependency.
+
+On 14 October, a later crawl detected updates on CarPlay, Live Activities, and Widgets. Current source readback updated their cards for HomeView scope and household visibility, limited-width Dynamic Island layouts, and container-relative corner geometry. Source metadata was refreshed for all 173 pages. This was agent source review, not independent empirical task-output grading; exact units and API availability still require current applicable evidence.
 
 An independent source review examined 12 component cards and found six material issues across five cards. Corrections preserve the Mac-specific scope of indeterminate progress bars, sheet exit alternatives, Live Activity privacy and ending behavior, Mac toolbar command access, and destructive button-role guidance. This sample is not a random benchmark or a complete independent semantic audit.
 

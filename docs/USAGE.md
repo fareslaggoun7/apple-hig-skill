@@ -53,6 +53,8 @@ For new screens or substantial changes, use the [design playbook](../skills/appl
 
 For a numerical claim, use the [evaluation protocol](../skills/apple-hig/references/evaluation-protocol.md) and [repository evaluation guide](../evaluations/README.md). `python skills/apple-hig/scripts/assurance.py estimate --trials 29956 --errors 0` is a hypothetical calculation. `evaluate` derives counts from registered actual task outputs and independent review artifacts. Neither calculator output, self-review, source hashes, nor authored challenge prompts prove an empirical error rate.
 
+For the all-three-client/all-six-platform study, run `python skills/apple-hig/scripts/assurance.py matrix --study evaluations/study-matrix.json`. It assesses all 18 cohorts separately with simultaneous confidence control and exits 2 while the target is unestablished. Actual models, OS versions, registration, and independently reviewed outputs must be supplied; the included draft has none.
+
 ## Examples and limits
 
 [Prompt library](../examples/prompts.md) · [Worked review](../examples/review-walkthrough.md) · [Interactive web adaptation](../examples/web-adaptation/README.md) · [All 173 gallery tasks](../examples/gallery/TOPICS.md) · [Ten motion experiments](../examples/gallery/MOTION.md)

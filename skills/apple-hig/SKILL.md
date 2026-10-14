@@ -3,7 +3,7 @@ name: apple-hig
 description: Design, implement, or review interfaces using Apple's Human Interface Guidelines, with platform-aware design planning, exact-section evidence, state/accessibility review, and honest accuracy evaluation. Use for Apple-platform UI or explicitly requested HIG-based web adaptation.
 license: MIT
 metadata:
-  snapshot-date: "2026-10-13"
+  snapshot-date: "2026-10-14"
   source: "https://developer.apple.com/design/human-interface-guidelines"
 ---
 
@@ -76,6 +76,8 @@ For substantial or accuracy-sensitive work, use `plan` and `check` to retain a p
 Read [the evaluation protocol](references/evaluation-protocol.md) when asked for a numerical accuracy claim. Evaluate actual complete task outputs from a pinned skill/model/client/OS population, with representative independent sampling and qualified independent source review. Count a task with any material error, ambiguity, or missing result as a failure. Do not inflate the sample with repeated prompts, duplicate outputs, source clauses, unit tests, or self-graded generated examples. Report task usability and aesthetic judgments separately from source interpretation error.
 
 `scripts/assurance.py` checks submitted evaluation artifacts and computes an exact one-sided binomial upper bound. Its `estimate` mode is hypothetical; only an independently audited evaluation can justify a scoped empirical claim. Zero observed errors require at least 29,956 genuinely independent representative task results for a 95% upper bound below 0.01%. Pooling platforms/models does not prove that bound for each of them. The current package has no such independent dataset; keep that limitation explicit.
+
+For the all-three-client/all-six-platform scope, use `assurance.py matrix` and the protocol's simultaneous-confidence rules. Require all 18 cohorts to qualify; a pooled passing rate cannot clear a weak or untested cohort. A simultaneous 95% zero-error study using the documented Bonferroni method needs at least 58,859 independent trials per cohort. Model/OS scope, genuine registration, independent review, and relevant runtime evidence remain prerequisites.
 
 ## Maintain the snapshot
 
