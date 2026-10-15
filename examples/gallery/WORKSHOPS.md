@@ -32,3 +32,17 @@ A responsive HTML document workspace. Keyboard and pointer tasks run in the brow
 | [Nonmodal inspector](index.html?topic=designing-for-ipados&example=inspector) | Inspect document details while editing the same document.<br>[Apple section](https://developer.apple.com/design/human-interface-guidelines/designing-for-ipados#Best-practices) | ![Designing for iPadOS: Nonmodal inspector](workshop-previews/designing-for-ipados--inspector.webp) |
 | [Keyboard & named actions](index.html?topic=designing-for-ipados&example=keyboard) | Save using the scoped keyboard command and the visible equivalent button.<br>[Apple section](https://developer.apple.com/design/human-interface-guidelines/designing-for-ipados#Best-practices) | ![Designing for iPadOS: Keyboard & named actions](workshop-previews/designing-for-ipados--keyboard.webp) |
 | [Sketch beside a note](index.html?topic=designing-for-ipados&example=sketch-transfer) | Draw or add a sample stroke, then transfer a bundled clip into a related note.<br>[Apple section](https://developer.apple.com/design/human-interface-guidelines/designing-for-ipados#Best-practices) | ![Designing for iPadOS: Sketch beside a note](workshop-previews/designing-for-ipados--sketch-transfer.webp) |
+
+## 3. Designing for macOS
+
+An original HTML document and command workspace. System menu bars, windows, file coordination, native full-screen and precision-device behavior require macOS validation.
+
+[Open workshop](index.html?topic=designing-for-macos) · [Implementation guide](../../skills/apple-hig/references/workshops/macos.md)
+
+| Study | Task and source | Actual rendered picture |
+| --- | --- | --- |
+| [Documents without lost drafts](index.html?topic=designing-for-macos&example=documents) | Edit two documents and return to each preserved draft.<br>[Apple section](https://developer.apple.com/design/human-interface-guidelines/designing-for-macos#Best-practices) | ![Designing for macOS: Documents without lost drafts](workshop-previews/designing-for-macos--documents.webp) |
+| [Discoverable commands & undo](index.html?topic=designing-for-macos&example=commands) | Open the command list, create a document, apply a revision, and undo it.<br>[Apple section](https://developer.apple.com/design/human-interface-guidelines/designing-for-macos#Best-practices) | ![Designing for macOS: Discoverable commands & undo](workshop-previews/designing-for-macos--commands.webp) |
+| [Personalize a toolbar](index.html?topic=designing-for-macos&example=personalize) | Choose which optional toolbar commands are visible while preserving the draft.<br>[Apple section](https://developer.apple.com/design/human-interface-guidelines/designing-for-macos#Best-practices) | ![Designing for macOS: Personalize a toolbar](workshop-previews/designing-for-macos--personalize.webp) |
+| [A focused work context](index.html?topic=designing-for-macos&example=focus) | Enter and leave a local focused layout without losing edited content.<br>[Apple section](https://developer.apple.com/design/human-interface-guidelines/designing-for-macos#Best-practices) | ![Designing for macOS: A focused work context](workshop-previews/designing-for-macos--focus.webp) |
+| [Precise, named adjustments](index.html?topic=designing-for-macos&example=precision) | Position a marker with a range control or one-step named buttons.<br>[Apple section](https://developer.apple.com/design/human-interface-guidelines/designing-for-macos#Best-practices) | ![Designing for macOS: Precise, named adjustments](workshop-previews/designing-for-macos--precision.webp) |

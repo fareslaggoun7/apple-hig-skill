@@ -7,6 +7,15 @@ import {WORKSHOPS} from '../examples/gallery/workshops.mjs';
 const action=(page,name)=>page.locator(`[data-w-action="${name}"]`).click();
 const choose=(page,id)=>page.locator('[data-w-scenario]').selectOption(id);
 const behavior={
+  async 'designing-for-macos'(page){
+    await choose(page,'documents');await page.locator('[data-w-field=body]').fill('Mac draft');await action(page,'document:coast');await action(page,'document:trail');assert.equal(await page.locator('[data-w-field=body]').inputValue(),'Mac draft');
+    await choose(page,'commands');await action(page,'new');assert.equal(await page.locator('[data-w-field=body]').inputValue(),'');await page.locator('[data-w-field=body]').fill('Before revision');await action(page,'revise');assert.equal(await page.locator('[data-w-field=body]').inputValue(),'Revised field notes.');await action(page,'undo');assert.equal(await page.locator('[data-w-field=body]').inputValue(),'Before revision');assert.equal(await page.locator('[data-w-action=undo]').isDisabled(),true);
+    await page.locator('[data-w-field=body]').focus();await page.keyboard.press('Control+s');assert.match(await page.locator('[data-document-status]').textContent(),/Saved/);
+    await choose(page,'personalize');await page.locator('[data-w-field=body]').fill('My workspace');await page.locator('[data-w-field=showSave]').uncheck();assert.equal(await page.locator('[data-custom-toolbar] [data-w-action=save]').count(),0);assert.equal(await page.locator('[data-w-field=body]').inputValue(),'My workspace');await action(page,'save');assert.match(await page.locator('[data-document-status]').textContent(),/Saved/);
+    await choose(page,'focus');await page.locator('[data-w-field=body]').fill('Focused draft');await action(page,'focus');assert.equal(await page.locator('.wk-document-sidebar').count(),0);await action(page,'focus');assert.equal(await page.locator('[data-w-field=body]').inputValue(),'Focused draft');
+    await choose(page,'precision');await action(page,'left');assert.match(await page.locator('[data-marker-value]').textContent(),/49/);await page.locator('[data-w-field=offset]').fill('100');assert.equal(await page.locator('[data-w-action=right]').isDisabled(),true);await page.locator('[data-w-field=offset]').focus();await page.keyboard.press('ArrowLeft');assert.match(await page.locator('[data-marker-value]').textContent(),/99/);
+    return 12;
+  },
   async 'designing-for-ios'(page){
     await choose(page,'library');await action(page,'open:ridge');await action(page,'bookmark');await action(page,'back');
     assert.match(await page.locator('.wk-items').textContent(),/Saved/);assert.equal(await page.evaluate(()=>document.activeElement.dataset.focusKey),'open:ridge');

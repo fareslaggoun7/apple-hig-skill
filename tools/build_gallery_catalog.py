@@ -43,7 +43,7 @@ designing-for-games|game|Move a token through a keyboard-friendly game|Move toke
 designing-for-ios|workshop|Explore six source-guided iOS tasks with navigation, editing, saved state and recovery|Choose an iOS study
 designing-for-ipados|workshop|Explore five connected iPadOS workspace studies with preserved drafts and fluid inputs|Choose an iPadOS study
 designing-for-iphone-duo|adaptive-screen|Compare compact and expanded reading layouts|Change layout
-designing-for-macos|window|Work with a document window and command strip|Open inspector
+designing-for-macos|workshop|Explore five Mac document, command, personalization and precision studies|Choose a macOS study
 designing-for-tvos|tv-screen|Choose a documentary with visible focus|Select film
 designing-for-visionos|spatial|Explore a calm spatial planning board|Change depth
 designing-for-watchos|watch-screen|Complete a glanceable timer task|Start timer

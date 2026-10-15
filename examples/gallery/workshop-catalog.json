@@ -123,6 +123,63 @@
           "skin": "tablet"
         }
       ]
+    },
+    {
+      "id": "designing-for-macos",
+      "label": "Designing for macOS",
+      "short": "macOS",
+      "order": 3,
+      "scope": "An original HTML document and command workspace. System menu bars, windows, file coordination, native full-screen and precision-device behavior require macOS validation.",
+      "reference": "references/workshops/macos.md",
+      "related": [
+        "the-menu-bar",
+        "windows",
+        "toolbars",
+        "keyboards",
+        "pointing-devices"
+      ],
+      "scenarios": [
+        {
+          "id": "documents",
+          "title": "Documents without lost drafts",
+          "task": "Edit two documents and return to each preserved draft.",
+          "principle": "Use available display space for connected work with less nesting.",
+          "source": "https://developer.apple.com/design/human-interface-guidelines/designing-for-macos#Best-practices",
+          "skin": "desktop"
+        },
+        {
+          "id": "commands",
+          "title": "Discoverable commands & undo",
+          "task": "Open the command list, create a document, apply a revision, and undo it.",
+          "principle": "Provide named commands and useful keyboard equivalents; keep recovery available.",
+          "source": "https://developer.apple.com/design/human-interface-guidelines/designing-for-macos#Best-practices",
+          "skin": "desktop"
+        },
+        {
+          "id": "personalize",
+          "title": "Personalize a toolbar",
+          "task": "Choose which optional toolbar commands are visible while preserving the draft.",
+          "principle": "Allow a workspace to reflect the person’s preferred tools and views.",
+          "source": "https://developer.apple.com/design/human-interface-guidelines/designing-for-macos#Best-practices",
+          "skin": "desktop"
+        },
+        {
+          "id": "focus",
+          "title": "A focused work context",
+          "task": "Enter and leave a local focused layout without losing edited content.",
+          "principle": "Let the person choose a distraction-reduced working context.",
+          "source": "https://developer.apple.com/design/human-interface-guidelines/designing-for-macos#Best-practices",
+          "skin": "desktop"
+        },
+        {
+          "id": "precision",
+          "title": "Precise, named adjustments",
+          "task": "Position a marker with a range control or one-step named buttons.",
+          "principle": "Support precise control and keyboard access without requiring a pointer gesture.",
+          "source": "https://developer.apple.com/design/human-interface-guidelines/designing-for-macos#Best-practices",
+          "skin": "desktop"
+        }
+      ]
     }
   ]
 }
