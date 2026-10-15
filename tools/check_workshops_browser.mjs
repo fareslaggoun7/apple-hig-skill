@@ -7,6 +7,14 @@ import {WORKSHOPS} from '../examples/gallery/workshops.mjs';
 const action=(page,name)=>page.locator(`[data-w-action="${name}"]`).click();
 const choose=(page,id)=>page.locator('[data-w-scenario]').selectOption(id);
 const behavior={
+  async 'designing-for-games'(page){
+    await choose(page,'play-first');await action(page,'left');assert.match(await page.locator('[data-game-message]').textContent(),/Edge/);for(const n of ['right','right','right','down','down'])await action(page,n);assert.match(await page.locator('[data-game-message]').textContent(),/Camp reached/);assert.equal(await page.locator('[data-w-action=right]').isDisabled(),true);await action(page,'restart');assert.match(await page.locator('[data-game-position]').textContent(),/row 1, column 1/);
+    await choose(page,'displays');await action(page,'right');await page.locator('[data-w-change=ratio]').selectOption('square');assert.match(await page.locator('[data-game-position]').textContent(),/column 2/);
+    await choose(page,'controls');await page.locator('[data-w-change=keys]').selectOption('wasd');await page.locator('.wk-game-board').focus();await page.keyboard.press('d');await page.keyboard.press('s');assert.match(await page.locator('[data-game-position]').textContent(),/row 2, column 2/);const captured=await page.locator('#topic-search').evaluate(n=>{const e=new KeyboardEvent('keydown',{key:'d',bubbles:true,cancelable:true});n.dispatchEvent(e);return e.defaultPrevented;});assert.equal(captured,false);
+    await choose(page,'accessibility');await page.locator('[data-w-field=contrast]').check();await page.locator('[data-w-field=captions]').uncheck();assert.equal(await page.locator('.wk-game-shell.high-contrast').count(),1);assert.match(await page.locator('.wk-game-board').getAttribute('aria-label'),/Camp row 3/);
+    await choose(page,'continuity');await action(page,'right');await action(page,'checkpoint');await action(page,'down');await action(page,'pause');assert.equal(await page.locator('[data-w-action=right]').isDisabled(),true);await action(page,'restore');assert.match(await page.locator('[data-game-position]').textContent(),/row 1, column 2/);assert.equal(await page.locator('[data-w-action=right]').isDisabled(),false);
+    return 12;
+  },
   async 'design-principles'(page){
     await choose(page,'purpose');await action(page,'capture');assert.match(await page.locator('#capture-error').textContent(),/Write a note/);await page.locator('[data-w-field=note]').fill('A useful thought');await action(page,'capture');assert.match(await page.locator('[data-captured]').textContent(),/1 saved/);
     await choose(page,'agency');const original=await page.locator('[data-principle-note]').textContent();await action(page,'archive');assert.equal(await page.locator('[data-principle-note]').count(),0);await action(page,'undo');assert.equal(await page.locator('[data-principle-note]').textContent(),original);
