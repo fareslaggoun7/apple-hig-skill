@@ -1,5 +1,6 @@
 /** Original educational browser specimens. No Apple assets or SDK calls. */
 import {mountMotion, springStep} from './motion.mjs';
+import {mountWorkshop} from './workshops.mjs';
 
 export const escapeHTML = value => String(value).replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 const e = escapeHTML;
@@ -288,3 +289,4 @@ register('scroll fullscreen print web-view',c=>{
   c.action('act',()=>{if(c.topic.kind==='web-view'){const frame=c.find('iframe');frame.hidden=!frame.hidden;c.find('[data-action=act]').textContent=frame.hidden?'Open help page':'Close help page';c.status(frame.hidden?'Help page closed. Original article preserved.':'Self-contained help page opened. No external page or native WebView loaded.');}else if(c.topic.kind==='fullscreen'){c.find('.panel-card').classList.toggle('reading-focus');c.status('Local distraction-free reading mode toggled. Browser fullscreen was not requested.');}else if(c.topic.kind==='print'){c.find('.panel-card').classList.toggle('print-preview');c.status('Print layout preview toggled. No print job sent.');}else{c.find('.reading-scroll').scrollTo({top:150,behavior:c.reduced()?'instant':'smooth'});c.status('Moved to the next article section.');}});
 });
 register('motion',c=>c.own(mountMotion(c.root,c.status,c.reduced,new URLSearchParams(location.search).get('motion')||'spring-retarget')));
+register('workshop',c=>c.own(mountWorkshop(c)));

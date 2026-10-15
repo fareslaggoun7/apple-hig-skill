@@ -4,6 +4,8 @@ import fs from 'node:fs';
 import {registeredKinds,escapeHTML} from '../examples/gallery/specimens.mjs';
 import {springStep,retarget,springAt,frameState,MOTIONS,MOTION_EXAMPLES,MOTION_DURATION,phase} from '../examples/gallery/motion.mjs';
 import {motionGuide,motionCatalog} from '../tools/build_motion_docs.mjs';
+import {WORKSHOPS,WORKSHOP_ORDER,workshopCatalog} from '../examples/gallery/workshops.mjs';
+import {workshopGuide,portableWorkshopGuide} from '../tools/build_workshop_docs.mjs';
 const catalog=JSON.parse(fs.readFileSync(new URL('../examples/gallery/catalog.json',import.meta.url)));
 const source=JSON.parse(fs.readFileSync(new URL('../skills/apple-hig/references/catalog.json',import.meta.url)));
 test('every source topic has an explicit implemented route and accurate source metadata',()=>{
@@ -78,4 +80,28 @@ test('motion guide and catalog match the runnable examples and use still preview
   const guide=fs.readFileSync(new URL('../examples/gallery/MOTION.md',import.meta.url),'utf8');
   assert.equal(guide,motionGuide());assert.ok(!/!\[[^\]]*\]\([^)]*\.gif\)/.test(guide));
   assert.deepEqual(JSON.parse(fs.readFileSync(new URL('../examples/gallery/motion-catalog.json',import.meta.url))),motionCatalog());
+});
+test('workshops follow the requested order and every study has an implementation and a real source section',()=>{
+  assert.deepEqual(WORKSHOPS.map(w=>w.id),WORKSHOP_ORDER.slice(0,WORKSHOPS.length));
+  for(const [index,w] of WORKSHOPS.entries()){
+    assert.equal(w.order,index+1);assert.ok(w.scenarios.length>=4,w.id);assert.equal(new Set(w.scenarios.map(s=>s.id)).size,w.scenarios.length);
+    assert.equal(catalog.topics.find(t=>t.slug===w.id).kind,'workshop');
+    assert.ok(fs.existsSync(new URL('../skills/apple-hig/'+w.reference,import.meta.url)));
+    for(const s of w.scenarios){
+      assert.equal(typeof s.initial,'function');assert.equal(typeof s.render,'function');assert.equal(typeof s.action,'function');assert.ok(s.task.length>25);assert.ok(s.principle.length>20);
+      const page=source.pages.find(p=>p.url===s.source.split('#')[0]);assert.ok(page,s.source);
+      if(s.source.includes('#'))assert.ok(page.source_anchors.includes(s.source.split('#')[1]),s.source);
+    }
+  }
+});
+test('workshop indexes and portable routing guide match the implemented registry',()=>{
+  assert.equal(fs.readFileSync(new URL('../examples/gallery/WORKSHOPS.md',import.meta.url),'utf8'),workshopGuide());
+  assert.equal(fs.readFileSync(new URL('../skills/apple-hig/references/workshops/README.md',import.meta.url),'utf8'),portableWorkshopGuide());
+  assert.deepEqual(JSON.parse(fs.readFileSync(new URL('../examples/gallery/workshop-catalog.json',import.meta.url))),workshopCatalog());
+});
+test('every workshop study has a captured picture and no stale study pictures remain',()=>{
+  const expected=WORKSHOPS.flatMap(w=>w.scenarios.map(s=>w.id+'--'+s.id+'.webp')).sort();
+  const directory=new URL('../examples/gallery/workshop-previews/',import.meta.url);
+  assert.deepEqual(fs.readdirSync(directory).filter(f=>f.endsWith('.webp')).sort(),expected);
+  for(const file of expected)assert.ok(fs.statSync(new URL(file,directory)).size>500,file);
 });

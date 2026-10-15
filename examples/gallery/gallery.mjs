@@ -16,7 +16,7 @@ function applyReduced(){
 }
 function updateMotionPreference(){
   applyReduced();
-  if(current?.kind==='motion')$('stage').dispatchEvent(new Event('reducedmotionchange'));
+  if(['motion','workshop'].includes(current?.kind))$('stage').dispatchEvent(new Event('reducedmotionchange'));
   else if(current)open(current.slug,false);
 }
 applyReduced();
@@ -40,7 +40,7 @@ function open(slug,push=true){
   if(push){const url=new URL(location);url.searchParams.set('topic',slug);url.searchParams.delete('motion');url.searchParams.delete('frame');url.searchParams.delete('record');history.pushState({},'',url);}
   $('demo-heading').textContent=topic.title;$('scenario').textContent=topic.scenario;
   $('mode').textContent=topic.mode==='simulation'?'Integration / hardware model':'Web adaptation';$('mode').classList.toggle('simulation',topic.mode==='simulation');
-  $('guidance').textContent=topic.guidance;$('source-link').href=topic.source;$('platforms').textContent=topic.platforms.length?'Source page metadata: '+topic.platforms.join(', '):'Collection overview';
+  $('guidance').textContent=topic.guidance;$('source-link').href=topic.source;$('platforms').textContent=topic.platforms.length?'Source page metadata: '+topic.platforms.join(', '):topic.children.length?'Explore related topics':'';
   $('try-it').textContent=topic.action+'. Try the visible controls and keyboard. Refresh or switch topics to reset local state.';
   $('scope').textContent=topic.mode==='simulation'?'The controls run locally, but the underlying device, payment, account, or SDK behavior is simulated. Nothing is charged or transmitted.':'This runs in the browser. Visual choices and timing are original example values, not native Apple specifications. Assistive-technology and Apple-device behavior require separate testing.';
   status('Try the controls. Changes stay in this example.');

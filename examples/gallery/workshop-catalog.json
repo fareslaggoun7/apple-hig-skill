@@ -1,0 +1,71 @@
+{
+  "schema_version": 1,
+  "workshops": [
+    {
+      "id": "designing-for-ios",
+      "label": "Designing for iOS",
+      "short": "iOS",
+      "order": 1,
+      "scope": "Original HTML adaptation. Text scaling and layout changes are browser studies, not native Dynamic Type or iPhone gesture validation.",
+      "reference": "references/workshops/ios.md",
+      "related": [
+        "navigation-and-search",
+        "tab-bars",
+        "sheets",
+        "searching",
+        "accessibility",
+        "loading"
+      ],
+      "scenarios": [
+        {
+          "id": "library",
+          "title": "Library & return",
+          "task": "Open an article, save it, and return to the same collection.",
+          "principle": "Prioritize primary content; retain an obvious return path.",
+          "source": "https://developer.apple.com/design/human-interface-guidelines/designing-for-ios#Best-practices",
+          "skin": "phone"
+        },
+        {
+          "id": "search",
+          "title": "Search & no results",
+          "task": "Find an article, then recover from a search with no matches.",
+          "principle": "Make the next action clear in both useful and empty states.",
+          "source": "https://developer.apple.com/design/human-interface-guidelines/designing-for-ios#Best-practices",
+          "skin": "phone"
+        },
+        {
+          "id": "compose",
+          "title": "Edit & cancel",
+          "task": "Edit a note in a focused sheet, validate an empty title, and cancel without losing the original.",
+          "principle": "Keep secondary editing discoverable and preserve the main task.",
+          "source": "https://developer.apple.com/design/human-interface-guidelines/designing-for-ios#Best-practices",
+          "skin": "phone"
+        },
+        {
+          "id": "tab-state",
+          "title": "Navigation & saved state",
+          "task": "Save an article in Library and find it under Saved without losing its state.",
+          "principle": "Use stable destinations for distinct top-level tasks.",
+          "source": "https://developer.apple.com/design/human-interface-guidelines/designing-for-ios#Best-practices",
+          "skin": "phone"
+        },
+        {
+          "id": "reading",
+          "title": "Adaptable reading",
+          "task": "Change the study width, text size, and appearance while keeping the same reading task.",
+          "principle": "Adapt to the configurations people choose without losing content.",
+          "source": "https://developer.apple.com/design/human-interface-guidelines/designing-for-ios#Best-practices",
+          "skin": "phone"
+        },
+        {
+          "id": "load-recovery",
+          "title": "Loading & recovery",
+          "task": "Load a local collection, cancel it, or simulate a failure and retry.",
+          "principle": "Keep task state and recovery actions understandable.",
+          "source": "https://developer.apple.com/design/human-interface-guidelines/designing-for-ios#Best-practices",
+          "skin": "phone"
+        }
+      ]
+    }
+  ]
+}

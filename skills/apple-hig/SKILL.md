@@ -44,6 +44,8 @@ For concrete controls, screens, and motion, see [the runnable examples guide](re
 
 For substantial motion work, read [the motion design workflow](references/motion-design.md): purpose, state continuity, interruption, useful endpoints, reduced alternatives, and actual interaction checks. It routes to 24 runnable motion examples; timing and physics remain original teaching choices.
 
+For platform-specific structure and task flows, use the relevant [platform and design workflow](references/workshops/README.md) alongside the overview cards. Its runnable studies illustrate concrete states and recovery; keep native SDK, device, and assistive-technology validation distinct.
+
 | Need | Reference |
 | --- | --- |
 | Platform conventions, games, design principles | [Getting started](references/getting-started.md) |
