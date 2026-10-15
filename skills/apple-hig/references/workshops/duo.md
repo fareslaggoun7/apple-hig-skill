@@ -1,0 +1,19 @@
+# Designing for iPhone Duo: preserve the task as space changes
+
+The current [overview](https://developer.apple.com/design/human-interface-guidelines/designing-for-iphone-duo) explicitly describes inner/outer displays and a folding device. It also states that iOS patterns continue to apply. Do not infer SDK deployment availability, exact dimensions, or hardware behavior from the presence of this design page. Verify the actual SDK documentation and target runtime before implementing a native feature.
+
+The complete overview, anatomy, best practices, dynamic layouts, and vertical controls were retrieved on 15 October 2026 and matched the recorded fingerprints. Read those sections in full for a relevant task; the page’s reserved-region and arrangement guidance adds conditions beyond ordinary width adaptation.
+
+## Keep one coherent experience
+
+1. [Best practices](https://developer.apple.com/design/human-interface-guidelines/designing-for-iphone-duo#Best-practices): resize with layout margins, safe areas and size classes; avoid display-specific fixed widths. Preserve functionality, element state and information hierarchy. An additional hierarchy level can appear when space permits. Do not redesign the task for each pose.
+2. [Device poses](https://developer.apple.com/design/human-interface-guidelines/designing-for-iphone-duo#Device-poses): use adaptable containers rather than a separate bespoke layout for each physical position. Native previews and device tests must verify the supported configurations; changing a web selector does not detect a hinge.
+3. [Reserved regions](https://developer.apple.com/design/human-interface-guidelines/designing-for-iphone-duo#Reserved-regions): distinguish the always-present outer camera region, the active inner camera region, and the conditional folding region. Prefer adapting system components. For custom layouts, verify the currently documented reserved-region APIs, then test important content and actions across transitions. Avoid abrupt unnecessary rearrangement.
+4. [Arrangement views](https://developer.apple.com/design/human-interface-guidelines/designing-for-iphone-duo#Arrangement-views): distinguish split and overlay arrangements. An arrangement handles layout, not navigation; keep navigation containers outside it. Do not treat an HTML flex layout as a native arrangement implementation.
+5. [Vertical controls](https://developer.apple.com/design/human-interface-guidelines/designing-for-iphone-duo#Vertical-controls): generally keep standard placement; inner portrait is an exception to side placement. Preserve relative command ordering and groups, prioritize frequent/status actions, give non-text-only items a title and symbol, and use system overflow. Navigation-focused and task-focused compression have different priorities. Controls affecting another content pane remain near that content. Verify right-to-left and multi-app edge behavior from the full source, not generic mirroring assumptions.
+
+## Five runnable studies
+
+The workshop includes compact-to-expanded navigation, independent editable drafts across contexts, illustrative camera/folding exclusions, split/layered content arrangement, and action compression with a reachable overflow action. Every dimension, gap and displayed pose is an original browser teaching choice. No native API, physical display measurement, camera access, hinge event, system overflow, or native accessibility behavior is exercised.
+
+Review state and focus continuity, keyboard completion, larger text, both appearances, selection after reflow, reserved-space avoidance, action availability, language direction, and actual native device previews. For games, preserve playability and consistent control/text sizes across supported poses; consult the games workflow separately. Refreshing/changing topics resets browser study memory.

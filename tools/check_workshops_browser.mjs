@@ -7,6 +7,14 @@ import {WORKSHOPS} from '../examples/gallery/workshops.mjs';
 const action=(page,name)=>page.locator(`[data-w-action="${name}"]`).click();
 const choose=(page,id)=>page.locator('[data-w-scenario]').selectOption(id);
 const behavior={
+  async 'designing-for-iphone-duo'(page){
+    await choose(page,'display-contexts');await action(page,'select:trail');await page.locator('[data-w-change=pose]').selectOption('inner');assert.equal(await page.locator('.wk-duo-panes>aside').count(),1);assert.equal(await page.locator('.wk-duo-panes>article').count(),1);
+    await choose(page,'draft-continuity');await action(page,'select:trail');await page.locator('[data-w-field=body]').fill('Duo draft');await page.locator('[data-w-change=pose]').selectOption('inner');await action(page,'select:coast');await page.locator('[data-w-field=body]').fill('Coast draft');await action(page,'select:trail');await page.locator('[data-w-change=pose]').selectOption('outer');assert.equal(await page.locator('[data-w-field=body]').inputValue(),'Duo draft');
+    await choose(page,'reserved-space');await action(page,'camera');assert.equal(await page.locator('.wk-duo.has-camera.has-fold').count(),1);await action(page,'fold');assert.equal(await page.locator('.wk-duo.has-fold').count(),0);await page.locator('[data-w-field=body]').fill('Clear of the camera');await page.locator('[data-w-change=pose]').selectOption('portrait');assert.equal(await page.locator('[data-w-field=body]').inputValue(),'Clear of the camera');
+    await choose(page,'arrangement');await page.locator('[data-w-field=body]').fill('My caption');await page.locator('[data-w-change=arrangement]').selectOption('overlay');await page.locator('[data-w-change=pose]').selectOption('portrait');assert.equal(await page.locator('.wk-arrangement.is-layered.is-tall').count(),1);assert.equal(await page.locator('[data-w-field=body]').inputValue(),'My caption');await action(page,'save');assert.match(await page.locator('.wk-scene').textContent(),/Local save 1/);
+    await choose(page,'action-overflow');await action(page,'compressed');await page.locator('.wk-panel details summary').click();await action(page,'tag');assert.match(await page.locator('.wk-panel [data-duo-notice]').textContent(),/Travel tag/);await action(page,'compose');assert.equal(await page.locator('[data-w-field=body]').inputValue(),'');
+    return 10;
+  },
   async 'designing-for-watchos'(page){
     await choose(page,'glance');await action(page,'context');assert.match(await page.locator('.wk-watch').textContent(),/short walk/);
     await choose(page,'session');await action(page,'start');await page.waitForTimeout(1150);assert.notEqual(await page.locator('[data-watch-time]').textContent(),'5:00');await action(page,'pause');const time=await page.locator('[data-watch-time]').textContent();await page.waitForTimeout(1100);assert.equal(await page.locator('[data-watch-time]').textContent(),time);

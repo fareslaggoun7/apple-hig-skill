@@ -237,6 +237,63 @@
           "skin": "wrist"
         }
       ]
+    },
+    {
+      "id": "designing-for-iphone-duo",
+      "label": "Designing for iPhone Duo",
+      "short": "iPhone Duo",
+      "order": 5,
+      "scope": "Source-guided responsive HTML models of display transitions and reserved space. No hardware pose detection, native reserved-region APIs, or device dimensions are implemented.",
+      "reference": "references/workshops/duo.md",
+      "related": [
+        "designing-for-ios",
+        "layout",
+        "split-views",
+        "toolbars",
+        "tab-bars"
+      ],
+      "scenarios": [
+        {
+          "id": "display-contexts",
+          "title": "One hierarchy, changing space",
+          "task": "Open a note on the compact display model, then show its collection beside it.",
+          "principle": "Expand the existing hierarchy when space permits; keep the same task and content.",
+          "source": "https://developer.apple.com/design/human-interface-guidelines/designing-for-iphone-duo#Best-practices",
+          "skin": "adaptive"
+        },
+        {
+          "id": "draft-continuity",
+          "title": "Preserve the work",
+          "task": "Edit multiple notes and change display context without losing selection or drafts.",
+          "principle": "Maintain state and functionality across display and pose changes.",
+          "source": "https://developer.apple.com/design/human-interface-guidelines/designing-for-iphone-duo#Best-practices",
+          "skin": "adaptive"
+        },
+        {
+          "id": "reserved-space",
+          "title": "Adapt around reserved space",
+          "task": "Toggle camera and folding-region illustrations while keeping content operable.",
+          "principle": "Move only what is necessary to keep content and controls clear of reserved regions.",
+          "source": "https://developer.apple.com/design/human-interface-guidelines/designing-for-iphone-duo#Reserved-regions",
+          "skin": "adaptive"
+        },
+        {
+          "id": "arrangement",
+          "title": "Arrange content, retain navigation",
+          "task": "Compare split and layered content arrangements, then change the available context.",
+          "principle": "Use arrangement for content layout; keep navigation outside it.",
+          "source": "https://developer.apple.com/design/human-interface-guidelines/designing-for-iphone-duo#Arrangement-views",
+          "skin": "adaptive"
+        },
+        {
+          "id": "action-overflow",
+          "title": "Keep useful actions available",
+          "task": "Compress secondary actions, create a note, and find the same tag action in overflow.",
+          "principle": "Preserve frequent actions, meaningful groupings, labels, and a consistent overflow route.",
+          "source": "https://developer.apple.com/design/human-interface-guidelines/designing-for-iphone-duo#Vertical-controls",
+          "skin": "adaptive"
+        }
+      ]
     }
   ]
 }

@@ -3,8 +3,9 @@ import {IOS} from './workshops/ios.mjs';
 import {IPADOS} from './workshops/ipados.mjs';
 import {MACOS} from './workshops/macos.mjs';
 import {WATCHOS} from './workshops/watchos.mjs';
+import {DUO} from './workshops/duo.mjs';
 import {e} from './workshops/shared.mjs';
-export const WORKSHOPS=[IOS,IPADOS,MACOS,WATCHOS];
+export const WORKSHOPS=[IOS,IPADOS,MACOS,WATCHOS,DUO];
 export const WORKSHOP_ORDER=['designing-for-ios','designing-for-ipados','designing-for-macos','designing-for-watchos','designing-for-iphone-duo','design-principles','designing-for-games','designing-for-tvos','designing-for-visionos','getting-started'];
 export const workshopCatalog=()=>({schema_version:1,workshops:WORKSHOPS.map(w=>({id:w.id,label:w.label,short:w.short,order:w.order,scope:w.scope,reference:w.reference,related:w.related,scenarios:w.scenarios.map(s=>({id:s.id,title:s.title,task:s.task,principle:s.principle,source:s.source,skin:s.skin}))}))});
 export function mountWorkshop(c){
