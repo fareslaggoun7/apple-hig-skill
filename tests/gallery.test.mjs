@@ -2,7 +2,8 @@ import test from 'node:test';
 import assert from 'node:assert/strict';
 import fs from 'node:fs';
 import {registeredKinds,escapeHTML} from '../examples/gallery/specimens.mjs';
-import {springStep,retarget,springAt,frameState,MOTIONS} from '../examples/gallery/motion.mjs';
+import {springStep,retarget,springAt,frameState,MOTIONS,MOTION_EXAMPLES,MOTION_DURATION,phase} from '../examples/gallery/motion.mjs';
+import {motionGuide,motionCatalog} from '../tools/build_motion_docs.mjs';
 const catalog=JSON.parse(fs.readFileSync(new URL('../examples/gallery/catalog.json',import.meta.url)));
 const source=JSON.parse(fs.readFileSync(new URL('../skills/apple-hig/references/catalog.json',import.meta.url)));
 test('every source topic has an explicit implemented route and accurate source metadata',()=>{
@@ -19,8 +20,52 @@ test('retargeting preserves position and velocity, including interruptions',()=>
   const next=retarget(s,0);assert.equal(next.position,s.position);assert.equal(next.velocity,s.velocity);assert.equal(next.target,0);
   const after=springStep(next,1/240);assert.ok(Math.abs(after.position-next.position)<.02);assert.notEqual(springAt(.6).position,frameState('toggle-state',.6).value);
 });
-test('ten motion experiments have deterministic frames and direct reduced alternatives',()=>{
-  assert.equal(MOTIONS.length,10);assert.equal(new Set(MOTIONS.map(m=>m[0])).size,10);
-  for(const [name] of MOTIONS){for(const time of [0,.4,.7,1.2,1.8,2.8]){const s=frameState(name,time,true);assert.ok([0,1].includes(s.value));assert.equal(s.opacity,1);assert.deepEqual(frameState(name,time),frameState(name,time));}}
+test('all 24 motion examples have a purpose, outcome, reduced alternative, exact source, and implemented companion',()=>{
+  assert.equal(MOTIONS.length,24);assert.equal(new Set(MOTIONS.map(m=>m[0])).size,24);
+  const motionSource=source.pages.find(page=>page.slug==='motion');
+  for(const example of MOTION_EXAMPLES){
+    assert.ok(example.purpose.length>30,example.id);assert.ok(example.outcome.length>20);assert.ok(example.reduced.length>20);
+    assert.ok(catalog.topics.some(topic=>topic.slug===example.topic),example.topic);
+    assert.equal(example.source.split('#')[0],motionSource.url);assert.ok(motionSource.source_anchors.includes(example.source.split('#')[1]));
+  }
+});
+test('every motion has deterministic finite frames and direct reduced alternatives at all scrub positions',()=>{
+  for(const [name] of MOTIONS){
+    for(let i=0;i<=280;i++){
+      const time=i/100,normal=frameState(name,time),reduced=frameState(name,time,true);
+      for(const value of [normal.value,normal.scale,normal.progress,reduced.value])assert.ok(Number.isFinite(value),`${name} at ${time}`);
+      assert.ok([0,1].includes(reduced.value));assert.equal(reduced.opacity,1);assert.equal(reduced.scale,1);
+      assert.deepEqual(normal,frameState(name,time));
+    }
+    assert.equal(frameState(name,MOTION_DURATION).complete,true);
+    assert.equal(frameState(name,MOTION_DURATION,true).summary,frameState(name,MOTION_DURATION).summary);
+  }
+});
+test('the completed frame holds a useful outcome instead of silently resetting',()=>{
+  assert.equal(phase(0),0);assert.equal(phase(MOTION_DURATION),1);
+  assert.ok(Math.abs(springAt(MOTION_DURATION).position-1)<.00001);
+  for(const name of ['sheet-presentation','toggle-state','progress-update','tab-transition','expand-collapse','navigation-push','loading-handoff','number-change'])assert.equal(frameState(name,MOTION_DURATION).value,1,name);
+  assert.equal(frameState('progress-update',MOTION_DURATION).progress,85);
+});
+test('undo restores the removed item and reports both intermediate and final states',()=>{
+  for(const reduced of [false,true]){
+    assert.equal(frameState('undo-removal',0,reduced).value,0);
+    assert.equal(frameState('undo-removal',1.3,reduced).value,1);
+    assert.match(frameState('undo-removal',1.3,reduced).summary,/removed.*Undo/);
+    assert.equal(frameState('undo-removal',MOTION_DURATION,reduced).value,0);
+    assert.match(frameState('undo-removal',MOTION_DURATION,reduced).summary,/restored/);
+  }
+});
+test('frame sampling clamps invalid times and spring integration never moves for an invalid elapsed value',()=>{
+  for(const value of [NaN,Infinity,-Infinity,-10])assert.equal(frameState('toggle-state',value).time,0);
+  assert.equal(frameState('toggle-state',100).time,MOTION_DURATION);
+  const start={position:.3,velocity:.2,target:1};
+  for(const value of [0,-1,NaN,Infinity])assert.deepEqual(springStep(start,value),start);
+  assert.deepEqual(springAt(.853),springAt(.853));
 });
 test('user-entered strings cannot become example markup',()=>{assert.equal(escapeHTML('<script>"&\''),'&lt;script&gt;&quot;&amp;&#39;');});
+test('motion guide and catalog match the runnable examples and use still previews by default',()=>{
+  const guide=fs.readFileSync(new URL('../examples/gallery/MOTION.md',import.meta.url),'utf8');
+  assert.equal(guide,motionGuide());assert.ok(!/!\[[^\]]*\]\([^)]*\.gif\)/.test(guide));
+  assert.deepEqual(JSON.parse(fs.readFileSync(new URL('../examples/gallery/motion-catalog.json',import.meta.url))),motionCatalog());
+});

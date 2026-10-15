@@ -1,0 +1,247 @@
+{
+  "schema_version": 1,
+  "count": 24,
+  "duration_seconds": 2.8,
+  "examples": [
+    {
+      "id": "spring-retarget",
+      "label": "Spring & retarget",
+      "group": "Continuity",
+      "purpose": "Change destination while a note is moving, preserving its current position and velocity.",
+      "outcome": "The note settles at the selected destination.",
+      "reduced": "Keep the note stationary and name the selected destination.",
+      "topic": "gestures",
+      "source": "https://developer.apple.com/design/human-interface-guidelines/motion#Best-practices"
+    },
+    {
+      "id": "sheet-presentation",
+      "label": "Sheet presentation",
+      "group": "Navigation",
+      "purpose": "Introduce a focused editing task while preserving the document behind it.",
+      "outcome": "The editing sheet is open above the document.",
+      "reduced": "Reveal the sheet and dimmed context directly.",
+      "topic": "sheets",
+      "source": "https://developer.apple.com/design/human-interface-guidelines/motion#Best-practices"
+    },
+    {
+      "id": "popover-origin",
+      "label": "Anchored popover",
+      "group": "Navigation",
+      "purpose": "Associate document details with the control that opened them.",
+      "outcome": "Document details are visible beside their source.",
+      "reduced": "Show the details directly at their final location.",
+      "topic": "popovers",
+      "source": "https://developer.apple.com/design/human-interface-guidelines/motion#Best-practices"
+    },
+    {
+      "id": "button-feedback",
+      "label": "Press feedback",
+      "group": "Feedback",
+      "purpose": "Acknowledge a save promptly, with a readable result that remains visible.",
+      "outcome": "The note is saved; the confirmation remains visible.",
+      "reduced": "Change the label to Saved without scaling.",
+      "topic": "buttons",
+      "source": "https://developer.apple.com/design/human-interface-guidelines/motion#Providing-feedback"
+    },
+    {
+      "id": "toggle-state",
+      "label": "Toggle state",
+      "group": "Feedback",
+      "purpose": "Coordinate the control position, checkmark, and explicit On or Off label.",
+      "outcome": "Reading reminders are On.",
+      "reduced": "Switch directly to the checked On state.",
+      "topic": "toggles",
+      "source": "https://developer.apple.com/design/human-interface-guidelines/motion#Providing-feedback"
+    },
+    {
+      "id": "progress-update",
+      "label": "Progress update",
+      "group": "Feedback",
+      "purpose": "Keep the numeric value and measurable progress track in agreement.",
+      "outcome": "Collection loading has reached 85 percent.",
+      "reduced": "Update the track and value directly, without interpolating.",
+      "topic": "progress-indicators",
+      "source": "https://developer.apple.com/design/human-interface-guidelines/motion#Providing-feedback"
+    },
+    {
+      "id": "tab-transition",
+      "label": "Tab transition",
+      "group": "Navigation",
+      "purpose": "Replace related content while keeping the navigation frame stable.",
+      "outcome": "Week is selected and its 18 notes are visible.",
+      "reduced": "Replace content directly and keep the selected-tab label.",
+      "topic": "tab-bars",
+      "source": "https://developer.apple.com/design/human-interface-guidelines/motion#Best-practices"
+    },
+    {
+      "id": "expand-collapse",
+      "label": "Expand & collapse",
+      "group": "Content",
+      "purpose": "Reveal optional export details in the same local context.",
+      "outcome": "Export details are expanded.",
+      "reduced": "Show the complete details directly.",
+      "topic": "disclosure-controls",
+      "source": "https://developer.apple.com/design/human-interface-guidelines/motion#Best-practices"
+    },
+    {
+      "id": "reorder-list",
+      "label": "List reordering",
+      "group": "Content",
+      "purpose": "Track the identities of items as their positions change.",
+      "outcome": "Weekend plans precedes Trail notes; Reading list stays third.",
+      "reduced": "Change the order directly, preserving item labels.",
+      "topic": "drag-and-drop",
+      "source": "https://developer.apple.com/design/human-interface-guidelines/motion#Best-practices"
+    },
+    {
+      "id": "reduced-motion",
+      "label": "Reduced alternative",
+      "group": "Continuity",
+      "purpose": "Communicate the same completed update using stationary text and a checkmark.",
+      "outcome": "The stationary note reads Updated.",
+      "reduced": "This example is stationary in both modes.",
+      "topic": "accessibility",
+      "source": "https://developer.apple.com/design/human-interface-guidelines/motion#Best-practices"
+    },
+    {
+      "id": "navigation-push",
+      "label": "Navigate to detail",
+      "group": "Navigation",
+      "purpose": "Follow a note into its detail view while retaining a clear collection relationship.",
+      "outcome": "Trail notes detail is open, with a collection back label.",
+      "reduced": "Replace the collection with detail without sliding.",
+      "topic": "navigation-and-search",
+      "source": "https://developer.apple.com/design/human-interface-guidelines/motion#Best-practices"
+    },
+    {
+      "id": "navigation-back",
+      "label": "Return to collection",
+      "group": "Navigation",
+      "purpose": "Reverse the detail transition to return to the originating collection.",
+      "outcome": "The collection is visible with Trail notes identified.",
+      "reduced": "Replace detail with the collection directly.",
+      "topic": "navigation-and-search",
+      "source": "https://developer.apple.com/design/human-interface-guidelines/motion#Best-practices"
+    },
+    {
+      "id": "shared-element",
+      "label": "Shared element",
+      "group": "Continuity",
+      "purpose": "Keep the same original landscape recognizable as its card becomes a detail header.",
+      "outcome": "The landscape is shown in a larger detail header.",
+      "reduced": "Replace the card with its final detail layout.",
+      "topic": "images",
+      "source": "https://developer.apple.com/design/human-interface-guidelines/motion#Best-practices"
+    },
+    {
+      "id": "crossfade-media",
+      "label": "Image replacement",
+      "group": "Content",
+      "purpose": "Replace an image within fixed bounds, so surrounding content does not jump.",
+      "outcome": "The evening landscape replaces the morning image.",
+      "reduced": "Swap the two images directly.",
+      "topic": "image-views",
+      "source": "https://developer.apple.com/design/human-interface-guidelines/motion#Best-practices"
+    },
+    {
+      "id": "search-filter",
+      "label": "Filter a collection",
+      "group": "Content",
+      "purpose": "Keep matching results recognizable while nonmatching items leave the list.",
+      "outcome": "Two matching notes remain, with a readable result count.",
+      "reduced": "Show the two matching results directly.",
+      "topic": "searching",
+      "source": "https://developer.apple.com/design/human-interface-guidelines/motion#Best-practices"
+    },
+    {
+      "id": "list-insert",
+      "label": "Insert an item",
+      "group": "Content",
+      "purpose": "Make room for a new note while keeping existing items identifiable.",
+      "outcome": "Morning sketch is first; the previous notes remain below it.",
+      "reduced": "Show the new list order directly.",
+      "topic": "lists-and-tables",
+      "source": "https://developer.apple.com/design/human-interface-guidelines/motion#Best-practices"
+    },
+    {
+      "id": "undo-removal",
+      "label": "Remove & undo",
+      "group": "Content",
+      "purpose": "Illustrate removal followed by an explicit undo that restores the same item.",
+      "outcome": "Undo restores Weekend plans to its original position.",
+      "reduced": "Use direct removed and restored states with explicit text.",
+      "topic": "undo-and-redo",
+      "source": "https://developer.apple.com/design/human-interface-guidelines/motion#Best-practices"
+    },
+    {
+      "id": "loading-handoff",
+      "label": "Loading to content",
+      "group": "Feedback",
+      "purpose": "Replace a quiet placeholder with readable content in the same bounds.",
+      "outcome": "Trail notes is ready; the loading placeholder is gone.",
+      "reduced": "Replace the placeholder with loaded content directly.",
+      "topic": "loading",
+      "source": "https://developer.apple.com/design/human-interface-guidelines/motion#Providing-feedback"
+    },
+    {
+      "id": "pull-refresh",
+      "label": "Refresh feedback",
+      "group": "Feedback",
+      "purpose": "Illustrate a refresh that ends with an explicit update time; no network request occurs.",
+      "outcome": "The local illustration says Updated just now.",
+      "reduced": "Keep the indicator stationary and update its status text.",
+      "topic": "loading",
+      "source": "https://developer.apple.com/design/human-interface-guidelines/motion#Providing-feedback"
+    },
+    {
+      "id": "toast-feedback",
+      "label": "Save confirmation",
+      "group": "Feedback",
+      "purpose": "Acknowledge completion near the task without hiding the document.",
+      "outcome": "A persistent Note saved confirmation is visible.",
+      "reduced": "Show the confirmation directly without sliding.",
+      "topic": "feedback",
+      "source": "https://developer.apple.com/design/human-interface-guidelines/motion#Providing-feedback"
+    },
+    {
+      "id": "validation-feedback",
+      "label": "Inline validation",
+      "group": "Feedback",
+      "purpose": "Explain what needs correction beside the field, without shaking the interface.",
+      "outcome": "The title field has a readable Enter a title correction.",
+      "reduced": "Show the same error directly, without movement.",
+      "topic": "entering-data",
+      "source": "https://developer.apple.com/design/human-interface-guidelines/motion#Providing-feedback"
+    },
+    {
+      "id": "number-change",
+      "label": "Numeric change",
+      "group": "Feedback",
+      "purpose": "Associate a changed total with its label and unit, retaining the exact final value.",
+      "outcome": "The reading total is 85 minutes.",
+      "reduced": "Replace 20 with 85 directly; keep minutes visible.",
+      "topic": "gauges",
+      "source": "https://developer.apple.com/design/human-interface-guidelines/motion#Providing-feedback"
+    },
+    {
+      "id": "selection-highlight",
+      "label": "Selection highlight",
+      "group": "Navigation",
+      "purpose": "Move a restrained indicator between related views while preserving their labels.",
+      "outcome": "Week is selected; the 18-note total is visible.",
+      "reduced": "Change the indicator and selected label directly.",
+      "topic": "segmented-controls",
+      "source": "https://developer.apple.com/design/human-interface-guidelines/motion#Best-practices"
+    },
+    {
+      "id": "focus-transition",
+      "label": "Focus emphasis",
+      "group": "Continuity",
+      "purpose": "Illustrate a restrained focus change with a border and explicit Focused label.",
+      "outcome": "Evening walk is identified as the focused card.",
+      "reduced": "Change the focus border and text without enlarging cards.",
+      "topic": "focus-and-selection",
+      "source": "https://developer.apple.com/design/human-interface-guidelines/motion#Best-practices"
+    }
+  ]
+}

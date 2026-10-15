@@ -2,6 +2,7 @@
 import fs from 'node:fs';
 import assert from 'node:assert/strict';
 import {createRequire} from 'node:module';
+import {checkMotion} from './check_motion_browser.mjs';
 const {chromium}=createRequire(import.meta.url)('playwright');
 const base=process.env.GALLERY_URL||'http://127.0.0.1:8000';
 const topics=JSON.parse(fs.readFileSync(new URL('../examples/gallery/catalog.json',import.meta.url))).topics;
@@ -68,9 +69,7 @@ try{
   // Wall-clock scheduling on busy CI workers must not let playback finish before Pause.
   await page.clock.install({time:new Date('2026-10-13T00:00:00Z')});
   await open('motion');await page.clock.pauseAt(new Date('2026-10-13T00:01:00Z'));
-  for(const [id] of (await import('../examples/gallery/motion.mjs')).MOTIONS){await page.locator(`[data-motion="${id}"]`).click();await page.locator('[data-play]').click();await page.clock.runFor(60);await page.locator('[data-pause]').click();assert.match(await page.locator('#result').textContent(),/paused/);}
-  await page.locator('[data-motion=spring-retarget]').click();await page.locator('[data-target="1"]').click();await page.clock.runFor(80);await page.evaluate(()=>{document.querySelector('[data-target="0"]').addEventListener('click',()=>{window.retargetBefore=document.querySelector('.motion-card').style.transform;queueMicrotask(()=>window.retargetAfter=document.querySelector('.motion-card').style.transform);},{capture:true,once:true});});await page.locator('[data-target="0"]').click();assert.equal(await page.evaluate(()=>window.retargetBefore),await page.evaluate(()=>window.retargetAfter),'spring retarget must preserve the immediate position');
-  await page.locator('#reduce-motion').check();await page.locator('[data-target="1"]').click();await page.clock.runFor(60);assert.equal(await page.locator('.motion-card').evaluate(n=>n.style.transform),'translateX(0px)');
+  const motionReport=await checkMotion(browser,base);console.log(JSON.stringify({motion:motionReport},null,2));
   await open('widgets');await page.locator('#appearance').click();assert.equal(await page.locator('body').evaluate(n=>n.classList.contains('dark')),true);
   await open('loading');await page.locator('[data-action=start]').click();await page.locator('#topic-list [data-topic=buttons]').click();await page.clock.runFor(300);assert.equal(await page.locator('body').getAttribute('data-topic'),'buttons');assert.match(await page.locator('#result').textContent(),/Try the controls/);assert.equal(await page.locator('#stage progress').count(),0);
   await open('motion');await page.locator('[data-play]').click();await page.locator('#topic-list [data-topic=buttons]').click();await page.clock.runFor(100);assert.match(await page.locator('#result').textContent(),/Try the controls/);

@@ -1,4 +1,4 @@
-<p align="center"><img src="docs/assets/gallery-hero.png" alt="Apple HIG Skill: an original dark banner with real control, workspace, and motion specimens; 173 topics, six source families, ten motion experiments" width="1200"></p>
+<p align="center"><img src="docs/assets/gallery-hero.png" alt="Apple HIG Skill: an original dark banner with real control, workspace, and motion specimens; 173 topics, six source families, 24 motion examples" width="1200"></p>
 
 <p align="center">
   <a href="https://github.com/fareslaggoun7/apple-hig-skill/actions/workflows/validate.yml"><img src="https://github.com/fareslaggoun7/apple-hig-skill/actions/workflows/validate.yml/badge.svg" alt="Portable skill and gallery CI"></a>
@@ -19,7 +19,7 @@
 
 **Bring Apple's Human Interface Guidelines into Claude and Codex—and try the decisions in a real browser.**
 
-A portable Agent Skill for designing, implementing, and reviewing interfaces with traceable Apple sources. It combines **173 indexed topics**, concise platform-aware guidance, live official-source lookup, and an original interactive gallery. The gallery has a concrete task and a rendered picture for every topic, plus ten motion experiments with animated previews.
+A portable Agent Skill for designing, implementing, and reviewing interfaces with traceable Apple sources. It combines **173 indexed topics**, concise platform-aware guidance, live official-source lookup, and an original interactive gallery. The gallery has a concrete task and a rendered picture for every topic, plus 24 motion examples with animated previews.
 
 The design workflow now starts with the person's task, compares appropriate structures, records consequential decisions with their sources, and tests the relevant states and accessibility behavior. It includes platform-aware planning and an evidence checker that flags incomplete source records and missing check evidence. [Design playbook](skills/apple-hig/references/design-playbook.md) · [Quality evidence](docs/QUALITY.md)
 
@@ -66,20 +66,22 @@ Enter `http://127.0.0.1:8000` in your browser. Search or choose a family; each r
 
 ## Motion that explains a change
 
-Replay, pause, interrupt, and compare a reduced alternative. The spring preserves its current position and velocity when you change its destination. The same renderers supply the recorded previews.
+Explore **24 examples** with replay, pause/resume, reset, a keyboard-accessible scrubber, playback speed, and optional looping. Retarget the spring without losing position or velocity. Changing Reduce Motion preserves your selected example and timeline; completed transitions hold their result.
+
+Click a still preview to open its recording. The recordings play twice and stop; the documentation does not autoplay them.
 
 <table>
   <tr>
-    <td width="50%"><img src="docs/assets/motion-spring-retarget.gif" alt="Recorded actual spring simulation retargeting while in motion"><br><strong>Continuous spring retargeting</strong></td>
-    <td width="50%"><img src="docs/assets/motion-sheet-presentation.gif" alt="Recorded sheet presentation over a stable document window"><br><strong>Sheet presentation</strong></td>
+    <td width="50%"><a href="docs/assets/motion-spring-retarget.gif"><img src="examples/gallery/motion-previews/spring-retarget.webp" alt="Still frame of the retargetable spring; open the recording"><br><strong>Continuous spring retargeting →</strong></a></td>
+    <td width="50%"><a href="docs/assets/motion-shared-element.gif"><img src="examples/gallery/motion-previews/shared-element.webp" alt="Still frame of a landscape retained through a layout change; open the recording"><br><strong>Shared content and context →</strong></a></td>
   </tr>
   <tr>
-    <td><img src="docs/assets/motion-toggle-state.gif" alt="Recorded toggle with coordinated position and text updates"><br><strong>Visible state changes</strong></td>
-    <td><img src="docs/assets/motion-reduced-motion.gif" alt="Recorded reduced-motion alternative: stationary card changing text directly"><br><strong>A stationary reduced alternative</strong></td>
+    <td><a href="docs/assets/motion-undo-removal.gif"><img src="examples/gallery/motion-previews/undo-removal.webp" alt="Still frame showing a removed item and its undo opportunity; open the recording"><br><strong>Removal with undo →</strong></a></td>
+    <td><a href="docs/assets/motion-reduced-motion.gif"><img src="examples/gallery/motion-previews/reduced-motion.webp" alt="Still frame of a stationary update; open the recording"><br><strong>A stationary reduced alternative →</strong></a></td>
   </tr>
 </table>
 
-[All ten motion experiments and previews](examples/gallery/MOTION.md) include popover origin, press feedback, progress, tabs, disclosure, and list reordering. Timings, easing, dimensions, and spring constants are original educational choices, not Apple specifications. Native animation fidelity and spatial comfort need testing on the target platform.
+[All 24 motion examples and previews](examples/gallery/MOTION.md) cover navigation, presentations, selection, loading, feedback, content changes, and recovery. Each has an explicit purpose, a reduced alternative, and an Apple source section. The [portable motion workflow](skills/apple-hig/references/motion-design.md) applies these decisions to your own interface. Timings, easing, dimensions, and spring constants are original teaching choices. Native animation fidelity and comfort require target-platform testing.
 
 ## From a source to a decision
 

@@ -10,6 +10,14 @@ The suite exercises source/citation scope, parser fidelity, integrity, freshness
 
 The source check on 14 October detected changes on CarPlay, Live Activities, and Widgets. Current source readback updated those cards and refreshed all 173 source records. Browser illustrations and simulation behavior do not establish native Apple-device/SDK or assistive-technology conformance.
 
+## Motion verification
+
+The motion lab has 24 explicit examples with source sections, purpose, outcomes, companion routes, and reduced alternatives. Its controlled-clock browser checks cover real playback advancement, pause/resume, held endpoints, reset, selection after pausing, keyboard scrubbing, speed changes, optional loops, live spring interruption, resize bounds, system/local preference changes, hidden-page pausing, and frame/listener cleanup after navigation.
+
+All examples are also checked at 320px, 390px, and 1280px in both light and dark appearances. Reduced-frame samples reject continuously interpolated transforms, opacity, and geometry. The recording check verifies changing GIF frames, two-play limits, and agreement between the retained endpoint and the actual renderer. The documentation uses still previews by default, with 24 recordings and 48 normal/reduced posters.
+
+These are software and visual checks of browser illustrations. They do not establish native device performance, frame pacing on every system, VoiceOver conformance, comfort, or semantic error rates. The two relevant official Motion sections were retrieved on 15 October and matched the recorded fingerprints; the entire dated source inventory was not recrawled for this motion-only update. The previous release's full-inventory check remains recorded in [the v1.3.0 report](test-results-v1.3.0.json).
+
 ## Unavailable empirical and native tests
 
 | Required evidence | Current status |

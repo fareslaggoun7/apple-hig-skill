@@ -11,7 +11,7 @@ class GalleryDistributionTests(unittest.TestCase):
         with zipfile.ZipFile(ROOT/'dist/apple-hig-gallery.zip') as archive:
             self.assertIsNone(archive.testzip())
             self.assertEqual(len(archive.namelist()),len(set(archive.namelist())))
-            for name in ['index.html','gallery.mjs','specimens.mjs','motion.mjs','gallery.css','catalog.json','LICENSE','NOTICE','README.txt']:
+            for name in ['index.html','gallery.mjs','specimens.mjs','motion.mjs','gallery.css','motion.css','catalog.json','motion-catalog.json','LICENSE','NOTICE','README.txt']:
                 self.assertIn('apple-hig-gallery/'+name,archive.namelist())
             topics=json.loads(archive.read('apple-hig-gallery/catalog.json'))['topics']
             self.assertEqual(len(topics),173)
@@ -19,6 +19,13 @@ class GalleryDistributionTests(unittest.TestCase):
                 name='apple-hig-gallery/previews/'+topic['slug']+'.webp'
                 self.assertIn(name,archive.namelist())
                 self.assertGreater(len(archive.read(name)),500)
+            motions=json.loads(archive.read('apple-hig-gallery/motion-catalog.json'))['examples']
+            self.assertEqual(len(motions),24)
+            for motion in motions:
+                for suffix in ['', '-reduced']:
+                    name='apple-hig-gallery/motion-previews/'+motion['id']+suffix+'.webp'
+                    self.assertIn(name,archive.namelist())
+                    self.assertGreater(len(archive.read(name)),500)
             for name in archive.namelist():
                 self.assertTrue(name.startswith('apple-hig-gallery/'))
                 self.assertNotIn('..',Path(name).parts)
@@ -31,9 +38,14 @@ class GalleryDistributionTests(unittest.TestCase):
         topics=json.loads((ROOT/'examples/gallery/catalog.json').read_text())['topics']
         self.assertEqual({p.stem for p in (ROOT/'examples/gallery/previews').glob('*.webp')},{t['slug'] for t in topics})
         gifs=list((ROOT/'docs/assets').glob('motion-*.gif'))
-        self.assertEqual(len(gifs),10)
+        motions=json.loads((ROOT/'examples/gallery/motion-catalog.json').read_text())['examples']
+        self.assertEqual(len(motions),24)
+        self.assertEqual({gif.stem.removeprefix('motion-') for gif in gifs},{motion['id'] for motion in motions})
+        self.assertEqual({p.stem for p in (ROOT/'examples/gallery/motion-previews').glob('*.webp')},
+                         {motion['id']+suffix for motion in motions for suffix in ['', '-reduced']})
         for gif in gifs:
             self.assertTrue(gif.read_bytes().startswith((b'GIF87a',b'GIF89a')))
             self.assertGreater(gif.stat().st_size,1000)
+            self.assertIn(b'NETSCAPE2.0\x03\x01\x01\x00',gif.read_bytes(),'Recordings must stop after two plays')
 
 if __name__=='__main__':unittest.main()

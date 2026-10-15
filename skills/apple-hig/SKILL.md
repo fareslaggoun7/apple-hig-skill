@@ -42,6 +42,8 @@ Read the target platform page, relevant foundation cards, and the component/patt
 
 For concrete controls, screens, and motion, see [the runnable examples guide](references/runnable-examples.md). It routes to all 173 companion gallery tasks and distinguishes browser interactions from simulated hardware and SDK behavior.
 
+For substantial motion work, read [the motion design workflow](references/motion-design.md): purpose, state continuity, interruption, useful endpoints, reduced alternatives, and actual interaction checks. It routes to 24 runnable motion examples; timing and physics remain original teaching choices.
+
 | Need | Reference |
 | --- | --- |
 | Platform conventions, games, design principles | [Getting started](references/getting-started.md) |

@@ -1,0 +1,110 @@
+{
+  "schema_version": 1,
+  "checked_at_utc": "2026-10-14T04:48:52.965792+00:00",
+  "status": "available-software-checks-passed; empirical-study-blocked",
+  "tested_skill_sha256": "9a97aa1707f306f989f5da1b553ab11cd10c2794c2c94c348f214eee8e0b744f",
+  "source_snapshot_date": "2026-10-14",
+  "independent_empirical_error_target_proven": false,
+  "executed": [
+    {
+      "check": "Python regression suite",
+      "command": "python3 -m unittest discover -s tests -q",
+      "exit_code": 0,
+      "tests": 62,
+      "outcome": "passed; synthetic regression fixtures are not independent task outputs"
+    },
+    {
+      "check": "Node gallery suite",
+      "command": "node --test tests/gallery.test.mjs",
+      "exit_code": 0,
+      "tests": 5,
+      "outcome": "passed"
+    },
+    {
+      "check": "Exhaustive browser routes and representative interactions",
+      "command": "node tools/check_gallery_browser.mjs",
+      "exit_code": 0,
+      "routes": 346,
+      "actions": 310,
+      "failures": [],
+      "viewport_widths": [
+        1280,
+        390
+      ],
+      "log_sha256": "963b8678c8e082959ec2aaae19bfaaff0a608a76bbaebaf5e3486a86f88989bf"
+    },
+    {
+      "check": "Topic catalog, local source audit, and both distribution freshness checks",
+      "exit_code": 0,
+      "topics": 173,
+      "outcome": "passed"
+    },
+    {
+      "check": "Live official source inventory and post-update drift check",
+      "command": "python3 skills/apple-hig/scripts/hig.py refresh",
+      "exit_code": 0,
+      "pages": 173,
+      "updates_reviewed": [
+        "carplay",
+        "live-activities",
+        "widgets"
+      ],
+      "remaining_drift": 0,
+      "failed_pages": 0,
+      "unhandled_nodes": 0,
+      "outcome": "passed after source review; not semantic-output proof"
+    },
+    {
+      "check": "Portable installation/extracted ZIP smoke checks",
+      "exit_code": 0,
+      "passed": [
+        "claude-code: repeated install, six platform plans, incomplete-record gate, installed matrix command",
+        "codex: repeated install, six platform plans, incomplete-record gate, installed matrix command",
+        "Claude chat ZIP: extraction and portable helper audit; live account installation is not tested",
+        "Standalone gallery ZIP: six extracted routes including all three updated-source examples"
+      ],
+      "live_client_model_outputs_tested": 0,
+      "native_app_device_study_executed": false,
+      "host_system": "Linux",
+      "local_xcodebuild_available": false
+    },
+    {
+      "command": "python3 skills/apple-hig/scripts/assurance.py evaluate --protocol evaluations/protocol.template.json --records evaluations/observations.jsonl",
+      "exit_code": 2,
+      "outcome": "executed; empirical target not established",
+      "independent_empirical_trials": 0
+    },
+    {
+      "command": "python3 skills/apple-hig/scripts/assurance.py matrix --study evaluations/study-matrix.json",
+      "exit_code": 2,
+      "outcome": "executed; empirical target not established",
+      "independent_empirical_trials": 0
+    }
+  ],
+  "unavailable": [
+    {
+      "check": "Actual client/model/OS task execution for 18 cohorts",
+      "status": "not executed",
+      "reason": "Actual configurations are not pinned and no external live client/model runner is configured."
+    },
+    {
+      "check": "Qualified independent grading and representative registered trial evidence",
+      "status": "not executed",
+      "reason": "The user confirmed no independently reviewed outputs or qualified reviewers are available; qualifying trial count is zero."
+    },
+    {
+      "check": "Native Apple app/device, assistive-technology and spatial comfort study",
+      "status": "not executed",
+      "reason": "No corresponding native app/device study exists; the current host is Linux without local xcodebuild."
+    }
+  ],
+  "statistical_requirement": {
+    "scope": "all 18 requested cohorts, one pinned configuration each",
+    "family_confidence": 0.95,
+    "method": "Bonferroni one-sided exact bounds",
+    "minimum_zero_error_independent_trials_per_cohort": 58859,
+    "minimum_zero_error_independent_trials_total": 1059462,
+    "achieved": false
+  },
+  "limitations": "Software tests and source fingerprints do not establish semantic accuracy, actual client/model behavior, native conformance, or universally best designs. Synthetic fixtures and repeated CI executions do not count as independent empirical trials."
+}

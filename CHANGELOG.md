@@ -1,5 +1,13 @@
 # Changelog
 
+## 1.4.0 — 2026-10-15
+
+- Expands the motion lab from 10 to 24 original examples, including navigation and return, shared content, image replacement, filtering, insertion, undo, loading completion, refresh, save confirmation, validation, numeric changes, selection, and focus.
+- Adds keyboard timeline scrubbing, speed, reset, optional looping, grouped selection, per-example links, explicit outcomes, current Apple section links, and companion interactive routes.
+- Keeps meaningful completed states; preserves selection, timeline, and pause state when reduced-motion preferences change; respects system reduction; pauses hidden-page playback; releases frames and listeners on navigation; and recomputes spring bounds after resize.
+- Adds 48 normal/reduced still previews and refreshes all 24 actual browser recordings. Documentation starts with stills; recordings play twice and stop.
+- Adds a portable source-guided motion workflow, generated motion guide/catalog checks, exhaustive frame tests, and controlled-clock interaction/layout regressions. Keeps all 173 topic routes and all three installation clients.
+
 ## 1.3.0 — 2026-10-14
 
 - Adds the requested 18-cohort study matrix for three clients and six Apple platforms, with actual protocol/record integrity checks and simultaneous Bonferroni confidence bounds. Missing or weak cohorts cannot be hidden by pooling.

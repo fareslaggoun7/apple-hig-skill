@@ -4,12 +4,22 @@ import {renderFrame, MOTIONS} from './motion.mjs';
 const $=id=>document.getElementById(id),params=new URLSearchParams(location.search);
 let cleanup=()=>{},topics=[],current;
 const preference=matchMedia('(prefers-reduced-motion: reduce)');
-$('reduce-motion').checked=preference.matches||params.get('reduced')==='1';
-const reduced=()=>$('reduce-motion').checked;
-function applyReduced(){document.body.classList.toggle('reduce-motion',reduced());}
+let localReduction=params.get('reduced')==='1';
+const reduced=()=>preference.matches||localReduction;
+function applyReduced(){
+  document.body.classList.toggle('reduce-motion',reduced());
+  $('reduce-motion').checked=reduced();
+  $('reduce-motion').disabled=preference.matches;
+  $('reduce-motion').title=preference.matches?'Reduce motion is enabled by your system preference.':'Use a stationary or direct-state alternative.';
+}
+function updateMotionPreference(){
+  applyReduced();
+  if(current?.kind==='motion')$('stage').dispatchEvent(new Event('reducedmotionchange'));
+  else if(current)open(current.slug,false);
+}
 applyReduced();
-preference.addEventListener('change',ev=>{$('reduce-motion').checked=ev.matches;applyReduced();if(current)open(current.slug,false);});
-$('reduce-motion').addEventListener('change',()=>{applyReduced();if(current)open(current.slug,false);});
+preference.addEventListener('change',updateMotionPreference);
+$('reduce-motion').addEventListener('change',()=>{localReduction=$('reduce-motion').checked;updateMotionPreference();});
 $('appearance').addEventListener('click',ev=>{const dark=document.body.classList.toggle('dark');ev.currentTarget.setAttribute('aria-pressed',String(dark));ev.currentTarget.textContent=dark?'Light appearance':'Dark appearance';});
 function status(message){$('result').textContent=message;}
 function list(){

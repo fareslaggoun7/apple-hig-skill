@@ -1,6 +1,6 @@
 # Interface & motion gallery
 
-**173 source-linked topic routes, actual rendered pictures, and ten motion experiments.** The gallery runs entirely in a browser, without a build step or runtime dependencies.
+**173 source-linked topic routes, actual rendered pictures, and 24 motion examples.** The gallery runs entirely in a browser, without a build step or runtime dependencies.
 
 From the repository root:
 
@@ -27,7 +27,7 @@ Search and family filters cover the entire library. Browser history restores top
 
 ## Motion and accessibility
 
-The system's reduced-motion preference is respected at startup and when it changes. The Reduce motion control also provides a local override. Motion previews offer replay and pause; the spring accepts new destinations without resetting position or velocity. The reduced spring uses a stationary card with a direct text update.
+The system's reduced-motion preference is respected at startup and when it changes. The Reduce motion control also provides a local override. The 24-example motion player offers replay, pause/resume, reset, pointer/keyboard timeline scrubbing, playback speed, optional looping, and direct links. The spring accepts new destinations without resetting position or velocity and stays within bounds after resizing. Reduced motion preserves the selected example, timeline, and pause state; system reduction cannot be accidentally disabled in the lab. The reduced spring uses stationary destination text. Completed transitions retain their useful outcome, and hidden-page playback pauses until explicitly resumed. Still previews are the documentation default; linked recordings play twice and stop.
 
 The gallery uses native HTML controls, dialog focus handling, visible focus, live result text, captions, and keyboard alternatives for pointer operations. Browser checks do not establish full accessibility conformance. Screen readers, Apple devices, native frameworks, spatial comfort, and real SDK integrations need separate testing.
 
@@ -60,7 +60,7 @@ python3 tools/build_gallery_catalog.py
 python3 tools/package_gallery.py
 ```
 
-The browser suite loads every route at 1280px and 390px, checks horizontal overflow, and exercises representative stateful interactions. The capture tool takes all 173 topic pictures from their live renderers and records 42 frames per motion GIF. The hero combines actual specimen screenshots with original typography and layout. No Apple interface artwork is redistributed.
+The browser suite loads every route at 1280px and 390px, checks horizontal overflow, and exercises representative stateful interactions. The capture tool takes all 173 topic pictures from their live renderers and samples 43 timeline positions per motion GIF, including the final frame, and captures 48 normal/reduced still previews. The hero combines actual specimen screenshots with original typography and layout. No Apple interface artwork is redistributed.
 
 ## Optional public hosting
 
