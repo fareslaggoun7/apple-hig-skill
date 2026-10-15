@@ -46,7 +46,7 @@ designing-for-iphone-duo|adaptive-screen|Compare compact and expanded reading la
 designing-for-macos|workshop|Explore five Mac document, command, personalization and precision studies|Choose a macOS study
 designing-for-tvos|tv-screen|Choose a documentary with visible focus|Select film
 designing-for-visionos|spatial|Explore a calm spatial planning board|Change depth
-designing-for-watchos|watch-screen|Complete a glanceable timer task|Start timer
+designing-for-watchos|workshop|Explore five concise watch tasks, context entries and input alternatives|Choose a watchOS study
 digit-entry-views|digit-entry|Enter a fictional six-digit pickup code|Verify code
 digital-crown|hardware|Adjust a watch timer using a rotary-control model|Adjust minutes
 disclosure-controls|disclosure|Reveal optional export details|Show details

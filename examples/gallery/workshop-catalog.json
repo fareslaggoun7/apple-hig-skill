@@ -180,6 +180,63 @@
           "skin": "desktop"
         }
       ]
+    },
+    {
+      "id": "designing-for-watchos",
+      "label": "Designing for watchOS",
+      "short": "watchOS",
+      "order": 4,
+      "scope": "Original watch-sized web studies of brief tasks. Native complications, notifications, Always On, sensors, Action button, and Digital Crown behavior are not exercised.",
+      "reference": "references/workshops/watchos.md",
+      "related": [
+        "complications",
+        "notifications",
+        "digital-crown",
+        "always-on",
+        "shortcuts"
+      ],
+      "scenarios": [
+        {
+          "id": "glance",
+          "title": "One useful glance",
+          "task": "Read the next action and choose another bundled context.",
+          "principle": "Keep critical information concise, relevant, and actionable.",
+          "source": "https://developer.apple.com/design/human-interface-guidelines/designing-for-watchos#Best-practices",
+          "skin": "wrist"
+        },
+        {
+          "id": "session",
+          "title": "Start, pause, resume",
+          "task": "Run a short timer, pause it, and reset without navigating through setup screens.",
+          "principle": "Make a focused task available with few actions and clear state.",
+          "source": "https://developer.apple.com/design/human-interface-guidelines/designing-for-watchos#Best-practices",
+          "skin": "wrist"
+        },
+        {
+          "id": "crown",
+          "title": "Rotary input alternatives",
+          "task": "Choose a duration through an ordinary range control or named step buttons.",
+          "principle": "Support convenient adjustment without requiring a hardware-only gesture.",
+          "source": "https://developer.apple.com/design/human-interface-guidelines/designing-for-watchos#Best-practices",
+          "skin": "wrist"
+        },
+        {
+          "id": "complication",
+          "title": "Glance to useful detail",
+          "task": "Open a complication-like entry and return to the same concise context.",
+          "principle": "Use a relevant entry point to reach useful app detail directly.",
+          "source": "https://developer.apple.com/design/human-interface-guidelines/designing-for-watchos#Best-practices",
+          "skin": "wrist"
+        },
+        {
+          "id": "notification",
+          "title": "A targeted notification action",
+          "task": "Acknowledge a bundled event or open its details without a long setup flow.",
+          "principle": "Reserve interruptions for timely, useful information and relevant actions.",
+          "source": "https://developer.apple.com/design/human-interface-guidelines/designing-for-watchos#Best-practices",
+          "skin": "wrist"
+        }
+      ]
     }
   ]
 }

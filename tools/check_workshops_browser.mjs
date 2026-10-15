@@ -7,6 +7,15 @@ import {WORKSHOPS} from '../examples/gallery/workshops.mjs';
 const action=(page,name)=>page.locator(`[data-w-action="${name}"]`).click();
 const choose=(page,id)=>page.locator('[data-w-scenario]').selectOption(id);
 const behavior={
+  async 'designing-for-watchos'(page){
+    await choose(page,'glance');await action(page,'context');assert.match(await page.locator('.wk-watch').textContent(),/short walk/);
+    await choose(page,'session');await action(page,'start');await page.waitForTimeout(1150);assert.notEqual(await page.locator('[data-watch-time]').textContent(),'5:00');await action(page,'pause');const time=await page.locator('[data-watch-time]').textContent();await page.waitForTimeout(1100);assert.equal(await page.locator('[data-watch-time]').textContent(),time);
+    await action(page,'start');await choose(page,'crown');await page.waitForTimeout(1100);await choose(page,'session');assert.match(await page.locator('.wk-watch').textContent(),/Paused or ready/);await action(page,'restart');assert.equal(await page.locator('[data-watch-time]').textContent(),'5:00');
+    await choose(page,'crown');await action(page,'more');assert.match(await page.locator('[data-watch-duration]').textContent(),/6 min/);await page.locator('[data-w-field=minutes]').fill('1');assert.equal(await page.locator('[data-w-action=less]').isDisabled(),true);await page.locator('[data-w-field=minutes]').focus();await page.keyboard.press('ArrowRight');assert.match(await page.locator('[data-watch-duration]').textContent(),/2 min/);
+    await choose(page,'complication');await action(page,'detail');assert.match(await page.locator('.wk-watch').textContent(),/east entrance/);await action(page,'back');assert.equal(await page.evaluate(()=>document.activeElement.dataset.focusKey),'detail');
+    await choose(page,'notification');await action(page,'reply');assert.equal(await page.locator('[data-w-action=reply]').isDisabled(),true);await action(page,'detail');await action(page,'back');assert.match(await page.locator('.wk-watch').textContent(),/Acknowledged/);
+    return 11;
+  },
   async 'designing-for-macos'(page){
     await choose(page,'documents');await page.locator('[data-w-field=body]').fill('Mac draft');await action(page,'document:coast');await action(page,'document:trail');assert.equal(await page.locator('[data-w-field=body]').inputValue(),'Mac draft');
     await choose(page,'commands');await action(page,'new');assert.equal(await page.locator('[data-w-field=body]').inputValue(),'');await page.locator('[data-w-field=body]').fill('Before revision');await action(page,'revise');assert.equal(await page.locator('[data-w-field=body]').inputValue(),'Revised field notes.');await action(page,'undo');assert.equal(await page.locator('[data-w-field=body]').inputValue(),'Before revision');assert.equal(await page.locator('[data-w-action=undo]').isDisabled(),true);
