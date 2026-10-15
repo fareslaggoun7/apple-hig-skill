@@ -432,6 +432,63 @@
           "skin": "game"
         }
       ]
+    },
+    {
+      "id": "designing-for-tvos",
+      "label": "Designing for tvOS",
+      "short": "tvOS",
+      "order": 8,
+      "scope": "Original illustrated TV-content browser studies. Arrow-key navigation models focus decisions; it does not exercise Siri Remote, the native focus engine, shared sign-in, video playback, or picture-in-picture.",
+      "reference": "references/workshops/tvos.md",
+      "related": [
+        "focus-and-selection",
+        "remotes",
+        "managing-accounts",
+        "playing-video",
+        "top-shelf"
+      ],
+      "scenarios": [
+        {
+          "id": "focus",
+          "title": "Focus, open, return",
+          "task": "Navigate a directional grid, open a story, and return to its focused item.",
+          "principle": "Keep the current location and the next available action clear.",
+          "source": "https://developer.apple.com/design/human-interface-guidelines/designing-for-tvos#Best-practices",
+          "skin": "television"
+        },
+        {
+          "id": "legibility",
+          "title": "Readable from a distance",
+          "task": "Choose a room-reading text treatment while retaining focus and reachable stories.",
+          "principle": "Use artwork, hierarchy and legible information for the viewing context; test the real room.",
+          "source": "https://developer.apple.com/design/human-interface-guidelines/designing-for-tvos#Best-practices",
+          "skin": "television"
+        },
+        {
+          "id": "profiles",
+          "title": "A shared screen, separate lists",
+          "task": "Save a story for Alex, switch to Sam, and verify the lists remain independent.",
+          "principle": "Support multiple viewers and preserve the active person’s context.",
+          "source": "https://developer.apple.com/design/human-interface-guidelines/designing-for-tvos#Best-practices",
+          "skin": "television"
+        },
+        {
+          "id": "signin",
+          "title": "A concise sign-in handoff model",
+          "task": "Recover from an invalid sample code and complete the bundled local flow.",
+          "principle": "Keep sign-in understandable and infrequent; evaluate actual shared sign-in integrations.",
+          "source": "https://developer.apple.com/design/human-interface-guidelines/designing-for-tvos#Best-practices",
+          "skin": "television"
+        },
+        {
+          "id": "playback",
+          "title": "Continue a story while browsing",
+          "task": "Advance a bundled illustrated story, pause it, and keep its place in a smaller presentation.",
+          "principle": "Preserve context when the person changes presentation or follows another task.",
+          "source": "https://developer.apple.com/design/human-interface-guidelines/designing-for-tvos#Best-practices",
+          "skin": "television"
+        }
+      ]
     }
   ]
 }

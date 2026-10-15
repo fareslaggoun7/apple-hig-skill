@@ -44,7 +44,7 @@ designing-for-ios|workshop|Explore six source-guided iOS tasks with navigation, 
 designing-for-ipados|workshop|Explore five connected iPadOS workspace studies with preserved drafts and fluid inputs|Choose an iPadOS study
 designing-for-iphone-duo|workshop|Explore five adaptive display, state, reserved-space and action studies|Choose an iPhone Duo study
 designing-for-macos|workshop|Explore five Mac document, command, personalization and precision studies|Choose a macOS study
-designing-for-tvos|tv-screen|Choose a documentary with visible focus|Select film
+designing-for-tvos|workshop|Explore five TV focus, legibility, viewer and story continuity studies|Choose a tvOS study
 designing-for-visionos|spatial|Explore a calm spatial planning board|Change depth
 designing-for-watchos|workshop|Explore five concise watch tasks, context entries and input alternatives|Choose a watchOS study
 digit-entry-views|digit-entry|Enter a fictional six-digit pickup code|Verify code
