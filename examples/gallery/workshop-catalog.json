@@ -193,7 +193,7 @@
         "notifications",
         "digital-crown",
         "always-on",
-        "shortcuts"
+        "app-shortcuts"
       ],
       "scenarios": [
         {
@@ -487,6 +487,63 @@
           "principle": "Preserve context when the person changes presentation or follows another task.",
           "source": "https://developer.apple.com/design/human-interface-guidelines/designing-for-tvos#Best-practices",
           "skin": "television"
+        }
+      ]
+    },
+    {
+      "id": "designing-for-visionos",
+      "label": "Designing for visionOS",
+      "short": "visionOS",
+      "order": 9,
+      "scope": "Stationary, original 2D browser illustrations of windowed tasks, immersion choices, objects and sharing state. No spatial tracking, gaze, hand gestures, passthrough, Spatial Audio or SharePlay is implemented.",
+      "reference": "references/workshops/visionos.md",
+      "related": [
+        "windows",
+        "immersive-experiences",
+        "eyes",
+        "gestures",
+        "shareplay"
+      ],
+      "scenarios": [
+        {
+          "id": "contained-task",
+          "title": "A contained, familiar task",
+          "task": "Edit a note and open supporting details without leaving the task.",
+          "principle": "Prefer a familiar window for a UI-centric task, with useful supporting controls.",
+          "source": "https://developer.apple.com/design/human-interface-guidelines/designing-for-visionos#Best-practices",
+          "skin": "spatial"
+        },
+        {
+          "id": "immersion",
+          "title": "Choose and leave immersion",
+          "task": "Enter an illustrated focused context deliberately, then exit with the note preserved.",
+          "principle": "Choose the minimum immersion appropriate to the moment and preserve the person’s agency.",
+          "source": "https://developer.apple.com/design/human-interface-guidelines/designing-for-visionos#Best-practices",
+          "skin": "spatial"
+        },
+        {
+          "id": "objects",
+          "title": "Select through named alternatives",
+          "task": "Choose an illustrated object and change its orientation with a range or named step action.",
+          "principle": "Make selection and manipulation understandable; test actual indirect/direct input separately.",
+          "source": "https://developer.apple.com/design/human-interface-guidelines/designing-for-visionos#Best-practices",
+          "skin": "spatial"
+        },
+        {
+          "id": "comfort",
+          "title": "A stable reference for work",
+          "task": "Keep an editable task beside a visible stable reference and inspect the illustration’s presentation.",
+          "principle": "Prioritize comfort, avoid overwhelming motion, and keep important content easy to find.",
+          "source": "https://developer.apple.com/design/human-interface-guidelines/designing-for-visionos#Best-practices",
+          "skin": "spatial"
+        },
+        {
+          "id": "sharing",
+          "title": "Shared activity with a clear exit",
+          "task": "Review a bundled invitation, simulate its acceptance, and leave while preserving the note.",
+          "principle": "Support a shared task with understandable participation and an available way to leave.",
+          "source": "https://developer.apple.com/design/human-interface-guidelines/designing-for-visionos#Best-practices",
+          "skin": "spatial"
         }
       ]
     }

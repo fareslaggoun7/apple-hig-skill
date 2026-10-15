@@ -84,6 +84,7 @@ test('motion guide and catalog match the runnable examples and use still preview
 test('workshops follow the requested order and every study has an implementation and a real source section',()=>{
   assert.deepEqual(WORKSHOPS.map(w=>w.id),WORKSHOP_ORDER.slice(0,WORKSHOPS.length));
   for(const [index,w] of WORKSHOPS.entries()){
+    for(const id of w.related)assert.ok(catalog.topics.some(t=>t.slug===id),w.id+' related '+id);
     assert.equal(w.order,index+1);assert.ok(w.scenarios.length>=4,w.id);assert.equal(new Set(w.scenarios.map(s=>s.id)).size,w.scenarios.length);
     assert.equal(catalog.topics.find(t=>t.slug===w.id).kind,'workshop');
     assert.ok(fs.existsSync(new URL('../skills/apple-hig/'+w.reference,import.meta.url)));
