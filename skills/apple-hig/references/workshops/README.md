@@ -7,5 +7,6 @@ Read the workflow for the task’s target platform or design topic, then load it
 3. [Designing for macOS](macos.md) — 5 source-linked studies.
 4. [Designing for watchOS](watchos.md) — 5 source-linked studies.
 5. [Designing for iPhone Duo](duo.md) — 5 source-linked studies.
+6. [Design principles](principles.md) — 8 source-linked studies.
 
 [Runnable workshops and actual pictures](https://github.com/fareslaggoun7/apple-hig-skill/blob/main/examples/gallery/WORKSHOPS.md). Each platform needs its own deployment, input, accessibility, and device/runtime review. Do not transfer native measurements or SDK guarantees into browser examples.

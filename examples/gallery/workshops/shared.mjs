@@ -9,7 +9,7 @@ export const source=(topic,section='Best-practices')=>'https://developer.apple.c
 export const section=(heading,body)=>`<section class="wk-panel"><h4>${e(heading)}</h4>${body}</section>`;
 export function editor(ctx,{title='Edit note',value,onSave}){
   if(ctx.root.querySelector('dialog[open]'))return;
-  const opener=document.activeElement,dialog=document.createElement('dialog');
+  const opener=document.activeElement,openerKey=opener?.dataset.focusKey,dialog=document.createElement('dialog');
   dialog.className='wk-editor';dialog.setAttribute('aria-labelledby','wk-editor-title');
   dialog.innerHTML=`<form method="dialog"><span class="wk-kicker">FIELDNOTES / DRAFT</span><h2 id="wk-editor-title">${e(title)}</h2><label class="wk-field">Note title<input name="note-title" value="${e(value)}" maxlength="100" autofocus></label><p class="wk-error" data-editor-error></p><div class="row"><button value="cancel" formnovalidate>Cancel</button><button class="primary" value="save">Save note</button></div></form>`;
   dialog.addEventListener('submit',ev=>{
@@ -21,7 +21,7 @@ export function editor(ctx,{title='Edit note',value,onSave}){
   dialog.addEventListener('close',()=>{
     if(dialog.returnValue==='save'){onSave(dialog.querySelector('input').value.trim());ctx.render();ctx.status('Note saved. Returned to the original task.');}
     else ctx.status('Cancelled. Original note preserved.');
-    dialog.remove();if(opener?.isConnected)opener.focus();else ctx.root.querySelector('[data-focus-key="edit"]')?.focus();
+    dialog.remove();if(opener?.isConnected)opener.focus();else [...ctx.root.querySelectorAll('[data-focus-key]')].find(n=>n.dataset.focusKey===openerKey)?.focus();
   },{once:true,signal:ctx.signal});
   ctx.root.append(dialog);ctx.own(()=>dialog.remove());dialog.showModal();
 }

@@ -38,7 +38,7 @@ complications|complication|Preview a watch-sized departure countdown|Change valu
 context-menus|context-menu|Open contextual actions for a photograph|Show actions
 controls|controls|Adjust a compact set of workspace preferences|Reset controls
 dark-mode|appearance|Compare a reading card in light and dark|Switch appearance
-design-principles|principles|Refine a focused note-taking task|Choose principle
+design-principles|workshop|Apply all eight current design principles through concrete working tasks|Choose a principle study
 designing-for-games|game|Move a token through a keyboard-friendly game|Move token
 designing-for-ios|workshop|Explore six source-guided iOS tasks with navigation, editing, saved state and recovery|Choose an iOS study
 designing-for-ipados|workshop|Explore five connected iPadOS workspace studies with preserved drafts and fluid inputs|Choose an iPadOS study

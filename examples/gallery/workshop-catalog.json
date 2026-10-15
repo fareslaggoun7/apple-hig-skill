@@ -294,6 +294,87 @@
           "skin": "adaptive"
         }
       ]
+    },
+    {
+      "id": "design-principles",
+      "label": "Design principles",
+      "short": "Principles",
+      "order": 6,
+      "scope": "Eight original interactive studies, one for each current named Apple design principle. Product decisions and illustrative outcomes are not universal rules or design certification.",
+      "reference": "references/workshops/principles.md",
+      "related": [
+        "accessibility",
+        "inclusion",
+        "privacy",
+        "feedback",
+        "motion"
+      ],
+      "scenarios": [
+        {
+          "id": "purpose",
+          "title": "Purpose · capture the useful thought",
+          "task": "Capture a useful note directly; recover from empty input.",
+          "principle": "Choose a meaningful goal and prioritize the task that serves it.",
+          "source": "https://developer.apple.com/design/human-interface-guidelines/design-principles#Purpose",
+          "skin": "principle"
+        },
+        {
+          "id": "agency",
+          "title": "Agency · make recovery easy",
+          "task": "Archive a note, then recover the same content with Undo.",
+          "principle": "Let people explore and recover without losing their time or work.",
+          "source": "https://developer.apple.com/design/human-interface-guidelines/design-principles#Agency",
+          "skin": "principle"
+        },
+        {
+          "id": "responsibility",
+          "title": "Responsibility · explain data use",
+          "task": "Choose manual place entry or inspect a bundled location example.",
+          "principle": "Be transparent about purpose and collect only what the real task needs.",
+          "source": "https://developer.apple.com/design/human-interface-guidelines/design-principles#Responsibility",
+          "skin": "principle"
+        },
+        {
+          "id": "familiarity",
+          "title": "Familiarity · consistent action feedback",
+          "task": "Save either of two notes using the same named action and state feedback.",
+          "principle": "Apply established behaviors consistently and show when content changes.",
+          "source": "https://developer.apple.com/design/human-interface-guidelines/design-principles#Familiarity",
+          "skin": "principle"
+        },
+        {
+          "id": "flexibility",
+          "title": "Flexibility · alternative input paths",
+          "task": "Reorder an itinerary with named keyboard-operable actions, then change layout or text size.",
+          "principle": "Accommodate different inputs and contexts while preserving the person’s work.",
+          "source": "https://developer.apple.com/design/human-interface-guidelines/design-principles#Flexibility",
+          "skin": "principle"
+        },
+        {
+          "id": "simplicity",
+          "title": "Simplicity · reveal relevant options",
+          "task": "Write a note, reveal its optional category, and return without losing either value.",
+          "principle": "Keep the main task clear while retaining useful secondary capability.",
+          "source": "https://developer.apple.com/design/human-interface-guidelines/design-principles#Simplicity",
+          "skin": "principle"
+        },
+        {
+          "id": "craft",
+          "title": "Craft · refine a real detail",
+          "task": "Refine a title, inspect empty-input validation, cancel, and save a better version.",
+          "principle": "Prototype, inspect the details, and iterate; shipping does not end design work.",
+          "source": "https://developer.apple.com/design/human-interface-guidelines/design-principles#Craft",
+          "skin": "principle"
+        },
+        {
+          "id": "delight",
+          "title": "Delight · a useful finishing moment",
+          "task": "Complete a quiet planning task, then reopen it when plans change.",
+          "principle": "Let the appropriate emotion emerge from a considerate, useful experience.",
+          "source": "https://developer.apple.com/design/human-interface-guidelines/design-principles#Delight",
+          "skin": "principle"
+        }
+      ]
     }
   ]
 }
