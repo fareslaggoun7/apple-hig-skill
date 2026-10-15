@@ -1,6 +1,6 @@
 # Runnable examples
 
-The companion repository contains a browser gallery with a concrete task for every one of the 173 indexed topics, 24 motion experiments, and pictures captured from actual renderers.
+The companion repository contains a browser gallery with a concrete task for every one of the 173 indexed topics, 54 studies in ten ordered platform/design workshops, 24 motion experiments, and pictures captured from actual renderers.
 
 [Gallery instructions](https://github.com/fareslaggoun7/apple-hig-skill/blob/main/examples/gallery/README.md) · [Complete topic index](https://github.com/fareslaggoun7/apple-hig-skill/blob/main/examples/gallery/TOPICS.md) · [Motion previews](https://github.com/fareslaggoun7/apple-hig-skill/blob/main/examples/gallery/MOTION.md)
 
@@ -13,3 +13,5 @@ Use the sheet and dialog routes to inspect cancellation and focus recovery; load
 The motion lab has replay, pause/resume, reset, keyboard timeline scrubbing, playback speed, optional looping, per-example links, and explicit outcomes. Preference changes preserve its selection and timeline. The preview stage illustrates an effect; its companion-topic link opens the full interaction. Read [the motion workflow](motion-design.md) before adapting these examples. Still previews are the documentation default; open a recording deliberately.
 
 The portable skill ZIP retains the source cards and this routing guide. The larger gallery is distributed separately, so Claude.ai ZIP uploads, Claude Code, and Codex keep their existing installation structure.
+
+Read [the platform and design workflow index](workshops/README.md) for the relevant target. Each workshop has stateful tasks, exact source sections, original rendered pictures and explicit native-validation limits. Getting started keeps all child-topic routes and provides original draft planning tools, not automatic certification.

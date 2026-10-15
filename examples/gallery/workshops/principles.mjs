@@ -3,13 +3,13 @@ const initial=()=>({title:'Morning field notes',note:'',archived:false,city:'',l
 const panel=(title,body)=>`<section class="wk-panel"><span class="wk-kicker">FIELDNOTES / DESIGN DECISIONS</span><h3>${title}</h3>${body}</section>`;
 function action(ctx,name){const s=ctx.state;
  if(name==='capture'){if(!s.note.trim()){s.error='Write a note before saving.';ctx.render();ctx.focus='note';ctx.root.querySelector('[data-w-field=note]')?.focus();return;}s.error='';s.saved.push(s.note.trim());s.note='';}
- else if(name==='archive')s.archived=true;else if(name==='undo')s.archived=false;
+ else if(name==='archive'){s.archived=true;ctx.focus='undo';}else if(name==='undo'){s.archived=false;ctx.focus='archive';}
  else if(name==='sample-location'){s.city='Sample: Lakeside';s.located=true;}
  else if(name.startsWith('save:'))s.saved.push(name.slice(5));
  else if(name.startsWith('move:')){const index=Number(name.slice(5));if(index>0)[s.items[index-1],s.items[index]]=[s.items[index],s.items[index-1]];ctx.focus='move:'+Math.max(1,index-1);}
  else if(name==='advanced')s.advanced=!s.advanced;
  else if(name==='rename'){editor(ctx,{title:'Refine the note title',value:s.title,onSave:value=>{s.title=value;ctx.status('Note title updated.');}});return;}
- else if(name==='done')s.complete=true;else if(name==='reopen')s.complete=false;
+ else if(name==='done'){s.complete=true;ctx.focus='reopen';}else if(name==='reopen'){s.complete=false;ctx.focus='done';}
  ctx.render();ctx.status('Design study updated. Changes remain local.');
 }
 function input(ctx,key,value){ctx.state[key]=value;}

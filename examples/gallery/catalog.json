@@ -1,5 +1,5 @@
 {
-  "version": "1.4.0",
+  "version": "1.5.0",
   "snapshot": "2026-10-14",
   "scope": "Original runnable web adaptations and explicitly labeled simulations; no native SDK or device conformance claim.",
   "topics": [
@@ -660,7 +660,7 @@
       "kind": "workshop",
       "scenario": "Apply all eight current design principles through concrete working tasks",
       "action": "Choose a principle study",
-      "guidance": "Use the product's purpose to prioritize the features people need and evaluate whether each design decision serves them. Preserve agency through direct access, escape from necessary guided flows, and recovery without losing work. Design inclusively from the beginning, preserve context across configurations, and consider multiple input methods. Prototype, test in real settings, discard ineffective approaches, and keep refining the experience as platform capabilities evolve.",
+      "guidance": "Apply all eight current principles in context: Purpose, Agency, Responsibility, Familiarity, Flexibility, Simplicity, Craft, and Delight. Prioritize meaningful tasks; preserve freedom and recovery; explain data use and protect necessary information; use familiar consistent patterns and feedback; include varied people and inputs; keep useful hierarchy and concise language; prototype and refine details; and choose an appropriate emotional character without obstructing the task. The principles support judgment among competing priorities, not a universal recipe.",
       "mode": "web-adaptation",
       "source": "https://developer.apple.com/design/human-interface-guidelines/design-principles#Purpose",
       "children": []
@@ -1100,7 +1100,7 @@
       "kind": "workshop",
       "scenario": "Build a scoped brief, choose sources, compare structures and review real states",
       "action": "Choose a getting-started study",
-      "guidance": "Begin with design principles, then select the guidance for each supported platform or games to understand its characteristic use, inputs, and system expectations.",
+      "guidance": "This is a collection linking to design principles, games, and the seven indexed platform/device design topics. Use the relevant children to understand characteristic use, inputs, and system expectations. The collection has no prose overview; the skill’s planning workflow is original interpretation, not an Apple-prescribed sequence.",
       "mode": "web-adaptation",
       "source": "https://developer.apple.com/design/human-interface-guidelines/getting-started",
       "children": [

@@ -1,4 +1,4 @@
-<p align="center"><img src="docs/assets/gallery-hero.png" alt="Apple HIG Skill: an original dark banner with real control, workspace, and motion specimens; 173 topics, six source families, 24 motion examples" width="1200"></p>
+<p align="center"><img src="docs/assets/gallery-hero.png" alt="Apple HIG Skill: an original dark banner with real control, workspace, and motion specimens; 173 topics, 54 workshop studies, 24 motion examples" width="1200"></p>
 
 <p align="center">
   <a href="https://github.com/fareslaggoun7/apple-hig-skill/actions/workflows/validate.yml"><img src="https://github.com/fareslaggoun7/apple-hig-skill/actions/workflows/validate.yml/badge.svg" alt="Portable skill and gallery CI"></a>
@@ -12,14 +12,15 @@
   <a href="https://github.com/fareslaggoun7/apple-hig-skill/releases/latest"><strong>Download ZIPs</strong></a> ·
   <a href="examples/gallery/README.md"><strong>Run the gallery</strong></a> ·
   <a href="examples/gallery/TOPICS.md"><strong>All 173 examples</strong></a> ·
-  <a href="examples/gallery/MOTION.md"><strong>Motion lab</strong></a>
+  <a href="examples/gallery/MOTION.md"><strong>Motion lab</strong></a> ·
+  <a href="examples/gallery/WORKSHOPS.md"><strong>Platform workshops</strong></a>
 </p>
 
 # Apple HIG Skill
 
 **Bring Apple's Human Interface Guidelines into Claude and Codex—and try the decisions in a real browser.**
 
-A portable Agent Skill for designing, implementing, and reviewing interfaces with traceable Apple sources. It combines **173 indexed topics**, concise platform-aware guidance, live official-source lookup, and an original interactive gallery. The gallery has a concrete task and a rendered picture for every topic, plus 24 motion examples with animated previews.
+A portable Agent Skill for designing, implementing, and reviewing interfaces with traceable Apple sources. It combines **173 indexed topics**, concise platform-aware guidance, live official-source lookup, and an original interactive gallery. The gallery has a concrete task and a rendered picture for every topic, plus **54 studies across ten ordered platform/design workshops** and 24 motion examples with animated previews.
 
 The design workflow now starts with the person's task, compares appropriate structures, records consequential decisions with their sources, and tests the relevant states and accessibility behavior. It includes platform-aware planning and an evidence checker that flags incomplete source records and missing check evidence. [Design playbook](skills/apple-hig/references/design-playbook.md) · [Quality evidence](docs/QUALITY.md)
 
@@ -63,6 +64,17 @@ python -m http.server 8000 --directory examples/gallery --bind 127.0.0.1
 Enter `http://127.0.0.1:8000` in your browser. Search or choose a family; each route has a task, its Apple source, dated guidance, and scope. Use `?topic=buttons`, `?topic=sheets`, or `?topic=motion` to start directly. No build step, remote fonts, framework, or runtime packages are needed. The separate **apple-hig-gallery.zip** can also run after extraction.
 
 [Gallery guide](examples/gallery/README.md) · [Exhaustive topic-to-example index and pictures](examples/gallery/TOPICS.md) · [Original small editor demo](examples/web-adaptation/README.md)
+
+## Ten topics, worked through in order
+
+Start with **iOS → iPadOS → macOS → watchOS → iPhone Duo → Design principles → Games → tvOS → visionOS → Getting started**. The [54-study workshop guide](examples/gallery/WORKSHOPS.md) pairs working tasks and actual pictures with a [portable implementation workflow](skills/apple-hig/references/workshops/README.md) for each topic.
+
+Edit and retain drafts, recover focus, undo changes, adapt connected workspaces, run a watch timer, play a small game, navigate a directional TV grid, and compare spatial contexts. Each study includes its exact Apple source, an explicit task, text/layout controls, reset, and a direct link. All eight current design principles have their own study. Browser illustrations keep native API, hardware and accessibility claims explicit.
+
+<table><tr>
+<td width="50%"><img src="examples/gallery/workshop-previews/designing-for-ipados--workspace.webp" alt="Actual iPadOS browser workspace with collection navigation and an editable document"><br><strong>Connected work without lost drafts</strong></td>
+<td width="50%"><img src="examples/gallery/workshop-previews/designing-for-tvos--focus.webp" alt="Actual TV content grid with original illustrated stories and directional focus"><br><strong>Focus with a clear way back</strong></td>
+</tr></table>
 
 ## Motion that explains a change
 
@@ -117,7 +129,7 @@ The generated plan is unfinished. Fill its context, decisions, exact source evid
 
 ## Coverage and evidence
 
-The **14 October 2026** source snapshot covers all **173/173** pages discovered in the recorded English HIG topic tree. The gallery covers all 173 routes with 121 explicitly registered renderer kinds; related topics share appropriate controls while retaining their own task and source. Topic presence does not establish exhaustive interpretation of every sentence, accurate native geometry, or SDK conformance.
+The **14 October 2026** source snapshot covers all **173/173** pages discovered in the recorded English HIG topic tree. The gallery covers all 173 routes, including 54 studies in ten ordered workshops; related topics share appropriate controls while retaining their own task and source. Topic presence does not establish exhaustive interpretation of every sentence, accurate native geometry, or SDK conformance.
 
 **A semantic error rate below 0.01% is unproven and is not guaranteed.** [Coverage](docs/COVERAGE.md) documents source ambiguities and unverified media semantics. Browser validation covers all routes at desktop and phone widths and representative keyboard, cancellation, validation, search, loading, and motion interactions. It does not establish full accessibility conformance, model response quality, Apple-device behavior, or a live installation in your Claude account.
 

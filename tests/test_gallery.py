@@ -11,7 +11,7 @@ class GalleryDistributionTests(unittest.TestCase):
         with zipfile.ZipFile(ROOT/'dist/apple-hig-gallery.zip') as archive:
             self.assertIsNone(archive.testzip())
             self.assertEqual(len(archive.namelist()),len(set(archive.namelist())))
-            for name in ['index.html','gallery.mjs','specimens.mjs','motion.mjs','gallery.css','motion.css','catalog.json','motion-catalog.json','LICENSE','NOTICE','README.txt']:
+            for name in ['index.html','gallery.mjs','specimens.mjs','motion.mjs','gallery.css','motion.css','catalog.json','motion-catalog.json','workshops.mjs','workshops.css','workshop-catalog.json','LICENSE','NOTICE','README.txt']:
                 self.assertIn('apple-hig-gallery/'+name,archive.namelist())
             topics=json.loads(archive.read('apple-hig-gallery/catalog.json'))['topics']
             self.assertEqual(len(topics),173)
@@ -26,6 +26,17 @@ class GalleryDistributionTests(unittest.TestCase):
                     name='apple-hig-gallery/motion-previews/'+motion['id']+suffix+'.webp'
                     self.assertIn(name,archive.namelist())
                     self.assertGreater(len(archive.read(name)),500)
+            workshops=json.loads(archive.read('apple-hig-gallery/workshop-catalog.json'))['workshops']
+            self.assertEqual(len(workshops),10)
+            self.assertEqual(sum(len(w['scenarios']) for w in workshops),54)
+            for workshop in workshops:
+                for study in workshop['scenarios']:
+                    name='apple-hig-gallery/workshop-previews/'+workshop['id']+'--'+study['id']+'.webp'
+                    self.assertIn(name,archive.namelist())
+                    self.assertGreater(len(archive.read(name)),500)
+            start=next(t for t in topics if t['slug']=='getting-started')
+            self.assertEqual(start['kind'],'workshop')
+            self.assertEqual(len(start['children']),9)
             for name in archive.namelist():
                 self.assertTrue(name.startswith('apple-hig-gallery/'))
                 self.assertNotIn('..',Path(name).parts)

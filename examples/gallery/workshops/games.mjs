@@ -7,6 +7,7 @@ function action(ctx,name){const s=ctx.state;
  else if(name==='restart'){s.x=0;s.y=0;s.moves=0;s.paused=false;s.message='Reach the camp at row 3, column 4.';}
  else if(name==='checkpoint'){s.checkpoint={x:s.x,y:s.y,moves:s.moves};s.message='Checkpoint stored in this study’s memory.';}
  else if(name==='restore'&&s.checkpoint){Object.assign(s,s.checkpoint);s.paused=false;s.message='Local checkpoint restored. No cloud service contacted.';}
+ if(s.x===3&&s.y===2)ctx.focus='restart';
  ctx.render();ctx.status(s.x===3&&s.y===2?'Camp reached.':s.message);
 }
 function input(ctx,key,value){ctx.state[key]=value;ctx.render();}

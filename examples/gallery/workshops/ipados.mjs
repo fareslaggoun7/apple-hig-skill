@@ -7,7 +7,7 @@ function drawing(ctx,scene){
   const draw=()=>{pen.clearRect(0,0,600,230);pen.strokeStyle=getComputedStyle(canvas).color;for(const stroke of ctx.state.strokes){pen.beginPath();stroke.forEach(([x,y],i)=>i?pen.lineTo(x,y):pen.moveTo(x,y));pen.stroke();}};
   let active=null;
   const point=ev=>{const r=canvas.getBoundingClientRect();return [Math.max(0,Math.min(600,(ev.clientX-r.left)*600/r.width)),Math.max(0,Math.min(230,(ev.clientY-r.top)*230/r.height))];};
-  canvas.addEventListener('pointerdown',ev=>{active=[point(ev)];ctx.state.strokes.push(active);canvas.setPointerCapture(ev.pointerId);draw();},{signal:ctx.sceneSignal});
+  canvas.addEventListener('pointerdown',ev=>{if(ev.button!==0||!ev.isPrimary)return;active=[point(ev)];ctx.state.strokes.push(active);canvas.setPointerCapture(ev.pointerId);draw();},{signal:ctx.sceneSignal});
   canvas.addEventListener('pointermove',ev=>{if(active){active.push(point(ev));draw();}},{signal:ctx.sceneSignal});
   const end=()=>{if(active){active=null;ctx.render();ctx.status('Sketch stroke added. The related note is preserved.');}};
   canvas.addEventListener('pointerup',end,{signal:ctx.sceneSignal});canvas.addEventListener('pointercancel',end,{signal:ctx.sceneSignal});draw();

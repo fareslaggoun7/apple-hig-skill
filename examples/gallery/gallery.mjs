@@ -37,7 +37,7 @@ function open(slug,push=true){
   const topic=topics.find(t=>t.slug===slug);
   if(!topic){status('Unknown topic. Choose a topic from the library.');return;}
   cleanup();current=topic;
-  if(push){const url=new URL(location);url.searchParams.set('topic',slug);url.searchParams.delete('motion');url.searchParams.delete('frame');url.searchParams.delete('record');history.pushState({},'',url);}
+  if(push){const url=new URL(location);url.searchParams.set('topic',slug);url.searchParams.delete('motion');url.searchParams.delete('frame');url.searchParams.delete('record');url.searchParams.delete('example');history.pushState({},'',url);}
   $('demo-heading').textContent=topic.title;$('scenario').textContent=topic.scenario;
   $('mode').textContent=topic.mode==='simulation'?'Integration / hardware model':'Web adaptation';$('mode').classList.toggle('simulation',topic.mode==='simulation');
   $('guidance').textContent=topic.guidance;$('source-link').href=topic.source;$('platforms').textContent=topic.platforms.length?'Source page metadata: '+topic.platforms.join(', '):topic.children.length?'Explore related topics':'';
@@ -49,7 +49,7 @@ function open(slug,push=true){
 }
 $('topic-list').addEventListener('click',ev=>{const a=ev.target.closest('[data-topic]');if(a&&!ev.ctrlKey&&!ev.metaKey){ev.preventDefault();open(a.dataset.topic);}});
 $('topic-search').addEventListener('input',list);$('category').addEventListener('change',list);
-document.querySelector('.motion-strip a').addEventListener('click',ev=>{ev.preventDefault();open('motion');});
+document.querySelectorAll('.motion-strip a').forEach(link=>link.addEventListener('click',ev=>{if(ev.ctrlKey||ev.metaKey||ev.shiftKey||ev.altKey)return;ev.preventDefault();open(new URL(link.href).searchParams.get('topic'));}));
 window.addEventListener('popstate',()=>open(new URLSearchParams(location.search).get('topic')||'buttons',false));
 window.addEventListener('pagehide',()=>cleanup());
 try{

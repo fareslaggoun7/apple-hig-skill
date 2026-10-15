@@ -20,7 +20,7 @@ Repository tests validate the complete topic tree, portable paths, helper behavi
 
 ## Gallery validation
 
-The companion gallery maps all 173 indexed topics to concrete tasks across 121 explicitly registered renderer kinds. Every topic has a picture captured from the actual browser renderer. Ten motion experiments have recorded animated previews. Device, payment, account, and SDK integrations are simulations; browser controls and local state changes are real.
+The companion gallery maps all 173 indexed topics to concrete tasks including 54 studies across ten ordered workshops. Every topic has a picture captured from the actual browser renderer. Twenty-four motion experiments have recorded animated previews. Device, payment, account, and SDK integrations are simulations; browser controls and local state changes are real.
 
 Validation includes Python tests across packaging, gallery, and design/evaluation tooling, five Node tests, both distribution archives, and 346 browser route checks at 1280px and 390px. Focused browser checks cover saving/cancellation and focus recovery, validation, search recovery, tabs, reordering, loading cancellation and retry, popover dismissal, motion interruption/reduced alternatives, cleanup, fictional consent, reviewed suggestions, document rename, semantic outlines, and contextual help. Motion checks use controlled time to avoid depending on CI worker scheduling. [Current executed checks](TESTING.md) include the 18-cohort assessment tests.
 
@@ -51,3 +51,5 @@ python skills/apple-hig/scripts/hig.py refresh --report work/drift.json
 ```
 
 Review changed and new official sections before revising summaries. Update source metadata and cards together; preserve unresolved conflicts. Then run the audit and tests, rebuild the ZIP, and describe the update in the changelog. A fetch failure or an unreached page alone is not proof that Apple removed it.
+
+On 15 October 2026, complete relevant sections for the ten requested workshop topics matched their recorded source fingerprints. Design principles now has individual tasks for all eight named principles. Getting started is a collection with an empty prose overview; its planning method is explicitly original. This targeted readback did not recrawl the whole inventory or visually verify Apple media.

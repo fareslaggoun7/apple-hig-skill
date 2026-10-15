@@ -1700,8 +1700,12 @@
       "evidence_sections": [
         "Purpose",
         "Agency",
+        "Responsibility",
+        "Familiarity",
         "Flexibility",
-        "Craft"
+        "Simplicity",
+        "Craft",
+        "Delight"
       ],
       "source_anchors": [
         "Purpose",

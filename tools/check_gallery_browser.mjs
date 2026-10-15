@@ -3,6 +3,7 @@ import fs from 'node:fs';
 import assert from 'node:assert/strict';
 import {createRequire} from 'node:module';
 import {checkMotion} from './check_motion_browser.mjs';
+import {checkWorkshops} from './check_workshops_browser.mjs';
 const {chromium}=createRequire(import.meta.url)('playwright');
 const base=process.env.GALLERY_URL||'http://127.0.0.1:8000';
 const topics=JSON.parse(fs.readFileSync(new URL('../examples/gallery/catalog.json',import.meta.url))).topics;
@@ -58,6 +59,7 @@ try{
   const page=await browser.newPage({viewport:{width:1280,height:900}});
   page.on('pageerror',error=>errors.push(error.message));
   const open=async topic=>{await page.goto(`${base}/?topic=${topic}`);await page.waitForFunction(()=>window.galleryReady);};
+  await open('buttons');await page.locator('.motion-strip a').first().click();assert.equal(await page.locator('body').getAttribute('data-topic'),'designing-for-ios');await page.locator('.motion-strip a').last().click();assert.equal(await page.locator('body').getAttribute('data-topic'),'motion');
   await open('sheets');await page.getByRole('button',{name:'Edit note',exact:true}).click();await page.locator('dialog input').fill('Revised trail');await page.getByRole('button',{name:'Save note',exact:true}).click();await page.waitForFunction(()=>document.querySelector('[data-note]').textContent==='Revised trail');assert.equal(await page.locator('[data-note]').textContent(),'Revised trail');
   await page.getByRole('button',{name:'Edit note',exact:true}).click();await page.locator('dialog input').fill('Discard this');await page.keyboard.press('Escape');await page.waitForFunction(()=>!document.querySelector('#stage dialog'));assert.equal(await page.locator('[data-note]').textContent(),'Revised trail');assert.equal(await page.evaluate(()=>document.activeElement.textContent),'Edit note');
   await open('text-fields');await page.locator('#stage form button[type=submit]').click();assert.equal(await page.locator('[name=entry]').getAttribute('aria-invalid'),'true');await page.locator('[name=entry]').fill('Read daily');await page.locator('#stage form button[type=submit]').click();assert.match(await page.locator('#result').textContent(),/Saved/);
@@ -80,6 +82,7 @@ try{
   await open('voiceover');await page.getByRole('button',{name:'Show semantic outline'}).click();assert.match(await page.locator('[data-context]').textContent(),/status, polite/);
   await open('web-views');await page.getByRole('button',{name:'Open help page'}).click();assert.equal(await page.locator('iframe').isVisible(),true);await page.getByRole('button',{name:'Close help page'}).click();assert.equal(await page.locator('iframe').isVisible(),false);
   await page.close();
+  const workshopReport=await checkWorkshops(browser,base);console.log(JSON.stringify({workshops:workshopReport},null,2));
   if(errors.length)failures.push(...errors);
   console.log(JSON.stringify({routes,actions,failures},null,2));
   assert.equal(failures.length,0,failures.join('\n'));

@@ -1,5 +1,13 @@
 # Changelog
 
+## 1.5.0 — 2026-10-15
+
+- Completes the ten requested platform/design topics in order with 54 working studies, 54 captured pictures, source sections, direct links, reset, per-study memory, and text/layout controls.
+- Adds ten portable implementation workflows; covers all eight current design principles, the games sizing conflict, Duo reserved-space/control guidance, and Getting started’s collection scope.
+- Exercises draft continuity, dialogs, undo, scoped keys, drawing alternatives, timers, playable game recovery, directional TV focus, separate viewers, spatial-context choices, and unreviewed planning export.
+- Adds ordered browser regressions and generated guide/catalog/picture checks to CI; preserves all 173 routes, 24 motion examples, three supported clients and previous releases.
+- Browser studies do not establish native fidelity, full accessibility conformance or a numerical semantic error bound.
+
 ## 1.4.0 — 2026-10-15
 
 - Expands the motion lab from 10 to 24 original examples, including navigation and return, shared content, image replacement, filtering, insertion, undo, loading completion, refresh, save confirmation, validation, numeric changes, selection, and focus.

@@ -16,7 +16,13 @@ The motion lab has 24 explicit examples with source sections, purpose, outcomes,
 
 All examples are also checked at 320px, 390px, and 1280px in both light and dark appearances. Reduced-frame samples reject continuously interpolated transforms, opacity, and geometry. The recording check verifies changing GIF frames, two-play limits, and agreement between the retained endpoint and the actual renderer. The documentation uses still previews by default, with 24 recordings and 48 normal/reduced posters.
 
-These are software and visual checks of browser illustrations. They do not establish native device performance, frame pacing on every system, VoiceOver conformance, comfort, or semantic error rates. The two relevant official Motion sections were retrieved on 15 October and matched the recorded fingerprints; the entire dated source inventory was not recrawled for this motion-only update. The previous release's full-inventory check remains recorded in [the v1.3.0 report](test-results-v1.3.0.json).
+These are software and visual checks of browser illustrations. They do not establish native device performance, frame pacing on every system, VoiceOver conformance, comfort, or semantic error rates. The two relevant official Motion sections were retrieved on 15 October and matched the recorded fingerprints; the entire dated source inventory was not recrawled for the prior motion update. The previous release's full-inventory check remains recorded in [the v1.3.0 report](test-results-v1.3.0.json).
+
+## Ordered workshop verification
+
+All ten requested topics have 54 implemented studies and captured pictures. The browser suite runs topic-specific behaviors in order, then each study at 320px, 390px and 1280px in both appearances with 150% web text. It checks draft/selection preservation, validation, undo, dialog return focus, scoped shortcuts, pointer/named alternatives, timer cleanup, directional navigation, separate profiles and unreviewed JSON export. Generated guides/catalogs and exact picture sets are checked against the real registry. Full regression retains all 173 routes and 24 motion examples.
+
+The new portable workflows describe current source recommendations, original product choices, native checks still needed, and what the browser tasks actually establish. [Targeted complete official sections](workshop-source-review.json) for all ten topics matched the recorded fingerprints on 15 October; Getting started has an empty prose overview and remains a source collection. [The v1.4.0 report](test-results-v1.4.0.json) preserves the prior motion verification. These checks do not replace independent task-output review or native device testing.
 
 ## Unavailable empirical and native tests
 

@@ -18,9 +18,11 @@ Evidence sections: [Overview](https://developer.apple.com/design/human-interface
 Source: [Design principles](https://developer.apple.com/design/human-interface-guidelines/design-principles).
 Platforms in page metadata: not specified.
 
-Use the product's purpose to prioritize the features people need and evaluate whether each design decision serves them. Preserve agency through direct access, escape from necessary guided flows, and recovery without losing work. Design inclusively from the beginning, preserve context across configurations, and consider multiple input methods. Prototype, test in real settings, discard ineffective approaches, and keep refining the experience as platform capabilities evolve.
+Apply all eight current principles in context: Purpose, Agency, Responsibility, Familiarity, Flexibility, Simplicity, Craft, and Delight. Prioritize meaningful tasks; preserve freedom and recovery; explain data use and protect necessary information; use familiar consistent patterns and feedback; include varied people and inputs; keep useful hierarchy and concise language; prototype and refine details; and choose an appropriate emotional character without obstructing the task. The principles support judgment among competing priorities, not a universal recipe.
 
-Evidence sections: [Purpose](https://developer.apple.com/design/human-interface-guidelines/design-principles#Purpose), [Agency](https://developer.apple.com/design/human-interface-guidelines/design-principles#Agency), [Flexibility](https://developer.apple.com/design/human-interface-guidelines/design-principles#Flexibility), [Craft](https://developer.apple.com/design/human-interface-guidelines/design-principles#Craft).
+Evidence sections: [Purpose](https://developer.apple.com/design/human-interface-guidelines/design-principles#Purpose), [Agency](https://developer.apple.com/design/human-interface-guidelines/design-principles#Agency), [Responsibility](https://developer.apple.com/design/human-interface-guidelines/design-principles#Responsibility), [Familiarity](https://developer.apple.com/design/human-interface-guidelines/design-principles#Familiarity), [Flexibility](https://developer.apple.com/design/human-interface-guidelines/design-principles#Flexibility), [Simplicity](https://developer.apple.com/design/human-interface-guidelines/design-principles#Simplicity), [Craft](https://developer.apple.com/design/human-interface-guidelines/design-principles#Craft), [Delight](https://developer.apple.com/design/human-interface-guidelines/design-principles#Delight).
+
+[Task workflow and runnable studies](workshops/principles.md). Current source review: 15 October 2026.
 
 <!-- topic:designing-for-games -->
 <a id="designing-for-games"></a>
@@ -34,6 +36,8 @@ Scope / uncertainty: The page's iOS button-size prose and default/minimum table 
 
 Evidence sections: [Jump-into-gameplay](https://developer.apple.com/design/human-interface-guidelines/designing-for-games#Jump-into-gameplay), [Look-stunning-on-every-display](https://developer.apple.com/design/human-interface-guidelines/designing-for-games#Look-stunning-on-every-display), [Enable-intuitive-interactions](https://developer.apple.com/design/human-interface-guidelines/designing-for-games#Enable-intuitive-interactions), [Welcome-everyone](https://developer.apple.com/design/human-interface-guidelines/designing-for-games#Welcome-everyone).
 
+[Task workflow and runnable studies](workshops/games.md). Current source review: 15 October 2026.
+
 <!-- topic:designing-for-ios -->
 <a id="designing-for-ios"></a>
 ## Designing for iOS
@@ -44,6 +48,8 @@ Prioritize primary content and tasks while keeping secondary actions discoverabl
 
 Evidence sections: [Overview](https://developer.apple.com/design/human-interface-guidelines/designing-for-ios), [Best-practices](https://developer.apple.com/design/human-interface-guidelines/designing-for-ios#Best-practices).
 
+[Task workflow and runnable studies](workshops/ios.md). Current source review: 15 October 2026.
+
 <!-- topic:designing-for-ipados -->
 <a id="designing-for-ipados"></a>
 ## Designing for iPadOS
@@ -53,6 +59,8 @@ Platforms in page metadata: not specified.
 Use the larger display to elevate content and reduce unnecessary modal interfaces and full-screen transitions. Choose density and control size with viewing distance and input mode in mind. Support fluid combinations of touch, keyboard, trackpad, and Apple Pencil rather than treating them as isolated experiences. Adapt to orientation, multitasking, text-size and appearance changes, and consider inter-app workflows such as drag and drop and the experience of running on macOS.
 
 Evidence sections: [Overview](https://developer.apple.com/design/human-interface-guidelines/designing-for-ipados), [Best-practices](https://developer.apple.com/design/human-interface-guidelines/designing-for-ipados#Best-practices).
+
+[Task workflow and runnable studies](workshops/ipados.md). Current source review: 15 October 2026.
 
 <!-- topic:designing-for-iphone-duo -->
 <a id="designing-for-iphone-duo"></a>
@@ -66,6 +74,8 @@ Scope / uncertainty: Applies to the device and APIs described by this source; im
 
 Evidence sections: [Best-practices](https://developer.apple.com/design/human-interface-guidelines/designing-for-iphone-duo#Best-practices), [Reserved-regions](https://developer.apple.com/design/human-interface-guidelines/designing-for-iphone-duo#Reserved-regions), [Split-views](https://developer.apple.com/design/human-interface-guidelines/designing-for-iphone-duo#Split-views), [Vertical-controls](https://developer.apple.com/design/human-interface-guidelines/designing-for-iphone-duo#Vertical-controls).
 
+[Task workflow and runnable studies](workshops/duo.md). Current source review: 15 October 2026.
+
 <!-- topic:designing-for-macos -->
 <a id="designing-for-macos"></a>
 ## Designing for macOS
@@ -75,6 +85,8 @@ Platforms in page metadata: not specified.
 Use large displays to reduce nesting and unnecessary modality while keeping information comfortable to read. Let people move, resize, hide, and arrange windows, and support full-screen work. Make needed commands available through the menu bar, provide precise pointer interactions and keyboard shortcuts, and support keyboard-only workflows. Offer useful personalization of toolbars, views, colors, and fonts, and handle frequent switching between active and inactive apps gracefully.
 
 Evidence sections: [Overview](https://developer.apple.com/design/human-interface-guidelines/designing-for-macos), [Best-practices](https://developer.apple.com/design/human-interface-guidelines/designing-for-macos#Best-practices).
+
+[Task workflow and runnable studies](workshops/macos.md). Current source review: 15 October 2026.
 
 <!-- topic:designing-for-tvos -->
 <a id="designing-for-tvos"></a>
@@ -86,6 +98,8 @@ Design artwork, text, animation, and audio for a cinematic experience that remai
 
 Evidence sections: [Overview](https://developer.apple.com/design/human-interface-guidelines/designing-for-tvos), [Best-practices](https://developer.apple.com/design/human-interface-guidelines/designing-for-tvos#Best-practices).
 
+[Task workflow and runnable studies](workshops/tvos.md). Current source review: 15 October 2026.
+
 <!-- topic:designing-for-visionos -->
 <a id="designing-for-visionos"></a>
 ## Designing for visionOS
@@ -95,6 +109,8 @@ Platforms in page metadata: not specified.
 Choose the minimum immersion that benefits each meaningful moment; prefer standard windows for familiar, contained tasks. Keep important content comfortably in view, avoid overwhelming motion, and prioritize indirect gestures so hands can rest. Reserve direct manipulation for reachable content and short interactions. Integrate space, passthrough, and Spatial Audio purposefully, support accessibility technologies, and consider shared activities through SharePlay when collaboration enhances the experience.
 
 Evidence sections: [Overview](https://developer.apple.com/design/human-interface-guidelines/designing-for-visionos), [Best-practices](https://developer.apple.com/design/human-interface-guidelines/designing-for-visionos#Best-practices).
+
+[Task workflow and runnable studies](workshops/visionos.md). Current source review: 15 October 2026.
 
 <!-- topic:designing-for-watchos -->
 <a id="designing-for-watchos"></a>
@@ -106,12 +122,16 @@ Make interactions brief, glanceable, and focused, preferably delivering useful i
 
 Evidence sections: [Overview](https://developer.apple.com/design/human-interface-guidelines/designing-for-watchos), [Best-practices](https://developer.apple.com/design/human-interface-guidelines/designing-for-watchos#Best-practices).
 
+[Task workflow and runnable studies](workshops/watchos.md). Current source review: 15 October 2026.
+
 <!-- topic:getting-started -->
 <a id="getting-started"></a>
 ## Getting started
 Source: [Getting started](https://developer.apple.com/design/human-interface-guidelines/getting-started).
 Platforms in page metadata: not specified.
 
-Begin with design principles, then select the guidance for each supported platform or games to understand its characteristic use, inputs, and system expectations.
+This is a collection linking to design principles, games, and the seven indexed platform/device design topics. Use the relevant children to understand characteristic use, inputs, and system expectations. The collection has no prose overview; the skill’s planning workflow is original interpretation, not an Apple-prescribed sequence.
 
 Evidence sections: [Overview](https://developer.apple.com/design/human-interface-guidelines/getting-started).
+
+[Task workflow and runnable studies](workshops/start.md). Current source review: 15 October 2026.

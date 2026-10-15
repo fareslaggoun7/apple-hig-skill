@@ -1,9 +1,9 @@
 {
   "schema_version": 1,
-  "release": "1.4.0",
-  "checked_at_utc": "2026-10-15T07:28:33.121214+00:00",
+  "release": "1.5.0",
+  "checked_at_utc": "2026-10-15T15:50:17.552114+00:00",
   "status": "available-software-checks-passed; native-and-empirical-studies-unavailable",
-  "tested_skill_sha256": "d471e7c5885c318f75952e2aba029d552d51e9c4bf7017fe24aea2d6454c01b0",
+  "tested_skill_sha256": "44f41f1489697eb0fbd2b3f39ab2a19abf04e7d2f08bb1cd7d566ca3349fc90e",
   "source_snapshot_date": "2026-10-14",
   "independent_empirical_error_target_proven": false,
   "executed": [
@@ -15,19 +15,18 @@
       "outcome": "passed; synthetic fixtures are not independent task outputs"
     },
     {
-      "check": "Node gallery/motion/documentation suite",
+      "check": "Node gallery, motion, workshop and generated-document suite",
       "command": "node --test tests/gallery.test.mjs",
       "exit_code": 0,
-      "tests": 11,
-      "outcome": "passed; includes all 24 effects across 281 deterministic timeline samples"
+      "tests": 14,
+      "outcome": "passed; validates source anchors, related routes, implemented study order, guide/catalog freshness and exact captured picture sets"
     },
     {
-      "check": "Exhaustive browser routes and motion interactions",
+      "check": "Exhaustive browser routes, motion and ordered workshop interactions",
       "command": "node tools/check_gallery_browser.mjs",
       "exit_code": 0,
       "routes": 346,
-      "actions": 310,
-      "failures": [],
+      "actions": 312,
       "topic_viewport_widths": [
         1280,
         390
@@ -44,75 +43,66 @@
         "checks": 227,
         "failures": []
       },
-      "log_sha256": "4bf9fc3da9b5678c3729b34e4656b4e0420a53c876fbb6ab3fbbfc77e9e8142c"
+      "workshops": {
+        "topics": 10,
+        "studies": 54,
+        "layouts": 324,
+        "behavior_checks": 130,
+        "viewports": [
+          320,
+          390,
+          1280
+        ],
+        "appearances": 2,
+        "web_text_scale": 1.5,
+        "failures": []
+      },
+      "failures": [],
+      "log_sha256": "d01a8363799b632e8b5bf7907659c112f43357ce642a6e97fca1d1ccbda9b6ab"
     },
     {
-      "check": "Motion visual inspection",
-      "outcome": "passed for reviewed normal/reduced stages, desktop/phone player and dark/phone stages; no clipped visible endpoint text found across all 24 at 390px",
+      "check": "Targeted complete official source-section readback",
+      "pages": 10,
+      "complete_section_results": 33,
+      "report": "workshop-source-review.json",
+      "outcome": "all complete results matched source fingerprints, had no truncation or unhandled nodes; Getting started overview has zero prose blocks; no full-inventory recrawl or official-media visual review"
+    },
+    {
+      "check": "Actual browser captures and visual review",
+      "workshop_pictures": 54,
+      "desktop_and_phone_workshop_captures": 20,
+      "additional_compact_dark_captures_at_150_percent_web_text": 10,
+      "outcome": "captured all studies from their live renderers; reviewed workshop desktop/phone output and selected enlarged dark scenes; refreshed the original README banner and gallery pictures",
       "native_fidelity_established": false
     },
     {
-      "check": "Browser recording verification",
-      "recordings": 24,
-      "timeline_samples_per_recording": 43,
-      "still_previews": 48,
-      "plays_per_recording": 2,
-      "outcome": "all recordings have changing frames and retain a quantized image of the rendered endpoint",
-      "maximum_mean_rgb_endpoint_error": 0.265
-    },
-    {
-      "check": "Current official Motion sections",
-      "pages": 1,
-      "sections": [
-        {
-          "url": "https://developer.apple.com/design/human-interface-guidelines/motion",
-          "section": "Best-practices",
-          "retrieved_at_utc": "2026-10-15T07:17:54.357562+00:00",
-          "snapshot_sha256": "957268c323af4617dabb6c0449d0920248c995159d54f76c691aa180ceb72a61",
-          "live_sha256": "957268c323af4617dabb6c0449d0920248c995159d54f76c691aa180ceb72a61",
-          "byte_match": true,
-          "semantic_match": true,
-          "truncated": false,
-          "selected_block_count": 2,
-          "media_nodes_not_visually_inspected": 1
-        },
-        {
-          "url": "https://developer.apple.com/design/human-interface-guidelines/motion",
-          "section": "Providing-feedback",
-          "retrieved_at_utc": "2026-10-15T07:17:55.229409+00:00",
-          "snapshot_sha256": "957268c323af4617dabb6c0449d0920248c995159d54f76c691aa180ceb72a61",
-          "live_sha256": "957268c323af4617dabb6c0449d0920248c995159d54f76c691aa180ceb72a61",
-          "byte_match": true,
-          "semantic_match": true,
-          "truncated": false,
-          "selected_block_count": 5,
-          "media_nodes_not_visually_inspected": 1
-        }
-      ],
-      "outcome": "both complete sections matched the recorded fingerprints; no full-tree recrawl for this motion-only update"
-    },
-    {
-      "check": "Topic/motion catalogs, local 173-topic source audit, distribution freshness and whitespace checks",
+      "check": "Catalogs, generated documentation, local 173-topic audit, distribution freshness and whitespace",
       "exit_code": 0,
-      "outcome": "passed"
+      "outcome": "passed; CRLF source catalog retained"
     },
     {
       "check": "Portable installation and extracted ZIP smoke checks",
       "exit_code": 0,
       "passed": [
-        "codex: repeated install, new motion workflow, installed audit and motion plan passed",
-        "claude-code: repeated install, new motion workflow, installed audit and motion plan passed",
-        "Claude chat ZIP: extracted motion workflow and helper audit passed; account installation untested",
-        "Standalone gallery ZIP: four new motion routes, selected example, rendered endpoint, CSS and absence of page errors passed"
+        "Codex and Claude Code custom installs: first/repeated install, source equality, new workflow files and installed audits",
+        "Claude chat ZIP: all extracted skill files match source and helper audit passes; account installation not tested",
+        "Standalone gallery ZIP: all ten workshop modules, selected deep links, rendered content, CSS and quick-link navigation pass without page errors",
+        "Configured cloud Codex installation: exact 30-file source match; previous installation preserved in a verified workspace backup"
       ],
       "live_client_model_outputs_tested": 0,
       "native_app_device_study_executed": false
+    },
+    {
+      "check": "Current 18-cohort empirical assessment",
+      "command": "python3 skills/apple-hig/scripts/assurance.py matrix --study evaluations/study-matrix.json --output work/workshop-study-assessment.json",
+      "exit_code": 2,
+      "outcome": "expected not-established; zero qualifying independent task outputs; no actual models, OS versions, preregistration or independent reviewers supplied"
     }
   ],
-  "previous_release_inventory_and_study_baseline": {
-    "release": "1.3.0",
-    "commit": "9203daa06a412299dd9850a704269112b5562f7f",
-    "report": "test-results-v1.3.0.json"
+  "previous_release_baseline": {
+    "release": "1.4.0",
+    "commit": "57b40bda0457ecd309f7c452bc895e97f175a9b5",
+    "report": "test-results-v1.4.0.json"
   },
   "unavailable": [
     {

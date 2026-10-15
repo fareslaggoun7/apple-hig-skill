@@ -1,6 +1,6 @@
 # Interface & motion gallery
 
-**173 source-linked topic routes, actual rendered pictures, and 24 motion examples.** The gallery runs entirely in a browser, without a build step or runtime dependencies.
+**173 source-linked topic routes, actual rendered pictures, 54 platform/design studies, and 24 motion examples.** The gallery runs entirely in a browser, without a build step or runtime dependencies.
 
 From the repository root:
 
@@ -10,7 +10,7 @@ python3 -m http.server 8000 --directory examples/gallery --bind 127.0.0.1
 
 In your browser, enter `http://127.0.0.1:8000`. Use `?topic=buttons`, `?topic=sheets`, or `?topic=motion` to open a specific example. Opening `index.html` directly as a file will not work: ES modules and the catalog require HTTP. On Windows, use `python` instead of `python3` if needed.
 
-[All 173 topics and pictures](TOPICS.md) · [Motion experiments](MOTION.md) · [Source coverage](../../docs/COVERAGE.md)
+[All 173 topics and pictures](TOPICS.md) · [Ten ordered workshops](WORKSHOPS.md) · [Motion experiments](MOTION.md) · [Source coverage](../../docs/COVERAGE.md)
 
 ![The actual runnable gallery, showing original button specimens](../../docs/assets/gallery-desktop.png)
 
@@ -24,6 +24,12 @@ In your browser, enter `http://127.0.0.1:8000`. Use `?topic=buttons`, `?topic=sh
 - Explore explicitly labeled device, payment, account, and SDK models. No purchase, authentication, invitation, sensor access, or system integration occurs.
 
 Search and family filters cover the entire library. Browser history restores topic routes. Each example shows its concrete task, current source link, dated source-card guidance, and scope. Local state resets when switching topics or refreshing. Timers, listeners, animations, and audio are cleaned up when leaving an example.
+
+## Platform and design workshops
+
+Use `?topic=designing-for-ios` to begin the requested sequence: iOS, iPadOS, macOS, watchOS, iPhone Duo, Design principles, games, tvOS, visionOS, then Getting started. The [54-study index](WORKSHOPS.md) includes an actual captured picture, task and exact Apple source for each study. The portable skill carries a corresponding implementation guide.
+
+Choose a study and use its real controls. Test compact/wide layouts, 100–150% web text, and both appearances. Each study retains its own state when revisited; Reset affects that study. Refreshing or changing gallery topic clears the workshop. Web text enlargement is not Dynamic Type. The Getting started collection retains all nine child links and adds original planning tools; downloaded worksheets remain explicitly unreviewed drafts.
 
 ## Motion and accessibility
 
@@ -56,11 +62,13 @@ Set `NODE_PATH` to the absolute path of `work/browser-tools/node_modules` for th
 node tools/check_gallery_browser.mjs
 python3 -m pip install Pillow
 node tools/capture_gallery.mjs
+node tools/capture_workshops.mjs
+node tools/build_workshop_docs.mjs
 python3 tools/build_gallery_catalog.py
 python3 tools/package_gallery.py
 ```
 
-The browser suite loads every route at 1280px and 390px, checks horizontal overflow, and exercises representative stateful interactions. The capture tool takes all 173 topic pictures from their live renderers and samples 43 timeline positions per motion GIF, including the final frame, and captures 48 normal/reduced still previews. The hero combines actual specimen screenshots with original typography and layout. No Apple interface artwork is redistributed.
+The browser suite loads every route at 1280px and 390px, checks horizontal overflow, and exercises representative stateful interactions. Workshop checks exercise 130 task behaviors and 324 layout/appearance combinations, including input, draft/focus preservation, recovery and exported-record scope. Workshop captures use the same live renderer as the gallery. The capture tool takes all 173 topic pictures from their live renderers and samples 43 timeline positions per motion GIF, including the final frame, and captures 48 normal/reduced still previews. The hero combines actual specimen screenshots with original typography and layout. No Apple interface artwork is redistributed.
 
 ## Optional public hosting
 

@@ -1,6 +1,6 @@
 # All 173 topic examples
 
-Every row links to a runnable browser task, its actual rendered preview, and the applicable Apple source. Collection topics open a topic browser. SDK and device examples are explicitly labeled simulations.
+Every row links to a runnable browser task, its actual rendered preview, and the applicable Apple source. Collection topics retain child links; Getting started includes an original planning workshop. SDK and device examples are explicitly labeled simulations.
 
 Run the gallery using [these instructions](README.md). Serve the gallery locally to run these HTML routes; all previews are included in the repository.
 

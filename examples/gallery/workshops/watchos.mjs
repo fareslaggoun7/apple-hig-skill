@@ -4,8 +4,8 @@ const face=(title,body)=>`<section class="wk-watch"><span class="wk-kicker">FIEL
 const display=s=>`${Math.floor(s.remaining/60)}:${String(s.remaining%60).padStart(2,'0')}`;
 function stop(ctx){ctx.cancelPending?.();ctx.cancelPending=null;if(ctx.state.running){ctx.state.remaining=Math.max(0,Math.ceil((ctx.state.deadline-Date.now())/1000));ctx.state.running=false;}}
 function act(ctx,name){const s=ctx.state;
- if(name==='start'){if(!s.remaining)s.remaining=s.minutes*60;s.running=true;s.deadline=Date.now()+s.remaining*1000;ctx.cancelPending=ctx.interval(()=>{s.remaining=Math.max(0,Math.ceil((s.deadline-Date.now())/1000));if(!s.remaining){stop(ctx);ctx.status('Timer finished.');}ctx.render();},1000);}
- else if(name==='pause')stop(ctx);
+ if(name==='start'){if(!s.remaining)s.remaining=s.minutes*60;s.running=true;s.deadline=Date.now()+s.remaining*1000;ctx.focus='pause';ctx.cancelPending=ctx.interval(()=>{s.remaining=Math.max(0,Math.ceil((s.deadline-Date.now())/1000));if(!s.remaining){stop(ctx);ctx.status('Timer finished.');}ctx.render();},1000);}
+ else if(name==='pause'){stop(ctx);ctx.focus='start';}
  else if(name==='restart'){stop(ctx);s.remaining=s.minutes*60;}
  else if(name==='less'||name==='more'){s.minutes=Math.max(1,Math.min(30,s.minutes+(name==='less'?-1:1)));s.remaining=s.minutes*60;}
  else if(name==='detail'){s.detail=true;ctx.focus='watch-detail';}

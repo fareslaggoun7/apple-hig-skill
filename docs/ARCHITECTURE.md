@@ -55,10 +55,12 @@ The Markdown package is client-neutral. Codex's optional UI metadata is separate
 
 ## Companion gallery
 
-`tools/build_gallery_catalog.py` maps every indexed topic to an explicit scenario and renderer kind, carries its dated source-card interpretation, and generates both `examples/gallery/catalog.json` and the complete topic index. There are 173 routes and 121 registered renderer kinds. Missing kinds or unmatched topics fail validation; there is no generic placeholder renderer.
+`tools/build_gallery_catalog.py` maps every indexed topic to an explicit scenario and renderer kind, carries its dated source-card interpretation, and generates both `examples/gallery/catalog.json` and the complete topic index. There are 173 routes, including 54 studies in ten ordered platform/design workshops. Missing kinds or unmatched topics fail validation; there is no generic placeholder renderer.
 
 `gallery.mjs` owns routing, history, filters, appearance, and reduced-motion preferences. `specimens.mjs` mounts each example with an abort signal and owned cleanup callbacks. Leaving an example removes listeners and stops timers, audio, dialogs, and animation frames. Device, account, payment, and SDK models are explicitly labeled simulations.
 
-`motion.mjs` contains ten preview renderers plus a substepped spring model. Retargeting retains position and velocity. Browser QA controls time during interruption assertions, while the actual gallery uses animation frames. The capture tool records actual renderers; pictures are not substitutes for functional or native-device checks.
+`motion.mjs` contains 24 preview renderers plus a substepped spring model. Retargeting retains position and velocity. Browser QA controls time during interruption assertions, while the actual gallery uses animation frames. The capture tool records actual renderers; pictures are not substitutes for functional or native-device checks.
 
 The portable skill includes a routing reference, while the larger browser gallery has its own standalone ZIP. Visitors need only a static HTTP server and a modern browser. Optional developer tools are isolated in ignored `work/`. Release automation publishes both archives only after the required CI jobs pass; Pages deployment is optional.
+
+`workshops.mjs` owns per-study state, scoped events, focus, timers and per-render abort signals. Topic modules implement concrete platform/design tasks; no generic passing fallback exists. `build_workshop_docs.mjs` derives the public picture index, portable guide index and JSON catalog from those implementations. Browser checks exercise each topic in order; captures render the same modules. Native integrations remain explicitly unverified.

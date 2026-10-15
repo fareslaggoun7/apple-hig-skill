@@ -18,7 +18,7 @@ def archive_bytes():
             info.compress_type=zipfile.ZIP_DEFLATED;info.external_attr=0o100644<<16;info.create_system=3
             archive.writestr(info,file.read_bytes())
         info=zipfile.ZipInfo('apple-hig-gallery/README.txt',date_time=(2026,10,13,0,0,0))
-        archive.writestr(info,'Run from this folder: python -m http.server 8000 --bind 127.0.0.1\nOpen http://127.0.0.1:8000 in a browser. No build step.\n173 original web topic routes and 24 motion examples; integration and device behavior are simulated.\nSource snapshot: 14 October 2026. No native fidelity or numerical accuracy guarantee.\nFull guide: https://github.com/fareslaggoun7/apple-hig-skill/blob/main/examples/gallery/README.md\n')
+        archive.writestr(info,'Run from this folder: python -m http.server 8000 --bind 127.0.0.1\nOpen http://127.0.0.1:8000 in a browser. No build step.\n173 original web topic routes, 54 studies in 10 ordered workshops and 24 motion examples; integration and device behavior are simulated.\nSource snapshot: 14 October 2026. No native fidelity or numerical accuracy guarantee.\nFull guide: https://github.com/fareslaggoun7/apple-hig-skill/blob/main/examples/gallery/README.md\n')
         for name in ['LICENSE','NOTICE']:
             info=zipfile.ZipInfo('apple-hig-gallery/'+name,date_time=(2026,10,13,0,0,0));archive.writestr(info,(ROOT/name).read_bytes())
     return buffer.getvalue()
