@@ -31,6 +31,24 @@ const behavior={
     await page.goto(new URL('?topic=designing-for-ios',page.url()).href);await page.waitForFunction(()=>window.galleryReady);
     return 19;
   },
+  async 'designing-for-ipados'(page){
+    await choose(page,'workspace');await page.locator('[data-w-field=body]').fill('A preserved iPad draft.');
+    await action(page,'collection:ideas');assert.match(await page.locator('.wk-document-bar h3').textContent(),/Studio/);
+    await action(page,'collection:travel');assert.equal(await page.locator('[data-w-field=body]').inputValue(),'A preserved iPad draft.');
+    await action(page,'document:coast');await page.locator('[data-w-field=body]').fill('A second independent draft.');await action(page,'document:trail');assert.equal(await page.locator('[data-w-field=body]').inputValue(),'A preserved iPad draft.');
+    await choose(page,'adaptation');await page.locator('[data-w-field=body]').fill('Keep this when columns reflow.');
+    await page.locator('[data-w-width]').selectOption('compact');await page.locator('[data-w-size]').selectOption('1.5');
+    assert.equal(await page.locator('[data-w-field=body]').inputValue(),'Keep this when columns reflow.');
+    await action(page,'sidebar');await action(page,'sidebar');assert.equal(await page.locator('[data-w-field=body]').inputValue(),'Keep this when columns reflow.');
+    await choose(page,'inspector');await page.locator('[data-w-field=body]').fill('One two three');assert.equal(await page.locator('[data-word-count]').textContent(),'3');
+    await action(page,'inspector');assert.equal(await page.locator('.wk-inspector').count(),0);assert.equal(await page.locator('[data-w-field=body]').inputValue(),'One two three');
+    await choose(page,'keyboard');await page.locator('[data-w-field=body]').focus();await page.keyboard.press('Control+s');assert.match(await page.locator('[data-document-status]').textContent(),/Saved/);
+    const captured=await page.locator('#topic-search').evaluate(n=>{const ev=new KeyboardEvent('keydown',{key:'s',ctrlKey:true,bubbles:true,cancelable:true});n.dispatchEvent(ev);return ev.defaultPrevented;});assert.equal(captured,false);
+    await choose(page,'sketch-transfer');await action(page,'mark');assert.match(await page.locator('.wk-panel .wk-meta').textContent(),/1 stroke/);
+    const canvas=page.locator('canvas');const bounds=await canvas.boundingBox();await page.mouse.move(bounds.x+20,bounds.y+20);await page.mouse.down();await page.mouse.move(bounds.x+75,bounds.y+50,{steps:3});await page.mouse.up();assert.match(await page.locator('.wk-panel .wk-meta').textContent(),/2 strokes/);
+    await action(page,'clip');assert.match(await page.locator('[data-w-field=body]').inputValue(),/Sketch clip/);await action(page,'clear-sketch');assert.match(await page.locator('.wk-panel .wk-meta').textContent(),/0 strokes/);assert.match(await page.locator('[data-w-field=body]').inputValue(),/Sketch clip/);
+    return 13;
+  },
 };
 export async function checkWorkshops(browser,base,selected){
   const workshops=WORKSHOPS.filter(w=>!selected||w.id===selected);if(!workshops.length)throw Error('No implemented matching workshop');

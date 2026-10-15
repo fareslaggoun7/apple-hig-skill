@@ -41,7 +41,7 @@ dark-mode|appearance|Compare a reading card in light and dark|Switch appearance
 design-principles|principles|Refine a focused note-taking task|Choose principle
 designing-for-games|game|Move a token through a keyboard-friendly game|Move token
 designing-for-ios|workshop|Explore six source-guided iOS tasks with navigation, editing, saved state and recovery|Choose an iOS study
-designing-for-ipados|tablet-screen|Edit a note beside its collection|Choose collection
+designing-for-ipados|workshop|Explore five connected iPadOS workspace studies with preserved drafts and fluid inputs|Choose an iPadOS study
 designing-for-iphone-duo|adaptive-screen|Compare compact and expanded reading layouts|Change layout
 designing-for-macos|window|Work with a document window and command strip|Open inspector
 designing-for-tvos|tv-screen|Choose a documentary with visible focus|Select film

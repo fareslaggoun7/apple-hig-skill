@@ -66,6 +66,63 @@
           "skin": "phone"
         }
       ]
+    },
+    {
+      "id": "designing-for-ipados",
+      "label": "Designing for iPadOS",
+      "short": "iPadOS",
+      "order": 2,
+      "scope": "A responsive HTML document workspace. Keyboard and pointer tasks run in the browser; native multitasking, Apple Pencil and inter-app transfer remain unverified.",
+      "reference": "references/workshops/ipados.md",
+      "related": [
+        "sidebars",
+        "multitasking",
+        "apple-pencil-and-scribble",
+        "keyboards",
+        "drag-and-drop"
+      ],
+      "scenarios": [
+        {
+          "id": "workspace",
+          "title": "Persistent workspace",
+          "task": "Switch collections and documents while preserving each editable draft.",
+          "principle": "Use the available display for content and connected tasks, with less nesting.",
+          "source": "https://developer.apple.com/design/human-interface-guidelines/designing-for-ipados#Best-practices",
+          "skin": "tablet"
+        },
+        {
+          "id": "adaptation",
+          "title": "Resize without losing work",
+          "task": "Edit a draft, then change layout and text size without losing the selected document.",
+          "principle": "Adapt to available space and chosen configurations rather than a fixed tablet width.",
+          "source": "https://developer.apple.com/design/human-interface-guidelines/designing-for-ipados#Best-practices",
+          "skin": "tablet"
+        },
+        {
+          "id": "inspector",
+          "title": "Nonmodal inspector",
+          "task": "Inspect document details while editing the same document.",
+          "principle": "Expose useful supporting information without interrupting the main task.",
+          "source": "https://developer.apple.com/design/human-interface-guidelines/designing-for-ipados#Best-practices",
+          "skin": "tablet"
+        },
+        {
+          "id": "keyboard",
+          "title": "Keyboard & named actions",
+          "task": "Save using the scoped keyboard command and the visible equivalent button.",
+          "principle": "Let people combine input methods without hiding essential actions.",
+          "source": "https://developer.apple.com/design/human-interface-guidelines/designing-for-ipados#Best-practices",
+          "skin": "tablet"
+        },
+        {
+          "id": "sketch-transfer",
+          "title": "Sketch beside a note",
+          "task": "Draw or add a sample stroke, then transfer a bundled clip into a related note.",
+          "principle": "Support mixed-input workflows while stating what the browser model actually establishes.",
+          "source": "https://developer.apple.com/design/human-interface-guidelines/designing-for-ipados#Best-practices",
+          "skin": "tablet"
+        }
+      ]
     }
   ]
 }
