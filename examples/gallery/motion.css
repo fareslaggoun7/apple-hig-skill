@@ -130,6 +130,7 @@ body.dark .motion-stage .motion-desktop{background:linear-gradient(140deg,#233c4
 .record-view .motion-picker,.record-view .motion-library,.record-view .motion-description,.record-view .motion-state,.record-view .motion-timeline,.record-view .motion-evidence,.record-view .motion-reduced-note{display:none}
 .record-view .motion-stage{height:320px}
 .reduce-motion button:active{transform:none}
+.reduce-control input[aria-disabled=true]{cursor:not-allowed}
 @media(prefers-reduced-motion:reduce){button:active{transform:none}}
 @media(max-width:650px){
   .motion-picker{display:grid;grid-template-columns:1fr;gap:.6rem}

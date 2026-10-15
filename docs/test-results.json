@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "release": "1.4.0",
-  "checked_at_utc": "2026-10-15T07:19:38.446797+00:00",
+  "checked_at_utc": "2026-10-15T07:28:33.121214+00:00",
   "status": "available-software-checks-passed; native-and-empirical-studies-unavailable",
   "tested_skill_sha256": "d471e7c5885c318f75952e2aba029d552d51e9c4bf7017fe24aea2d6454c01b0",
   "source_snapshot_date": "2026-10-14",
@@ -18,7 +18,7 @@
       "check": "Node gallery/motion/documentation suite",
       "command": "node --test tests/gallery.test.mjs",
       "exit_code": 0,
-      "tests": 10,
+      "tests": 11,
       "outcome": "passed; includes all 24 effects across 281 deterministic timeline samples"
     },
     {
@@ -41,10 +41,10 @@
           1280
         ],
         "appearances": 2,
-        "checks": 226,
+        "checks": 227,
         "failures": []
       },
-      "log_sha256": "3d6441948423dc9ddc188f6ea02066a30327335b6c04801a1c4cfdc3ee6c4911"
+      "log_sha256": "4bf9fc3da9b5678c3729b34e4656b4e0420a53c876fbb6ab3fbbfc77e9e8142c"
     },
     {
       "check": "Motion visual inspection",

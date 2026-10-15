@@ -71,8 +71,18 @@ export async function checkMotion(browser,base){
     assert.equal(await page.evaluate(()=>document.activeElement.id),'reduce-motion');
     await changePreference('reduce');assert.equal(await frame(),preserved);
     assert.equal(await page.locator('#reduce-motion').isChecked(),true);
-    assert.equal(await page.locator('#reduce-motion').isDisabled(),true);
+    assert.equal(await page.locator('#reduce-motion').getAttribute('aria-disabled'),'true');
+    assert.equal(await page.evaluate(()=>document.activeElement.id),'reduce-motion','system changes must preserve keyboard focus');
+    await page.keyboard.press('Space');assert.equal(await page.locator('#reduce-motion').isChecked(),true,'system reduction cannot be toggled off locally');
+    assert.equal(await frame(),preserved);assert.equal(await state(),'paused');
     await changePreference('no-preference');assert.equal(await page.locator('#reduce-motion').isChecked(),true,'local reduction survives a system preference change');
+    await page.locator('#reduce-motion').uncheck();checks++;
+    await choose('tab-transition');await page.locator('[data-play]').click();await page.clock.runFor(400);
+    const playingFrame=await frame();await page.locator('#reduce-motion').check();
+    assert.equal(await frame(),playingFrame);assert.equal(await state(),'playing');
+    assert.equal(await page.locator('[data-motion-select]').inputValue(),'tab-transition');
+    assert.equal(await page.locator('.motion-stage').getAttribute('data-reduced'),'true');
+    await page.clock.runFor(120);assert.ok(await frame()>playingFrame);
     await page.locator('#reduce-motion').uncheck();checks++;
     // Keyboard scrubbing has exact endpoints and can resume from an intermediate position.
     await page.locator('[data-seek]').focus();await page.keyboard.press('End');assert.equal(await frame(),2.8);

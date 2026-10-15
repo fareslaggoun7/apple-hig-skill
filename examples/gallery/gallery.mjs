@@ -9,7 +9,9 @@ const reduced=()=>preference.matches||localReduction;
 function applyReduced(){
   document.body.classList.toggle('reduce-motion',reduced());
   $('reduce-motion').checked=reduced();
-  $('reduce-motion').disabled=preference.matches;
+  // Keep the control focusable when the system enforces reduction. Native
+  // disabling would unexpectedly discard focus on a dynamic preference change.
+  $('reduce-motion').setAttribute('aria-disabled',String(preference.matches));
   $('reduce-motion').title=preference.matches?'Reduce motion is enabled by your system preference.':'Use a stationary or direct-state alternative.';
 }
 function updateMotionPreference(){
@@ -19,7 +21,10 @@ function updateMotionPreference(){
 }
 applyReduced();
 preference.addEventListener('change',updateMotionPreference);
-$('reduce-motion').addEventListener('change',()=>{localReduction=$('reduce-motion').checked;updateMotionPreference();});
+$('reduce-motion').addEventListener('change',()=>{
+  if(preference.matches){applyReduced();status('Reduced motion is enabled by your system preference.');return;}
+  localReduction=$('reduce-motion').checked;updateMotionPreference();
+});
 $('appearance').addEventListener('click',ev=>{const dark=document.body.classList.toggle('dark');ev.currentTarget.setAttribute('aria-pressed',String(dark));ev.currentTarget.textContent=dark?'Light appearance':'Dark appearance';});
 function status(message){$('result').textContent=message;}
 function list(){

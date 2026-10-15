@@ -56,11 +56,14 @@ export function frameState(name,time,reduced=false){
   let p=physical?physical.position:phase(time);
   if(name==='undo-removal')p=phase(time)*(1-ease((time-1.65)/.65));
   const direct=reduced||name==='reduced-motion',value=direct?(p>=.5?1:0):p;
-  const active=value>=.5,complete=time>=MOTION_DURATION;
+  const active=value>=.5,complete=time>=MOTION_DURATION,progress=Math.round(20+value*65);
+  let summary=complete?motionExample(name).outcome:(time===0?'Before: ':'Preview in progress. ')+motionExample(name).purpose;
+  if(name==='progress-update'&&!complete)summary=`Collection loading: ${progress} percent.`;
+  if(name==='number-change'&&!complete)summary=`Reading total: ${progress} minutes.`;
+  if(name==='pull-refresh'&&!complete)summary=time>=1.65?'The local illustration says Updated just now.':time>.2?'Refreshing local notes. No network request occurs.':'Ready to preview a local refresh.';
+  if(name==='undo-removal')summary=time>=2.3?'Weekend plans restored. All three notes are present.':active?'Weekend plans removed. Undo is available.':'All three notes are present.';
   return {name,time,value,position:20+value*260,opacity:direct?1:value,
-    progress:Math.round(20+value*65),scale:direct?1:1-.04*Math.sin(clamp(p)*Math.PI),active,reduced:direct,complete,
-    summary:name==='undo-removal'?(time>=2.3?'Weekend plans restored. All three notes are present.':active?'Weekend plans removed. Undo is available.':'All three notes are present.'):
-      complete?motionExample(name).outcome:active?'After: '+motionExample(name).outcome:'Before: '+motionExample(name).purpose};
+    progress,scale:direct?1:1-.04*Math.sin(clamp(p)*Math.PI),active,reduced:direct,complete,summary};
 }
 
 const caption = text=>`<div class="motion-caption">${text}</div>`;

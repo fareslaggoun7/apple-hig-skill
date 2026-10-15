@@ -56,6 +56,16 @@ test('undo restores the removed item and reports both intermediate and final sta
     assert.match(frameState('undo-removal',MOTION_DURATION,reduced).summary,/restored/);
   }
 });
+test('intermediate accessible descriptions agree with displayed values and do not announce completion early',()=>{
+  for(const reduced of [false,true])for(const time of [.4,.7,.9,1.3]){
+    for(const name of ['progress-update','number-change']){
+      const state=frameState(name,time,reduced);
+      assert.ok(state.summary.includes(String(state.progress)),`${name} must describe its actual value`);
+    }
+    assert.match(frameState('pull-refresh',1.3,reduced).summary,/Refreshing/);
+    assert.match(frameState('spring-retarget',.7,reduced).summary,/Preview in progress/);
+  }
+});
 test('frame sampling clamps invalid times and spring integration never moves for an invalid elapsed value',()=>{
   for(const value of [NaN,Infinity,-Infinity,-10])assert.equal(frameState('toggle-state',value).time,0);
   assert.equal(frameState('toggle-state',100).time,MOTION_DURATION);
