@@ -546,6 +546,67 @@
           "skin": "spatial"
         }
       ]
+    },
+    {
+      "id": "getting-started",
+      "label": "Getting started",
+      "short": "Start here",
+      "order": 10,
+      "scope": "An original planning workflow built around Apple’s Getting started topic index and its nine child topics. Briefs and downloads remain unreviewed drafts; no automated design certification is produced.",
+      "reference": "references/workshops/start.md",
+      "related": [
+        "design-principles",
+        "designing-for-games",
+        "designing-for-ios",
+        "designing-for-ipados",
+        "designing-for-macos",
+        "designing-for-watchos",
+        "designing-for-tvos",
+        "designing-for-visionos",
+        "designing-for-iphone-duo"
+      ],
+      "scenarios": [
+        {
+          "id": "brief",
+          "title": "Name a person’s task",
+          "task": "Create a scoped draft brief with a goal, target platform and explicit OS.",
+          "principle": "Establish the design context before choosing structure or styling.",
+          "source": "https://developer.apple.com/design/human-interface-guidelines/getting-started",
+          "skin": "planning"
+        },
+        {
+          "id": "source-route",
+          "title": "Choose the relevant sources",
+          "task": "Choose a platform, then open its workshop or any Getting started child topic.",
+          "principle": "Use Apple’s topic relationships as a source map; verify exact sections for consequential claims.",
+          "source": "https://developer.apple.com/design/human-interface-guidelines/getting-started",
+          "skin": "planning"
+        },
+        {
+          "id": "structure",
+          "title": "Compare two plausible structures",
+          "task": "Compare a focused flow with a connected workspace while retaining the same draft.",
+          "principle": "Choose a structure for the task and platform; retain context as it adapts.",
+          "source": "https://developer.apple.com/design/human-interface-guidelines/getting-started",
+          "skin": "planning"
+        },
+        {
+          "id": "states",
+          "title": "Build the paths that can fail",
+          "task": "Submit, cancel, trigger a bundled failure, retry, and return with the draft intact.",
+          "principle": "Inspect real entry, loading, error, cancellation and recovery states.",
+          "source": "https://developer.apple.com/design/human-interface-guidelines/getting-started",
+          "skin": "planning"
+        },
+        {
+          "id": "record",
+          "title": "Keep an honest decision draft",
+          "task": "Describe a source-linked decision and export its explicitly unreviewed record.",
+          "principle": "Separate recommendations, original choices, implementation evidence and unverified claims.",
+          "source": "https://developer.apple.com/design/human-interface-guidelines/getting-started",
+          "skin": "planning"
+        }
+      ]
     }
   ]
 }

@@ -18,7 +18,7 @@ Run the gallery using [these instructions](README.md). Serve the gallery locally
 | [Designing for tvOS](index.html?topic=designing-for-tvos) | Explore five TV focus, legibility, viewer and story continuity studies | web-adaptation | [Preview](previews/designing-for-tvos.webp) | [Source](https://developer.apple.com/design/human-interface-guidelines/designing-for-tvos#Best-practices) |
 | [Designing for visionOS](index.html?topic=designing-for-visionos) | Explore five contained-task, immersion, input, comfort and shared-state studies | web-adaptation | [Preview](previews/designing-for-visionos.webp) | [Source](https://developer.apple.com/design/human-interface-guidelines/designing-for-visionos#Best-practices) |
 | [Designing for watchOS](index.html?topic=designing-for-watchos) | Explore five concise watch tasks, context entries and input alternatives | web-adaptation | [Preview](previews/designing-for-watchos.webp) | [Source](https://developer.apple.com/design/human-interface-guidelines/designing-for-watchos#Best-practices) |
-| [Getting started](index.html?topic=getting-started) | Explore the getting started example collection | web-adaptation | [Preview](previews/getting-started.webp) | [Source](https://developer.apple.com/design/human-interface-guidelines/getting-started) |
+| [Getting started](index.html?topic=getting-started) | Build a scoped brief, choose sources, compare structures and review real states | web-adaptation | [Preview](previews/getting-started.webp) | [Source](https://developer.apple.com/design/human-interface-guidelines/getting-started) |
 
 ## Foundations
 

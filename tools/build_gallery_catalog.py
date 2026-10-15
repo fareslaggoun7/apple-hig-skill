@@ -61,6 +61,7 @@ focus-and-selection|focus|Move through a selectable film grid|Select item
 game-center|integration|Preview a fictional leaderboard and invitation|Preview match
 game-controls|game|Control a token using keys or onscreen arrows|Move token
 gauges|gauge|Read and adjust a fictional storage gauge|Add file
+getting-started|workshop|Build a scoped brief, choose sources, compare structures and review real states|Choose a getting-started study
 generative-ai|assistant|Review a labeled example AI suggestion before applying it|Preview suggestion
 gestures|gesture|Drag a card and release it to a snap point|Reset card
 going-full-screen|fullscreen|Focus on a distraction-free reading panel|Toggle reading mode
@@ -177,7 +178,9 @@ def build(check=False):
     result=[]
     for page in source['pages']:
         slug=page['slug']
-        if page['topic_children']:
+        if slug in cases and cases[slug]['kind']=='workshop':
+            case=cases.pop(slug)
+        elif page['topic_children']:
             case={'kind':'topic-browser','scenario':'Explore the '+page['title'].lower()+' example collection','action':'Choose example'}
         else:
             if slug not in cases:raise ValueError('Topic needs an explicit example: '+slug)

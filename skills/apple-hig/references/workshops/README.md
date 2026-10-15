@@ -11,5 +11,6 @@ Read the workflow for the task’s target platform or design topic, then load it
 7. [Designing for games](games.md) — 5 source-linked studies.
 8. [Designing for tvOS](tvos.md) — 5 source-linked studies.
 9. [Designing for visionOS](visionos.md) — 5 source-linked studies.
+10. [Getting started](start.md) — 5 source-linked studies.
 
 [Runnable workshops and actual pictures](https://github.com/fareslaggoun7/apple-hig-skill/blob/main/examples/gallery/WORKSHOPS.md). Each platform needs its own deployment, input, accessibility, and device/runtime review. Do not transfer native measurements or SDK guarantees into browser examples.
